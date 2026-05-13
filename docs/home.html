@@ -1,0 +1,758 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Descripción del Curso &#8212; Sacha Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/home';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Preámbulo" href="preambulo.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Sacha Analytics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Descripción del Curso
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="preambulo.html">Preámbulo</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion1_caso_estudio_anemia.html">1. <b>Diseño de Caso Estudio: </b>Anemia</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion2_caso_estudio_dengue.html">2. <b>Diseño de Caso Estudio:</b> Dengue</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion3_caso_estudio_malaria.html">3. <b>Diseño de Caso Estudio: </b>Malaria</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion4_caso_estudio_diabetes.html">4. <b>Diseño de Caso Estudio: </b>Diabetes</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion5_caso_estudio_zoonosis.html">5. <b>Diseño de Caso Estudio:</b> Zoonosis</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion6_caso_estudio_covid19.html">6. <b>Diseño de Caso Estudio:</b> Linaje Genómico de Pruebas Moleculares del Instituto Nacional de Salud para COVID-19 (INS)</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion7_caso_estudio_enfermedad_carrion.html">7. <b>Diseño de Caso Estudio: </b>Enfermedad de Carrión</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion8_caso_estudio_infeccionRespiratoria.html">8. <b>Diseño de Caso Estudio:</b> Infecciones Respiratorias Agudas</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/vrrp/sachabook_bigdata" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/vrrp/sachabook_bigdata/issues/new?title=Issue%20on%20page%20%2Fdocs/home.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/home.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Descripción del Curso</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Descripción del Curso</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia">Metodología</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quien-esta-dirigido">¿A quién está dirigido?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plagio-e-integridad-academica">Plagio e Integridad Académica</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion">Evaluación</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas">Herramientas</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#donaciones">Donaciones</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Bioestadística para Investigación Científica <br>usando Python con Inteligencia Artificial</b></span></h1>
+</div>
+<style>
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+</style>
+<table align="center" style="font-size: 13px;">
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Autor</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:VR ROJAS</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Email</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:sacha.analytics@gmail.com</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Web</span></th>
+    <th align="left">:<a href="https://sacha-analytics.github.io/" style="font-family:Monospace;font-size: 13px;">sacha-analytics</a></th>
+</tr>
+</table>
+<br>
+<section class="tex2jax_ignore mathjax_ignore" id="descripcion-del-curso">
+<h1>Descripción del Curso<a class="headerlink" href="#descripcion-del-curso" title="Link to this heading">#</a></h1>
+<p>(Última actualización: 21 Abril, 2026)</p>
+<p>Este curso intensivo de Bioestadística está diseñado para proporcionar a profesionales de Biología, Genética, Medicina, Epidemiología y Salud Pública las herramientas estadísticas y computacionales necesarias para analizar e interpretar datos biomédicos. A través de la aplicación práctica de métodos estadísticos y el lenguaje de programación Python, los participantes aprenderán a abordar problemas relacionados con tasas de incidencia de enfermedades, expresiones genéticas, resultados clínicos e indicadores de salud poblacional. El curso se centra en casos de estudio para analizar datos clínicos, con el fin de comprender los procesos biológicos, las enfermedades y las intervenciones médicas.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="objetivos">
+<h1>Objetivos<a class="headerlink" href="#objetivos" title="Link to this heading">#</a></h1>
+<p><strong>General</strong></p>
+<p>Capacitar a los participantes en el uso de métodos bioestadísticos y de herramientas tecnológicas para analizar e interpretar datos biomédicos, mejorando su capacidad para la investigación y la toma de desiciones basada en evidencia.</p>
+<p><strong>Específicos</strong></p>
+<ul class="simple">
+<li><p>Introducción a la computación en la nube (Google Colaboratory).</p></li>
+<li><p>Procesar, analizar y construir base de datos provenientes de archivos en formato CSV y XLSX.</p></li>
+<li><p>Emplear paquetes o librerias estándar de Python para generar gráficos descriptivos que permitan visualizar tendencias y patrones en datos procesados.</p></li>
+<li><p>Realizar análisis estadístico descriptivo e inferencial para tomar decisiones informadas y basadas en evidencia.</p></li>
+<li><p>Implementar el modelo Bioestadístico de Regresión Logística Binaria</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="metodologia">
+<h1>Metodología<a class="headerlink" href="#metodologia" title="Link to this heading">#</a></h1>
+<p>En este curso se utilizará una combinación de clases magistrales, debates en clase, presentaciones, videos, aprendizaje cooperativo y aprendizaje basado en problemas.
+Este curso trabaja con 8 casos de estudio reales basados en datos biomédicos. A lo largo del desarrollo de cada caso, aprenderás de manera práctica los siguientes temas:</p>
+<ul class="simple">
+<li><p><strong>Introducción a la computación en la nube (Google Colaboratory)</strong>: Presentar las ventajas y el funcionamiento básico de Google Colab como plataforma de computación en la nube para bioestadística. Los estudiantes aprenderán a crear, guardar y compartir notebooks interactivos, utilizar recursos de GPU/TPU gratuitos, importar librerías y trabajar de forma colaborativa sin necesidad de instalaciones locales, facilitando la reproducción de análisis en investigación biomédica.</p></li>
+<li><p><strong>Procesar y analizar base de datos provenientes de archivos en formato CSV y XLSX</strong>: Desarrollar habilidades para importar, limpiar, transformar y estructurar datos clínicos o biológicos desde archivos CSV y XLSX utilizando pandas. Se enfatizará en el manejo de valores faltantes, detección de outliers, creación de nuevas variables, preparando los datos para análisis posteriores en contextos de investigación.</p></li>
+<li><p><strong>Emplear paquetes o librerías estándar de Python para generar gráficos descriptivos que permitan visualizar tendencias y patrones en datos procesados</strong>: Capacitar en el uso de librerías como Matplotlib y Seabor para crear gráficos univariados, bivariados y multivariados (histogramas, boxplots y scatter plots.). Los estudiantes aprenderán a interpretar visualizaciones que revelen distribuciones, correlaciones, tendencias temporales y patrones en datos biológicos o de salud, mejorando la exploración y comunicación de resultados.</p></li>
+<li><p><strong>Realizar análisis estadístico descriptivo e inferencial para tomar decisiones informadas y basadas en evidencia</strong>: Enseñar a calcular medidas de tendencia central, dispersión y posición, así como a aplicar pruebas de hipótesis paramétricas y no paramétricas (t-Student, ANOVA, chi-cuadrado y Shapiro-Wilk.). El objetivo es que los estudiantes interpreten los resultados estadísticos para respaldar conclusiones científicas y tomar decisiones basadas en evidencia en investigación biomédica.</p></li>
+<li><p><strong>Implementar el modelo Bioestadístico de Regresión Logística Binaria</strong>: Introducir y aplicar la regresión logística binaria como herramienta clave en bioestadística para predecir eventos dicotómicos (presencia/ausencia de enfermedad, éxito/fracaso de tratamiento, etc.). Los estudiantes aprenderán a ajustar el modelo con statsmodels, interpretar odds ratios, evaluar el ajuste, validar el modelo y utilizar IA para optimizar y explicar predicciones en contextos de investigación clínica y epidemiológica</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-quien-esta-dirigido">
+<h1>¿A quién está dirigido?<a class="headerlink" href="#a-quien-esta-dirigido" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Científicos e ingenieros</strong>: Que buscan automatizar el análisis de sus experimentos o simulaciones</p></li>
+<li><p><strong>Docentes y educadores</strong>: Que deseen incorporar la programación y el análisis de datos como herramientas pedagógicas en sus aulas.</p></li>
+<li><p><strong>Estudiantes universitarios</strong>: De cualquier disciplina (ciencias, ingeniería, economía, ciencias sociales) que quieran adquirir una habilidad altamente demandada en el mercado laboral y en la investigación.</p></li>
+<li><p><strong>Profesionales en general</strong>: Con interés en iniciarse en el mundo de los datos desde una perspectiva práctica y estructurada.</p></li>
+</ul>
+<p><strong>Requisitos</strong></p>
+<ul class="simple">
+<li><p>No se requiere experiencia previa en programación.</p></li>
+<li><p>Se recomienda tener curiosidad por los datos y las ganas de aprender.</p></li>
+<li><p>Una computadora con acceso a internet para instalar las herramientas necesarias (se proporcionarán guías paso a paso).</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plagio-e-integridad-academica">
+<h1>Plagio e Integridad Académica<a class="headerlink" href="#plagio-e-integridad-academica" title="Link to this heading">#</a></h1>
+<p>El plagio es la práctica de copiar palabras, oraciones, imágenes o ideas para su uso en evaluaciones escritas u orales sin dar el crédito correspondiente a la fuente. Hacer trampa se define como dar o recibir ayuda ilegal en cualquier cosa que el profesor haya determinado como un esfuerzo individual. Ambas se consideran infracciones graves y afectarán significativamente la calificación del curso.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="evaluacion">
+<h1>Evaluación<a class="headerlink" href="#evaluacion" title="Link to this heading">#</a></h1>
+<div class="warning attention caution danger error important hint note seealso tip admonition">
+<p class="admonition-title">Laborarotios guíados</p>
+<p>Se desarrollaran laboratorios por cada sesión, con los cuáles se determinará el promedio final (PF), Ecuación  <a class="reference internal" href="#equation-eq-promediofinal">(1)</a>. La nota mínima
+aprobatoria es 11.</p>
+<div class="math notranslate nohighlight" id="equation-eq-promediofinal">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-promediofinal" title="Link to this equation">#</a></span>\[
+ PF = \frac{1}{N} \sum_{i=1}^N lab_{(i)} 
+\]</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="herramientas">
+<h1>Herramientas<a class="headerlink" href="#herramientas" title="Link to this heading">#</a></h1>
+<p>Para desarrollar este curso se recomienda usar la computación en la nube (Google Drive y Google Colaboratory). La siguiente secuencia de imágenes muestra cómo funciona la computación en la nube y como instalar
+Google Colaboratory.</p>
+<div class="languages-slideshow-container">
+  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/cloudComputing/cc1.png?raw=true" alt="Imagen 0: Evolución 0">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/cloudComputing/cc2.png?raw=true" alt="Imagen 1: Evolución 1">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/cloudComputing/cc3.png?raw=true" alt="Imagen 2: Evolución 2">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/cloudComputing/cc4.png?raw=true" alt="Imagen 3: Evolución 3">
+  <div class="languages-controls">
+    <button onclick="languagesChangeSlide(-1)">Anterior</button>
+    <button onclick="languagesToggleAutoPlay()" id="languages-play-btn">Play</button>
+    <button onclick="languagesChangeSlide(1)">Siguiente</button>
+  </div>
+</div>
+<style>
+.languages-slideshow-container {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.languages-slides {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+.languages-slides.active {
+  display: block;
+}
+.languages-controls {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+}
+.languages-controls button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+.languages-controls button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+</style>
+<script>
+(function() {
+  let languagesSlideIndex = 0;
+  let languagesAutoPlayInterval = null;
+  const languagesSlides = document.getElementsByClassName("languages-slides");
+  const languagesPlayBtn = document.getElementById("languages-play-btn");
+
+  function languagesShowSlide(index) {
+    if (index >= languagesSlides.length) languagesSlideIndex = 0;
+    if (index < 0) languagesSlideIndex = languagesSlides.length - 1;
+    for (let i = 0; i < languagesSlides.length; i++) {
+      languagesSlides[i].classList.remove("active");
+    }
+    languagesSlides[languagesSlideIndex].classList.add("active");
+  }
+
+  window.languagesChangeSlide = function(n) {
+    languagesSlideIndex += n;
+    languagesShowSlide(languagesSlideIndex);
+  };
+
+  window.languagesToggleAutoPlay = function() {
+    if (languagesAutoPlayInterval) {
+      clearInterval(languagesAutoPlayInterval);
+      languagesAutoPlayInterval = null;
+      languagesPlayBtn.textContent = "Play";
+    } else {
+      languagesAutoPlayInterval = setInterval(() => {
+        languagesSlideIndex++;
+        languagesShowSlide(languagesSlideIndex);
+      }, 3000); // Cambia cada 3 segundos
+      languagesPlayBtn.textContent = "Pause";
+    }
+  };
+
+  languagesShowSlide(languagesSlideIndex);
+})();
+</script>
+<p><br><br></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="donaciones">
+<h1>Donaciones<a class="headerlink" href="#donaciones" title="Link to this heading">#</a></h1>
+<p>¡Apoya este proyecto con una donación, para seguir creando contenido gratuito y de calidad sobre Ciencia de Datos aplicado en Ciencias de la Tierra, Biomedicina, Finanzas y Educación usando Python!.</p>
+<p>¡Cada aporte  ayuda a mantener y ampliar este proyecto!</p>
+<a class="reference internal image-reference" href="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true"><img alt="" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true" style="width: 460px; height: 100px;" />
+</a>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="preambulo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Preámbulo</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Descripción del Curso</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia">Metodología</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quien-esta-dirigido">¿A quién está dirigido?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plagio-e-integridad-academica">Plagio e Integridad Académica</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion">Evaluación</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas">Herramientas</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#donaciones">Donaciones</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By VR Rojas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <style>
+  .slideshow-container { max-width: 800px; margin: auto; position: relative; }
+  .slides { display: none; width: 100%; height: auto; }
+  .slides.active { display: block; }
+  .controls { text-align: center; margin-top: 10px; }
+  .controls button { margin: 0 10px; padding: 10px 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
+  .controls button:hover { background: #0056b3; }
+</style>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,2191 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Diseño de Caso Estudio: Anemia &#8212; Sacha Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/sesion_1_caso_estudio_anemia';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Manejo, Preprocesamiento y Procesamiento de datos" href="sesion2-procesamiento_datos.html" />
+    <link rel="prev" title="Preámbulo" href="preambulo.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Sacha Analytics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="home.html">
+                    Descripción del Curso
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="preambulo.html">Preámbulo</a></li>
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. <b>Diseño de Caso Estudio: </b>Anemia</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion2-procesamiento_datos.html"><strong>2. Manejo, Preprocesamiento y Procesamiento de datos</strong></a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion3-visualizacion_graficas.html"><strong>3. Visualización de gráficos</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion4-estadistica_descriptiva.html"><strong>4. Estadística Descriptiva</strong></a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion5-estadistica_inferencial.html"><strong>5. Estadística Inferencial</strong></a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/vrrp/sachabook_bioestadistica/blob/main/docs/docs/sesion_1_caso_estudio_anemia.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/vrrp/sachabook_bioestadistica" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/vrrp/sachabook_bioestadistica/issues/new?title=Issue%20on%20page%20%2Fdocs/sesion_1_caso_estudio_anemia.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/sesion_1_caso_estudio_anemia.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. <b>Diseño de Caso Estudio: </b>Anemia</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. <b>Diseño de Caso Estudio: </b>Anemia</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-marco-teorico"><strong>I. Marco Teórico</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo"><strong>1.1 Objetivo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-bioestadisticos"><strong>1.2 Fundamentos Bioestadísticos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-variables"><strong>1.2.1 Tipos de variables</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-estadisticos-relevantes"><strong>1.2.2 Métodos estadísticos relevantes</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-recoleccion-de-datos"><strong>II. Recolección de Datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fuentes-de-datos"><strong>2.1. Fuentes de datos</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-metodologia-practica"><strong>III. Metodología Práctica</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#montar-drive-a-google-colaboratory"><strong>3.1. Montar Drive a Google Colaboratory</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-entorno"><strong>3.2. Preparar Entorno</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-base-de-datos-de-anemia"><strong>3.3. Importar Base de Datos de Anemia</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-de-metadatos"><strong>3.4. Revision de Metadatos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-dx-definitivo-d"><strong>3.4.1. tipo_Dx:</strong> Definitivo (D)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-dx-presuntivo-p"><strong>3.4.2. tipo_Dx:</strong> Presuntivo (P)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-dx-repetido-r"><strong>3.4.3. tipo_Dx:</strong> Repetido (R)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-estadistico-descriptivo-univariado-y-bivariado"><strong>3.5. Análisis Estadístico Descriptivo Univariado y Bivariado</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-frecuencia-de-datos-categoricos-por-columna-analisis-univariado"><strong>3.5.1. Distribución de frecuencia de datos categóricos por columna (análisis univariado)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-de-datos-categoricos-vs-numericos-analisis-bivariado"><strong>3.5.2. Relación de datos categóricos vs numéricos (análisis bivariado)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-la-variable-edad"><strong>3.5.3. Distribución de la variable “Edad”</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-medidas-de-tendencia-central-y-dispersion"><strong>3.5.4. Análisis de Medidas de Tendencia Central y Dispersión</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadistica-inferencial-pruebas-de-hipotesis"><strong>3.6. Estadística inferencial:</strong> pruebas de hipótesis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-cuadrado"><strong>3.6.1. Chi-cuadrado</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-medidas-prueba-de-hipotesis-t-test"><strong>3.6.2. Comparación de medidas:</strong> prueba de hipótesis T-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prueba-de-hipotesis-parametrica-shapiro-wilk"><strong>3.6.3. Prueba de hipótesis paramétrica Shapiro-Wilk</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-medidas-anova"><strong>3.6.4. Comparación de medidas:</strong> Anova</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-bioestadistico"><strong>3.7. Modelo Bioestadístico</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-logistica-binaria"><strong>3.7.1 Regresión logística binaria</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-referencias"><strong>IV. Referencias</strong></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Bioestadística para Investigación Científica <br>usando Python con Inteligencia Artificial</b></span></h1>
+</div>
+<style>
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+</style>
+<table align="center" style="font-size: 13px;">
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Autor</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:VR ROJAS</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Email</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:sacha.analytics@gmail.com</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Web</span></th>
+    <th align="left">:<a href="https://sacha-analytics.github.io/" style="font-family:Monospace;font-size: 13px;">sacha-analytics</a></th>
+</tr>
+</table>
+<section class="tex2jax_ignore mathjax_ignore" id="diseno-de-caso-estudio-anemia">
+<h1>1. <b>Diseño de Caso Estudio: </b>Anemia<a class="headerlink" href="#diseno-de-caso-estudio-anemia" title="Link to this heading">#</a></h1>
+<p>La anemia es un transtorno en el cual el número de glóbulos rojos o eritrocitos circulantes en la sangre se ha reducido y es insuficiente para satisfacer las necesidades del organismo. En términos de salud pública, la anemia se define como una concentración de hemoglobina por debajo de dos desviaciones estándar del promedio según género, edad y altura a nivel del mar,</p>
+<p><strong>Fuentes</strong></p>
+<ul class="simple">
+<li><p><a href="https://www.datosabiertos.gob.pe/dataset/anemia">Plataforma de datos abiertos del Perú</a>.</p></li>
+<li><p><a href="https://www.who.int/news-room/fact-sheets/detail/anaemia">Organización Mundial de la Salud (OMS)</a></p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="i-marco-teorico">
+<h1><strong>I. Marco Teórico</strong><a class="headerlink" href="#i-marco-teorico" title="Link to this heading">#</a></h1>
+<section id="objetivo">
+<h2><strong>1.1 Objetivo</strong><a class="headerlink" href="#objetivo" title="Link to this heading">#</a></h2>
+<p>Analizar la distribución y características de casos de <strong>Anemia</strong> en función de las variables <strong>Sexo, Edad</strong> y <strong>Tipo de Diagnóstico</strong> utilizando métodos bioestadístico.</p>
+</section>
+<section id="fundamentos-bioestadisticos">
+<h2><strong>1.2 Fundamentos Bioestadísticos</strong><a class="headerlink" href="#fundamentos-bioestadisticos" title="Link to this heading">#</a></h2>
+<section id="tipos-de-variables">
+<h3><strong>1.2.1 Tipos de variables</strong><a class="headerlink" href="#tipos-de-variables" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Sexo</strong>: categórica nomial (Femenino, Masculino).</p></li>
+<li><p><strong>Edad</strong>: cuantitativa continua.</p></li>
+<li><p><strong>Tipo de Diagnóstico (Tipo de Dx)</strong>: categórica nominal (Ej. Anemia ferropénica, megaloblástica, etc)</p></li>
+</ul>
+</section>
+<section id="metodos-estadisticos-relevantes">
+<h3><strong>1.2.2 Métodos estadísticos relevantes</strong><a class="headerlink" href="#metodos-estadisticos-relevantes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Estadística descriptiva univariada y bivariada</p></li>
+<li><p>Distribución de frecuencias.</p></li>
+<li><p>Medidas de tendencia central y dispersión.</p></li>
+<li><p>Prueba de independencia (Chi-cuadrado)</p></li>
+<li><p>Comparaciones de medidas (t-test, ANOVA)</p></li>
+<li><p>Modelos de regresión logística (para predecir DX)</p></li>
+<li><p>Modelos multivariantes (regresión logística si se desea modelar probabilidad de anemia)</p></li>
+<li><p>Validación de supuestos estadísticos</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ii-recoleccion-de-datos">
+<h1><strong>II. Recolección de Datos</strong><a class="headerlink" href="#ii-recoleccion-de-datos" title="Link to this heading">#</a></h1>
+<section id="fuentes-de-datos">
+<h2><strong>2.1. Fuentes de datos</strong><a class="headerlink" href="#fuentes-de-datos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a href="https://www.datosabiertos.gob.pe">Plataforma Nacional de Datos Abiertos</a>.</p></li>
+<li><p>Datos para caso estudio: <a href="https://www.datosabiertos.gob.pe/dataset/anemia">Anemia</a>.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="iii-metodologia-practica">
+<h1><strong>III. Metodología Práctica</strong><a class="headerlink" href="#iii-metodologia-practica" title="Link to this heading">#</a></h1>
+<section id="montar-drive-a-google-colaboratory">
+<h2><strong>3.1. Montar Drive a Google Colaboratory</strong><a class="headerlink" href="#montar-drive-a-google-colaboratory" title="Link to this heading">#</a></h2>
+<p>La siguiente celda de código monta el drive en la computadora remota de Google</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">20</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">division</span> <span class="k">as</span> <span class="n">_</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_function</span> <span class="k">as</span> <span class="n">_</span>
+<span class="ne">---&gt; </span><span class="mi">20</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_import_hooks</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_installation_commands</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_shell_customizations</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="n">_import_hooks</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2018 Google Inc.</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">12</span> <span class="c1"># See the License for the specific language govestylerning permissions and</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Colab import customizations to the IPython runtime.&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab._import_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">_altair</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab._import_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">_cv2</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">def</span><span class="w"> </span><span class="nf">_register_hooks</span><span class="p">():</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="n">_import_hooks</span><span class="o">/</span><span class="n">_altair</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2018 Google Inc. All rights reserved.</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">12</span> <span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Import hook for ensuring that Altair&#39;s Colab renderer is registered.&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">import</span><span class="w"> </span><span class="nn">imp</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;imp&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>La siguiente celda de código lista el contenido de la carpeta <strong>Datos</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span> <span class="c1"># permite gestionar los directorios</span>
+
+<span class="n">data_dir</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/Bioestadistica/Datos/&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_dir</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;datos_abiertos_vigilancia_dengue_2000_2023.csv&#39;, &#39;datos_abiertos_vigilancia_malaria_2000_2008.csv&#39;, &#39;datos_abiertos_vigilancia_malaria_2009_2023.csv&#39;, &#39;Dataset_ExamenesLaboratorio_ConsultaExterna_PatologíasRelacionadas_Diabetes_202001_202404.csv&#39;, &#39;datos_abiertos_vigilancia_zoonosis_2000_2023.csv&#39;, &#39;datos_abiertos_vigilancia_iras_2000_2023.csv&#39;, &#39;datos_abiertos_vigilancia_enfermedad_carrion_2000_2023.csv&#39;, &#39;pmGenoma_25Septiembre2021.csv&#39;, &#39;pmGenoma_27Sep2023.csv&#39;, &#39;TB_DIGTEL_ANEMIA_TRATAMIENTOS.csv&#39;, &#39;primeras_100_filas_anemia.xlsx&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ifile</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_dir</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">ifile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datos_abiertos_vigilancia_dengue_2000_2023.csv
+datos_abiertos_vigilancia_malaria_2000_2008.csv
+datos_abiertos_vigilancia_malaria_2009_2023.csv
+Dataset_ExamenesLaboratorio_ConsultaExterna_PatologíasRelacionadas_Diabetes_202001_202404.csv
+datos_abiertos_vigilancia_zoonosis_2000_2023.csv
+datos_abiertos_vigilancia_iras_2000_2023.csv
+datos_abiertos_vigilancia_enfermedad_carrion_2000_2023.csv
+pmGenoma_25Septiembre2021.csv
+pmGenoma_27Sep2023.csv
+TB_DIGTEL_ANEMIA_TRATAMIENTOS.csv
+primeras_100_filas_anemia.xlsx
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="preparar-entorno">
+<h2><strong>3.2. Preparar Entorno</strong><a class="headerlink" href="#preparar-entorno" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Paquete especializado en metodos numericos</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Paquete especialozado manejo de estructuras de datos tipo tablas (Data Frames)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Paquetes especializado para generar graficas</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Paquete especializados de estadística y metodos numéricos</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># Paquete especializado en estadística</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
+<span class="c1">#from statsmodels.formula.api import ols</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="importar-base-de-datos-de-anemia">
+<h2><strong>3.3. Importar Base de Datos de Anemia</strong><a class="headerlink" href="#importar-base-de-datos-de-anemia" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_archivo</span> <span class="o">=</span> <span class="s2">&quot;TB_DIGTEL_ANEMIA_TRATAMIENTOS.csv&quot;</span>
+
+<span class="n">df_anemia</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="n">nombre_archivo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_anemia</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Sexo  id_persona  Edad Tipo_edad  id_ubigeo  Fecha_atencion    Etapa  \
+0         F    41031388    20         A        NaN        20230208  18a-29a   
+1         F    40489600     2         A     1128.0        20230107  00a-11a   
+2         M    40315865     1         A        NaN        20230207  00a-11a   
+3         F    38917347    19         D     1460.0        20210511  00a-11a   
+4         M    40507941     3         A     1668.0        20230224  00a-11a   
+...     ...         ...   ...       ...        ...             ...      ...   
+248888    M     9206744     6         A     1631.0        20230119  00a-11a   
+248889    M    25824229     4         A      163.0        20210528  00a-11a   
+248890    F    19472530     6         A     1161.0        20230107  00a-11a   
+248891    F    33840534     4         A      242.0        20210412  00a-11a   
+248892    F    19486739    84         A     1703.0        20230525     60a+   
+
+        Diagnostico Tipo_Dx  Lab  id_eess  
+0          99199.17       D  SF3     5942  
+1          99199.17       D  SF3     6856  
+2          99199.17       D  SF1    27109  
+3          99199.17       D  SF1       16  
+4          99199.17       D   TA     2978  
+...             ...     ...  ...      ...  
+248888     99199.17       D  SF2     3263  
+248889     99199.17       D  SF1     1819  
+248890     99199.17       D  SF2     5217  
+248891     99199.17       D  SF1     1812  
+248892     99199.17       D  SF1     3161  
+
+[248893 rows x 11 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="revision-de-metadatos">
+<h2><strong>3.4. Revision de Metadatos</strong><a class="headerlink" href="#revision-de-metadatos" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_anemia</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_list</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Sexo&#39;, &#39;id_persona&#39;, &#39;Edad&#39;, &#39;Tipo_edad&#39;, &#39;id_ubigeo&#39;, &#39;Fecha_atencion&#39;, &#39;Etapa&#39;, &#39;Diagnostico&#39;, &#39;Tipo_Dx&#39;, &#39;Lab&#39;, &#39;id_eess&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_anemia</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_list</span><span class="p">())):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">- </span><span class="si">{</span><span class="n">df_anemia</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_list</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0- Sexo
+1- id_persona
+2- Edad
+3- Tipo_edad
+4- id_ubigeo
+5- Fecha_atencion
+6- Etapa
+7- Diagnostico
+8- Tipo_Dx
+9- Lab
+10- id_eess
+</pre></div>
+</div>
+</div>
+</div>
+<p>Reconocimiento de las variables en base a los archvios <strong>Metadatos</strong></p>
+<p><strong>Metadata de la base de datos de anemia</strong></p>
+<p><strong>Sexo</strong>: M:Masculino, F:Femenino</p>
+<p><strong>Edad</strong>: Edad del paciente</p>
+<p><strong>Tipo_edad</strong>: AÑO, MES, DIA, HORA</p>
+<p><strong>Tipo_Dx</strong>: Tipo de diagnostico: Definitivo, Presuntivo, Repetido</p>
+<p>En el contexto de la anemia, los términos diagnóstico <strong>Definitivo</strong>, <strong>Presuntivo</strong> y <strong>Repetido</strong> se refiere a categorias utilizadas en la práctica clínica para clasificar el nivel de certeza y el proceso de diagnóstico. A continuación, se describe detalladamente cada uno de ellos, con un enfoque específico en su aplicación al diagnóstico de anemia:</p>
+<section id="tipo-dx-definitivo-d">
+<h3><strong>3.4.1. tipo_Dx:</strong> Definitivo (D)<a class="headerlink" href="#tipo-dx-definitivo-d" title="Link to this heading">#</a></h3>
+<p>Es el diagnótico establecido con absoluta certeza, respaldado por pruebas clínicas de laboratorio o estudios complementarios que confirman de manera inequívoca la presencia y la causa específica de la anemia. Este diagnóstico se basa en evidencia objetiva y criterios de diagnósticos estandarizados.</p>
+<p><strong>Características</strong></p>
+<ul class="simple">
+<li><p>Se alccanza tras completar una evaluación exhaustiva, que incluye análisis de sangre, estudios de médula ósea (si es necesario), prubas bioquímicas u otros métodos especializados.</p></li>
+<li><p>Elimina dudas sobre otras posibles causas o condiciones diferenciales.</p></li>
+<li><p>Especifíca el tipo de anemia (Ej. anemia <strong>ferropénica, megaloblástica, hemolítica</strong>) y, cuando aplica, la causa subyacente (como deficiencia de hierro, déficit de vitamina <strong>B12</strong> ó enfermedad crónica)</p></li>
+</ul>
+</section>
+<section id="tipo-dx-presuntivo-p">
+<h3><strong>3.4.2. tipo_Dx:</strong> Presuntivo (P)<a class="headerlink" href="#tipo-dx-presuntivo-p" title="Link to this heading">#</a></h3>
+<p>Es un diagnóstico preliminar o tentativo  basado en datos clínicos, sintomáticos, antecedentes y pruebas iniciales, pero sin confirmación completa de todas las pruebas necesarias para establecer un diagnóstico definitivo. Se utiliza cuando hay una alta probabilidad de anemia, pero aún se requieren estudios adicionales para confirmar la causa exacta.</p>
+<p><strong>Características</strong></p>
+<ul class="simple">
+<li><p>Se basa en hallazgos parciales, como síntomas, examen físico o pruebas básicas (Ej Hemograma)</p></li>
+<li><p>Puede ser suficiente para iniciar un tratamiento provisional, pero debe ser seguido por pruebas confirmatorias.</p></li>
+<li><p>Está sujeto a revisión  y puede cambiar una vez que se obtengan resultados más específicos.</p></li>
+</ul>
+</section>
+<section id="tipo-dx-repetido-r">
+<h3><strong>3.4.3. tipo_Dx:</strong> Repetido (R)<a class="headerlink" href="#tipo-dx-repetido-r" title="Link to this heading">#</a></h3>
+<p>Se refiere a un diagnóstico que se registra nuevamente en una consulta o episodio clínico posterior, confirmando o reevaluando una condición previamente identificada (ya sea presuntiva o definitiva). Este término se usa en sistemas de codificación clínica (como CIE-10) para indicar que la anemia sigue presente o se ha reevaluado en el paciente.</p>
+<p><strong>Características</strong></p>
+<ul class="simple">
+<li><p>No implica un nuevo diagnóstico, sino la confirmación o monitoreo de una condición existente.</p></li>
+<li><p>Puede aplicarse tanto a diagnósticos definitivos como presuntivos que se mantienen en el tiempo.</p></li>
+<li><p>Es común en enfermedades crónicas o recurrentes, donde el paciente requiere seguimiento continuo.</p></li>
+</ul>
+<p><strong>Fuentes</strong></p>
+<ul class="simple">
+<li><p><a href="https://www.datosabiertos.gob.pe/dataset/anemia">Plataforma de datos abiertos del Perú</a>.</p></li>
+<li><p><a href="https://www.who.int/news-room/fact-sheets/detail/anaemia">Organización Mundial de la Salud (OMS)</a></p></li>
+</ul>
+<p>####<strong>3.4.4. Elección de variables de interés</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_interes</span> <span class="o">=</span> <span class="n">df_anemia</span><span class="p">[[</span> <span class="s2">&quot;Sexo&quot;</span><span class="p">,</span><span class="s2">&quot;Tipo_edad&quot;</span><span class="p">,</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">,</span> <span class="s2">&quot;Edad&quot;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Sexo Tipo_edad Tipo_Dx  Edad
+0         F         A       D    20
+1         F         A       D     2
+2         M         A       D     1
+3         F         D       D    19
+4         M         A       D     3
+...     ...       ...     ...   ...
+248888    M         A       D     6
+248889    M         A       D     4
+248890    F         A       D     6
+248891    F         A       D     4
+248892    F         A       D    84
+
+[248893 rows x 4 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primeras_100_filas</span> <span class="o">=</span> <span class="n">df_interes</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primeras_100_filas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Sexo Tipo_edad Tipo_Dx  Edad
+0     F         A       D    20
+1     F         A       D     2
+2     M         A       D     1
+3     F         D       D    19
+4     M         A       D     3
+..  ...       ...     ...   ...
+95    M         M       D     6
+96    F         A       D     2
+97    F         A       D     2
+98    M         A       D     2
+99    M         A       D     2
+
+[100 rows x 4 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_archivo_excel</span> <span class="o">=</span> <span class="s2">&quot;primeras_100_filas_anemia.xlsx&quot;</span>
+<span class="n">ruta_completa_excel</span> <span class="o">=</span> <span class="n">data_dir</span> <span class="o">+</span> <span class="n">nombre_archivo_excel</span>
+
+<span class="n">primeras_100_filas</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">ruta_completa_excel</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edad</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         20
+1          2
+2          1
+3         19
+4          3
+          ..
+248888     6
+248889     4
+248890     6
+248891     4
+248892    84
+Name: Edad, Length: 248893, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="analisis-estadistico-descriptivo-univariado-y-bivariado">
+<h2><strong>3.5. Análisis Estadístico Descriptivo Univariado y Bivariado</strong><a class="headerlink" href="#analisis-estadistico-descriptivo-univariado-y-bivariado" title="Link to this heading">#</a></h2>
+<p>Esta sección se enfoca en realizar análisis estadístico descriptivo sobre las variables seleccionadas del DataFrame <code class="docutils literal notranslate"><span class="pre">df_interes</span></code>: Sexo, Edad y Tipo_Dx. Cubriremos estadísticas descriptivas univariadas (análisis de variable individual) y bivariadas (análisis de la relación entre dos variables).</p>
+<section id="distribucion-de-frecuencia-de-datos-categoricos-por-columna-analisis-univariado">
+<h3><strong>3.5.1. Distribución de frecuencia de datos categóricos por columna (análisis univariado)</strong><a class="headerlink" href="#distribucion-de-frecuencia-de-datos-categoricos-por-columna-analisis-univariado" title="Link to this heading">#</a></h3>
+<p>Para variables categóricas como <strong>Sexo, Tipo_edad</strong> y <strong>Tipo_Dx</strong>, el análisis descriptivo más común es observar la distribución de frecuencias. Esto nos indica cuántas veces aparece cada valor único en la columna.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Sexo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Tipo_edad&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sexo
+M    126255
+F    122638
+Name: count, dtype: int64
+Tipo_edad
+A    137592
+M    111104
+D       197
+Name: count, dtype: int64
+Tipo_Dx
+D    248398
+R       454
+P        41
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="relacion-de-datos-categoricos-vs-numericos-analisis-bivariado">
+<h3><strong>3.5.2. Relación de datos categóricos vs numéricos (análisis bivariado)</strong><a class="headerlink" href="#relacion-de-datos-categoricos-vs-numericos-analisis-bivariado" title="Link to this heading">#</a></h3>
+<p>Para explorar la relación entre una variable categórica (<strong>Sexo</strong>) y una variable numérica (<strong>Edad</strong>), un gráfico de cajas (boxplot) es una visualización adecuada.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Sexo&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Edad&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_interes</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4e07ee6c78943dabce2fb18dba6a0fc8016527378f59bc79d35f72251887fc88.png" src="../_images/4e07ee6c78943dabce2fb18dba6a0fc8016527378f59bc79d35f72251887fc88.png" />
+</div>
+</div>
+</section>
+<section id="distribucion-de-la-variable-edad">
+<h3><strong>3.5.3. Distribución de la variable “Edad”</strong><a class="headerlink" href="#distribucion-de-la-variable-edad" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estadísticas descriptivas para la variable &#39;Edad&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estadísticas Descriptivas para &#39;Edad&#39;:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Separador para mayor claridad</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estadísticas Descriptivas para &#39;Edad&#39;:
+count    248893.000000
+mean          4.765341
+std           5.621249
+min           1.000000
+25%           2.000000
+50%           4.000000
+75%           6.000000
+max          99.000000
+Name: Edad, dtype: float64
+
+==================================================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histograma para visualizar la distribución de &#39;Edad&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Visualización de la Distribución para &#39;Edad&#39; (Histograma):&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># (ncols, nfil) Establece el tamaño de la figura para el gráfico</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Crea el histograma</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribución de la Edad de caso de Anemia&quot;</span><span class="p">)</span> <span class="c1"># Añade un título al gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Edad&quot;</span><span class="p">)</span> <span class="c1"># Añade una etiqueta al eje x</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frecuencia&quot;</span><span class="p">)</span> <span class="c1"># Añade una etiqueta al eje y</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Añade una cuadrícula al gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># Muestra el gráfico</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Visualización de la Distribución para &#39;Edad&#39; (Histograma):
+</pre></div>
+</div>
+<img alt="../_images/d719720d4a3618b2805cf0660a3d1fce292c6696bb400a6e0a7e3272d7932427.png" src="../_images/d719720d4a3618b2805cf0660a3d1fce292c6696bb400a6e0a7e3272d7932427.png" />
+</div>
+</div>
+</section>
+<section id="analisis-de-medidas-de-tendencia-central-y-dispersion">
+<h3><strong>3.5.4. Análisis de Medidas de Tendencia Central y Dispersión</strong><a class="headerlink" href="#analisis-de-medidas-de-tendencia-central-y-dispersion" title="Link to this heading">#</a></h3>
+<p>Vamos a calcular medidas de tendencia central (como la media, mediana y moda) y medidas de dispersión (como la desviación estándar, varianza y rango) para las variables <strong>Sexo, Edad</strong> y <strong>Tipo_Dx</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Análisis para la variable &#39;Edad&#39; (Cuantitativa)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Análisis para la variable &#39;Edad&#39;:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Medidas de Tendencia Central para &#39;Edad&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Media: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Mediana: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Moda: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># mode() puede devolver múltiples valores si hay un empate</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Medidas de Dispersión para &#39;Edad&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Desviación Estándar: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Varianza: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Rango: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Cuartil 1 (Q1): </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Cuartil 3 (Q3): </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Rango Intercuartílico (IQR): </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Separador</span>
+
+<span class="c1"># Análisis para la variable &#39;Sexo&#39; (Categórica)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Análisis para la variable &#39;Sexo&#39;:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Medida de Tendencia Central para &#39;Sexo&#39; (Moda)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Moda: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Sexo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># La categoría más frecuente</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Separador</span>
+
+<span class="c1"># Análisis para la variable &#39;Tipo_edad&#39; (Categórica)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Análisis para la variable &#39;Tipo_edad&#39;:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Medida de Tendencia Central para &#39;Tipo_edad&#39; (Moda)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Moda: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Tipo_edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># La categoría más frecuente</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Separador</span>
+
+<span class="c1"># Análisis para la variable &#39;Tipo_Dx&#39; (Categórica)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Análisis para la variable &#39;Tipo_Dx&#39;:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Medida de Tendencia Central para &#39;Tipo_Dx&#39; (Moda)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Moda: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Tipo_Dx&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># La categoría más frecuente</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Separador</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Análisis para la variable &#39;Edad&#39;:
+  Media: 4.77
+  Mediana: 4.00
+  Moda: 1
+
+
+  Desviación Estándar: 5.62
+  Varianza: 31.60
+  Rango: 98
+  Cuartil 1 (Q1): 2.00
+  Cuartil 3 (Q3): 6.00
+  Rango Intercuartílico (IQR): 4.00
+
+==================================================
+
+Análisis para la variable &#39;Sexo&#39;:
+  Moda: M
+
+==================================================
+
+Análisis para la variable &#39;Tipo_edad&#39;:
+  Moda: A
+
+==================================================
+
+Análisis para la variable &#39;Tipo_Dx&#39;:
+  Moda: D
+
+==================================================
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="estadistica-inferencial-pruebas-de-hipotesis">
+<h2><strong>3.6. Estadística inferencial:</strong> pruebas de hipótesis<a class="headerlink" href="#estadistica-inferencial-pruebas-de-hipotesis" title="Link to this heading">#</a></h2>
+<section id="chi-cuadrado">
+<h3><strong>3.6.1. Chi-cuadrado</strong><a class="headerlink" href="#chi-cuadrado" title="Link to this heading">#</a></h3>
+<p>La prueba de hipótesis no paramétrica <strong>Chi-cuadrado</strong> es una técnica estadística fundamental para analizar datos categóricos, es decir, datos que se pueden agrupar en categorías (com sexo, tipo de enfermedad, opinión, etc.). Se considera <strong>no paramétrica</strong> porque no asume que los datos sigan una distribución de probabilidad específica (como la distribución normal), lo que la hace muy útil en situaciones donde las suposiciones de pruebas paramétricas no se cumplen.</p>
+<p><b>¿Por qué se usa la prueba de Chi-cuadrado?</b></p>
+<ul>
+  <li>Se aplica a <b>datos categóricos</b> en forma de tablas de frecuencias.</li>
+  <li> Se utiliza para determinar si existe una relación o asociación significativa entre dos variables (<b>prueba de independencia</b>).</li>
+  <li> Se usa para comparar una distribución observada con una distribución teórica (<b>prueba de bondad de ajuste</b>).</li>
+  <li> Sirve para conocer si la distribución de una variable categórica es la misma en dos o más poblaciones diferentes (<b>prueba de homogeneidad</b>).</li>
+</ul>
+<p><strong>Hipótesis</strong></p>
+<ul class="simple">
+<li><p><strong>Hipótesis Nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>: No hay una relación ó asociación entre dos variables categóricas (las variables son independientes).</p></li>
+<li><p><strong>Hipóteisis Alternativa (<span class="math notranslate nohighlight">\(H_{1}\)</span>)</strong>: Hay una relación ó asociación significativa entre dos variables categóricas.
+<span class="math notranslate nohighlight">\( \)</span></p></li>
+</ul>
+<p><strong>Interpretación</strong></p>
+<ul class="simple">
+<li><p>Si el valor p (p-value) es <strong>mayor</strong> que el nivel de significancia (<span class="math notranslate nohighlight">\(α = 0.05\)</span>): No se rechaza <strong>Hipótesis Nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>. Por tanto, no hay evidencia de relación ó asociación entre variables.</p></li>
+<li><p>Si el valor p es <strong>menor</strong> que el nivel de significancia: Se rechaza la <strong>Hipóteisis Nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>. Por tanto, Existe evidencia estadística de relación o asociación entre las variables.
+<span class="math notranslate nohighlight">\( \)</span></p></li>
+</ul>
+<p><strong>Consideraciones claves</strong></p>
+<ul class="simple">
+<li><p><strong>Tamaño muestral</strong>: Requiere frecuencias esperadas <span class="math notranslate nohighlight">\(\geq 5\)</span> en cada celda.</p></li>
+<li><p><strong>Variables categóricas</strong>: No aplica para variables continuas.</p></li>
+<li><p><strong>Direccionalidad</strong>: Chi-Cuadrado solo detecta relación o asociación , <strong>no causalida</strong>.</p></li>
+</ul>
+<p><strong>Nota</strong>:</p>
+<p>Diversos ejemplo aplicativos para generar tabla de contingenci</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dx_D</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;D&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dx_D</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dx_D</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Sexo Tipo_edad Tipo_Dx  Edad
+0         F         A       D    20
+1         F         A       D     2
+2         M         A       D     1
+3         F         D       D    19
+4         M         A       D     3
+...     ...       ...     ...   ...
+248888    M         A       D     6
+248889    M         A       D     4
+248890    F         A       D     6
+248891    F         A       D     4
+248892    F         A       D    84
+
+[248398 rows x 4 columns]
+========================================
+Tipo_Dx
+D    248398
+Name: count, dtype: int64
+========================================
+Tipo_Dx
+D    248398
+R       454
+P        41
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabla_sx_D</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">dx_D</span><span class="p">[</span><span class="s2">&quot;Sexo&quot;</span><span class="p">],</span> <span class="n">dx_D</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabla_sx_D</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tipo_Dx       D
+Sexo           
+F        122359
+M        126039
+</pre></div>
+</div>
+</div>
+</div>
+<p>aplicación tabla de contingencia original del caso estudio</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabla</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Sexo&quot;</span><span class="p">],</span> <span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabla</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tipo_Dx       D   P    R
+Sexo                    
+F        122359  26  253
+M        126039  15  201
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Aplicar la prueba de Chi-cuadrado de independencia</span>
+<span class="sd">---------------------------------------------------</span>
+<span class="sd">  chi2_stat : Esta variable almacena el estadístico Chi-cuadrado</span>
+
+<span class="sd">  p_valor         : Esta variable almacena el valor p, que representa la</span>
+<span class="sd">                    la probabilidad de observar los datos si no ubiera</span>
+<span class="sd">                    relación entre las variables</span>
+
+<span class="sd">  dof             : En esta variable contine los grados de libertar, que</span>
+<span class="sd">                    es un parámetro relacionado con el tamaño de la muestra</span>
+<span class="sd">                    y el número de categorias en las variables.</span>
+
+<span class="sd">  freq_esperadas  : A esta variable se le asigna las frecuencias esperadas</span>
+<span class="sd">                    para cada celda de la tabla de contingencia si no hubiera</span>
+<span class="sd">                    relación entre las variables.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">chi2_stat</span><span class="p">,</span> <span class="n">p_valor</span><span class="p">,</span> <span class="n">dof</span><span class="p">,</span> <span class="n">freq_esperadas</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2_contingency</span><span class="p">(</span><span class="n">tabla_sx_D</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prueba de Chi-cuadrado de Independencia:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estadístico Chi-cuadrado: </span><span class="si">{</span><span class="n">chi2_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Grados de libertad: </span><span class="si">{</span><span class="n">dof</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-valor: </span><span class="si">{</span><span class="n">p_valor</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="c1"># Nivel de significancia</span>
+<span class="c1"># Interpretación:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Resultado:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p_valor</span> <span class="o">&gt;=</span> <span class="n">alpha</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">No se rechaza H0:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">No hay una relación ó asociación significativa entre Sexo y Tipo_Dx.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Se rechaza H0:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Hay una relación ó asociación significativa entre Sexo y Tipo_Dx.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prueba de Chi-cuadrado de Independencia:
+Estadístico Chi-cuadrado: 0.000
+Grados de libertad: 0
+p-valor: 1.000
+
+
+Resultado:
+	No se rechaza H0:
+
+	No hay una relación ó asociación significativa entre Sexo y Tipo_Dx.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Prueba de Chi-cuadrado de Independencia:</p>
+<p>Estadístico Chi-cuadrado: 10.865</p>
+<p>Grados de libertad: 2</p>
+<p>p-valor: 0.004</p>
+<p>Resultado:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Se rechaza H0:
+
+Hay una relación ó asociación significativa entre Sexo y Tipo_Dx.
+</pre></div>
+</div>
+</section>
+<section id="comparacion-de-medidas-prueba-de-hipotesis-t-test">
+<h3><strong>3.6.2. Comparación de medidas:</strong> prueba de hipótesis T-test<a class="headerlink" href="#comparacion-de-medidas-prueba-de-hipotesis-t-test" title="Link to this heading">#</a></h3>
+<p>La prueba <strong>T-test</strong> (también conocido como <strong>t de Student</strong>) se utiliza para comparar las medias de dos muestras independientes. En este caso, las dos muestras son las edades de los individuos masculinos y femeninos.</p>
+<p><strong>El T-test</strong> es una herramienta fundamental en bioestadística que permite tomar decisiones basadas en evidencia sobre diferencias entre grupos, siendo especialmente valioso en investigación médica y epidemiológica donde las decisiones pueden tener implicaciones importantes para la salud pública.</p>
+<p><strong>Supuestos del T-test</strong></p>
+<ul class="simple">
+<li><p>Los datos deben seguir una distribución aproximadamente normal (verificar con histogramas o pruebas como <strong>Shapiro-Wilk</strong>).</p></li>
+</ul>
+<p><strong>Hipótesis</strong></p>
+<ul class="simple">
+<li><p><strong>Hipótesis Nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>: No hay una diferencia significativa en la media de la edad entre hombres y mujeres (medias iguales).</p></li>
+<li><p><strong>Hipóteisis Alternativa (<span class="math notranslate nohighlight">\(H_{1}\)</span>)</strong>: Hay una diferencia significativa en la media de la edad entre hombres y mujeres (medias diferentes).</p></li>
+</ul>
+<p><strong>Interpretación</strong></p>
+<ul class="simple">
+<li><p>si <strong>p-valor <span class="math notranslate nohighlight">\(\lt \alpha\)</span></strong>, se <strong>rechaza la hipótesis nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>: hay evidencia estadísticamente significativa de una diferencia entre los grupos. Generalmente,  <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span>, donde <span class="math notranslate nohighlight">\(\alpha\)</span> es el nivel de significancia.</p></li>
+<li><p>si p-valor <span class="math notranslate nohighlight">\(\geq \alpha\)</span>, <strong>No</strong> se <strong>rechaza la hipótesis nula</strong> (<span class="math notranslate nohighlight">\(H_{0}\)</span>): no hay evidencia suficiente para afirmar que las medias son distintas</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separar la variable &#39;Edad&#39; en dos grupos basados en la variable &#39;Sexo&#39;</span>
+<span class="n">edad_femenino</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Sexo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;F&quot;</span><span class="p">][</span><span class="s2">&quot;Edad&quot;</span><span class="p">]</span>
+<span class="n">edad_masculino</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Sexo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;M&quot;</span><span class="p">][</span><span class="s2">&quot;Edad&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">edad_femenino</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">edad_masculino</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         20
+1          2
+3         19
+5          1
+7          2
+          ..
+248885     4
+248886     6
+248890     6
+248891     4
+248892    84
+Name: Edad, Length: 122638, dtype: int64
+2         1
+4         3
+6         1
+8         8
+9         1
+         ..
+248880    3
+248881    6
+248887    4
+248888    6
+248889    4
+Name: Edad, Length: 126255, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Nota</strong>:</p>
+<p>Ejemplo adicional aplicativo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_f</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Sexo&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;F&quot;</span><span class="p">][</span><span class="s2">&quot;Edad&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         20
+1          2
+3         19
+5          1
+7          2
+          ..
+248885     4
+248886     6
+248890     6
+248891     4
+248892    84
+Name: Edad, Length: 122638, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Nota</strong>:</p>
+<p>Ejemplo adicional aplicativo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dd_years</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Tipo_edad&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;A&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dd_years</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dd_years</span><span class="p">[</span><span class="s2">&quot;Tipo_edad&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Sexo Tipo_edad Tipo_Dx  Edad
+0         F         A       D    20
+1         F         A       D     2
+2         M         A       D     1
+4         M         A       D     3
+5         F         A       D     1
+...     ...       ...     ...   ...
+248888    M         A       D     6
+248889    M         A       D     4
+248890    F         A       D     6
+248891    F         A       D     4
+248892    F         A       D    84
+
+[137592 rows x 4 columns]
+Tipo_edad
+A    137592
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Nota</strong>:</p>
+<p>Ejemplo adicional aplicativo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dd_adulto_mayor</span> <span class="o">=</span> <span class="n">dd_years</span><span class="p">[(</span><span class="n">dd_years</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">60</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dd_years</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">100</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dd_adulto_mayor</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dd_adulto_mayor</span><span class="p">[</span><span class="s2">&quot;Tipo_edad&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Sexo Tipo_edad Tipo_Dx  Edad
+311       M         A       D    75
+312       M         A       D    84
+424       F         A       D    70
+425       M         A       D    69
+491       F         A       D    81
+...     ...       ...     ...   ...
+231679    F         A       D    78
+237405    F         A       D    82
+247719    F         A       D    71
+247722    F         A       D    87
+248892    F         A       D    84
+
+[630 rows x 4 columns]
+Tipo_edad
+A    630
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Nota</strong>:</p>
+<p>Ejemplo adicional aplicativo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dd_adolecentes</span> <span class="o">=</span> <span class="n">dd_years</span><span class="p">[(</span><span class="n">dd_years</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">60</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dd_years</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">100</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dd_adulto_mayor</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dd_adulto_mayor</span><span class="p">[</span><span class="s2">&quot;Tipo_edad&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Sexo&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Edad&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">dd_adulto_mayor</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1b310bcaebb7eadcf8327702a5b985bc6f0e01e08cd9e212828caa1ed2ec7fd5.png" src="../_images/1b310bcaebb7eadcf8327702a5b985bc6f0e01e08cd9e212828caa1ed2ec7fd5.png" />
+</div>
+</div>
+<p>Continuación de la prueba de <strong>T-test</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Realizar la prueba T-test independiente</span>
+<span class="c1"># equal_var=True asume varianzas iguales (T-test estándar).</span>
+<span class="c1"># Si no estamos seguros de la igualdad de varianzas, podemos usar equal_var=False (Welch&#39;s T-test).</span>
+<span class="n">t_stat</span><span class="p">,</span> <span class="n">p_valor_ttest</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">edad_femenino</span><span class="p">,</span> <span class="n">edad_masculino</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prueba T-test Independiente para la Edad entre Sexo Femenino y Masculino:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estadístico T: </span><span class="si">{</span><span class="n">t_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-valor: </span><span class="si">{</span><span class="n">p_valor_ttest</span><span class="si">:</span><span class="s2">.13f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Interpretación del p-valor</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="c1"># Nivel de significancia comúnmente utilizado</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Interpretación del resultado:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p_valor_ttest</span> <span class="o">&gt;</span> <span class="n">alpha</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">no se rechaza H0.&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que no existe una diferencia estadísticamente significativa en la media de la edad entre el sexo femenino y masculino.&quot;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Se rechaza H0.&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que existe una diferencia estadísticamente significativa en la media de la edad entre el sexo femenino y masculino.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Opcional: Mostrar las medias de edad para cada grupo</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Medias de Edad por Sexo:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Media de Edad (Femenino): </span><span class="si">{</span><span class="n">edad_femenino</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Media de Edad (Masculino): </span><span class="si">{</span><span class="n">edad_masculino</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prueba T-test Independiente para la Edad entre Sexo Femenino y Masculino:
+Estadístico T: 26.119
+p-valor: 0.0000000000000
+
+Interpretación del resultado:
+	Se rechaza H0.
+	Concluimos que existe una diferencia estadísticamente significativa en la media de la edad entre el sexo femenino y masculino.
+
+Medias de Edad por Sexo:
+	Media de Edad (Femenino): 5.06
+	Media de Edad (Masculino): 4.48
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="prueba-de-hipotesis-parametrica-shapiro-wilk">
+<h3><strong>3.6.3. Prueba de hipótesis paramétrica Shapiro-Wilk</strong><a class="headerlink" href="#prueba-de-hipotesis-parametrica-shapiro-wilk" title="Link to this heading">#</a></h3>
+<p>La <strong>prueba de Shapiro-Wilk</strong> es un método estadístico utilizado para evaluar si una muestra de datos proviene de una distribución normal. Es una de las pruebas más comunes y poderosas para verificar la normalidad de los datos, lo cual es un supuesto clave en muchas pruebas estadísticas paramétricas, como la t de Student o ANOVA. En investigación, esta prueba es útil para determinar si los datos cumplen con los requisitos de normalidad antes de aplicar métodos estadísticos que asumen una distribución normal.</p>
+<p><strong>Hipótesis para la prueba Shapiro-Wilk</strong></p>
+<ul class="simple">
+<li><p><strong>Hipótesis Nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>: Los datos siguen una distribución normal.</p></li>
+<li><p><strong>Hipóteisis Alternativa (<span class="math notranslate nohighlight">\(H_{1}\)</span>)</strong>: Los datos <strong>No</strong> siguen una distribución normal.</p></li>
+</ul>
+<p><strong>Interpretación</strong></p>
+<ul class="simple">
+<li><p>si <strong>p-valor <span class="math notranslate nohighlight">\(\leq \alpha\)</span></strong>, se <strong>rechaza la hipótesis nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>: Los datos <strong>no siguen una distribución normal</strong>. Generalmente,  <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span>, donde <span class="math notranslate nohighlight">\(\alpha\)</span> es el nivel de significancia.</p></li>
+<li><p>si <strong>p-valor <span class="math notranslate nohighlight">\(\gt \alpha\)</span></strong>, no se <strong>rechaza la hipótesis nula</strong> (<span class="math notranslate nohighlight">\(H_{0}\)</span>): Los datos no difieren de una distribución normal (se asume normalidad).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Realizar la prueba de Shapiro-Wilk para el grupo Femenino</span>
+<span class="n">shapiro_femenino_stat</span><span class="p">,</span> <span class="n">shapiro_femenino_p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">edad_femenino</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prueba de Shapiro-Wilk para la Edad (Sexo Femenino):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estadístico Shapiro-Wilk: </span><span class="si">{</span><span class="n">shapiro_femenino_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-valor: </span><span class="si">{</span><span class="n">shapiro_femenino_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Interpretación para el grupo Femenino</span>
+<span class="n">alfa_shapiro</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Interpretación para el grupo Femenino:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">shapiro_femenino_p</span> <span class="o">&gt;</span> <span class="n">alfa_shapiro</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Dado que el p-valor (</span><span class="si">{</span><span class="n">shapiro_femenino_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) es mayor o igual que el nivel de significancia (</span><span class="si">{</span><span class="n">alfa_shapiro</span><span class="si">}</span><span class="s2">),&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">no se rechaza H0.&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que la distribución de la Edad en el grupo Femenino se ajusta a una distribución normal.&quot;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Dado que el p-valor (</span><span class="si">{</span><span class="n">shapiro_femenino_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) es menor que el nivel de significancia (</span><span class="si">{</span><span class="n">alfa_shapiro</span><span class="si">}</span><span class="s2">),&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">se rechaza H0.&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que la distribución de la Edad en el grupo Femenino no es significativamente normal.&quot;</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Separador</span>
+
+<span class="c1"># Realizar la prueba de Shapiro-Wilk para el grupo Masculino</span>
+<span class="n">shapiro_masculino_stat</span><span class="p">,</span> <span class="n">shapiro_masculino_p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">edad_masculino</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prueba de Shapiro-Wilk para la Edad (Sexo Masculino):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estadístico Shapiro-Wilk: </span><span class="si">{</span><span class="n">shapiro_masculino_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-valor: </span><span class="si">{</span><span class="n">shapiro_masculino_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Interpretación para el grupo Masculino</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Interpretación para el grupo Masculino:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">shapiro_masculino_p</span> <span class="o">&gt;</span> <span class="n">alfa_shapiro</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Dado que el p-valor (</span><span class="si">{</span><span class="n">shapiro_masculino_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) es mayor o igual que el nivel de significancia (</span><span class="si">{</span><span class="n">alfa_shapiro</span><span class="si">}</span><span class="s2">),&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">no se rechaza H0.&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que la distribución de la Edad en el grupo Masculino se ajusta a una distribución normal.&quot;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Dado que el p-valor (</span><span class="si">{</span><span class="n">shapiro_masculino_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) es menor que el nivel de significancia (</span><span class="si">{</span><span class="n">alfa_shapiro</span><span class="si">}</span><span class="s2">),&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">se rechaza H0.&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que la distribución de la Edad en el grupo Masculino no es significativamente normal.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Separador</span>
+
+<span class="c1"># Ahora procedemos con el T-test, considerando los resultados de la prueba de normalidad.</span>
+<span class="c1"># Si las distribuciones no son normales, podrías considerar usar una prueba no paramétrica</span>
+<span class="c1"># equivalente al T-test, como la prueba U de Mann-Whitney.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prueba de Shapiro-Wilk para la Edad (Sexo Femenino):
+Estadístico Shapiro-Wilk: 0.504
+p-valor: 0.000
+
+Interpretación para el grupo Femenino:
+	Dado que el p-valor (0.000) es menor que el nivel de significancia (0.05),
+	se rechaza H0.
+	Concluimos que la distribución de la Edad en el grupo Femenino no es significativamente normal.
+
+==================================================
+
+Prueba de Shapiro-Wilk para la Edad (Sexo Masculino):
+Estadístico Shapiro-Wilk: 0.557
+p-valor: 0.000
+
+Interpretación para el grupo Masculino:
+	Dado que el p-valor (0.000) es menor que el nivel de significancia (0.05),
+	se rechaza H0.
+	Concluimos que la distribución de la Edad en el grupo Masculino no es significativamente normal.
+
+==================================================
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparacion-de-medidas-anova">
+<h3><strong>3.6.4. Comparación de medidas:</strong> Anova<a class="headerlink" href="#comparacion-de-medidas-anova" title="Link to this heading">#</a></h3>
+<p>La prueba de hipótesis ANOVA (Análisis de la Varianza) es una herramienta estadística paramétrica que se utiliza para comparar las medias de tres o más grupos independientes y determinar si existen diferencias significativas entre ellas. Aunque la ANOVA es relativamente robusta a la falta de la normalidad con tamaños de muestra grandes, la homogeneidad de varianzas es más crítica.</p>
+<p><strong>Nota Importante para ANOVA</strong></p>
+<ul class="simple">
+<li><p><strong>Normalidad</strong>: Las distribuciones de los residuos (o de la variable dependiente dentro de cada grupo) son aproximadamente normales.</p></li>
+<li><p><strong>Homogeneidad de Varianzas</strong>: Las varianzas de la variable dependiente son aproximadamente iguales en todos los grupos.</p></li>
+<li><p><strong>Independencia</strong>: Las observaciones son independientes.</p></li>
+</ul>
+<p>Evaluaremos la normalidad de la variable <strong>Edad</strong> para cada una de las categorias de <strong>Tipo_Dx</strong> empleando la prueba de Shapiro-Wilk</p>
+<p><strong>Hipótesis para prueba de normalidad:</strong> Shapiro-Wilk</p>
+<ul class="simple">
+<li><p><strong>Hipótesis Nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>: La muestra proviene de una distribución normal.</p></li>
+<li><p><strong>Hipóteisis Alternativa (<span class="math notranslate nohighlight">\(H_{1}\)</span>)</strong>: La muestra no proviene de una distribución normal.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separar la variable &#39;Edad&#39; en grupos basados en la variable &#39;Tipo_Dx&#39;</span>
+<span class="n">grupos_tipo_dx</span> <span class="o">=</span> <span class="n">df_interes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grupos_tipo_dx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7e266f8afc10&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_grupos</span> <span class="o">=</span> <span class="n">grupos_tipo_dx</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nombre_grupos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;D&#39;, &#39;P&#39;, &#39;R&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dx_D</span> <span class="o">=</span> <span class="n">grupos_tipo_dx</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Dx_D</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Dx_D</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+<span class="c1">#print(Dx_D[&quot;Edad&quot;].describe())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Sexo Tipo_edad Tipo_Dx  Edad
+0         F         A       D    20
+1         F         A       D     2
+2         M         A       D     1
+3         F         D       D    19
+4         M         A       D     3
+...     ...       ...     ...   ...
+248888    M         A       D     6
+248889    M         A       D     4
+248890    F         A       D     6
+248891    F         A       D     4
+248892    F         A       D    84
+
+[248398 rows x 4 columns]
+Tipo_Dx
+D    248398
+Name: count, dtype: int64
+Tipo_Dx
+D    248398
+R       454
+P        41
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Implementar una función para realizar pruebas de hipótesis (distribución normal) Shapiro-Wilk.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pruebaH_shapiroWilk</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+  <span class="n">shapiro_stat</span><span class="p">,</span> <span class="n">shapiro_p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">variable</span><span class="p">])</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prueba de Shapiro-Wilk para </span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Estadístico Shapiro-Wilk: </span><span class="si">{</span><span class="n">shapiro_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">p-valor: </span><span class="si">{</span><span class="n">shapiro_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+  <span class="c1"># Interpretación</span>
+  <span class="k">if</span> <span class="n">shapiro_p</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Se rechaza H0. La distribución de la Edad en este grupo NO es significativamente normal.&quot;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">No se rechaza H0. La distribución de la Edad en este grupo PUEDE ser normal.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Implementar una función para realizar pruebas de hipótesis (distribución normal) Jerque-Bera.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pruebaH_jerqueBera</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+  <span class="n">jb_test</span><span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">jarque_bera</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">variable</span><span class="p">])</span>
+
+  <span class="c1"># Interpretación</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prueba de Jarque-Bera para </span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Estadístico = </span><span class="si">{</span><span class="n">jb_test</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, p-valor = </span><span class="si">{</span><span class="n">jb_test</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">jb_test</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Se rechaza la hipótesis nula: Los datos NO siguen una distribución normal.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">No se rechaza la hipótesis nula: Los datos siguen una distribución normal.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Dx_D</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Sexo Tipo_edad Tipo_Dx  Edad
+0         F         A       D    20
+1         F         A       D     2
+2         M         A       D     1
+3         F         D       D    19
+4         M         A       D     3
+...     ...       ...     ...   ...
+248888    M         A       D     6
+248889    M         A       D     4
+248890    F         A       D     6
+248891    F         A       D     4
+248892    F         A       D    84
+
+[248398 rows x 4 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pruebaH_shapiroWilk</span><span class="p">(</span><span class="n">Dx_D</span><span class="p">,</span> <span class="s2">&quot;Edad&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prueba de Shapiro-Wilk para Edad:
+	Estadístico Shapiro-Wilk: 0.518
+	p-valor: 0.000
+	Se rechaza H0. La distribución de la Edad en este grupo NO es significativamente normal.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pruebaH_jerqueBera</span><span class="p">(</span><span class="n">Dx_D</span><span class="p">,</span> <span class="s2">&quot;Edad&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prueba de Jarque-Bera para Edad:
+	Estadístico = 58285036.4549, p-valor = 0.0000
+	Se rechaza la hipótesis nula: Los datos NO siguen una distribución normal.
+</pre></div>
+</div>
+</div>
+</div>
+<p>En tu DataFrame <strong>df_interes</strong>, la variable numérica es <strong>Edad</strong>, y la variable categórica con múltiples categorías que podemos usar para agrupar es <strong>Tipo_Dx</strong> (Definitivo, Presuntivo, Repetido) o potencialmente la combinación de <strong>Sexo</strong> y <strong>Tipo_Dx</strong>.</p>
+<p>Acontinuación, realizaremos una prueba ANOVA para comparar la media de la variable <strong>Edad</strong> entre los grupos definidos por <strong>Tipo_Dx</strong>.</p>
+<p><strong>Hipótesis para la prueba ANOVA</strong></p>
+<ul class="simple">
+<li><p><strong>Hipótesis Nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>: Las medias de todos los grupos son iguales.</p></li>
+<li><p><strong>Hipótesis Alternativa (<span class="math notranslate nohighlight">\(H_{1}\)</span>)</strong>: Hay al menos un par de grupos cuyas medias de edad son significativamente diferentes.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Preparar los datos: asegurar que &#39;Tipo_Dx&#39; es de tipo category si no lo es,</span>
+<span class="c1"># ols puede manejar strings, es buena práctica.</span>
+<span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Tipo_Dx&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;Tipo_Dx&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Sexo Tipo_edad Tipo_Dx  Edad
+0         F         A       D    20
+1         F         A       D     2
+2         M         A       D     1
+3         F         D       D    19
+4         M         A       D     3
+...     ...       ...     ...   ...
+248888    M         A       D     6
+248889    M         A       D     4
+248890    F         A       D     6
+248891    F         A       D     4
+248892    F         A       D    84
+
+[248893 rows x 4 columns]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-96-28a30ef10ef6&gt;:3: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_interes[&#39;Tipo_Dx&#39;] = df_interes[&#39;Tipo_Dx&#39;].astype(&#39;category&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Realizar la prueba ANOVA usando statsmodels</span>
+<span class="c1"># La fórmula &#39;Edad ~ C(Tipo_Dx)&#39; indica que &#39;Edad&#39; es la variable dependiente</span>
+<span class="c1"># y &#39;Tipo_Dx&#39; es la variable independiente categórica (C() asegura que se trate como categórica)</span>
+<span class="n">modelo_anova</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;Edad ~ C(Tipo_Dx)&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span> <span class="c1"># Ajusta el modelo a los datos</span>
+<span class="n">tabla_anova</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">anova_lm</span><span class="p">(</span><span class="n">modelo_anova</span><span class="p">,</span> <span class="n">typ</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># typ=2 para el tipo de suma de cuadrados</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado de la Prueba ANOVA (Comparación de Edad entre Tipos de Diagnóstico):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabla_anova</span><span class="p">)</span>
+
+<span class="c1"># Interpretación del p-valor de la ANOVA</span>
+<span class="n">p_valor_anova</span> <span class="o">=</span> <span class="n">tabla_anova</span><span class="p">[</span><span class="s1">&#39;PR(&gt;F)&#39;</span><span class="p">][</span><span class="s1">&#39;C(Tipo_Dx)&#39;</span><span class="p">]</span>
+<span class="n">alfa_anova</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Interpretación del resultado de la ANOVA:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p_valor_anova</span> <span class="o">&lt;</span> <span class="n">alfa_anova</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Dado que el p-valor de la ANOVA (</span><span class="si">{</span><span class="n">p_valor_anova</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) es menor que el nivel de significancia (</span><span class="si">{</span><span class="n">alfa_anova</span><span class="si">}</span><span class="s2">),&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">se rechaza la hipótesis nula.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que existe una diferencia estadísticamente significativa</span><span class="se">\n\t</span><span class="s2"> en la media de la edad entre al menos dos de los tipos de diagnóstico (Definitivo, Presuntivo, Repetido).&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Dado que el p-valor de la ANOVA (</span><span class="si">{</span><span class="n">p_valor_anova</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) es mayor o igual que el nivel de significancia (</span><span class="si">{</span><span class="n">alfa_anova</span><span class="si">}</span><span class="s2">),&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">no se rechaza la hipótesis nula.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que no existe una diferencia estadísticamente significativa general en la media de la edad entre los diferentes tipos de diagnóstico.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Opcional: Mostrar las medias de Edad por grupo para ver las diferencias (si ANOVA fue significativa)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Medias de Edad por Tipo de Diagnóstico:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Tipo_Dx&#39;</span><span class="p">)[</span><span class="s1">&#39;Edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resultado de la Prueba ANOVA (Comparación de Edad entre Tipos de Diagnóstico):
+                  sum_sq        df           F        PR(&gt;F)
+C(Tipo_Dx)  7.565611e+03       2.0  119.829274  9.634893e-53
+Residual    7.857032e+06  248890.0         NaN           NaN
+
+Interpretación del resultado de la ANOVA:
+	Dado que el p-valor de la ANOVA (0.000) es menor que el nivel de significancia (0.05),
+	se rechaza la hipótesis nula.
+	Concluimos que existe una diferencia estadísticamente significativa
+	 en la media de la edad entre al menos dos de los tipos de diagnóstico (Definitivo, Presuntivo, Repetido).
+
+Medias de Edad por Tipo de Diagnóstico:
+Tipo_Dx
+D     4.761282
+P    17.902439
+R     5.799559
+Name: Edad, dtype: float64
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-97-f7312f60d7e4&gt;:26: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  print(df_interes.groupby(&#39;Tipo_Dx&#39;)[&#39;Edad&#39;].mean())
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="modelo-bioestadistico">
+<h2><strong>3.7. Modelo Bioestadístico</strong><a class="headerlink" href="#modelo-bioestadistico" title="Link to this heading">#</a></h2>
+<section id="regresion-logistica-binaria">
+<h3><strong>3.7.1 Regresión logística binaria</strong><a class="headerlink" href="#regresion-logistica-binaria" title="Link to this heading">#</a></h3>
+<p>Un modelo de regresión logística es un tipo de modelo estadístico que se utiliza para predecir la probabilidad de que un resultado pertenezca a una de varias categorías. A diferencia de la regresión lineal, que predice un valor continuo, la regresión logística se utiliza para problemas de clasificación.</p>
+<p><strong>¿Para que sirve?</strong></p>
+<p>Sirve para modelar la relación entre una o más <strong>variables independientes</strong> (predictoras) y una <strong>variable dependiente categórica</strong> (la que queremos predecir). La variable dependiente suele ser binaria (con dos categorías, como sí/no, verdadero/falso, 0/1).</p>
+<p>Se va ha implementar el modelo de regresión logística con la relación matemática <code class="docutils literal notranslate"><span class="pre">&quot;Dx_Confirmado</span> <span class="pre">~</span> <span class="pre">edad</span> <span class="pre">+</span> <span class="pre">C(sexo)&quot;</span></code>. Esto significa que las variables predictoras son <strong>edad</strong> (cuantitativa) y <strong>sexo</strong> (categórica).</p>
+<p>La expresión matemática estimada para este modelo está representada por la ecuación (1):</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2c233b64-d63f-4e82-82f9-6ee3ed9123c1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-2c233b64-d63f-4e82-82f9-6ee3ed9123c1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+P(dx|C=1) = \frac{1}{1 + e^{-(\beta_{0} + \beta_{1}\times EDAD + \beta_{2}\times SEXO)}} \hspace{2cm} (1)
+\end{equation}\]</div>
+<p>Donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta_0\)</span> es el <strong>coeficiente estimado del intercepto</strong> obtenido de la salida del modelo <code class="docutils literal notranslate"><span class="pre">modelo.params[&quot;Intercept&quot;]</span></code>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_1\)</span> e el <strong>coeficiente estimado para la variable edad</strong> (<code class="docutils literal notranslate"><span class="pre">modelo.params[&quot;edad&quot;]</span></code>).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_2\)</span> es el <strong>coeficiente estimado para la variable sexo</strong> (<code class="docutils literal notranslate"><span class="pre">modelo.params[&quot;C(sexo)[T.M]&quot;]</span></code>)</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\( \)</span></p>
+<p><strong>Referencias</strong></p>
+<blockquote>
+<div><p><a href="https://link.springer.com/article/10.1186/s12889-024-18338-8">Lyu, Y., Xu, Q., &amp; Liu, J. (2024). Exploring the medical decision-making patterns and influencing factors among the general Chinese public: a binary logistic regression analysis. BMC public health, 24(1), 887.</a></p>
+</div></blockquote>
+<blockquote>
+<div><p><a href="https://www.nature.com/articles/s41598-023-49872-x">Talin, I. A., Abid, M. H., Samad, M. A., Domínguez Azpíroz, I., de la Torre Diez, I., Ashraf, I., &amp; Nahid, A. A. (2023). Exploring factors influencing the severity of pregnancy anemia in India: a study using proportional odds model. Scientific Reports, 13(1), 22816.</a></p>
+</div></blockquote>
+<blockquote>
+<div><p><a href="https://sjuoz.uoz.edu.krd/index.php/sjuoz/article/view/442">Abdulqader, Q. M. (2017). Applying the binary logistic regression analysis on the medical data. Science Journal of University of Zakho, 5(4), 330-334.</a></p>
+</div></blockquote>
+<blockquote>
+<div><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4419893/">Avali, V. R., Cooper, G. F., &amp; Gopalakrishnan, V. (2014, November). Application of Bayesian logistic regression to mining biomedical data. In AMIA Annual Symposium Proceedings (Vol. 2014, p. 266)</a></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Dx_Definitivo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Separador</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Dx_Definitivo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tipo_Dx
+D    248398
+R       454
+P        41
+Name: count, dtype: int64
+
+==================================================
+
+       Sexo Tipo_edad Tipo_Dx  Edad  Dx_Definitivo
+0         F         A       D    20              1
+1         F         A       D     2              1
+2         M         A       D     1              1
+3         F         D       D    19              1
+4         M         A       D     3              1
+...     ...       ...     ...   ...            ...
+248888    M         A       D     6              1
+248889    M         A       D     4              1
+248890    F         A       D     6              1
+248891    F         A       D     4              1
+248892    F         A       D    84              1
+
+[248893 rows x 5 columns]
+Dx_Definitivo
+1    248398
+0       495
+Name: count, dtype: int64
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-99-9f315d2bba63&gt;:1: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_interes[&quot;Dx_Definitivo&quot;] = (df_interes[&quot;Tipo_Dx&quot;] == &quot;D&quot;).astype(int)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modelo</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">logit</span><span class="p">(</span><span class="s2">&quot;Dx_Definitivo ~ Edad + C(Sexo)&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_interes</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully.
+         Current function value: 0.014267
+         Iterations 10
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:          Dx_Definitivo   No. Observations:               248893
+Model:                          Logit   Df Residuals:                   248890
+Method:                           MLE   Df Model:                            2
+Date:                Sun, 01 Jun 2025   Pseudo R-squ.:                0.006323
+Time:                        03:08:21   Log-Likelihood:                -3550.9
+converged:                       True   LL-Null:                       -3573.5
+Covariance Type:            nonrobust   LLR p-value:                 1.540e-10
+================================================================================
+                   coef    std err          z      P&gt;|z|      [0.025      0.975]
+--------------------------------------------------------------------------------
+Intercept        6.2584      0.067     93.620      0.000       6.127       6.389
+C(Sexo)[T.M]     0.2549      0.091      2.801      0.005       0.076       0.433
+Edad            -0.0290      0.004     -7.409      0.000      -0.037      -0.021
+================================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Obtener las predicciones del modelo para los datos de entrenamiento</span>
+<span class="n">df_f</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Sexo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;F&quot;</span><span class="p">]</span>
+<span class="n">df_m</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Sexo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;M&quot;</span><span class="p">]</span>
+
+<span class="n">y_pred_f</span> <span class="o">=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df_f</span><span class="p">)</span>
+<span class="n">y_pred_m</span> <span class="o">=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df_m</span><span class="p">)</span>
+
+<span class="c1"># Crear un gráfico de dispersión con los datos observados y forzados</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># Ajustar el tamaño de la figura si es necesario</span>
+<span class="c1">#plt.scatter(df_interes[&quot;Edad&quot;], df_interes[&quot;Dx_Ferropenica&quot;], label=&quot;Observado&quot;, alpha=0.5)  # Datos observados</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">][</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Dx_Definitivo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">],</span>
+            <span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Dx_Definitivo&quot;</span><span class="p">][</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;Dx_Definitivo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">],</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Observado (Definitivo: 1)&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_f</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">],</span> <span class="n">y_pred_f</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Forzado F&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># Datos forzados (predichos)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_m</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">],</span> <span class="n">y_pred_m</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Forzado M&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># Datos forzados (predichos)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Edad&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Probabilidad de Dx_Definitivo&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Datos Observados vs. Forzados (Regresión Logística)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/eeb4b0d739e01a9640aec2387553e59a425867af3d258f5e30ce15d24f60c196.png" src="../_images/eeb4b0d739e01a9640aec2387553e59a425867af3d258f5e30ce15d24f60c196.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="iv-referencias">
+<h1><strong>IV. Referencias</strong><a class="headerlink" href="#iv-referencias" title="Link to this heading">#</a></h1>
+<p><strong>Libros y manuales</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.editorial-sciela.org/index.php/sciela/article/view/16/49">Libro de estadisitica con python </a>, <a class="reference external" href="https://ciladi.org/wp-content/uploads/Version_final_Introduccion-Probabilidad-Python-vf_Bayas-3.pdf">Introducción a la teoria de probabilidades</a>, <a class="reference external" href="https://datos.gob.es/sites/default/files/doc/file/guia_eda_python.pdf">Guía practica de análsis exploratorio de python</a></p></li>
+</ul>
+<p><strong>Cursos en linea</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.w3schools.com/statistics/index.php">Estadística W3School</a>, <a class="reference external" href="https://docs.python.org/es/3/library/statistics.html">Estadística con python</a>, <a class="reference external" href="https://www.kaggle.com/code/saurav9786/statistics-for-data-scientists">Kaggle</a></p></li>
+</ul>
+<p><strong>Aplicaciones IA</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gemini.google.com">Gemini iA</a>, <a class="reference external" href="https://www.deepseek.com/">DeepSeek</a>, <a class="reference external" href="https://chatgpt.com/">ChatGPT</a>, <a class="reference external" href="https://claude.ai/">Claude IA</a>, <a class="reference external" href="https://julius.ai">Julius IA:</a></p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="preambulo.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Preámbulo</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sesion2-procesamiento_datos.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>2. Manejo, Preprocesamiento y Procesamiento de datos</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. <b>Diseño de Caso Estudio: </b>Anemia</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-marco-teorico"><strong>I. Marco Teórico</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo"><strong>1.1 Objetivo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-bioestadisticos"><strong>1.2 Fundamentos Bioestadísticos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-variables"><strong>1.2.1 Tipos de variables</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-estadisticos-relevantes"><strong>1.2.2 Métodos estadísticos relevantes</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-recoleccion-de-datos"><strong>II. Recolección de Datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fuentes-de-datos"><strong>2.1. Fuentes de datos</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-metodologia-practica"><strong>III. Metodología Práctica</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#montar-drive-a-google-colaboratory"><strong>3.1. Montar Drive a Google Colaboratory</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-entorno"><strong>3.2. Preparar Entorno</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-base-de-datos-de-anemia"><strong>3.3. Importar Base de Datos de Anemia</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-de-metadatos"><strong>3.4. Revision de Metadatos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-dx-definitivo-d"><strong>3.4.1. tipo_Dx:</strong> Definitivo (D)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-dx-presuntivo-p"><strong>3.4.2. tipo_Dx:</strong> Presuntivo (P)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-dx-repetido-r"><strong>3.4.3. tipo_Dx:</strong> Repetido (R)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-estadistico-descriptivo-univariado-y-bivariado"><strong>3.5. Análisis Estadístico Descriptivo Univariado y Bivariado</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-frecuencia-de-datos-categoricos-por-columna-analisis-univariado"><strong>3.5.1. Distribución de frecuencia de datos categóricos por columna (análisis univariado)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-de-datos-categoricos-vs-numericos-analisis-bivariado"><strong>3.5.2. Relación de datos categóricos vs numéricos (análisis bivariado)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-la-variable-edad"><strong>3.5.3. Distribución de la variable “Edad”</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-medidas-de-tendencia-central-y-dispersion"><strong>3.5.4. Análisis de Medidas de Tendencia Central y Dispersión</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadistica-inferencial-pruebas-de-hipotesis"><strong>3.6. Estadística inferencial:</strong> pruebas de hipótesis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-cuadrado"><strong>3.6.1. Chi-cuadrado</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-medidas-prueba-de-hipotesis-t-test"><strong>3.6.2. Comparación de medidas:</strong> prueba de hipótesis T-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prueba-de-hipotesis-parametrica-shapiro-wilk"><strong>3.6.3. Prueba de hipótesis paramétrica Shapiro-Wilk</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-medidas-anova"><strong>3.6.4. Comparación de medidas:</strong> Anova</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-bioestadistico"><strong>3.7. Modelo Bioestadístico</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-logistica-binaria"><strong>3.7.1 Regresión logística binaria</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-referencias"><strong>IV. Referencias</strong></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By VR Rojas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <style>
+  .slideshow-container { max-width: 800px; margin: auto; position: relative; }
+  .slides { display: none; width: 100%; height: auto; }
+  .slides.active { display: block; }
+  .controls { text-align: center; margin-top: 10px; }
+  .controls button { margin: 0 10px; padding: 10px 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
+  .controls button:hover { background: #0056b3; }
+</style>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

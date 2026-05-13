@@ -1,0 +1,2275 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>8. Diseño de Caso Estudio: Infecciones Respiratorias Agudas &#8212; Sacha Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/sesion8_caso_estudio_infeccionRespiratoria';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="7. Diseño de Caso Estudio: Enfermedad de Carrión" href="sesion7_caso_estudio_enfermedad_carrion.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Sacha Analytics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="home.html">
+                    Descripción del Curso
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="preambulo.html">Preámbulo</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion1_caso_estudio_anemia.html">1. <b>Diseño de Caso Estudio: </b>Anemia</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion2_caso_estudio_dengue.html">2. <b>Diseño de Caso Estudio:</b> Dengue</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion3_caso_estudio_malaria.html">3. <b>Diseño de Caso Estudio: </b>Malaria</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion4_caso_estudio_diabetes.html">4. <b>Diseño de Caso Estudio: </b>Diabetes</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion5_caso_estudio_zoonosis.html">5. <b>Diseño de Caso Estudio:</b> Zoonosis</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion6_caso_estudio_covid19.html">6. <b>Diseño de Caso Estudio:</b> Linaje Genómico de Pruebas Moleculares del Instituto Nacional de Salud para COVID-19 (INS)</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion7_caso_estudio_enfermedad_carrion.html">7. <b>Diseño de Caso Estudio: </b>Enfermedad de Carrión</a></li>
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. <b>Diseño de Caso Estudio:</b> Infecciones Respiratorias Agudas</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/vrrp/sachabook_bigdata/blob/main/docs/docs/sesion8_caso_estudio_infeccionRespiratoria.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/vrrp/sachabook_bigdata" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/vrrp/sachabook_bigdata/issues/new?title=Issue%20on%20page%20%2Fdocs/sesion8_caso_estudio_infeccionRespiratoria.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/sesion8_caso_estudio_infeccionRespiratoria.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>8. <b>Diseño de Caso Estudio:</b> Infecciones Respiratorias Agudas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. <b>Diseño de Caso Estudio:</b> Infecciones Respiratorias Agudas</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-marco-teorico"><strong>I. Marco Teórico</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo"><strong>1.1 Objetivo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-bioestadisiticos"><strong>1.2 Fundamentos Bioestadisiticos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-variables"><strong>1.2.1 Tipos de variables</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-estadisticos-relevantes"><strong>1.2.2 Métodos estadísticos relevantes</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-recoleccion-de-datos"><strong>II. Recolección de Datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fuentes-de-datos"><strong>2.1. Fuentes de datos</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-metodologia-practica"><strong>III. Metodología Práctica</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-archivos-y-directorios-en-la-nube"><strong>3.1. Gestión de archivos y directorios en la Nube</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#montar-google-drive">3.1.1. Montar Google Drive</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explorar-archivos-y-directorios-de-google-drive-desde-la-nube">3.1.2. Explorar archivos y directorios de Google Drive desde la nube</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-entorno"><strong>3.2 Preparar Entorno</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-paquetes">3.2.1 Importar paquetes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explorar-herramientas-de-paquetes">3.2.2. Explorar herramientas de Paquetes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-base-de-datos"><strong>3.3. Importar Base de Datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-metadatos"><strong>3.4. Revisión Metadatos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eleccion-de-variables-de-interes"><strong>3.4.4. Elección de variables de interés</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-estadistico-descriptivo-univariado-y-bivariado"><strong>3.5 Análisis Estadístico Descriptivo Univariado y Bivariado</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-frecuencia-de-datos-categoricos-por-columna-analisis-univariado"><strong>3.5.1 Distribución de frecuencia de datos categóricos por columna (análisis univariado)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-casos-ira-en-lima-analisis-bivariado"><strong>3.5.2 Análisis de casos IRA en Lima (análisis bivariado)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-medidas-de-tendencia-central-y-dispersion"><strong>3.5.3 Análisis de Medidas de Tendencia Central y Dispersión</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadistica-inferencial-prueba-de-hipotesis"><strong>3.6 Estadística inferencial:</strong> prueba de hipótesis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-cuadrado"><strong>3.6.1. Chi-cuadrado</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-medidas-prueba-de-hipotesis-t-test"><strong>3.6.2. Comparación de medidas:</strong> prueba de hipótesis T-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prueba-de-hipotesis-parametrica-shapiro-wilk"><strong>3.6.3. Prueba de hipótesis paramétrica Shapiro-Wilk</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-medidas-anova"><strong>3.6.4. Comparación de medidas:</strong> Anova</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-bioestadistico"><strong>3.7. Modelo Bioestadístico</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-logistica-binaria"><strong>3.7.1 Regresión logística binaria</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Bioestadística para Investigación Científica <br>usando Python con Inteligencia Artificial</b></span></h1>
+</div>
+<style>
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+</style>
+<table align="center" style="font-size: 13px;">
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Autor</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:VR ROJAS</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Email</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:sacha.analytics@gmail.com</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Web</span></th>
+    <th align="left">:<a href="https://sacha-analytics.github.io/" style="font-family:Monospace;font-size: 13px;">sacha-analytics</a></th>
+</tr>
+</table>
+<br><section class="tex2jax_ignore mathjax_ignore" id="diseno-de-caso-estudio-infecciones-respiratorias-agudas">
+<h1>8. <b>Diseño de Caso Estudio:</b> Infecciones Respiratorias Agudas<a class="headerlink" href="#diseno-de-caso-estudio-infecciones-respiratorias-agudas" title="Link to this heading">#</a></h1>
+<p>En una era de riesgos sanitarios de enfermedades transmisibles emergentes y reemergentes, no debe subestimarse la importancia de la prevención de infecciones ni de las medidas de control en entornos sanitarios. La transmisión de enfermedad transmisible/patógeno es un tema en constante evolución, y la transmisión de patógenos que causan enfermedades respiratorias agudas (ERA) no es una excepción. El principal modo de transmisión de la mayoría de las ERA es a través de microgotas, pero en el caso de algunos patógenos la transmisión también ocurre a través del contacto (incluyendo contaminación de las manos seguida de autoinoculación) y de aerosoles respiratorios infecciosos de diversos tamaños y a corta distancia. Debido a que muchos síntomas de las ERA no son específicos y que no siempre hay pruebas diagnósticas rápidas disponibles, con frecuencia no es posible conocer la etiología de inmediato. Además, puede no haber disponibilidad de intervenciones farmacéuticas (vacunas, antivirales, antimicrobianos) para las ERA.</p>
+<p>Las ERA están directamente vinculadas a la <strong>calidad del aire</strong>. Los contaminantes atmosféricos actúan como desencadenantes o agrabantes, especialmente en poblaciones vulnerables (niños, ancianos y personas con enfermedades crónicas).</p>
+<p><strong>Fuentes</strong></p>
+<ul class="simple">
+<li><p><a href="https://www.gob.pe/21263-que-son-las-infecciones-respiratorias-agudas">MINSA</a></p></li>
+<li><p><a href="https://www.who.int/es/publications/i/item/WHO-CDS-EPR-2007-6">Organización Mundial de la Salud (OMS)</a></p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="i-marco-teorico">
+<h1><strong>I. Marco Teórico</strong><a class="headerlink" href="#i-marco-teorico" title="Link to this heading">#</a></h1>
+<section id="objetivo">
+<h2><strong>1.1 Objetivo</strong><a class="headerlink" href="#objetivo" title="Link to this heading">#</a></h2>
+<p>Analizar la distribución y características de casos de <strong>infecciones respiratorias agudas</strong> en función de las variables <strong>departamento, defunciones</strong> y <strong>Tipo de Diagnóstico</strong> utilizando métodos bioestadístico.</p>
+</section>
+<section id="fundamentos-bioestadisiticos">
+<h2><strong>1.2 Fundamentos Bioestadisiticos</strong><a class="headerlink" href="#fundamentos-bioestadisiticos" title="Link to this heading">#</a></h2>
+<section id="tipos-de-variables">
+<h3><strong>1.2.1 Tipos de variables</strong><a class="headerlink" href="#tipos-de-variables" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>departamento</strong>: categórica nomial (Femenino, Masculino).</p></li>
+<li><p><strong>defunciones</strong>: cuantitativa continua.</p></li>
+<li><p><strong>Tipo de Diagnóstico (Tipo de Dx)</strong>: categórica nominal</p></li>
+</ul>
+</section>
+<section id="metodos-estadisticos-relevantes">
+<h3><strong>1.2.2 Métodos estadísticos relevantes</strong><a class="headerlink" href="#metodos-estadisticos-relevantes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Estadística descriptiva univariada y bivariada</p></li>
+<li><p>Distribución de frecuencias.</p></li>
+<li><p>Medidas de tendencia central y dispersión.</p></li>
+<li><p>Prueba de independencia (Chi-cuadrado)</p></li>
+<li><p>Comparaciones de medidas (t-test, ANOVA)</p></li>
+<li><p>Modelos de regresión logística (para predecir DX)</p></li>
+<li><p>Modelos multivariantes (regresión logística si se desea modelar probabilidad de anemia)</p></li>
+<li><p>Validación de supuestos estadísticos</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ii-recoleccion-de-datos">
+<h1><strong>II. Recolección de Datos</strong><a class="headerlink" href="#ii-recoleccion-de-datos" title="Link to this heading">#</a></h1>
+<section id="fuentes-de-datos">
+<h2><strong>2.1. Fuentes de datos</strong><a class="headerlink" href="#fuentes-de-datos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a href="https://www.datosabiertos.gob.pe">Plataforma Nacional de Datos Abiertos</a>.</p></li>
+<li><p>Datos para caso estudio estudio: <a href="https://www.datosabiertos.gob.pe/dataset/vigilancia-epidemiologica-de-infecciones-respiratoiras-agudas-ira">Infecciones Respiratoiras Agudas (IRA)</a>.</p></li>
+<li><p>Datos para caso estudio estudio: <a href="https://www.datosabiertos.gob.pe/dataset/monitoreo-de-los-contaminantes-del-aire-en-lima-metropolitana-servicio-nacional-de">Calidad del Aire Lima Metropolitana</a>.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="iii-metodologia-practica">
+<h1><strong>III. Metodología Práctica</strong><a class="headerlink" href="#iii-metodologia-practica" title="Link to this heading">#</a></h1>
+<section id="gestion-de-archivos-y-directorios-en-la-nube">
+<h2><strong>3.1. Gestión de archivos y directorios en la Nube</strong><a class="headerlink" href="#gestion-de-archivos-y-directorios-en-la-nube" title="Link to this heading">#</a></h2>
+<section id="montar-google-drive">
+<h3>3.1.1. Montar Google Drive<a class="headerlink" href="#montar-google-drive" title="Link to this heading">#</a></h3>
+<p>La siguiente celda de código monta Google Drive a la nube (centro de datos remoto de Google)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">20</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">division</span> <span class="k">as</span> <span class="n">_</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_function</span> <span class="k">as</span> <span class="n">_</span>
+<span class="ne">---&gt; </span><span class="mi">20</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_import_hooks</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_installation_commands</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_shell_customizations</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="n">_import_hooks</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2018 Google Inc.</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">12</span> <span class="c1"># See the License for the specific language govestylerning permissions and</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Colab import customizations to the IPython runtime.&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab._import_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">_altair</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab._import_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">_cv2</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">def</span><span class="w"> </span><span class="nf">_register_hooks</span><span class="p">():</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="n">_import_hooks</span><span class="o">/</span><span class="n">_altair</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2018 Google Inc. All rights reserved.</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">12</span> <span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Import hook for ensuring that Altair&#39;s Colab renderer is registered.&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">import</span><span class="w"> </span><span class="nn">imp</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;imp&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="explorar-archivos-y-directorios-de-google-drive-desde-la-nube">
+<h3>3.1.2. Explorar archivos y directorios de Google Drive desde la nube<a class="headerlink" href="#explorar-archivos-y-directorios-de-google-drive-desde-la-nube" title="Link to this heading">#</a></h3>
+<p>En la siguiente celda de código se define la ruta de  <strong>Google Drive</strong> en la computadora en la nube</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drive_dir</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">drive_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;datos_abiertos_vigilancia_dengue_2000_2023.csv&#39;, &#39;datos_abiertos_vigilancia_malaria_2000_2008.csv&#39;, &#39;datos_abiertos_vigilancia_malaria_2009_2023.csv&#39;, &#39;Dataset_ExamenesLaboratorio_ConsultaExterna_PatologíasRelacionadas_Diabetes_202001_202404.csv&#39;, &#39;datos_abiertos_vigilancia_zoonosis_2000_2023.csv&#39;, &#39;datos_abiertos_vigilancia_iras_2000_2023.csv&#39;, &#39;datos_abiertos_vigilancia_enfermedad_carrion_2000_2023.csv&#39;, &#39;pmGenoma_25Septiembre2021.csv&#39;, &#39;pmGenoma_27Sep2023.csv&#39;, &#39;TB_DIGTEL_ANEMIA_TRATAMIENTOS.csv&#39;, &#39;primeras_100_filas_anemia.xlsx&#39;, &#39;primeras_100_filas_anemia.gsheet&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>La funión <code class="docutils literal notranslate"><span class="pre">explorar_drive</span></code> permite inspeccionar cada carpeta y subcarpetas de <strong>Google Drive</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">explorar_drive</span><span class="p">(</span><span class="n">nombre_carpeta</span><span class="p">):</span>
+  <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+  <span class="n">ruta_drive</span> <span class="o">=</span><span class="s2">&quot;/content/drive/MyDrive/&quot;</span>
+  <span class="n">contenido_carpeta</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">ruta_drive</span> <span class="o">+</span> <span class="n">nombre_carpeta</span><span class="p">)</span>
+  <span class="n">n_elem</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">contenido_carpeta</span><span class="p">)</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ruta: </span><span class="si">{</span><span class="n">ruta_drive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre_carpeta</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Numero de elementos: </span><span class="si">{</span><span class="n">n_elem</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_elem</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">) </span><span class="si">{</span><span class="n">contenido_carpeta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datos_abiertos_vigilancia_dengue_2000_2023.csv
+datos_abiertos_vigilancia_malaria_2000_2008.csv
+datos_abiertos_vigilancia_malaria_2009_2023.csv
+Dataset_ExamenesLaboratorio_ConsultaExterna_PatologíasRelacionadas_Diabetes_202001_202404.csv
+datos_abiertos_vigilancia_zoonosis_2000_2023.csv
+datos_abiertos_vigilancia_iras_2000_2023.csv
+datos_abiertos_vigilancia_enfermedad_carrion_2000_2023.csv
+pmGenoma_25Septiembre2021.csv
+pmGenoma_27Sep2023.csv
+TB_DIGTEL_ANEMIA_TRATAMIENTOS.csv
+primeras_100_filas_anemia.xlsx
+primeras_100_filas_anemia.gsheet
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">explorar_drive</span><span class="p">(</span><span class="s2">&quot;Base_datos&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">explorar_drive</span><span class="p">(</span><span class="s2">&quot;Base_datos/biomedicina&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="preparar-entorno">
+<h2><strong>3.2 Preparar Entorno</strong><a class="headerlink" href="#preparar-entorno" title="Link to this heading">#</a></h2>
+<section id="importar-paquetes">
+<h3>3.2.1 Importar paquetes<a class="headerlink" href="#importar-paquetes" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Paquete especializado en metodos numericos</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Paquete especialozado manejo de estructuras de datos tipo tablas (Data Frames)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Paquetes especializado para generar graficas</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Paquete especializados de estadística y metodos numéricos</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># Paquete especializado en estadística</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
+<span class="c1">#from statsmodels.formula.api import ols</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="explorar-herramientas-de-paquetes">
+<h3>3.2.2. Explorar herramientas de Paquetes<a class="headerlink" href="#explorar-herramientas-de-paquetes" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lista de todos los atributos (métodos, clases, funciones):&quot;</span><span class="p">)</span>
+
+<span class="n">herramientas_paquete</span> <span class="o">=</span> <span class="nb">dir</span><span class="p">(</span><span class="n">np</span><span class="p">)</span>
+<span class="n">numero_herramientas</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">herramientas_paquete</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Numero de herramientas: </span><span class="si">{</span><span class="n">numero_herramientas</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numero_herramientas</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">) </span><span class="si">{</span><span class="n">herramientas_paquete</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para obtener documentación detallada sobre el paquete <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, puedes usar <code class="docutils literal notranslate"><span class="pre">help(np)</span></code>. Esto imprimirá una gran cantidad de información directamente en la salida de la celda. <strong>Advertencia: Esta salida puede ser muy larga.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descomenta la siguiente línea para ver la documentación completa de numpy</span>
+<span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="importar-base-de-datos">
+<h2><strong>3.3. Importar Base de Datos</strong><a class="headerlink" href="#importar-base-de-datos" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_archivo</span> <span class="o">=</span> <span class="s2">&quot;datos_abiertos_vigilancia_iras_2000_2023.csv&quot;</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/Base_datos/biomedicina/&quot;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="n">nombre_archivo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        departamento    provincia     distrito   ano  semana  sub_reg_nt  \
+0           AMAZONAS  CHACHAPOYAS  CHACHAPOYAS  2000       1           9   
+1           AMAZONAS  CHACHAPOYAS  CHACHAPOYAS  2000       1          36   
+2           AMAZONAS  CHACHAPOYAS  CHACHAPOYAS  2000       2           9   
+3           AMAZONAS  CHACHAPOYAS  CHACHAPOYAS  2000       2          36   
+4           AMAZONAS  CHACHAPOYAS  CHACHAPOYAS  2000       3          36   
+...              ...          ...          ...   ...     ...         ...   
+2143980      UCAYALI        PURUS        PURUS  2023      48          25   
+2143981      UCAYALI        PURUS        PURUS  2023      49          25   
+2143982      UCAYALI        PURUS        PURUS  2023      50          25   
+2143983      UCAYALI        PURUS        PURUS  2023      51          25   
+2143984      UCAYALI        PURUS        PURUS  2023      52          25   
+
+         ubigeo  ira_no_neumonia  neumonias_men5  neumonias_60mas  \
+0         10101                6               0                0   
+1         10101               10               0                0   
+2         10101                6               0                0   
+3         10101                7               3                0   
+4         10101                8               2                0   
+...         ...              ...             ...              ...   
+2143980  250401               41               0                0   
+2143981  250401               51               0                0   
+2143982  250401               55               0                0   
+2143983  250401               36               0                0   
+2143984  250401               31               0                0   
+
+         hospitalizados_men5  hospitalizados_60mas  defunciones_men5  \
+0                          0                     0                 0   
+1                          0                     0                 0   
+2                          0                     0                 0   
+3                          0                     0                 0   
+4                          0                     0                 0   
+...                      ...                   ...               ...   
+2143980                    0                     0                 0   
+2143981                    0                     0                 0   
+2143982                    0                     0                 0   
+2143983                    0                     0                 0   
+2143984                    0                     0                 0   
+
+         defunciones_60mas  
+0                        0  
+1                        0  
+2                        0  
+3                        0  
+4                        0  
+...                    ...  
+2143980                  0  
+2143981                  0  
+2143982                  0  
+2143983                  0  
+2143984                  0  
+
+[2143985 rows x 14 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="revision-metadatos">
+<h2><strong>3.4. Revisión Metadatos</strong><a class="headerlink" href="#revision-metadatos" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_variables</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_variables</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;departamento&#39;, &#39;provincia&#39;, &#39;distrito&#39;, &#39;ano&#39;, &#39;semana&#39;, &#39;sub_reg_nt&#39;, &#39;ubigeo&#39;, &#39;ira_no_neumonia&#39;, &#39;neumonias_men5&#39;, &#39;neumonias_60mas&#39;, &#39;hospitalizados_men5&#39;, &#39;hospitalizados_60mas&#39;, &#39;defunciones_men5&#39;, &#39;defunciones_60mas&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista_variables</span><span class="p">)):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">lista_variables</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0. departamento
+1. provincia
+2. distrito
+3. ano
+4. semana
+5. sub_reg_nt
+6. ubigeo
+7. ira_no_neumonia
+8. neumonias_men5
+9. neumonias_60mas
+10. hospitalizados_men5
+11. hospitalizados_60mas
+12. defunciones_men5
+13. defunciones_60mas
+</pre></div>
+</div>
+</div>
+</div>
+<section id="eleccion-de-variables-de-interes">
+<h3><strong>3.4.4. Elección de variables de interés</strong><a class="headerlink" href="#eleccion-de-variables-de-interes" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_interes</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;ano&quot;</span><span class="p">,</span> <span class="s2">&quot;neumonias_men5&quot;</span><span class="p">,</span><span class="s2">&quot;defunciones_men5&quot;</span><span class="p">,</span><span class="s2">&quot;departamento&quot;</span><span class="p">,</span> <span class="s2">&quot;hospitalizados_men5&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ano  neumonias_men5  defunciones_men5 departamento  \
+0        2000               0                 0     AMAZONAS   
+1        2000               0                 0     AMAZONAS   
+2        2000               0                 0     AMAZONAS   
+3        2000               3                 0     AMAZONAS   
+4        2000               2                 0     AMAZONAS   
+...       ...             ...               ...          ...   
+2143980  2023               0                 0      UCAYALI   
+2143981  2023               0                 0      UCAYALI   
+2143982  2023               0                 0      UCAYALI   
+2143983  2023               0                 0      UCAYALI   
+2143984  2023               0                 0      UCAYALI   
+
+         hospitalizados_men5  
+0                          0  
+1                          0  
+2                          0  
+3                          0  
+4                          0  
+...                      ...  
+2143980                    0  
+2143981                    0  
+2143982                    0  
+2143983                    0  
+2143984                    0  
+
+[2143985 rows x 5 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="analisis-estadistico-descriptivo-univariado-y-bivariado">
+<h2><strong>3.5 Análisis Estadístico Descriptivo Univariado y Bivariado</strong><a class="headerlink" href="#analisis-estadistico-descriptivo-univariado-y-bivariado" title="Link to this heading">#</a></h2>
+<p>Esta sección se enfoca en realizar análisis estadístico descriptivo sobre las variables seleccionadas del DataFrame <code class="docutils literal notranslate"><span class="pre">df_interes</span></code>: <strong>año, departamento y tipos de casos asociado a infecciones respiratorias agudas</strong>. Cubriremos estadísticas descriptivas univariadas (análisis de variable individual) y bivariadas (análisis de la relación entre dos variables).</p>
+<section id="distribucion-de-frecuencia-de-datos-categoricos-por-columna-analisis-univariado">
+<h3><strong>3.5.1 Distribución de frecuencia de datos categóricos por columna (análisis univariado)</strong><a class="headerlink" href="#distribucion-de-frecuencia-de-datos-categoricos-por-columna-analisis-univariado" title="Link to this heading">#</a></h3>
+<p>Para variables categóricas y numéricas como <strong>departamento, departamento</strong> y <strong>casos de IRA</strong>, el análisis descriptivo más común es observar la distribución de frecuencias. Esto nos indica cuántas veces aparece cada valor único en la columna.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;neumonias_men5&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;defunciones_men5&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>neumonias_men5
+0     1811822
+1      173409
+2       65508
+3       31010
+4       18172
+       ...   
+86          1
+76          1
+87          1
+90          1
+78          1
+Name: count, Length: 89, dtype: int64
+defunciones_men5
+0     2135016
+1        8341
+2         526
+3          68
+4          19
+5           8
+7           2
+6           2
+24          1
+9           1
+8           1
+Name: count, dtype: int64
+departamento
+LIMA             252178
+ANCASH           166756
+CAJAMARCA        146234
+JUNIN            137304
+CUSCO            131085
+AREQUIPA         125086
+PUNO             115156
+HUANCAVELICA     114313
+AYACUCHO         113268
+LA LIBERTAD       98297
+APURIMAC          95419
+HUANUCO           92920
+AMAZONAS          86114
+PIURA             80407
+SAN MARTIN        77147
+LORETO            59863
+ICA               53457
+LAMBAYEQUE        48423
+PASCO             35401
+TACNA             27575
+MOQUEGUA          21721
+UCAYALI           20138
+TUMBES            15932
+CALLAO            15755
+MADRE DE DIOS     14036
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Graficar la distribución de departamentos (barras horizontales)</span>
+<span class="c1"># Obtener la cuenta de valores de la columna &#39;departamento&#39;</span>
+<span class="n">conteos_departamento</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear el gráfico de barras horizontales</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span> <span class="c1"># Ajusta el tamaño de la figura, puede necesitar ser más alto para barras horizontales</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">conteos_departamento</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">conteos_departamento</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;rainbow_r&quot;</span><span class="p">)</span> <span class="c1"># Intercambia x e y y asigna a una variable &#39;ax&#39;</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribución de Casos por Departamento&quot;</span><span class="p">)</span> <span class="c1"># Añade un título al gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Número de Casos&quot;</span><span class="p">)</span> <span class="c1"># Etiqueta del eje X (ahora es el conteo)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Departamento&quot;</span><span class="p">)</span> <span class="c1"># Etiqueta del eje Y (ahora son los departamentos)</span>
+<span class="c1"># plt.xticks(rotation=90) # No necesitas rotar las etiquetas del eje X con barras horizontales</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># Ajusta el diseño</span>
+
+<span class="c1"># Añadir la cantidad total sobre cada barra</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">conteos_departamento</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">count</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span> <span class="c1"># count + 5 para un pequeño desplazamiento, i es la posición en el eje y</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># Muestra el gráfico</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-11-1552299696&gt;:3: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  ax = sns.barplot(x=conteos_departamento.values, y=conteos_departamento.index, palette=&quot;rainbow_r&quot;) # Intercambia x e y y asigna a una variable &#39;ax&#39;
+</pre></div>
+</div>
+<img alt="../_images/15fba9a3f6215ac47ee92beb8d34c7e6264c448ee430a038e37517ec17b88e63.png" src="../_images/15fba9a3f6215ac47ee92beb8d34c7e6264c448ee430a038e37517ec17b88e63.png" />
+</div>
+</div>
+</section>
+<section id="analisis-de-casos-ira-en-lima-analisis-bivariado">
+<h3><strong>3.5.2 Análisis de casos IRA en Lima (análisis bivariado)</strong><a class="headerlink" href="#analisis-de-casos-ira-en-lima-analisis-bivariado" title="Link to this heading">#</a></h3>
+<p>Para explorar la relación entre una variable categórica (<strong>Sexo</strong>) y una variable numérica (<strong>Edad</strong>), un gráfico de cajas (boxplot) es una visualización adecuada.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lima</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;LIMA&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">casos_lima_por_ano</span> <span class="o">=</span> <span class="n">df_lima</span><span class="p">[</span><span class="s2">&quot;ano&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="c1"># Adjust figure size as needed</span>
+<span class="n">casos_lima_por_ano</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Número de Casos en LIMA por Año&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Número de Casos&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span> <span class="c1"># Rotate x-axis labels for better readability</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6671fec9264e5bb2335c6bb52a21f5889d46468a87903817a91564e57caa501f.png" src="../_images/6671fec9264e5bb2335c6bb52a21f5889d46468a87903817a91564e57caa501f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">casos_neumonias_lima</span> <span class="o">=</span> <span class="n">df_lima</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;ano&quot;</span><span class="p">)[</span><span class="s2">&quot;neumonias_men5&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">defunciones_lima</span> <span class="o">=</span> <span class="n">df_lima</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;ano&quot;</span><span class="p">)[</span><span class="s2">&quot;defunciones_men5&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Combine the data into a single DataFrame for easier plotting</span>
+<span class="n">df_plot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Neumonias (&lt;5 años)&#39;</span><span class="p">:</span> <span class="n">casos_neumonias_lima</span><span class="p">,</span>
+    <span class="s1">&#39;Defunciones (&lt;5 años)&#39;</span><span class="p">:</span> <span class="n">defunciones_lima</span>
+<span class="p">})</span>
+
+<span class="c1"># Create the bar plot</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">df_plot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Casos de Neumonias y Defunciones (&lt;5 años) en LIMA por Año&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Número de Casos/Defunciones&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span> <span class="c1"># Rotate x-axis labels for better readability</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Tipo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="c1"># Add the values on top of the bars</span>
+<span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">containers</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar_label</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d3bab33d7de3e5c5401af209d53e2b7b61970dbb56a6c5eb65a57c5b2b13d8e8.png" src="../_images/d3bab33d7de3e5c5401af209d53e2b7b61970dbb56a6c5eb65a57c5b2b13d8e8.png" />
+</div>
+</div>
+</section>
+<section id="analisis-de-medidas-de-tendencia-central-y-dispersion">
+<h3><strong>3.5.3 Análisis de Medidas de Tendencia Central y Dispersión</strong><a class="headerlink" href="#analisis-de-medidas-de-tendencia-central-y-dispersion" title="Link to this heading">#</a></h3>
+<p>Vamos a calcular medidas de tendencia central (como la media, mediana y moda) y medidas de dispersión (como la desviación estándar, varianza y rango) para las variables <strong>Sexo, Edad</strong> y <strong>Tipo_Dx</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Análisis para la variable &#39;neumonia men5&#39; (Cuantitativa)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Análisis para la variable &#39;neumonia men5&#39;:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Medidas de Tendencia Central para &#39;neumonia men5&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Media: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Mediana: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Moda: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># mode() puede devolver múltiples valores si hay un empate</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Medidas de Dispersión para &#39;neumonia men5&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Desviación Estándar: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Varianza: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Rango: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Cuartil 1 (Q1): </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Cuartil 3 (Q3): </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Rango Intercuartílico (IQR): </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Separador</span>
+
+<span class="c1"># Análisis para la variable &#39;Departamento&#39; (Categórica)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Análisis para la variable &#39;Departamento&#39;:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Medida de Tendencia Central para &#39;Departamento&#39; (Moda)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Moda: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;departamento&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># La categoría más frecuente</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Separador</span>
+
+<span class="c1"># Análisis para la variable &#39;neumonia men5&#39; (Categórica)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Análisis para la variable &#39;neumonia men5&#39;:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Medida de Tendencia Central para &#39;Tipo_Dx&#39; (Moda)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Moda: </span><span class="si">{</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># La categoría más frecuente</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Separador</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Análisis para la variable &#39;neumonia men5&#39;:
+  Media: 0.41
+  Mediana: 0.00
+  Moda: 0
+
+
+  Desviación Estándar: 1.70
+  Varianza: 2.90
+  Rango: 155
+  Cuartil 1 (Q1): 0.00
+  Cuartil 3 (Q3): 0.00
+  Rango Intercuartílico (IQR): 0.00
+
+==================================================
+
+Análisis para la variable &#39;Departamento&#39;:
+  Moda: LIMA
+
+==================================================
+
+Análisis para la variable &#39;neumonia men5&#39;:
+  Moda: 0
+
+==================================================
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="estadistica-inferencial-prueba-de-hipotesis">
+<h2><strong>3.6 Estadística inferencial:</strong> prueba de hipótesis<a class="headerlink" href="#estadistica-inferencial-prueba-de-hipotesis" title="Link to this heading">#</a></h2>
+<section id="chi-cuadrado">
+<h3><strong>3.6.1. Chi-cuadrado</strong><a class="headerlink" href="#chi-cuadrado" title="Link to this heading">#</a></h3>
+<p>La prueba de hipótesis no paramétrica <strong>Chi-cuadrado</strong> es una técnica estadística fundamental para analizar datos categóricos, es decir, datos que se pueden agrupar en categorías (com sexo, tipo de enfermedad, opinión, etc.). Se considera <strong>no paramétrica</strong> porque no asume que los datos sigan una distribución de probabilidad específica (como la distribución normal), lo que la hace muy útil en situaciones donde las suposiciones de pruebas paramétricas no se cumplen.</p>
+<p><b>¿Por qué se usa la prueba de Chi-cuadrado?</b></p>
+<ul>
+  <li>Se aplica a <b>datos categóricos</b> en forma de tablas de frecuencias.</li>
+  <li> Se utiliza para determinar si existe una relación o asociación significativa entre dos variables (<b>prueba de independencia</b>).</li>
+  <li> Se usa para comparar una distribución observada con una distribución teórica (<b>prueba de bondad de ajuste</b>).</li>
+  <li> Sirve para conocer si la distribución de una variable categórica es la misma en dos o más poblaciones diferentes (<b>prueba de homogeneidad</b>).</li>
+</ul>
+<p><span class="math notranslate nohighlight">\( \)</span></p>
+<p><strong>Hipótesis</strong></p>
+<ul class="simple">
+<li><p><strong>Hipótesis Nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>: No hay una relación ó asociación entre dos variables categóricas (las variables son independientes).</p></li>
+<li><p><strong>Hipóteisis Alternativa (<span class="math notranslate nohighlight">\(H_{1}\)</span>)</strong>: Hay una relación ó asociación significativa entre dos variables categóricas.
+<span class="math notranslate nohighlight">\( \)</span></p></li>
+</ul>
+<p><strong>Interpretación</strong></p>
+<ul class="simple">
+<li><p>Si el valor p (p-value) es <strong>mayor</strong> que el nivel de significancia (<span class="math notranslate nohighlight">\(α = 0.05\)</span>): No se rechaza <strong>Hipótesis Nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>. Por tanto, no hay evidencia de relación ó asociación entre variables.</p></li>
+<li><p>Si el valor p es <strong>menor</strong> que el nivel de significancia: Se rechaza la <strong>Hipóteisis Nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>. Por tanto, Existe evidencia estadística de relación o asociación entre las variables.
+<span class="math notranslate nohighlight">\( \)</span></p></li>
+</ul>
+<p><strong>Consideraciones claves</strong></p>
+<ul class="simple">
+<li><p><strong>Tamaño muestral</strong>: Requiere frecuencias esperadas <span class="math notranslate nohighlight">\(\geq 5\)</span> en cada celda.</p></li>
+<li><p><strong>Variables categóricas</strong>: No aplica para variables continuas.</p></li>
+<li><p><strong>Direccionalidad</strong>: Chi-Cuadrado solo detecta relación o asociación , <strong>no causalida</strong>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabla</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">],</span> <span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;neumonias_men5&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabla</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>neumonias_men5     0      1      2     3     4     5     6     7     8    9    \
+departamento                                                                    
+AMAZONAS         75593   6052   2070   988   531   311   176   129    87   52   
+ANCASH          152328   9195   2684  1064   555   338   211   106    82   47   
+APURIMAC         85798   5816   1677   692   440   259   191   120    96   58   
+AREQUIPA        107598   8698   3483  1749  1008   703   482   334   211  167   
+AYACUCHO        105486   4834   1606   585   297   151    96    58    44   41   
+CAJAMARCA       125065  11718   4367  1983  1042   556   449   241   177  138   
+CALLAO            9595   2262   1130   687   445   328   224   207   187  119   
+CUSCO           107931  13187   4866  2142  1082   645   388   268   167  119   
+HUANCAVELICA    102502   7596   2270   886   422   251   144    77    68   24   
+HUANUCO          72546  10999   4341  1921  1040   615   396   281   213  145   
+ICA              45158   5107   1648   705   338   171   134    67    34   24   
+JUNIN           121593   9465   3052  1327   678   389   236   164   103   73   
+LA LIBERTAD      84030   8472   2902  1047   602   305   185   147    94   95   
+LAMBAYEQUE       39928   4799   1550   735   419   252   182   135    84   72   
+LIMA            194615  23581  11128  6392  4276  2856  2153  1566  1119  822   
+LORETO           41653   7609   3506  1876  1140   764   558   423   339  268   
+MADRE DE DIOS    11155   1702    574   217   139    82    52    35    30   15   
+MOQUEGUA         20060    864    356   154   107    73    39    26    20    8   
+PASCO            28144   4283   1490   612   319   206   119    68    53   37   
+PIURA            61895   8629   3621  1795  1154   729   544   386   310  239   
+PUNO            101998   7072   2339  1084   696   416   308   222   162  130   
+SAN MARTIN       65819   6733   2363   954   535   266   165    82    63   48   
+TACNA            25838    897    385   157   124    73    34    24    18   10   
+TUMBES           14292    816    362   176   110    61    37    29    18    8   
+UCAYALI          11202   3023   1738  1082   673   504   387   259   220  179   
+
+neumonias_men5  ...  87   88   90   91   100  116  125  130  145  155  
+departamento    ...                                                    
+AMAZONAS        ...    0    0    0    0    0    0    0    0    0    0  
+ANCASH          ...    0    0    0    0    0    0    0    0    0    0  
+APURIMAC        ...    0    0    0    0    0    0    0    0    0    0  
+AREQUIPA        ...    0    0    0    0    0    0    0    0    0    0  
+AYACUCHO        ...    0    0    0    0    0    0    0    0    0    0  
+CAJAMARCA       ...    0    0    0    0    0    0    0    0    0    0  
+CALLAO          ...    0    0    0    0    0    0    0    0    0    0  
+CUSCO           ...    0    0    0    0    0    0    0    0    0    0  
+HUANCAVELICA    ...    0    0    0    0    0    0    0    0    0    0  
+HUANUCO         ...    0    0    0    0    0    0    0    0    0    0  
+ICA             ...    0    0    0    0    0    0    0    0    0    0  
+JUNIN           ...    0    0    0    0    0    0    0    0    0    0  
+LA LIBERTAD     ...    0    0    0    0    0    0    0    0    0    0  
+LAMBAYEQUE      ...    0    0    0    0    0    0    0    0    0    0  
+LIMA            ...    0    0    0    0    0    0    0    0    0    0  
+LORETO          ...    0    1    0    1    1    1    1    1    1    1  
+MADRE DE DIOS   ...    0    0    0    0    0    0    0    0    0    0  
+MOQUEGUA        ...    0    0    0    0    0    0    0    0    0    0  
+PASCO           ...    0    0    0    0    0    0    0    0    0    0  
+PIURA           ...    0    0    0    0    0    0    0    0    0    0  
+PUNO            ...    0    0    0    0    0    0    0    0    0    0  
+SAN MARTIN      ...    0    0    0    0    0    0    0    0    0    0  
+TACNA           ...    0    0    0    0    0    0    0    0    0    0  
+TUMBES          ...    0    0    0    0    0    0    0    0    0    0  
+UCAYALI         ...    1    1    1    0    0    0    0    0    0    0  
+
+[25 rows x 89 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_neumoniaMen3</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;neumonias_men5&quot;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombres_departamentos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LIMA&quot;</span><span class="p">,</span><span class="s2">&quot;ANCASH&quot;</span><span class="p">,</span><span class="s2">&quot;JUNIN&quot;</span><span class="p">,</span><span class="s2">&quot;CAJAMARCA&quot;</span><span class="p">]</span>
+<span class="n">df_depA_neumoniaMen3</span> <span class="o">=</span> <span class="n">df_neumoniaMen3</span><span class="p">[</span><span class="n">df_neumoniaMen3</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">nombres_departamentos</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_depA_neumoniaMen3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ano  neumonias_men5  defunciones_men5 departamento  \
+86114    2000               2                 0       ANCASH   
+86115    2000               2                 0       ANCASH   
+86116    2000               2                 0       ANCASH   
+86119    2000               1                 0       ANCASH   
+86120    2000               0                 0       ANCASH   
+...       ...             ...               ...          ...   
+1676604  2023               0                 0         LIMA   
+1676605  2023               0                 0         LIMA   
+1676606  2023               0                 0         LIMA   
+1676607  2023               0                 0         LIMA   
+1676608  2023               0                 0         LIMA   
+
+         hospitalizados_men5  
+86114                      2  
+86115                      1  
+86116                      2  
+86119                      1  
+86120                      0  
+...                      ...  
+1676604                    0  
+1676605                    0  
+1676606                    0  
+1676607                    0  
+1676608                    0  
+
+[668791 rows x 5 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabla_A</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df_depA_neumoniaMen3</span><span class="p">[</span><span class="s2">&quot;departamento&quot;</span><span class="p">],</span> <span class="n">df_depA_neumoniaMen3</span><span class="p">[</span><span class="s2">&quot;neumonias_men5&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabla_A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>neumonias_men5       0      1      2
+departamento                        
+ANCASH          152328   9195   2684
+CAJAMARCA       125065  11718   4367
+JUNIN           121593   9465   3052
+LIMA            194615  23581  11128
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Aplicar la prueba de Chi-cuadrado de independencia</span>
+<span class="sd">---------------------------------------------------</span>
+<span class="sd">  chi2_stat : Esta variable almacena el estadístico Chi-cuadrado</span>
+
+<span class="sd">  p_valor         : Esta variable almacena el valor p, que representa la</span>
+<span class="sd">                    la probabilidad de observar los datos si no ubiera</span>
+<span class="sd">                    relación entre las variables</span>
+
+<span class="sd">  dof             : En esta variable contine los grados de libertar, que</span>
+<span class="sd">                    es un parámetro relacionado con el tamaño de la muestra</span>
+<span class="sd">                    y el número de categorias en las variables.</span>
+
+<span class="sd">  freq_esperadas  : A esta variable se le asigna las frecuencias esperadas</span>
+<span class="sd">                    para cada celda de la tabla de contingencia si no hubiera</span>
+<span class="sd">                    relación entre las variables.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">chi2_stat</span><span class="p">,</span> <span class="n">p_valor</span><span class="p">,</span> <span class="n">dof</span><span class="p">,</span> <span class="n">freq_esperadas</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2_contingency</span><span class="p">(</span><span class="n">tabla</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prueba de Chi-cuadrado de Independencia:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estadístico Chi-cuadrado: </span><span class="si">{</span><span class="n">chi2_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Grados de libertad: </span><span class="si">{</span><span class="n">dof</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-valor: </span><span class="si">{</span><span class="n">p_valor</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="c1"># Nivel de significancia</span>
+<span class="c1"># Interpretación:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Resultado:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p_valor</span> <span class="o">&gt;=</span> <span class="n">alpha</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">No se rechaza H0:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">No hay una relación ó asociación significativa entre departamento y neumonia men5.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Se rechaza H0:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Hay una relación ó asociación significativa entre departamento y neumonia men5.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prueba de Chi-cuadrado de Independencia:
+Estadístico Chi-cuadrado: 104185.252
+Grados de libertad: 2112
+p-valor: 0.000
+
+
+Resultado:
+	Se rechaza H0:
+
+	Hay una relación ó asociación significativa entre departamento y neumonia men5.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparacion-de-medidas-prueba-de-hipotesis-t-test">
+<h3><strong>3.6.2. Comparación de medidas:</strong> prueba de hipótesis T-test<a class="headerlink" href="#comparacion-de-medidas-prueba-de-hipotesis-t-test" title="Link to this heading">#</a></h3>
+<p>La prueba <strong>T-test</strong> (también conocido como <strong>t de Student</strong>) se utiliza para comparar las medias de dos muestras independientes. En este caso, las dos muestras son las edades de los individuos masculinos y femeninos.</p>
+<p><strong>El T-test</strong> es una herramienta fundamental en bioestadística que permite tomar decisiones basadas en evidencia sobre diferencias entre grupos, siendo especialmente valioso en investigación médica y epidemiológica donde las decisiones pueden tener implicaciones importantes para la salud pública.</p>
+<p><strong>Supuestos del T-test</strong></p>
+<ul class="simple">
+<li><p>Los datos deben seguir una distribución aproximadamente normal (verificar con histogramas o pruebas como <strong>Shapiro-Wilk</strong>).</p></li>
+</ul>
+<p><strong>Hipótesis</strong></p>
+<ul class="simple">
+<li><p><strong>Hipótesis Nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>: No hay una diferencia significativa en la media de la edad entre hombres y mujeres (medias iguales).</p></li>
+<li><p><strong>Hipóteisis Alternativa (<span class="math notranslate nohighlight">\(H_{1}\)</span>)</strong>: Hay una diferencia significativa en la media de la edad entre hombres y mujeres (medias diferentes).</p></li>
+</ul>
+<p><strong>Interpretación</strong></p>
+<ul class="simple">
+<li><p>si <strong>p-valor <span class="math notranslate nohighlight">\(\lt \alpha\)</span></strong>, se <strong>rechaza la hipótesis nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>: hay evidencia estadísticamente significativa de una diferencia entre los grupos. Generalmente,  <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span>, donde <span class="math notranslate nohighlight">\(\alpha\)</span> es el nivel de significancia.</p></li>
+<li><p>si p-valor <span class="math notranslate nohighlight">\(\geq \alpha\)</span>, <strong>No</strong> se <strong>rechaza la hipótesis nula</strong> (<span class="math notranslate nohighlight">\(H_{0}\)</span>): no hay evidencia suficiente para afirmar que las medias son distintas</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separar la variable &#39;Edad&#39; en dos grupos basados en la variable &#39;Sexo&#39;</span>
+<span class="n">neumonias_men5</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;neumonias_men5&quot;</span><span class="p">]</span>
+<span class="n">defunciones_men5</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;defunciones_men5&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">neumonias_men5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">defunciones_men5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0          0
+1          0
+2          0
+3          3
+4          2
+          ..
+2143980    0
+2143981    0
+2143982    0
+2143983    0
+2143984    0
+Name: neumonias_men5, Length: 2143985, dtype: int64
+0          0
+1          0
+2          0
+3          0
+4          0
+          ..
+2143980    0
+2143981    0
+2143982    0
+2143983    0
+2143984    0
+Name: defunciones_men5, Length: 2143985, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Realizar la prueba T-test independiente</span>
+<span class="c1"># equal_var=True asume varianzas iguales (T-test estándar).</span>
+<span class="c1"># Si no estamos seguros de la igualdad de varianzas, podemos usar equal_var=False (Welch&#39;s T-test).</span>
+<span class="n">t_stat</span><span class="p">,</span> <span class="n">p_valor_ttest</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">neumonias_men5</span><span class="p">,</span> <span class="n">defunciones_men5</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prueba T-test Independiente para la Edad entre Sexo Femenino y Masculino:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estadístico T: </span><span class="si">{</span><span class="n">t_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-valor: </span><span class="si">{</span><span class="n">p_valor_ttest</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Interpretación del p-valor</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="c1"># Nivel de significancia comúnmente utilizado</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Interpretación del resultado:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p_valor_ttest</span> <span class="o">&gt;</span> <span class="n">alpha</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">no se rechaza H0.&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que no existe una diferencia estadísticamente significativa en la media entre</span><span class="se">\n\t</span><span class="s2">neumonias men5 y defunciones men5.&quot;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Se rechaza H0.&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que existe una diferencia estadísticamente significativa en la media entre</span><span class="se">\n\t</span><span class="s2">neumonias men5 y defunciones men5.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prueba T-test Independiente para la Edad entre Sexo Femenino y Masculino:
+Estadístico T: 346.336
+p-valor: 0.000
+
+Interpretación del resultado:
+	Se rechaza H0.
+	Concluimos que existe una diferencia estadísticamente significativa en la media entre
+	neumonias men5 y defunciones men5.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Opcional: Mostrar las medias de edad para cada grupo</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Medias:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Media de neumonias men5: </span><span class="si">{</span><span class="n">neumonias_men5</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Media de defunciones men5: </span><span class="si">{</span><span class="n">defunciones_men5</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medias:
+	Media de neumonias men5: 0.41
+	Media de defunciones men5: 0.00
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="prueba-de-hipotesis-parametrica-shapiro-wilk">
+<h3><strong>3.6.3. Prueba de hipótesis paramétrica Shapiro-Wilk</strong><a class="headerlink" href="#prueba-de-hipotesis-parametrica-shapiro-wilk" title="Link to this heading">#</a></h3>
+<p>La <strong>prueba de Shapiro-Wilk</strong> es un método estadístico utilizado para evaluar si una muestra de datos proviene de una distribución normal. Es una de las pruebas más comunes y poderosas para verificar la normalidad de los datos, lo cual es un supuesto clave en muchas pruebas estadísticas paramétricas, como la t de Student o ANOVA. En investigación, esta prueba es útil para determinar si los datos cumplen con los requisitos de normalidad antes de aplicar métodos estadísticos que asumen una distribución normal.</p>
+<p><strong>Hipótesis para la prueba Shapiro-Wilk</strong></p>
+<ul class="simple">
+<li><p><strong>Hipótesis Nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>: Los datos siguen una distribución normal.</p></li>
+<li><p><strong>Hipóteisis Alternativa (<span class="math notranslate nohighlight">\(H_{1}\)</span>)</strong>: Los datos <strong>No</strong> siguen una distribución normal.</p></li>
+</ul>
+<p><strong>Interpretación</strong></p>
+<ul class="simple">
+<li><p>si <strong>p-valor <span class="math notranslate nohighlight">\(\leq \alpha\)</span></strong>, se <strong>rechaza la hipótesis nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>: Los datos <strong>no siguen una distribución normal</strong>. Generalmente,  <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span>, donde <span class="math notranslate nohighlight">\(\alpha\)</span> es el nivel de significancia.</p></li>
+<li><p>si <strong>p-valor <span class="math notranslate nohighlight">\(\gt \alpha\)</span></strong>, no se <strong>rechaza la hipótesis nula</strong> (<span class="math notranslate nohighlight">\(H_{0}\)</span>): Los datos no difieren de una distribución normal (se asume normalidad).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Realizar la prueba de Shapiro-Wilk para el grupo Femenino</span>
+<span class="n">shapiro_neumonias_men5</span><span class="p">,</span> <span class="n">shapiro_neumonias_men5_p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">neumonias_men5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prueba de Shapiro-Wilk para neumonias men5:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estadístico Shapiro-Wilk: </span><span class="si">{</span><span class="n">shapiro_neumonias_men5</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-valor: </span><span class="si">{</span><span class="n">shapiro_neumonias_men5_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Interpretación para el grupo Femenino</span>
+<span class="n">alfa_shapiro</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Interpretación para el grupo neumonias men5:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">shapiro_neumonias_men5_p</span> <span class="o">&gt;</span> <span class="n">alfa_shapiro</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Dado que el p-valor (</span><span class="si">{</span><span class="n">shapiro_neumonias_men5_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) es mayor o igual que el nivel de significancia (</span><span class="si">{</span><span class="n">alfa_shapiro</span><span class="si">}</span><span class="s2">),&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">no se rechaza H0.&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que la distribución de neumonias men5 se ajusta a una distribución normal.&quot;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Dado que el p-valor (</span><span class="si">{</span><span class="n">shapiro_neumonias_men5_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) es menor que el nivel de significancia (</span><span class="si">{</span><span class="n">alfa_shapiro</span><span class="si">}</span><span class="s2">),&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">se rechaza H0.&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que la distribución de neumonias men5 no es significativamente normal.&quot;</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Separador</span>
+
+<span class="c1"># Realizar la prueba de Shapiro-Wilk para el grupo Masculino</span>
+<span class="n">shapiro_defunciones_men5_stat</span><span class="p">,</span> <span class="n">shapiro_defunciones_men5_p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">defunciones_men5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prueba de Shapiro-Wilk para defunciones men5:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estadístico Shapiro-Wilk: </span><span class="si">{</span><span class="n">shapiro_defunciones_men5_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-valor: </span><span class="si">{</span><span class="n">shapiro_defunciones_men5_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Interpretación para el grupo Masculino</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Interpretación para el grupo de defunciones men5:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">shapiro_defunciones_men5_p</span> <span class="o">&gt;</span> <span class="n">alfa_shapiro</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Dado que el p-valor (</span><span class="si">{</span><span class="n">shapiro_defunciones_men5_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) es mayor o igual que el nivel de significancia (</span><span class="si">{</span><span class="n">alfa_shapiro</span><span class="si">}</span><span class="s2">),&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">no se rechaza H0.&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que la distribución de defunciones men5 se ajusta a una distribución normal.&quot;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Dado que el p-valor (</span><span class="si">{</span><span class="n">shapiro_defunciones_men5_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) es menor que el nivel de significancia (</span><span class="si">{</span><span class="n">alfa_shapiro</span><span class="si">}</span><span class="s2">),&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">se rechaza H0.&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que la distribución de defunciones men5 no es significativamente normal.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Separador</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prueba de Shapiro-Wilk para neumonias men5:
+Estadístico Shapiro-Wilk: 0.240
+p-valor: 0.000
+
+Interpretación para el grupo neumonias men5:
+	Dado que el p-valor (0.000) es menor que el nivel de significancia (0.05),
+	se rechaza H0.
+	Concluimos que la distribución de neumonias men5 no es significativamente normal.
+
+==================================================
+
+Prueba de Shapiro-Wilk para defunciones men5:
+Estadístico Shapiro-Wilk: 0.033
+p-valor: 0.000
+
+Interpretación para el grupo de defunciones men5:
+	Dado que el p-valor (0.000) es menor que el nivel de significancia (0.05),
+	se rechaza H0.
+	Concluimos que la distribución de defunciones men5 no es significativamente normal.
+
+==================================================
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/dist-packages/scipy/stats/_axis_nan_policy.py:586: UserWarning: scipy.stats.shapiro: For N &gt; 5000, computed p-value may not be accurate. Current N is 2143985.
+  res = hypotest_fun_out(*samples, **kwds)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separar la variable &#39;Edad&#39; en grupos basados en la variable &#39;Tipo_Dx&#39;</span>
+<span class="n">grupos_tipo_dx</span> <span class="o">=</span> <span class="n">df_interes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;neumonias_men5&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grupos_tipo_dx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7bd3fd4416d0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_grupos</span> <span class="o">=</span> <span class="n">grupos_tipo_dx</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nombre_grupos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 75, 76, 77, 78, 79, 86, 87, 88, 90, 91, 100, 116, 125, 130, 145, 155])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dx_C</span> <span class="o">=</span> <span class="n">grupos_tipo_dx</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Dx_C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ano  neumonias_men5  defunciones_men5 departamento  \
+0        2000               0                 0     AMAZONAS   
+1        2000               0                 0     AMAZONAS   
+2        2000               0                 0     AMAZONAS   
+5        2000               0                 0     AMAZONAS   
+6        2000               0                 0     AMAZONAS   
+...       ...             ...               ...          ...   
+2143980  2023               0                 0      UCAYALI   
+2143981  2023               0                 0      UCAYALI   
+2143982  2023               0                 0      UCAYALI   
+2143983  2023               0                 0      UCAYALI   
+2143984  2023               0                 0      UCAYALI   
+
+         hospitalizados_men5  
+0                          0  
+1                          0  
+2                          0  
+5                          0  
+6                          0  
+...                      ...  
+2143980                    0  
+2143981                    0  
+2143982                    0  
+2143983                    0  
+2143984                    0  
+
+[1811822 rows x 5 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pruebaH_shapiroWilk</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+  <span class="n">shapiro_stat</span><span class="p">,</span> <span class="n">shapiro_p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">variable</span><span class="p">])</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prueba de Shapiro-Wilk para </span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Estadístico Shapiro-Wilk: </span><span class="si">{</span><span class="n">shapiro_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">p-valor: </span><span class="si">{</span><span class="n">shapiro_p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+  <span class="c1"># Interpretación</span>
+  <span class="k">if</span> <span class="n">shapiro_p</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Se rechaza H0. La distribución de la Edad en este grupo NO es significativamente normal.&quot;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">No se rechaza H0. La distribución de la Edad en este grupo PUEDE ser normal.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pruebaH_jerqueBera</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+  <span class="n">jb_test</span><span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">jarque_bera</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">variable</span><span class="p">])</span>
+
+  <span class="c1"># Interpretación</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prueba de Jarque-Bera para </span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Estadístico = </span><span class="si">{</span><span class="n">jb_test</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, p-valor = </span><span class="si">{</span><span class="n">jb_test</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">jb_test</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Se rechaza la hipótesis nula: Los datos NO siguen una distribución normal.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">No se rechaza la hipótesis nula: Los datos siguen una distribución normal.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pruebaH_shapiroWilk</span><span class="p">(</span><span class="n">Dx_C</span><span class="p">,</span> <span class="s2">&quot;neumonias_men5&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prueba de Shapiro-Wilk para neumonias_men5:
+	Estadístico Shapiro-Wilk: 1.000
+	p-valor: 1.000
+	No se rechaza H0. La distribución de la Edad en este grupo PUEDE ser normal.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pruebaH_jerqueBera</span><span class="p">(</span><span class="n">Dx_C</span><span class="p">,</span> <span class="s2">&quot;defunciones_men5&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prueba de Jarque-Bera para defunciones_men5:
+	Estadístico = 38957801907426.9141, p-valor = 0.0000
+	Se rechaza la hipótesis nula: Los datos NO siguen una distribución normal.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparacion-de-medidas-anova">
+<h3><strong>3.6.4. Comparación de medidas:</strong> Anova<a class="headerlink" href="#comparacion-de-medidas-anova" title="Link to this heading">#</a></h3>
+<p>La prueba de hipótesis ANOVA (Análisis de la Varianza) es una herramienta estadística paramétrica que se utiliza para comparar las medias de tres o más grupos independientes y determinar si existen diferencias significativas entre ellas. Aunque la ANOVA es relativamente robusta a la falta de la normalidad con tamaños de muestra grandes, la homogeneidad de varianzas es más crítica.</p>
+<p><strong>Nota Importante para ANOVA</strong></p>
+<ul class="simple">
+<li><p><strong>Normalidad</strong>: Las distribuciones de los residuos (o de la variable dependiente dentro de cada grupo) son aproximadamente normales.</p></li>
+<li><p><strong>Homogeneidad de Varianzas</strong>: Las varianzas de la variable dependiente son aproximadamente iguales en todos los grupos.</p></li>
+<li><p><strong>Independencia</strong>: Las observaciones son independientes.</p></li>
+</ul>
+<p>Implementar una función para realizar pruebas de hipótesis (distribución normal) Shapiro-Wilk.</p>
+<p>Implementar una función para realizar pruebas de hipótesis (distribución normal) Jerque-Bera.</p>
+<p><strong>Hipótesis para la prueba ANOVA</strong></p>
+<ul class="simple">
+<li><p><strong>Hipótesis Nula (<span class="math notranslate nohighlight">\(H_{0}\)</span>)</strong>: Las medias de todos los grupos son iguales.</p></li>
+<li><p><strong>Hipóteisis Alternativa (<span class="math notranslate nohighlight">\(H_{1}\)</span>)</strong>: Hay al menos un par de grupos cuyas medias de edad son significativamente diferentes.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Preparar los datos: asegurar que &#39;Tipo_Dx&#39; es de tipo category si no lo es,</span>
+<span class="c1"># ols puede manejar strings, es buena práctica.</span>
+<span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;tipo_neumoniaMen5&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ano  neumonias_men5  defunciones_men5 departamento  \
+0        2000               0                 0     AMAZONAS   
+1        2000               0                 0     AMAZONAS   
+2        2000               0                 0     AMAZONAS   
+3        2000               3                 0     AMAZONAS   
+4        2000               2                 0     AMAZONAS   
+...       ...             ...               ...          ...   
+2143980  2023               0                 0      UCAYALI   
+2143981  2023               0                 0      UCAYALI   
+2143982  2023               0                 0      UCAYALI   
+2143983  2023               0                 0      UCAYALI   
+2143984  2023               0                 0      UCAYALI   
+
+         hospitalizados_men5 tipo_neumoniaMen5  
+0                          0                 0  
+1                          0                 0  
+2                          0                 0  
+3                          0                 3  
+4                          0                 2  
+...                      ...               ...  
+2143980                    0                 0  
+2143981                    0                 0  
+2143982                    0                 0  
+2143983                    0                 0  
+2143984                    0                 0  
+
+[2143985 rows x 6 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Realizar la prueba ANOVA usando statsmodels</span>
+<span class="c1"># La fórmula &#39;Edad ~ C(Tipo_Dx)&#39; indica que &#39;Edad&#39; es la variable dependiente</span>
+<span class="c1"># y &#39;Tipo_Dx&#39; es la variable independiente categórica (C() asegura que se trate como categórica)</span>
+<span class="n">modelo_anova</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;defunciones_men5 ~ C(tipo_neumoniaMen5)&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_interes</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span> <span class="c1"># Ajusta el modelo a los datos</span>
+<span class="n">tabla_anova</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">anova_lm</span><span class="p">(</span><span class="n">modelo_anova</span><span class="p">,</span> <span class="n">typ</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># typ=2 para el tipo de suma de cuadrados</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado de la Prueba ANOVA (Comparación de Edad entre Tipos de Diagnóstico):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabla_anova</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resultado de la Prueba ANOVA (Comparación de Edad entre Tipos de Diagnóstico):
+                            sum_sq         df           F  PR(&gt;F)
+C(tipo_neumoniaMen5)    338.483903       88.0  683.268251     0.0
+Residual              12068.903658  2143896.0         NaN     NaN
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Interpretación del p-valor de la ANOVA</span>
+<span class="n">p_valor_anova</span> <span class="o">=</span> <span class="n">tabla_anova</span><span class="p">[</span><span class="s1">&#39;PR(&gt;F)&#39;</span><span class="p">][</span><span class="s1">&#39;C(tipo_neumoniaMen5)&#39;</span><span class="p">]</span>
+<span class="n">alfa_anova</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Interpretación del resultado de la ANOVA:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p_valor_anova</span> <span class="o">&lt;</span> <span class="n">alfa_anova</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Dado que el p-valor de la ANOVA (</span><span class="si">{</span><span class="n">p_valor_anova</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) es menor que el nivel de significancia (</span><span class="si">{</span><span class="n">alfa_anova</span><span class="si">}</span><span class="s2">),&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\t</span><span class="s2">Se rechaza la hipótesis nula.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que existe una diferencia estadísticamente significativa</span><span class="se">\n\t</span><span class="s2">en la media de ambos grupos.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Dado que el p-valor de la ANOVA (</span><span class="si">{</span><span class="n">p_valor_anova</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) es mayor o igual que el nivel de significancia (</span><span class="si">{</span><span class="n">alfa_anova</span><span class="si">}</span><span class="s2">),&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">no se rechaza la hipótesis nula.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Concluimos que no existe una diferencia estadísticamente significativa general en la media de ambos grupos.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Interpretación del resultado de la ANOVA:
+	Dado que el p-valor de la ANOVA (0.000) es menor que el nivel de significancia (0.05),
+
+	Se rechaza la hipótesis nula.
+	Concluimos que existe una diferencia estadísticamente significativa
+	en la media de ambos grupos.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="modelo-bioestadistico">
+<h2><strong>3.7. Modelo Bioestadístico</strong><a class="headerlink" href="#modelo-bioestadistico" title="Link to this heading">#</a></h2>
+<section id="regresion-logistica-binaria">
+<h3><strong>3.7.1 Regresión logística binaria</strong><a class="headerlink" href="#regresion-logistica-binaria" title="Link to this heading">#</a></h3>
+<p>Un modelo de regresión logística es un tipo de modelo estadístico que se utiliza para predecir la probabilidad de que un resultado pertenezca a una de varias categorías. A diferencia de la regresión lineal, que predice un valor continuo, la regresión logística se utiliza para problemas de clasificación.</p>
+<p><strong>¿Para que sirve?</strong></p>
+<p>Sirve para modelar la relación entre una o más <strong>variables independientes</strong> (predictoras) y una <strong>variable dependiente categórica</strong> (la que queremos predecir). La variable dependiente suele ser binaria (con dos categorías, como sí/no, verdadero/falso, 0/1).</p>
+<p>Se va ha implementar el modelo de regresión logística con la relación matemática <code class="docutils literal notranslate"><span class="pre">&quot;hubo_defuncion</span> <span class="pre">~</span> <span class="pre">neumonias_men5</span> <span class="pre">+</span> <span class="pre">C(hospitalizados_men5)&quot;</span></code>. Esto significa que las variables predictoras son <strong>edad</strong> (cuantitativa) y <strong>sexo</strong> (categórica).</p>
+<p>La expresión matemática estimada para este modelo está representada por la ecuación <a class="reference internal" href="#equation-eq-rlb-ira">(9)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-rlb-ira">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-rlb-ira" title="Link to this equation">#</a></span>\[
+P(Defunción|D=1) = \frac{1}{1 + e^{-(\beta_{0} + \beta_{1}\times x_{1} + \beta_{2}\times x_{2})}} \hspace{2cm}
+\]</div>
+<p>Donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta_0\)</span> es el <strong>coeficiente estimado del intercepto</strong> obtenido de la salida del modelo <code class="docutils literal notranslate"><span class="pre">modelo_logistico.params[&quot;Intercep&quot;]</span></code>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_1\)</span> e el <strong>coeficiente estimado para la variable edad</strong> (<code class="docutils literal notranslate"><span class="pre">modelo_logistico.params[&quot;neumonias_men5&quot;]</span></code>).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_2\)</span> es el <strong>coeficiente estimado para la variable sexo</strong> (<code class="docutils literal notranslate"><span class="pre">modelo_logistico.params[&quot;hospitalizados_men5&quot;]</span></code>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{1}\)</span> y <span class="math notranslate nohighlight">\(x_{2}\)</span> representan  las variables <code class="docutils literal notranslate"><span class="pre">neumonias_men5</span></code> y <code class="docutils literal notranslate"><span class="pre">hospitalizados_men5</span></code>, respectivamente.</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\( \)</span></p>
+<p><strong>Referencias</strong></p>
+<blockquote>
+<div><p><a href="https://link.springer.com/article/10.1186/s12889-024-18338-8">Lyu, Y., Xu, Q., &amp; Liu, J. (2024). Exploring the medical decision-making patterns and influencing factors among the general Chinese public: a binary logistic regression analysis. BMC public health, 24(1), 887.</a></p>
+</div></blockquote>
+<blockquote>
+<div><p><a href="https://www.nature.com/articles/s41598-023-49872-x">Talin, I. A., Abid, M. H., Samad, M. A., Domínguez Azpíroz, I., de la Torre Diez, I., Ashraf, I., &amp; Nahid, A. A. (2023). Exploring factors influencing the severity of pregnancy anemia in India: a study using proportional odds model. Scientific Reports, 13(1), 22816.</a></p>
+</div></blockquote>
+<blockquote>
+<div><p><a href="https://sjuoz.uoz.edu.krd/index.php/sjuoz/article/view/442">Abdulqader, Q. M. (2017). Applying the binary logistic regression analysis on the medical data. Science Journal of University of Zakho, 5(4), 330-334.</a></p>
+</div></blockquote>
+<blockquote>
+<div><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4419893/">Avali, V. R., Cooper, G. F., &amp; Gopalakrishnan, V. (2014, November). Application of Bayesian logistic regression to mining biomedical data. In AMIA Annual Symposium Proceedings (Vol. 2014, p. 266)</a></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_model</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[[</span><span class="s2">&quot;neumonias_men5&quot;</span><span class="p">,</span> <span class="s2">&quot;defunciones_men5&quot;</span><span class="p">,</span> <span class="s2">&quot;hospitalizados_men5&quot;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         neumonias_men5  defunciones_men5  hospitalizados_men5
+0                     0                 0                    0
+1                     0                 0                    0
+2                     0                 0                    0
+3                     3                 0                    0
+4                     2                 0                    0
+...                 ...               ...                  ...
+2143980               0                 0                    0
+2143981               0                 0                    0
+2143982               0                 0                    0
+2143983               0                 0                    0
+2143984               0                 0                    0
+
+[2143985 rows x 3 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_interes</span><span class="o">=</span><span class="n">df_interes</span><span class="p">[</span><span class="n">df_interes</span><span class="p">[</span><span class="s2">&quot;neumonias_men5&quot;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear una variable dependiente binaria de ejemplo: ¿Hubo defunciones?</span>
+<span class="c1"># Asumimos que un valor &gt; 0 en &#39;defunciones_men5&#39; significa &#39;hubo defunción&#39;</span>
+<span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;hubo_defuncion&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;defunciones_men5&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># Verificamos la distribución de la nueva variable binaria</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distribución de la variable &#39;hubo_defuncion&#39;:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;hubo_defuncion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Distribución de la variable &#39;hubo_defuncion&#39;:
+hubo_defuncion
+0    2093071
+1       6850
+Name: count, dtype: int64
+
+==================================================
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-52-942279726&gt;:3: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_interes[&#39;hubo_defuncion&#39;] = (df_interes[&#39;defunciones_men5&#39;] &gt; 0).astype(int)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Empleando las variables de <code class="docutils literal notranslate"><span class="pre">df_model</span></code> como predictores y la variable binaria <code class="docutils literal notranslate"><span class="pre">(hubo_defuncion)</span></code> como varaible dependiente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definir la fórmula del modelo de regresión logística</span>
+<span class="c1"># La fórmula es &#39;variable_dependiente ~ predictor1 + predictor2 + ...&#39;</span>
+<span class="c1"># Usaremos &#39;hubo_defuncion&#39; como variable dependiente y las columnas de df_model como predictores</span>
+<span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;hubo_defuncion ~ neumonias_men5 + hospitalizados_men5&#39;</span>
+
+<span class="c1"># Ajustar el modelo de regresión logística utilizando statsmodels</span>
+<span class="c1"># smf.logit se utiliza para modelos logísticos binarios</span>
+<span class="n">modelo_logistico</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">logit</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_interes</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># Imprimir el resumen del modelo</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resumen del Modelo de Regresión Logística Binaria:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">modelo_logistico</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully.
+         Current function value: 0.019026
+         Iterations 10
+Resumen del Modelo de Regresión Logística Binaria:
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:         hubo_defuncion   No. Observations:              2099921
+Model:                          Logit   Df Residuals:                  2099918
+Method:                           MLE   Df Model:                            2
+Date:                Tue, 17 Jun 2025   Pseudo R-squ.:                  0.1325
+Time:                        22:03:02   Log-Likelihood:                -39953.
+converged:                       True   LL-Null:                       -46058.
+Covariance Type:            nonrobust   LLR p-value:                     0.000
+=======================================================================================
+                          coef    std err          z      P&gt;|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept              -6.4332      0.017   -377.836      0.000      -6.467      -6.400
+neumonias_men5          0.9525      0.009    102.206      0.000       0.934       0.971
+hospitalizados_men5     0.1377      0.015      9.244      0.000       0.109       0.167
+=======================================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">modelo_logistico</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;hospitalizados_men5&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13769974754178668
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Graficar el modelo logístico ---</span>
+
+<span class="c1"># 1. Preparar datos para la predicción</span>
+<span class="c1"># Vamos a predecir la probabilidad en un rango de valores de &#39;neumonias_men5&#39;</span>
+<span class="c1"># Mantenemos los otros predictores en sus valores promedio</span>
+<span class="n">min_neumonias</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">max_neumonias</span> <span class="o">=</span> <span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># Crear un rango de valores para &#39;neumonias_men5&#39;</span>
+<span class="n">rango_neumonias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_neumonias</span><span class="p">,</span> <span class="n">max_neumonias</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Crear un DataFrame para hacer predicciones</span>
+<span class="c1"># Mantener &#39;defunciones_men5&#39; y &#39;hospitalizados_men5&#39; en sus medias para la predicción</span>
+<span class="n">data_para_predecir</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;neumonias_men5&#39;</span><span class="p">:</span> <span class="n">rango_neumonias</span><span class="p">,</span>
+    <span class="s1">&#39;defunciones_men5&#39;</span><span class="p">:</span> <span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;defunciones_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="c1"># Mantener en la media</span>
+    <span class="s1">&#39;hospitalizados_men5&#39;</span><span class="p">:</span> <span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;hospitalizados_men5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># Mantener en la media</span>
+<span class="p">})</span>
+
+<span class="c1"># 2. Predecir las probabilidades usando el modelo ajustado</span>
+<span class="c1"># El método &#39;predict&#39; devuelve las probabilidades</span>
+<span class="n">probabilidades_predichas</span> <span class="o">=</span> <span class="n">modelo_logistico</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data_para_predecir</span><span class="p">)</span>
+
+<span class="c1"># 3. Graficar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Graficar los datos observados (añadimos un pequeño jitter para visualizarlos mejor)</span>
+<span class="c1"># El jitter es un desplazamiento aleatorio pequeño para que los puntos superpuestos sean visibles</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;neumonias_men5&#39;</span><span class="p">],</span> <span class="n">df_interes</span><span class="p">[</span><span class="s1">&#39;hubo_defuncion&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Datos Observados (0=No Defunción, 1=Defunción)&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1"># Graficar la curva de probabilidad predicha por el modelo</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rango_neumonias</span><span class="p">,</span> <span class="n">probabilidades_predichas</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Probabilidad Predicha por el Modelo&#39;</span><span class="p">)</span>
+
+<span class="c1"># Configurar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Modelo de Regresión Logística: Probabilidad de Defunción vs Neumonías (&lt;5 años)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Número de Neumonías (&lt;5 años)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probabilidad Predicha de Defunción&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">)</span> <span class="c1"># Limitar el eje Y entre 0 y 1 para probabilidades</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/dist-packages/IPython/core/pylabtools.py:151: UserWarning: Creating legend with loc=&quot;best&quot; can be slow with large amounts of data.
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="../_images/f20acb76a8c2d5bfc75caaea44bce9a55196d313d9e2511d68880f7e93808586.png" src="../_images/f20acb76a8c2d5bfc75caaea44bce9a55196d313d9e2511d68880f7e93808586.png" />
+</div>
+</div>
+<p>#<strong>IV. Referencias</strong></p>
+<p>###<strong>4.1 Libros y manuales</strong></p>
+<ul>
+<li><p>Libro de estadisitica con python</p>
+<p><a class="reference external" href="https://www.editorial-sciela.org/index.php/sciela/article/view/16/49">https://www.editorial-sciela.org/index.php/sciela/article/view/16/49</a></p>
+</li>
+<li><p>Introducción a la teoria de probabilidades</p>
+<p><a class="reference external" href="https://ciladi.org/wp-content/uploads/Version_final_Introduccion-Probabilidad-Python-vf_Bayas-3.pdf">https://ciladi.org/wp-content/uploads/Version_final_Introduccion-Probabilidad-Python-vf_Bayas-3.pdf</a></p>
+</li>
+<li><p>Guía practica de análsis exploratorio de python</p>
+<p><a class="reference external" href="https://datos.gob.es/sites/default/files/doc/file/guia_eda_python.pdf">https://datos.gob.es/sites/default/files/doc/file/guia_eda_python.pdf</a></p>
+</li>
+</ul>
+<p><strong>Cursos en linea</strong></p>
+<ul>
+<li><p>Estadística W3School:</p>
+<p><a class="reference external" href="https://www.w3schools.com/statistics/index.php">https://www.w3schools.com/statistics/index.php</a></p>
+</li>
+<li><p>Estadística con python:</p>
+<p><a class="reference external" href="https://docs.python.org/es/3/library/statistics.html">https://docs.python.org/es/3/library/statistics.html</a></p>
+</li>
+<li><p>Kaggle:</p>
+<p><a class="reference external" href="https://www.kaggle.com/code/saurav9786/statistics-for-data-scientists">https://www.kaggle.com/code/saurav9786/statistics-for-data-scientists</a></p>
+</li>
+</ul>
+<p><strong>Aplicaciones IA</strong></p>
+<ul>
+<li><p>Gemini iA</p>
+<p><a class="reference external" href="https://gemini.google.com">https://gemini.google.com</a></p>
+</li>
+<li><p>DeepSeek</p>
+<p><a class="reference external" href="https://www.deepseek.com/">https://www.deepseek.com/</a></p>
+</li>
+<li><p>Chat GPT</p>
+<p><a class="reference external" href="https://chatgpt.com/">https://chatgpt.com/</a></p>
+</li>
+<li><p>Claude IA</p>
+<p><a class="reference external" href="https://claude.ai/">https://claude.ai/</a></p>
+</li>
+<li><p>Julius IA:</p>
+<p><a class="reference external" href="https://julius.ai">https://julius.ai</a></p>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sesion7_caso_estudio_enfermedad_carrion.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">7. <b>Diseño de Caso Estudio: </b>Enfermedad de Carrión</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. <b>Diseño de Caso Estudio:</b> Infecciones Respiratorias Agudas</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-marco-teorico"><strong>I. Marco Teórico</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo"><strong>1.1 Objetivo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-bioestadisiticos"><strong>1.2 Fundamentos Bioestadisiticos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-variables"><strong>1.2.1 Tipos de variables</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-estadisticos-relevantes"><strong>1.2.2 Métodos estadísticos relevantes</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-recoleccion-de-datos"><strong>II. Recolección de Datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fuentes-de-datos"><strong>2.1. Fuentes de datos</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-metodologia-practica"><strong>III. Metodología Práctica</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-archivos-y-directorios-en-la-nube"><strong>3.1. Gestión de archivos y directorios en la Nube</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#montar-google-drive">3.1.1. Montar Google Drive</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explorar-archivos-y-directorios-de-google-drive-desde-la-nube">3.1.2. Explorar archivos y directorios de Google Drive desde la nube</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-entorno"><strong>3.2 Preparar Entorno</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-paquetes">3.2.1 Importar paquetes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explorar-herramientas-de-paquetes">3.2.2. Explorar herramientas de Paquetes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-base-de-datos"><strong>3.3. Importar Base de Datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-metadatos"><strong>3.4. Revisión Metadatos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eleccion-de-variables-de-interes"><strong>3.4.4. Elección de variables de interés</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-estadistico-descriptivo-univariado-y-bivariado"><strong>3.5 Análisis Estadístico Descriptivo Univariado y Bivariado</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-frecuencia-de-datos-categoricos-por-columna-analisis-univariado"><strong>3.5.1 Distribución de frecuencia de datos categóricos por columna (análisis univariado)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-casos-ira-en-lima-analisis-bivariado"><strong>3.5.2 Análisis de casos IRA en Lima (análisis bivariado)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-medidas-de-tendencia-central-y-dispersion"><strong>3.5.3 Análisis de Medidas de Tendencia Central y Dispersión</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadistica-inferencial-prueba-de-hipotesis"><strong>3.6 Estadística inferencial:</strong> prueba de hipótesis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-cuadrado"><strong>3.6.1. Chi-cuadrado</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-medidas-prueba-de-hipotesis-t-test"><strong>3.6.2. Comparación de medidas:</strong> prueba de hipótesis T-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prueba-de-hipotesis-parametrica-shapiro-wilk"><strong>3.6.3. Prueba de hipótesis paramétrica Shapiro-Wilk</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-medidas-anova"><strong>3.6.4. Comparación de medidas:</strong> Anova</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-bioestadistico"><strong>3.7. Modelo Bioestadístico</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-logistica-binaria"><strong>3.7.1 Regresión logística binaria</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By VR Rojas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <style>
+  .slideshow-container { max-width: 800px; margin: auto; position: relative; }
+  .slides { display: none; width: 100%; height: auto; }
+  .slides.active { display: block; }
+  .controls { text-align: center; margin-top: 10px; }
+  .controls button { margin: 0 10px; padding: 10px 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
+  .controls button:hover { background: #0056b3; }
+</style>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
