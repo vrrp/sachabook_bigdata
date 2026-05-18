@@ -139,108 +139,10 @@ $$
 $$(eq:promedioFinal)
 :::
 
-# Herramientas
-%-----------------------------------------------------------------------------------------------------
-Para desarrollar este curso se recomienda usar la computación en la nube (Google Drive y Google Colaboratory). La siguiente secuencia de imágenes muestra cómo funciona la computación en la nube y como instalar
-Google Colaboratory.
-
-<div class="languages-slideshow-container">
-  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/cloudComputing/cc1.png?raw=true" alt="Imagen 0: Evolución 0">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/cloudComputing/cc2.png?raw=true" alt="Imagen 1: Evolución 1">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/cloudComputing/cc3.png?raw=true" alt="Imagen 2: Evolución 2">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/cloudComputing/cc4.png?raw=true" alt="Imagen 3: Evolución 3">
-  <div class="languages-controls">
-    <button onclick="languagesChangeSlide(-1)">Anterior</button>
-    <button onclick="languagesToggleAutoPlay()" id="languages-play-btn">Play</button>
-    <button onclick="languagesChangeSlide(1)">Siguiente</button>
-  </div>
-</div>
-
-<style>
-.languages-slideshow-container {
-  max-width: 800px;
-  margin: auto;
-  position: relative;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.languages-slides {
-  display: none;
-  width: 100%;
-  height: auto;
-}
-.languages-slides.active {
-  display: block;
-}
-.languages-controls {
-  text-align: center;
-  margin-top: 10px;
-  padding: 10px;
-}
-.languages-controls button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  cursor: pointer;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  transition: background-color 0.3s;
-}
-.languages-controls button:hover {
-  background: #0056b3;
-  transform: translateY(-2px);
-}
-</style>
-
-<script>
-(function() {
-  let languagesSlideIndex = 0;
-  let languagesAutoPlayInterval = null;
-  const languagesSlides = document.getElementsByClassName("languages-slides");
-  const languagesPlayBtn = document.getElementById("languages-play-btn");
-
-  function languagesShowSlide(index) {
-    if (index >= languagesSlides.length) languagesSlideIndex = 0;
-    if (index < 0) languagesSlideIndex = languagesSlides.length - 1;
-    for (let i = 0; i < languagesSlides.length; i++) {
-      languagesSlides[i].classList.remove("active");
-    }
-    languagesSlides[languagesSlideIndex].classList.add("active");
-  }
-
-  window.languagesChangeSlide = function(n) {
-    languagesSlideIndex += n;
-    languagesShowSlide(languagesSlideIndex);
-  };
-
-  window.languagesToggleAutoPlay = function() {
-    if (languagesAutoPlayInterval) {
-      clearInterval(languagesAutoPlayInterval);
-      languagesAutoPlayInterval = null;
-      languagesPlayBtn.textContent = "Play";
-    } else {
-      languagesAutoPlayInterval = setInterval(() => {
-        languagesSlideIndex++;
-        languagesShowSlide(languagesSlideIndex);
-      }, 3000); // Cambia cada 3 segundos
-      languagesPlayBtn.textContent = "Pause";
-    }
-  };
-
-  languagesShowSlide(languagesSlideIndex);
-})();
-</script>
-
-<br><br>
-
 # Donaciones
 ¡Apoya este proyecto con una donación, para seguir creando contenido gratuito y de calidad sobre Ciencia de Datos aplicado en Ciencias de la Tierra, Biomedicina, Finanzas y Educación usando Python!.
 
 ¡Cada aporte  ayuda a mantener y ampliar este proyecto!
 
-<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true" alt="" width="460" height="100">
+<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true" alt="" width="400" height="50">
 
