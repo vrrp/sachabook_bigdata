@@ -96,6 +96,7 @@ ETS, Prophet) para el pronóstico de series de tiempo univariadas de
 dominios reales peruanos.
 
 **SESIÓN 6: Introducción a Machine Learning para Series de Tiempo**
+
 Transformar series de tiempo en features tabulares y aplicar algoritmos de
 ML supervisado para pronóstico y clasificación en los dominios biomédico,
 financiero y ambiental.
