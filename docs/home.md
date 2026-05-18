@@ -71,7 +71,7 @@ duración de 5 horas. A lo largo del desarrollo de cada sesión, aprenderás de 
 **SESIÓN 1 : Fundamentos de Big Data y Computación en la Nube**
 
 Comprender las características de los datos de gran volumen en contextos
-temporales. Introducción a Google Colaboratory: entorno, GPU/TPU, montaje de Google Drive, gestión de archivos.
+temporales. Introducción a la Computación en la Nube.
 
 **SESIÓN 2: Manejo y Preprocesamiento de Series de Tiempo a Gran Escala**
 
@@ -86,17 +86,31 @@ para preparar series de tiempo de gran escala aptas para el modelado.
 
 **SESIÓN 4: Modelos Estadísticos para Series de Tiempo**
 
+Escalar el procesamiento de series de tiempo a millones de registros
+utilizando Dask y formatos de almacenamiento eficientes en Google Colab.
+
 **SESIÓN 5: Modelos Estadísticos Avanzados**
 
+Implementar y evaluar modelos estadísticos clásicos (ARIMA, SARIMA, 
+ETS, Prophet) para el pronóstico de series de tiempo univariadas de
+dominios reales peruanos.
+
 **SESIÓN 6: Introducción a Machine Learning para Series de Tiempo**
+Transformar series de tiempo en features tabulares y aplicar algoritmos de
+ML supervisado para pronóstico y clasificación en los dominios biomédico,
+financiero y ambiental.
 
 **SESIÓN 7: Modelos Avanzados de Deep Learning para Series de Tiempo**
 
+Implementar y entrenar redes neuronales recurrentes (LSTM) y arquitecturas
+Transformer para pronóstico y detección de anomalías en series de tiempo
+de alta dimensionalidad.
+
 **SESION 8: Evaluación de Modelos, Pronóstico y Aplicaciones**
 
-
-
-
+Diseñar, implementar, evaluar y comunicar un pipeline completo de análisis
+de Big Data temporal desde la ingesta de datos abiertos peruanos hasta el
+despliegue de un modelo predictivo.
 
 # ¿A quién está dirigido?
 - **Científicos e ingenieros**: Que buscan automatizar el análisis de sus experimentos o simulaciones
