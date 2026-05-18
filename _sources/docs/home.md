@@ -1,7 +1,7 @@
-<div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
-<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Bioestadística para Investigación Científica <br>usando Python con Inteligencia Artificial</b></span></h1>
-</div>
 
+<div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Big Data y Análisis de Datos usando Python con Inteligencia Artificial</b></span></h1>
+</div>
 <style>
 table tr:last-child td:last-child {
   border-bottom-right-radius: 0.5rem;
@@ -23,44 +23,80 @@ table tr:last-child td:last-child {
     <th align="left">:<a href="https://sacha-analytics.github.io/" style="font-family:Monospace;font-size: 13px;">sacha-analytics</a></th>
 </tr>
 </table>
-
 <br>
 
 # Descripción del Curso
 %-----------------------------------------------------------------------------------------------------
-(Última actualización: 21 Abril, 2026)
+(Última actualización: 18 Mayo, 2026)
 
-Este curso intensivo de Bioestadística está diseñado para proporcionar a profesionales de Biología, Genética, Medicina, Epidemiología y Salud Pública las herramientas estadísticas y computacionales necesarias para analizar e interpretar datos biomédicos. A través de la aplicación práctica de métodos estadísticos y el lenguaje de programación Python, los participantes aprenderán a abordar problemas relacionados con tasas de incidencia de enfermedades, expresiones genéticas, resultados clínicos e indicadores de salud poblacional. El curso se centra en casos de estudio para analizar datos clínicos, con el fin de comprender los procesos biológicos, las enfermedades y las intervenciones médicas.
+Este curso ofrece una inmersión profunda en los conceptos, técnicas y herramientas del Big
+Data y el análisis de series temporales, con un enfoque práctico basado en el lenguaje de
+programación Python.
 
+Los estudiantes aprenderán a gestionar grandes volúmenes de datos, así como a aplicar métodos estadísticos
+y de aprendizaje automático para el análisis de series temporales y la extracción de información
+relevante que apoye la toma de decisiones en áreas como la Biomedicina, las Finanzas y las Ciencias de la Tierra.
+
+# Justificación
+%-----------------------------------------------------------------------------------------------------
+El Estado Peruano pone a disposición pública, a través de la [Plataforma Nacional de Datos Abiertos](https://www.datosabiertos.gob.pe/), más 
+de 4 500 datasets (bases de datos) en áreas de Gobernabilidad, Economía y Finanzas, Desarrollo Social,
+Educación, Medio Ambiente y Recursos Naturales, Transporte, Salud, Desarrollo Urbano, Agua y Saneamiento,
+Energía, Ciencia y Tecnología, y Alimentación y Nutrición. Este curso aprovecha
+esta riqueza de datos reales para enseñar Big Data y análisis de series de tiempo en un contexto
+directamente relevante para el Perú.
 
 # Objetivos
 %-----------------------------------------------------------------------------------------------------
 **General**
 
-Capacitar a los participantes en el uso de métodos bioestadísticos y de herramientas tecnológicas para analizar e interpretar datos biomédicos, mejorando su capacidad para la investigación y la toma de desiciones basada en evidencia.
+Capacitar en el manejo y análisis de grandes volúmenes de datos de series de tiempo utilizando 
+Python, con el fin de extraer conocimientos aplicables a problemas complejos en **Biomedicina**,
+**Finanzas** y **Ciencias de la Tierra**.
 
 **Específicos**
 
-- Introducción a la computación en la nube (Google Colaboratory).
-- Procesar, analizar y construir base de datos provenientes de archivos en formato CSV y XLSX.
-- Emplear paquetes o librerias estándar de Python para generar gráficos descriptivos que permitan visualizar tendencias y patrones en datos procesados.
-- Realizar análisis estadístico descriptivo e inferencial para tomar decisiones informadas y basadas en evidencia.
-- Implementar el modelo Bioestadístico de Regresión Logística Binaria
+- Introducción a la computación en la nube: configurar **Google Colaboratory** como entorno de trabajo científico para procesamiento de Big Data temporal.
+- Comprender los fundamentos teóricos-prácticos del Big Data y su relevancia en **Biomedicina**, **Finanzas** y **Ciencias de la Tierra**.
+- Dominiar las librerías de Python (**Numpy, Pandas, Dask, Statsmodels, Scikit-learn, TensorFlow/Pytorch**) para el manejo, análisis y visualización de series de tiempo a gran escala.
+- Aplicar técnicas de preprocesamiento y control de calidad de datos de series de tiempo.
+- Emplear modelos de **Machine Learning** para el pronóstico y clasificación de series de tiempo.
 
 # Metodología
 %-----------------------------------------------------------------------------------------------------
-En este curso se utilizará una combinación de clases magistrales, debates en clase, presentaciones, videos, aprendizaje cooperativo y aprendizaje basado en problemas.
-Este curso trabaja con 8 casos de estudio reales basados en datos biomédicos. A lo largo del desarrollo de cada caso, aprenderás de manera práctica los siguientes temas:
+En este curso se utilizará una combinación de clases magistrales, debates en clase, presentaciones, videos, aprendizaje
+cooperativo y aprendizaje basado en problemas. Este curso esta diseñado para ser desarrollado en 8 sesiones, cada sesión con una
+duración de 5 horas. A lo largo del desarrollo de cada sesión, aprenderás de manera práctica los siguientes temas:
 
-* **Introducción a la computación en la nube (Google Colaboratory)**: Presentar las ventajas y el funcionamiento básico de Google Colab como plataforma de computación en la nube para bioestadística. Los estudiantes aprenderán a crear, guardar y compartir notebooks interactivos, utilizar recursos de GPU/TPU gratuitos, importar librerías y trabajar de forma colaborativa sin necesidad de instalaciones locales, facilitando la reproducción de análisis en investigación biomédica.
+**SESIÓN 1 : Fundamentos de Big Data y Computación en la Nube**
 
-* **Procesar y analizar base de datos provenientes de archivos en formato CSV y XLSX**: Desarrollar habilidades para importar, limpiar, transformar y estructurar datos clínicos o biológicos desde archivos CSV y XLSX utilizando pandas. Se enfatizará en el manejo de valores faltantes, detección de outliers, creación de nuevas variables, preparando los datos para análisis posteriores en contextos de investigación.
+Comprender las características de los datos de gran volumen en contextos
+temporales. Introducción a Google Colaboratory: entorno, GPU/TPU, montaje de Google Drive, gestión de archivos.
 
-* **Emplear paquetes o librerías estándar de Python para generar gráficos descriptivos que permitan visualizar tendencias y patrones en datos procesados**: Capacitar en el uso de librerías como Matplotlib y Seabor para crear gráficos univariados, bivariados y multivariados (histogramas, boxplots y scatter plots.). Los estudiantes aprenderán a interpretar visualizaciones que revelen distribuciones, correlaciones, tendencias temporales y patrones en datos biológicos o de salud, mejorando la exploración y comunicación de resultados.
+**SESIÓN 2: Manejo y Preprocesamiento de Series de Tiempo a Gran Escala**
 
-* **Realizar análisis estadístico descriptivo e inferencial para tomar decisiones informadas y basadas en evidencia**: Enseñar a calcular medidas de tendencia central, dispersión y posición, así como a aplicar pruebas de hipótesis paramétricas y no paramétricas (t-Student, ANOVA, chi-cuadrado y Shapiro-Wilk.). El objetivo es que los estudiantes interpreten los resultados estadísticos para respaldar conclusiones científicas y tomar decisiones basadas en evidencia en investigación biomédica.
+Identificar y describir los componentes fundamentales de una serie de
+tiempo y aplicar técnicas de análisis exploratorio de datos (EDA)
+multivariado.
 
-* **Implementar el modelo Bioestadístico de Regresión Logística Binaria**: Introducir y aplicar la regresión logística binaria como herramienta clave en bioestadística para predecir eventos dicotómicos (presencia/ausencia de enfermedad, éxito/fracaso de tratamiento, etc.). Los estudiantes aprenderán a ajustar el modelo con statsmodels, interpretar odds ratios, evaluar el ajuste, validar el modelo y utilizar IA para optimizar y explicar predicciones en contextos de investigación clínica y epidemiológica
+**SESIÓN 3: Análisis Exploratorio y Visualización Avanzada de Series de Tiempo**
+
+Aplicar técnicas sistemáticas de preprocesamiento y control de calidad (QC)
+para preparar series de tiempo de gran escala aptas para el modelado.
+
+**SESIÓN 4: Modelos Estadísticos para Series de Tiempo**
+
+**SESIÓN 5: Modelos Estadísticos Avanzados**
+
+**SESIÓN 6: Introducción a Machine Learning para Series de Tiempo**
+
+**SESIÓN 7: Modelos Avanzados de Deep Learning para Series de Tiempo**
+
+**SESION 8: Evaluación de Modelos, Pronóstico y Aplicaciones**
+
+
+
+
 
 # ¿A quién está dirigido?
 - **Científicos e ingenieros**: Que buscan automatizar el análisis de sus experimentos o simulaciones
