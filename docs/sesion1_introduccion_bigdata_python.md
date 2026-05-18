@@ -1,5 +1,6 @@
+
 <div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
-<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Bioestadística para Investigación Científica <br>usando Python con Inteligencia Artificial</b></span></h1>
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Big Data y Análisis de Datos usando Python con Inteligencia Artificial</b></span></h1>
 </div>
 <style>
 table tr:last-child td:last-child {
@@ -25,13 +26,27 @@ table tr:last-child td:last-child {
 <br>
 
 %## Contenido
+%- [Introducción a Big Data](#s0)
 %- [Preámbulo](#pre)
 %- [Origenes: informática y programación](#s1)
 %- [Top 10 lenguajes de programación](#s2)
 %- [Ecosistema de Python](#s2)
 %- [Aplicaciones con Python](#s4)
 
-# Preámbulo
+# **1. Introducción**
+<a name="s0"></a>
+%---------------------------------------------------------------------------------------------------
+## **I. Big Data**
+
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1 Col 1 | Row 1 Col 2 | Row 1 Col 3 |
+| Row 2 Col 1 | Row 2 Col 2 | Row 2 Col 3 |
+| Row 3 Col 1 | Row 3 Col 2 | Row 3 Col 3 |
+| Row 4 Col 1 | Row 4 Col 2 | Row 4 Col 3 |
+| Row 5 Col 1 | Row 5 Col 2 | Row 5 Col 3 |
+
+### **1.1. Que es Big Data?**
 <a name="pre"></a>
 %---------------------------------------------------------------------------------------------------
 La sociedad ha experimentado una evolución significativa a lo largo del tiempo, marcada por avances tecnológicos y cambios en las necesidades y capacidades humanas.
@@ -188,7 +203,7 @@ La sociedad ha experimentado una evolución significativa a lo largo del tiempo,
 
 
 <br><br>
-# Origenes: informatica y programación
+## **II. Introducción a la Computación en la Nube**
 <a name="s1"></a>
 %---------------------------------------------------------------------------------------------------
 Los origenes de la informática y la programación, y cómo evolucionaron para dar forma al mundo digital que conocemos hoy.
@@ -198,8 +213,11 @@ Los origenes de la informática y la programación, y cómo evolucionaron para d
 :name: fig:historiaLenguajes
 
 :::
+
+### 2.1. Qué es la Computación en la Nube?
+
 <br><br>
-# Top 10 lenguajes de programación
+## Top 10 lenguajes de programación
 <a name="s2"></a>
 %---------------------------------------------------------------------------------------------------
 Existen índices ([TIOBE](https://www.tiobe.com/tiobe-index/), [PYPL](https://pypl.github.io/ODE.html)) que miden la popularidad de los lenguajes de programación. Su principal utilidad es funcionar como 
@@ -211,7 +229,7 @@ a tomar decisiones informadas sobre qué lenguajes aprender, enseñar o utilizar
 
 :::
 <br><br>
-# Ecosistema Python
+## Ecosistema Python
 <a name="s3"></a>
 %---------------------------------------------------------------------------------------------------
 El ecosistema Python es el conjunto de herramientas, bibliotecas, marcos de trabajo (frameworks) y la comunidad de desarrolladores que rodean al lenguaje de programación Python. Este ecosistema se caracteriza por su vastedad y la gran cantidad de recursos de código abierto, lo que permite a Python ser utilizado en una amplia variedad de campos, como el desarrollo web, la ciencia de datos, el aprendizaje automático y la informática científica. 
@@ -223,7 +241,7 @@ El ecosistema Python es el conjunto de herramientas, bibliotecas, marcos de trab
 
 :::
 <br><br>
-# Aplicaciones con Python
+## Aplicaciones con Python
 <a name="s4"></a>
 %---------------------------------------------------------------------------------------------------
 Python se utiliza para una gran variedad de aplicaciones debido a su versatilidad y a su extenso ecosistema. A continuación, se detallan algunas de las más importantes.
@@ -236,7 +254,7 @@ Python se utiliza para una gran variedad de aplicaciones debido a su versatilida
 
 
 
-# Automatización de procesos
+## Automatización de procesos
 %<a name="s4"></a>
 %---------------------------------------------------------------------------------------------------
 %fabrica automatizada de tesla

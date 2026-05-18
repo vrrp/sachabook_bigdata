@@ -4,12 +4,5 @@
 format: jb-book
 root: docs/home
 chapters:
-- file: docs/preambulo
-- file: docs/sesion1_caso_estudio_anemia
-- file: docs/sesion2_caso_estudio_dengue
-- file: docs/sesion3_caso_estudio_malaria
-- file: docs/sesion4_caso_estudio_diabetes
-- file: docs/sesion5_caso_estudio_zoonosis
-- file: docs/sesion6_caso_estudio_covid19
-- file: docs/sesion7_caso_estudio_enfermedad_carrion
-- file: docs/sesion8_caso_estudio_infeccionRespiratoria
+- file: docs/sesion1_introduccion_bigdata_python
+
