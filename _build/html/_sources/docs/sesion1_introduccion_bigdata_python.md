@@ -36,15 +36,34 @@ table tr:last-child td:last-child {
 # **1. Introducción**
 <a name="s0"></a>
 %---------------------------------------------------------------------------------------------------
-## **I. Big Data**
+En los últimos años las empresas se han embarcado en un proceso de transformación
+digital de profundo calado dentro del marco de lo que se conoce como la cuarta
+revolución industrial, que esta dando paso a una nueva manera de organizar los medios
+de producción.
 
-| Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
-| Row 1 Col 1 | Row 1 Col 2 | Row 1 Col 3 |
-| Row 2 Col 1 | Row 2 Col 2 | Row 2 Col 3 |
-| Row 3 Col 1 | Row 3 Col 2 | Row 3 Col 3 |
-| Row 4 Col 1 | Row 4 Col 2 | Row 4 Col 3 |
-| Row 5 Col 1 | Row 5 Col 2 | Row 5 Col 3 |
+El resultado de esta tormenta perfecta en la que se halla todas las organizaciones es una
+explosión del dato en volumen, velocidad y variedad. Y de modo natural ha crecido la
+complejidad para capturar, procesar, almacenar, analizar y visualizar datos.
+
+Como resultado, han aparecido múltiples métodos, técnicas y tecnologías que buscan ayudar a las 
+organizaciones a tomar mejores decisiones a partir de los datos y a extraer valor de estos. Estos métodos, técnicas
+y tecnologías para la captura, el procesamiento, el almacenamiento, la gestión y el análisis se han
+ido progresivamente estructurando en diferentes estrategias que conocemos como bíg data.
+
+Aunque este concepto  ya lleva años en el mercado y existen múltiples casos de uso conocido,
+las organizaciones siguen teniendo problemas para conocer el impacto y el valor de big data, y sobre todo para 
+poner en marcha estos sistemas de información. Existen todavía múltiples preguntas:
+
+* Que es big data?
+* Qué significa para mi organizació?
+* Cuándo es relevante?
+* Está preparada mi organización?
+* Como desplegar con éxito este tipo de iniciativas?
+* Qué barreras presenta este tipo de proyectos?
+* Que tecnologías existen dentro de big data?
+* Cómo empiezo un proyecto?
+
+## **I. Big Data**
 
 ### **1.1. Que es Big Data?**
 <a name="pre"></a>
