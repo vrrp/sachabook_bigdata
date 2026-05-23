@@ -41,9 +41,9 @@ digital de profundo calado dentro del marco de lo que se conoce como la cuarta
 revolución industrial, que esta dando paso a una nueva manera de organizar los medios
 de producción.
 
-El resultado de esta tormenta perfecta en la que se halla todas las organizaciones es una
+<a style="color:blue">El resultado de esta tormenta perfecta en la que se halla todas las organizaciones es una
 explosión del dato en volumen, velocidad y variedad. Y de modo natural ha crecido la
-complejidad para capturar, procesar, almacenar, analizar y visualizar datos.
+complejidad para capturar, procesar, almacenar, analizar y visualizar datos.</a>
 
 Como resultado, han aparecido múltiples métodos, técnicas y tecnologías que buscan ayudar a las 
 organizaciones a tomar mejores decisiones a partir de los datos y a extraer valor de estos. Estos métodos, técnicas
@@ -54,6 +54,10 @@ Aunque este concepto  ya lleva años en el mercado y existen múltiples casos de
 las organizaciones siguen teniendo problemas para conocer el impacto y el valor de big data, y sobre todo para 
 poner en marcha estos sistemas de información. Existen todavía múltiples preguntas:
 
+1. Nuevo contexto
+
+- Naturaleza del dato 1.2.1
+
 * Que es big data?
 * Qué significa para mi organizació?
 * Cuándo es relevante?
@@ -63,7 +67,43 @@ poner en marcha estos sistemas de información. Existen todavía múltiples preg
 * Que tecnologías existen dentro de big data?
 * Cómo empiezo un proyecto?
 
+**Data warehouse -o almacén de datos**
+
+Se entiende por **data Warehouse** el repositorio de datos que
+proporciona una visión global, común e integrada de los datos de la organización,
+independiente de cómo se vayan a utilizar posteriormente por los consumidores o 
+usuarios, con las propiedades siguientes: estable, coherente,fiable y con información
+histórica
+
+**Business inteligence -o inteligencia de negocio (BI)**
+
+Se entiende por **business intelligence** el conjunto de metodologías, aplicaciones
+prácticas y capacidades enfocadas a la creación y administración de información
+que permite tomar mejores decisiones a los usuarios de una organización.
+
+<a style="color:purple">Es fácil deducir que el **data werehouse** ha sido el componente principal para el
+almacenamiento de datos y el **BI** lo ha sido para su explotación.</a>
+
+Aparición de más fuentes que producen y consumen datos; de una mayor incorporación de usuairios
+a internet; del despliegue de una mayor cantidad de dispositivos inteligentes, y del continuo
+desarrollo de soluciones y servicios digitales.
+
+<a style="color:purple">Esta explosión de datos está caracterizada por un crecimiento en las magnitudes físicas
+del dato: **volumen, variedad y velocidad** (las 3 V del big data). Se crea un mayor volumen de datos, provenientes de una mayor variedad
+de fuentes, representados en múltiples formatos y que se deben capturar y consumir a una mayor velocidad.
+Este nuevo paradigma de los datos se conoce frecuentemente como Big Data.</a>
+
+<a style="color:red"> Tecnologías de Big Data: Almacenamiento, procesamiento, análisis y visualización</a>
+
+**Algunas herramientas para big data:** Apache Hadoop, Scikit-learn, Pandas o Caffe
+
+**Dos disciplinas para la visualización de información:** Visualización de datos (data visualization) y data storytelling 
+(historias fundadas en datos)
+
+
+
 ## **I. Big Data**
+Es el conjunto de estrategias, tecnologías y sistemas para el almacenamiento, procesamiento, análisis y visualización de conjunto de datos complejos.
 
 ### **1.1. Que es Big Data?**
 <a name="pre"></a>
@@ -71,7 +111,7 @@ poner en marcha estos sistemas de información. Existen todavía múltiples preg
 La sociedad ha experimentado una evolución significativa a lo largo del tiempo, marcada por avances tecnológicos y cambios en las necesidades y capacidades humanas.
 
 <div class="languages-slideshow-container">
-  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 0: Evolución 0">
+  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0_nuevo.png?raw=true" alt="Imagen 0: Evolución 0">
   <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Imagen 1: Evolución 1">
   <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 2: Evolución 2">
   <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 3: Evolución 3">
