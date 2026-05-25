@@ -6,4 +6,5 @@ root: docs/home
 chapters:
 - file: docs/sesion1_introduccion_bigdata_python
 - file: docs/sesion1_introduccion_cloudComputing
+- file: docs/03_programación_basica_python_AI
 
