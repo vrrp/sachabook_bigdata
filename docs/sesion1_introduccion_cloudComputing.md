@@ -33,58 +33,21 @@ table tr:last-child td:last-child {
 %- [Ecosistema de Python](#s2)
 %- [Aplicaciones con Python](#s4)
 
-# **1. Introducción**
+# **2. Fundamentos de Computación en la Nube**
 <a name="s0"></a>
 %---------------------------------------------------------------------------------------------------
-En los últimos años las empresas se han embarcado en un proceso de transformación
-digital de profundo calado dentro del marco de lo que se conoce como la cuarta
-revolución industrial, que esta dando paso a una nueva manera de organizar los medios
-de producción.
 
-El resultado de esta tormenta perfecta en la que se halla todas las organizaciones es una
-explosión del dato en volumen, velocidad y variedad. Y de modo natural ha crecido la
-complejidad para capturar, procesar, almacenar, analizar y visualizar datos.
-
-Como resultado, han aparecido múltiples métodos, técnicas y tecnologías que buscan ayudar a las 
-organizaciones a tomar mejores decisiones a partir de los datos y a extraer valor de estos. Estos métodos, técnicas
-y tecnologías para la captura, el procesamiento, el almacenamiento, la gestión y el análisis se han
-ido progresivamente estructurando en diferentes estrategias que conocemos como bíg data.
-
-Aunque este concepto  ya lleva años en el mercado y existen múltiples casos de uso conocido,
-las organizaciones siguen teniendo problemas para conocer el impacto y el valor de big data, y sobre todo para 
-poner en marcha estos sistemas de información. Existen todavía múltiples preguntas:
-
-* Que es big data?
-* Qué significa para mi organizació?
-* Cuándo es relevante?
-* Está preparada mi organización?
-* Como desplegar con éxito este tipo de iniciativas?
-* Qué barreras presenta este tipo de proyectos?
-* Que tecnologías existen dentro de big data?
-* Cómo empiezo un proyecto?
-
-## **I. Big Data**
-
-| Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
-| Row 1 Col 1 | Row 1 Col 2 | Row 1 Col 3 |
-| Row 2 Col 1 | Row 2 Col 2 | Row 2 Col 3 |
-| Row 3 Col 1 | Row 3 Col 2 | Row 3 Col 3 |
-| Row 4 Col 1 | Row 4 Col 2 | Row 4 Col 3 |
-| Row 5 Col 1 | Row 5 Col 2 | Row 5 Col 3 |
-
-### **1.1. Que es Big Data?**
-<a name="pre"></a>
-%---------------------------------------------------------------------------------------------------
-La sociedad ha experimentado una evolución significativa a lo largo del tiempo, marcada por avances tecnológicos y cambios en las necesidades y capacidades humanas.
-
+## **I. Computación en la Nube**
 <div class="languages-slideshow-container">
-  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 0: Evolución 0">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Imagen 1: Evolución 1">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 2: Evolución 2">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 3: Evolución 3">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev4.png?raw=true" alt="Imagen 4: Evolución 4">
-  <div class="languages-controls"><button onclick="languagesChangeSlide(-1)">Anterior</button><button onclick="languagesToggleAutoPlay()" id="languages-play-btn">Play</button><button onclick="languagesChangeSlide(1)">Siguiente</button><button onclick="languagesToggleFullscreen()" id="languages-fullscreen-btn">Pantalla completa</button></div>
+  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/cloudComputing/cc1.png?raw=true" alt="Imagen 0: Evolución 0">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/cloudComputing/cc2.png?raw=true" alt="Imagen 1: Evolución 1">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/cloudComputing/cc3.png?raw=true" alt="Imagen 2: Evolución 2">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/cloudComputing/cc4.png?raw=true" alt="Imagen 3: Evolución 3">
+  <div class="languages-controls">
+    <button onclick="languagesChangeSlide(-1)">Anterior</button>
+    <button onclick="languagesToggleAutoPlay()" id="languages-play-btn">Play</button>
+    <button onclick="languagesChangeSlide(1)">Siguiente</button>
+  </div>
 </div>
 
 <style>
@@ -109,14 +72,10 @@ La sociedad ha experimentado una evolución significativa a lo largo del tiempo,
   text-align: center;
   margin-top: 10px;
   padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
 }
 .languages-controls button {
-  margin: 0 5px;
-  padding: 8px 15px;
+  margin: 0 10px;
+  padding: 10px 20px;
   cursor: pointer;
   background: #007bff;
   color: white;
@@ -128,35 +87,6 @@ La sociedad ha experimentado una evolución significativa a lo largo del tiempo,
 .languages-controls button:hover {
   background: #0056b3;
   transform: translateY(-2px);
-}
-.languages-slideshow-container.fullscreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  max-width: 100vw;
-  z-index: 9999;
-  background: #000;
-  border: none;
-  border-radius: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.languages-slideshow-container.fullscreen .languages-slides {
-  max-height: calc(100vh - 80px);
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-}
-.languages-slideshow-container.fullscreen .languages-controls {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  background: rgba(0,0,0,0.5);
-  padding: 15px;
 }
 </style>
 
@@ -195,53 +125,9 @@ La sociedad ha experimentado una evolución significativa a lo largo del tiempo,
     }
   };
 
-  window.languagesToggleFullscreen = function() {
-    const container = document.querySelector('.languages-slideshow-container');
-    const fullscreenBtn = document.getElementById('languages-fullscreen-btn');
-    
-    if (!document.fullscreenElement) {
-      container.requestFullscreen().then(() => {
-        container.classList.add('fullscreen');
-        fullscreenBtn.textContent = 'Salir';
-      }).catch(err => {
-        container.classList.add('fullscreen');
-        fullscreenBtn.textContent = 'Salir';
-      });
-    } else {
-      document.exitFullscreen().then(() => {
-        container.classList.remove('fullscreen');
-        fullscreenBtn.textContent = 'Pantalla completa';
-      });
-    }
-  };
-
-  document.addEventListener('fullscreenchange', function() {
-    const container = document.querySelector('.languages-slideshow-container');
-    const fullscreenBtn = document.getElementById('languages-fullscreen-btn');
-    if (!document.fullscreenElement) {
-      container.classList.remove('fullscreen');
-      fullscreenBtn.textContent = 'Pantalla completa';
-    }
-  });
-
   languagesShowSlide(languagesSlideIndex);
 })();
 </script>
-
-
-<br><br>
-## **II. Introducción a la Computación en la Nube**
-<a name="s1"></a>
-%---------------------------------------------------------------------------------------------------
-Los origenes de la informática y la programación, y cómo evolucionaron para dar forma al mundo digital que conocemos hoy.
-
-% A figure of a photograph of some mountains, followed by a caption
-:::{figure} https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/lenguajes_pro.webp?raw=true
-:name: fig:historiaLenguajes
-
-:::
-
-### 2.1. Qué es la Computación en la Nube?
 
 <br><br>
 ## Top 10 lenguajes de programación
@@ -278,8 +164,6 @@ Python se utiliza para una gran variedad de aplicaciones debido a su versatilida
 :align: center
 
 :::
-
-
 
 ## Automatización de procesos
 %<a name="s4"></a>
