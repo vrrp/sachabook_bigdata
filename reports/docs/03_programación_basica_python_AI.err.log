@@ -36,14 +36,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Aplicar interpolación 'spline' de orden 2
-df_spline_interpolated = completar_nan_col(df_copia2, method='spline', order=2)
+# Aplicar interpolación 'polynomial' de orden 2
+df_poly_interpolated = completar_nan_col(df_copia2, method='polynomial', order=2)
 
-print("\nDataFrame después de interpolación 'spline' (orden 2, primeras 7 filas):")
-display(df_spline_interpolated.head(7))
+print("\nDataFrame después de interpolación 'polynomial' (orden 2, primeras 7 filas):")
+display(df_poly_interpolated.head(7))
 
-print("Valores NaN después de interpolación 'spline' (orden 2):")
-display(contar_nan(df_spline_interpolated))
+print("Valores NaN después de interpolación 'polynomial' (orden 2):")
+display(contar_nan(df_poly_interpolated))
 ------------------
 
 
@@ -70,10 +70,10 @@ During handling of the above exception, another exception occurred:
 
 [31mImportError[39m                               Traceback (most recent call last)
 [36mCell[39m[36m [39m[32mIn[62][39m[32m, line 2[39m
-[32m      1[39m [38;5;66;03m# Aplicar interpolación 'spline' de orden 2[39;00m
-[32m----> [39m[32m2[39m df_spline_interpolated = [43mcompletar_nan_col[49m[43m([49m[43mdf_copia2[49m[43m,[49m[43m [49m[43mmethod[49m[43m=[49m[33;43m'[39;49m[33;43mspline[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[43morder[49m[43m=[49m[32;43m2[39;49m[43m)[49m
-[32m      4[39m [38;5;28mprint[39m([33m"[39m[38;5;130;01m\n[39;00m[33mDataFrame después de interpolación [39m[33m'[39m[33mspline[39m[33m'[39m[33m (orden 2, primeras 7 filas):[39m[33m"[39m)
-[32m      5[39m display(df_spline_interpolated.head([32m7[39m))
+[32m      1[39m [38;5;66;03m# Aplicar interpolación 'polynomial' de orden 2[39;00m
+[32m----> [39m[32m2[39m df_poly_interpolated = [43mcompletar_nan_col[49m[43m([49m[43mdf_copia2[49m[43m,[49m[43m [49m[43mmethod[49m[43m=[49m[33;43m'[39;49m[33;43mpolynomial[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[43morder[49m[43m=[49m[32;43m2[39;49m[43m)[49m
+[32m      4[39m [38;5;28mprint[39m([33m"[39m[38;5;130;01m\n[39;00m[33mDataFrame después de interpolación [39m[33m'[39m[33mpolynomial[39m[33m'[39m[33m (orden 2, primeras 7 filas):[39m[33m"[39m)
+[32m      5[39m display(df_poly_interpolated.head([32m7[39m))
 
 [36mCell[39m[36m [39m[32mIn[59][39m[32m, line 20[39m, in [36mcompletar_nan_col[39m[34m(dataframe, method, **kwargs)[39m
 [32m     17[39m [38;5;28;01mfor[39;00m col [38;5;129;01min[39;00m numeric_cols:
@@ -230,5 +230,5 @@ During handling of the above exception, another exception occurred:
 [32m    139[39m     [38;5;28;01mreturn[39;00m [38;5;28;01mNone[39;00m
 [32m    141[39m [38;5;66;03m# Handle submodules: if we have submodule, grab parent module from sys.modules[39;00m
 
-[31mImportError[39m: Missing optional dependency 'scipy'. spline interpolation requires SciPy. Use pip or conda to install scipy.
+[31mImportError[39m: Missing optional dependency 'scipy'. polynomial interpolation requires SciPy. Use pip or conda to install scipy.
 
