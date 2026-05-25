@@ -1283,9 +1283,6 @@ min       0.880983          7.802457     6.873829
 max      35.119017         93.397543  3280.029936
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2257,6 +2254,7 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">completar_nan_col</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Completa valores NaN solo en columnas numéricas de un DataFrame</span>
 <span class="sd">    utilizando el método de interpolación especificado.</span>
@@ -2269,6 +2267,8 @@ dtype: int64
 <span class="sd">    Returns:</span>
 <span class="sd">        pd.DataFrame: El DataFrame con los NaNs en columnas numéricas interpolados.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">interpolate</span>
+
     <span class="n">df_interpolado</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">numeric_cols</span> <span class="o">=</span> <span class="n">df_interpolado</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span>
 
@@ -2365,10 +2365,50 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame después de interpolación &#39;linear&#39; (primeras 7 filas):
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">61</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Aplicar interpolación &#39;linear&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df_linear_interpolated</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame después de interpolación &#39;linear&#39; (primeras 7 filas):&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">display</span><span class="p">(</span><span class="n">df_linear_interpolated</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+
+<span class="nn">Cell In[59], line 15,</span> in <span class="ni">completar_nan_col</span><span class="nt">(dataframe, method, **kwargs)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">completar_nan_col</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="sd">     Completa valores NaN solo en columnas numéricas de un DataFrame</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="sd">     utilizando el método de interpolación especificado.</span>
+<span class="sd">   (...)     13         pd.DataFrame: El DataFrame con los NaNs en columnas numéricas interpolados.</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">interpolate</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">df_interpolado</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">numeric_cols</span> <span class="o">=</span> <span class="n">df_interpolado</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
 </pre></div>
 </div>
-<div class="output text_html"><div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicar interpolación &#39;polynomial&#39; de orden 2</span>
+<span class="n">df_poly_interpolated</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;polynomial&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame después de interpolación &#39;polynomial&#39; (orden 2, primeras 7 filas):&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_poly_interpolated</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN después de interpolación &#39;polynomial&#39; (orden 2):&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_poly_interpolated</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame después de interpolación &#39;polynomial&#39; (orden 2, primeras 7 filas):
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-30481a8c-e658-4d11-8316-72c413756285" class="colab-df-container">
+    <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2436,7 +2476,7 @@ dtype: int64
     </tr>
     <tr>
       <th>5</th>
-      <td>18.000000</td>
+      <td>18.000410</td>
       <td>0.5</td>
       <td>50.600000</td>
       <td>NaN</td>
@@ -2452,10 +2492,95 @@ dtype: int64
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación &#39;linear&#39;:
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-30481a8c-e658-4d11-8316-72c413756285')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-30481a8c-e658-4d11-8316-72c413756285 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-30481a8c-e658-4d11-8316-72c413756285');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación &#39;polynomial&#39; (orden 2):
 </pre></div>
 </div>
-<div class="output text_html"><div>
+<div class="output text_html">
+  <div id="df-c769fd47-97eb-43be-a112-40f1391e227d" class="colab-df-container">
+    <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2505,209 +2630,90 @@ dtype: int64
     </tr>
   </tbody>
 </table>
-</div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicar interpolación &#39;polynomial&#39; de orden 2</span>
-<span class="n">df_poly_interpolated</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;polynomial&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <div class="colab-df-buttons">
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame después de interpolación &#39;polynomial&#39; (orden 2, primeras 7 filas):&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df_poly_interpolated</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-c769fd47-97eb-43be-a112-40f1391e227d')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN después de interpolación &#39;polynomial&#39; (orden 2):&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_poly_interpolated</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">File ~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/compat/_optional.py:135,</span> in <span class="ni">import_optional_dependency</span><span class="nt">(name, extra, errors, min_version)</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">135</span>     <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
 
-<span class="nn">File ~/anaconda3/envs/jupyterbook/lib/python3.13/importlib/__init__.py:88,</span> in <span class="ni">import_module</span><span class="nt">(name, package)</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span>         <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="ne">---&gt; </span><span class="mi">88</span> <span class="k">return</span> <span class="n">_bootstrap</span><span class="o">.</span><span class="n">_gcd_import</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">level</span><span class="p">:],</span> <span class="n">package</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
 
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1387,</span> in <span class="ni">_gcd_import</span><span class="nt">(name, package, level)</span>
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
 
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1360,</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
 
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1324,</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
 
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
 
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">62</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Aplicar interpolación &#39;polynomial&#39; de orden 2</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df_poly_interpolated</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;polynomial&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame después de interpolación &#39;polynomial&#39; (orden 2, primeras 7 filas):&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">display</span><span class="p">(</span><span class="n">df_poly_interpolated</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+    <script>
+      const buttonEl =
+        document.querySelector('#df-c769fd47-97eb-43be-a112-40f1391e227d button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
 
-<span class="nn">Cell In[59], line 20,</span> in <span class="ni">completar_nan_col</span><span class="nt">(dataframe, method, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">numeric_cols</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="c1"># Solo interpolar si la columna tiene NaNs</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="k">if</span> <span class="n">df_interpolado</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
-<span class="ne">---&gt; </span><span class="mi">20</span>         <span class="n">df_interpolado</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_interpolado</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">return</span> <span class="n">df_interpolado</span>
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-c769fd47-97eb-43be-a112-40f1391e227d');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
 
-<span class="nn">File ~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/generic.py:8518,</span> in <span class="ni">NDFrame.interpolate</span><span class="nt">(self, method, axis, limit, inplace, limit_direction, limit_area, downcast, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">8516</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">8517</span>     <span class="n">index</span> <span class="o">=</span> <span class="n">missing</span><span class="o">.</span><span class="n">get_interp_index</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">8518</span>     <span class="n">new_data</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_mgr</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">8519</span>         <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8520</span>         <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8521</span>         <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8522</span>         <span class="n">limit_direction</span><span class="o">=</span><span class="n">limit_direction</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8523</span>         <span class="n">limit_area</span><span class="o">=</span><span class="n">limit_area</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8524</span>         <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8525</span>         <span class="n">downcast</span><span class="o">=</span><span class="n">downcast</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8526</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8527</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">8529</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_constructor_from_mgr</span><span class="p">(</span><span class="n">new_data</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">new_data</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">8530</span> <span class="k">if</span> <span class="n">should_transpose</span><span class="p">:</span>
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
 
-<span class="nn">File ~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/internals/base.py:291,</span> in <span class="ni">DataManager.interpolate</span><span class="nt">(self, inplace, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">290</span> <span class="k">def</span><span class="w"> </span><span class="nf">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">291</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_with_block</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">292</span>         <span class="s2">&quot;interpolate&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">293</span>         <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span>         <span class="n">using_cow</span><span class="o">=</span><span class="n">using_copy_on_write</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">296</span>         <span class="n">already_warned</span><span class="o">=</span><span class="n">_AlreadyWarned</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span>     <span class="p">)</span>
 
-<span class="nn">File ~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/internals/managers.py:363,</span> in <span class="ni">BaseBlockManager.apply</span><span class="nt">(self, f, align_keys, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span>         <span class="n">applied</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">362</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">363</span>         <span class="n">applied</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">f</span><span class="p">)(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="n">result_blocks</span> <span class="o">=</span> <span class="n">extend_blocks</span><span class="p">(</span><span class="n">applied</span><span class="p">,</span> <span class="n">result_blocks</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="n">out</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">from_blocks</span><span class="p">(</span><span class="n">result_blocks</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/internals/blocks.py:1863,</span> in <span class="ni">Block.interpolate</span><span class="nt">(self, method, index, inplace, limit, limit_direction, limit_area, downcast, using_cow, already_warned, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1860</span> <span class="n">copy</span><span class="p">,</span> <span class="n">refs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_refs_and_copy</span><span class="p">(</span><span class="n">using_cow</span><span class="p">,</span> <span class="n">inplace</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1862</span> <span class="c1"># Dispatch to the EA method.</span>
-<span class="ne">-&gt; </span><span class="mi">1863</span> <span class="n">new_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">array_values</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1864</span>     <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1865</span>     <span class="n">axis</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1866</span>     <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1867</span>     <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1868</span>     <span class="n">limit_direction</span><span class="o">=</span><span class="n">limit_direction</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1869</span>     <span class="n">limit_area</span><span class="o">=</span><span class="n">limit_area</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1870</span>     <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1871</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1872</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1873</span> <span class="n">data</span> <span class="o">=</span> <span class="n">extract_array</span><span class="p">(</span><span class="n">new_values</span><span class="p">,</span> <span class="n">extract_numpy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1875</span> <span class="k">if</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1876</span>     <span class="ow">not</span> <span class="n">copy</span>
-<span class="g g-Whitespace">   </span><span class="mi">1877</span>     <span class="ow">and</span> <span class="n">warn_copy_on_write</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="ow">and</span> <span class="n">already_warned</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1879</span>     <span class="ow">and</span> <span class="ow">not</span> <span class="n">already_warned</span><span class="o">.</span><span class="n">warned_already</span>
-<span class="g g-Whitespace">   </span><span class="mi">1880</span> <span class="p">):</span>
-
-<span class="nn">File ~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/arrays/numpy_.py:302,</span> in <span class="ni">NumpyExtensionArray.interpolate</span><span class="nt">(self, method, axis, index, limit, limit_direction, limit_area, copy, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span>     <span class="n">out_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ndarray</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span> <span class="c1"># TODO: assert we have floating dtype?</span>
-<span class="ne">--&gt; </span><span class="mi">302</span> <span class="n">missing</span><span class="o">.</span><span class="n">interpolate_2d_inplace</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="n">out_data</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span>     <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">307</span>     <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="n">limit_direction</span><span class="o">=</span><span class="n">limit_direction</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span>     <span class="n">limit_area</span><span class="o">=</span><span class="n">limit_area</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">copy</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span>     <span class="k">return</span> <span class="bp">self</span>
-
-<span class="nn">File ~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/missing.py:410,</span> in <span class="ni">interpolate_2d_inplace</span><span class="nt">(data, index, axis, method, limit, limit_direction, limit_area, fill_value, mask, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">391</span>     <span class="n">_interpolate_1d</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">392</span>         <span class="n">indices</span><span class="o">=</span><span class="n">indices</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">393</span>         <span class="n">yvalues</span><span class="o">=</span><span class="n">yvalues</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">401</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">404</span> <span class="c1"># error: Argument 1 to &quot;apply_along_axis&quot; has incompatible type</span>
-<span class="g g-Whitespace">    </span><span class="mi">405</span> <span class="c1"># &quot;Callable[[ndarray[Any, Any]], None]&quot;; expected &quot;Callable[...,</span>
-<span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="c1"># Union[_SupportsArray[dtype[&lt;nothing&gt;]], Sequence[_SupportsArray</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span> <span class="c1"># [dtype[&lt;nothing&gt;]]], Sequence[Sequence[_SupportsArray[dtype[&lt;nothing&gt;]]]],</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span> <span class="c1"># Sequence[Sequence[Sequence[_SupportsArray[dtype[&lt;nothing&gt;]]]]],</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span> <span class="c1"># Sequence[Sequence[Sequence[Sequence[_SupportsArray[dtype[&lt;nothing&gt;]]]]]]]]&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">410</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/numpy/lib/_shape_base_impl.py:393,</span> in <span class="ni">apply_along_axis</span><span class="nt">(func1d, axis, arr, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">389</span> <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">390</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">391</span>         <span class="s1">&#39;Cannot apply_along_axis when any iteration dimensions are 0&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">392</span>     <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">393</span> <span class="n">res</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">func1d</span><span class="p">(</span><span class="n">inarr_view</span><span class="p">[</span><span class="n">ind0</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">395</span> <span class="c1"># build a buffer for storing evaluations of func1d.</span>
-<span class="g g-Whitespace">    </span><span class="mi">396</span> <span class="c1"># remove the requested axis, and add the new ones on the end.</span>
-<span class="g g-Whitespace">    </span><span class="mi">397</span> <span class="c1"># laid out so that each write is contiguous.</span>
-<span class="g g-Whitespace">    </span><span class="mi">398</span> <span class="c1"># for a tuple index inds, buff[inds] = func1d(inarr_view[inds])</span>
-<span class="g g-Whitespace">    </span><span class="mi">399</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">matrix</span><span class="p">):</span>
-
-<span class="nn">File ~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/missing.py:391,</span> in <span class="ni">interpolate_2d_inplace.&lt;locals&gt;.func</span><span class="nt">(yvalues)</span>
-<span class="g g-Whitespace">    </span><span class="mi">388</span> <span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="n">yvalues</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">389</span>     <span class="c1"># process 1-d slices in the axis direction</span>
-<span class="ne">--&gt; </span><span class="mi">391</span>     <span class="n">_interpolate_1d</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">392</span>         <span class="n">indices</span><span class="o">=</span><span class="n">indices</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">393</span>         <span class="n">yvalues</span><span class="o">=</span><span class="n">yvalues</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">394</span>         <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">395</span>         <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">396</span>         <span class="n">limit_direction</span><span class="o">=</span><span class="n">limit_direction</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">397</span>         <span class="n">limit_area</span><span class="o">=</span><span class="n">limit_area_validated</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">398</span>         <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">399</span>         <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">400</span>         <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">401</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span>     <span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/missing.py:528,</span> in <span class="ni">_interpolate_1d</span><span class="nt">(indices, yvalues, method, limit, limit_direction, limit_area, fill_value, bounds_error, order, mask, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">524</span>     <span class="n">yvalues</span><span class="p">[</span><span class="n">invalid</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">525</span>         <span class="n">indices</span><span class="p">[</span><span class="n">invalid</span><span class="p">],</span> <span class="n">indices</span><span class="p">[</span><span class="n">valid</span><span class="p">][</span><span class="n">indexer</span><span class="p">],</span> <span class="n">yvalues</span><span class="p">[</span><span class="n">valid</span><span class="p">][</span><span class="n">indexer</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">527</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">528</span>     <span class="n">yvalues</span><span class="p">[</span><span class="n">invalid</span><span class="p">]</span> <span class="o">=</span> <span class="n">_interpolate_scipy_wrapper</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">529</span>         <span class="n">indices</span><span class="p">[</span><span class="n">valid</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">530</span>         <span class="n">yvalues</span><span class="p">[</span><span class="n">valid</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">531</span>         <span class="n">indices</span><span class="p">[</span><span class="n">invalid</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">532</span>         <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">533</span>         <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">534</span>         <span class="n">bounds_error</span><span class="o">=</span><span class="n">bounds_error</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">535</span>         <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">536</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="k">if</span> <span class="n">mask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span>     <span class="n">mask</span><span class="p">[:]</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="nn">File ~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/missing.py:565,</span> in <span class="ni">_interpolate_scipy_wrapper</span><span class="nt">(x, y, new_x, method, fill_value, bounds_error, order, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">559</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">560</span><span class="sd"> Passed off to scipy.interpolate.interp1d. method is scipy&#39;s kind.</span>
-<span class="g g-Whitespace">    </span><span class="mi">561</span><span class="sd"> Returns an array interpolated at new_x.  Add any new methods to</span>
-<span class="g g-Whitespace">    </span><span class="mi">562</span><span class="sd"> the list in _clean_interp_method.</span>
-<span class="g g-Whitespace">    </span><span class="mi">563</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="n">extra</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> interpolation requires SciPy.&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">565</span> <span class="n">import_optional_dependency</span><span class="p">(</span><span class="s2">&quot;scipy&quot;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="n">extra</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">566</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">interpolate</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span> <span class="n">new_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">new_x</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/compat/_optional.py:138,</span> in <span class="ni">import_optional_dependency</span><span class="nt">(name, extra, errors, min_version)</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">if</span> <span class="n">errors</span> <span class="o">==</span> <span class="s2">&quot;raise&quot;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">138</span>         <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span>     <span class="k">return</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span> <span class="c1"># Handle submodules: if we have submodule, grab parent module from sys.modules</span>
-
-<span class="ne">ImportError</span>: Missing optional dependency &#39;scipy&#39;. polynomial interpolation requires SciPy. Use pip or conda to install scipy.
-</pre></div>
-</div>
-</div>
+    </div>
+  </div>
+</div></div>
 </div>
 </section>
 </section>

@@ -36,199 +36,35 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Aplicar interpolación 'polynomial' de orden 2
-df_poly_interpolated = completar_nan_col(df_copia2, method='polynomial', order=2)
+# Aplicar interpolación 'linear'
+df_linear_interpolated = completar_nan_col(df_copia2, method='linear')
 
-print("\nDataFrame después de interpolación 'polynomial' (orden 2, primeras 7 filas):")
-display(df_poly_interpolated.head(7))
+print("\nDataFrame después de interpolación 'linear' (primeras 7 filas):")
+display(df_linear_interpolated.head(7))
 
-print("Valores NaN después de interpolación 'polynomial' (orden 2):")
-display(contar_nan(df_poly_interpolated))
+print("Valores NaN después de interpolación 'linear':")
+display(contar_nan(df_linear_interpolated))
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
 [31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mFile [39m[32m~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/compat/_optional.py:135[39m, in [36mimport_optional_dependency[39m[34m(name, extra, errors, min_version)[39m
-[32m    134[39m [38;5;28;01mtry[39;00m:
-[32m--> [39m[32m135[39m     module = [43mimportlib[49m[43m.[49m[43mimport_module[49m[43m([49m[43mname[49m[43m)[49m
-[32m    136[39m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
+[36mCell[39m[36m [39m[32mIn[61][39m[32m, line 2[39m
+[32m      1[39m [38;5;66;03m# Aplicar interpolación 'linear'[39;00m
+[32m----> [39m[32m2[39m df_linear_interpolated = [43mcompletar_nan_col[49m[43m([49m[43mdf_copia2[49m[43m,[49m[43m [49m[43mmethod[49m[43m=[49m[33;43m'[39;49m[33;43mlinear[39;49m[33;43m'[39;49m[43m)[49m
+[32m      4[39m [38;5;28mprint[39m([33m"[39m[38;5;130;01m\n[39;00m[33mDataFrame después de interpolación [39m[33m'[39m[33mlinear[39m[33m'[39m[33m (primeras 7 filas):[39m[33m"[39m)
+[32m      5[39m display(df_linear_interpolated.head([32m7[39m))
 
-[36mFile [39m[32m~/anaconda3/envs/jupyterbook/lib/python3.13/importlib/__init__.py:88[39m, in [36mimport_module[39m[34m(name, package)[39m
-[32m     87[39m         level += [32m1[39m
-[32m---> [39m[32m88[39m [38;5;28;01mreturn[39;00m [43m_bootstrap[49m[43m.[49m[43m_gcd_import[49m[43m([49m[43mname[49m[43m[[49m[43mlevel[49m[43m:[49m[43m][49m[43m,[49m[43m [49m[43mpackage[49m[43m,[49m[43m [49m[43mlevel[49m[43m)[49m
-
-[36mFile [39m[32m<frozen importlib._bootstrap>:1387[39m, in [36m_gcd_import[39m[34m(name, package, level)[39m
-
-[36mFile [39m[32m<frozen importlib._bootstrap>:1360[39m, in [36m_find_and_load[39m[34m(name, import_)[39m
-
-[36mFile [39m[32m<frozen importlib._bootstrap>:1324[39m, in [36m_find_and_load_unlocked[39m[34m(name, import_)[39m
+[36mCell[39m[36m [39m[32mIn[59][39m[32m, line 15[39m, in [36mcompletar_nan_col[39m[34m(dataframe, method, **kwargs)[39m
+[32m      1[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mcompletar_nan_col[39m(dataframe, method=[33m'[39m[33mlinear[39m[33m'[39m, **kwargs):
+[32m      3[39m [38;5;250m    [39m[33;03m"""[39;00m
+[32m      4[39m [33;03m    Completa valores NaN solo en columnas numéricas de un DataFrame[39;00m
+[32m      5[39m [33;03m    utilizando el método de interpolación especificado.[39;00m
+[32m   (...)[39m[32m     13[39m [33;03m        pd.DataFrame: El DataFrame con los NaNs en columnas numéricas interpolados.[39;00m
+[32m     14[39m [33;03m    """[39;00m
+[32m---> [39m[32m15[39m     [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mscipy[39;00m[34;01m.[39;00m[34;01minterpolate[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01minterpolate[39;00m
+[32m     17[39m     df_interpolado = dataframe.copy()
+[32m     18[39m     numeric_cols = df_interpolado.select_dtypes(include=np.number).columns
 
 [31mModuleNotFoundError[39m: No module named 'scipy'
-
-During handling of the above exception, another exception occurred:
-
-[31mImportError[39m                               Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[62][39m[32m, line 2[39m
-[32m      1[39m [38;5;66;03m# Aplicar interpolación 'polynomial' de orden 2[39;00m
-[32m----> [39m[32m2[39m df_poly_interpolated = [43mcompletar_nan_col[49m[43m([49m[43mdf_copia2[49m[43m,[49m[43m [49m[43mmethod[49m[43m=[49m[33;43m'[39;49m[33;43mpolynomial[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[43morder[49m[43m=[49m[32;43m2[39;49m[43m)[49m
-[32m      4[39m [38;5;28mprint[39m([33m"[39m[38;5;130;01m\n[39;00m[33mDataFrame después de interpolación [39m[33m'[39m[33mpolynomial[39m[33m'[39m[33m (orden 2, primeras 7 filas):[39m[33m"[39m)
-[32m      5[39m display(df_poly_interpolated.head([32m7[39m))
-
-[36mCell[39m[36m [39m[32mIn[59][39m[32m, line 20[39m, in [36mcompletar_nan_col[39m[34m(dataframe, method, **kwargs)[39m
-[32m     17[39m [38;5;28;01mfor[39;00m col [38;5;129;01min[39;00m numeric_cols:
-[32m     18[39m     [38;5;66;03m# Solo interpolar si la columna tiene NaNs[39;00m
-[32m     19[39m     [38;5;28;01mif[39;00m df_interpolado[col].isnull().any():
-[32m---> [39m[32m20[39m         df_interpolado[col] = [43mdf_interpolado[49m[43m[[49m[43mcol[49m[43m][49m[43m.[49m[43minterpolate[49m[43m([49m[43mmethod[49m[43m=[49m[43mmethod[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
-[32m     21[39m [38;5;28;01mreturn[39;00m df_interpolado
-
-[36mFile [39m[32m~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/generic.py:8518[39m, in [36mNDFrame.interpolate[39m[34m(self, method, axis, limit, inplace, limit_direction, limit_area, downcast, **kwargs)[39m
-[32m   8516[39m [38;5;28;01melse[39;00m:
-[32m   8517[39m     index = missing.get_interp_index(method, obj.index)
-[32m-> [39m[32m8518[39m     new_data = [43mobj[49m[43m.[49m[43m_mgr[49m[43m.[49m[43minterpolate[49m[43m([49m
-[32m   8519[39m [43m        [49m[43mmethod[49m[43m=[49m[43mmethod[49m[43m,[49m
-[32m   8520[39m [43m        [49m[43mindex[49m[43m=[49m[43mindex[49m[43m,[49m
-[32m   8521[39m [43m        [49m[43mlimit[49m[43m=[49m[43mlimit[49m[43m,[49m
-[32m   8522[39m [43m        [49m[43mlimit_direction[49m[43m=[49m[43mlimit_direction[49m[43m,[49m
-[32m   8523[39m [43m        [49m[43mlimit_area[49m[43m=[49m[43mlimit_area[49m[43m,[49m
-[32m   8524[39m [43m        [49m[43minplace[49m[43m=[49m[43minplace[49m[43m,[49m
-[32m   8525[39m [43m        [49m[43mdowncast[49m[43m=[49m[43mdowncast[49m[43m,[49m
-[32m   8526[39m [43m        [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m,[49m
-[32m   8527[39m [43m    [49m[43m)[49m
-[32m   8529[39m result = [38;5;28mself[39m._constructor_from_mgr(new_data, axes=new_data.axes)
-[32m   8530[39m [38;5;28;01mif[39;00m should_transpose:
-
-[36mFile [39m[32m~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/internals/base.py:291[39m, in [36mDataManager.interpolate[39m[34m(self, inplace, **kwargs)[39m
-[32m    290[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34minterpolate[39m([38;5;28mself[39m, inplace: [38;5;28mbool[39m, **kwargs) -> Self:
-[32m--> [39m[32m291[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mapply_with_block[49m[43m([49m
-[32m    292[39m [43m        [49m[33;43m"[39;49m[33;43minterpolate[39;49m[33;43m"[39;49m[43m,[49m
-[32m    293[39m [43m        [49m[43minplace[49m[43m=[49m[43minplace[49m[43m,[49m
-[32m    294[39m [43m        [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m,[49m
-[32m    295[39m [43m        [49m[43musing_cow[49m[43m=[49m[43musing_copy_on_write[49m[43m([49m[43m)[49m[43m,[49m
-[32m    296[39m [43m        [49m[43malready_warned[49m[43m=[49m[43m_AlreadyWarned[49m[43m([49m[43m)[49m[43m,[49m
-[32m    297[39m [43m    [49m[43m)[49m
-
-[36mFile [39m[32m~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/internals/managers.py:363[39m, in [36mBaseBlockManager.apply[39m[34m(self, f, align_keys, **kwargs)[39m
-[32m    361[39m         applied = b.apply(f, **kwargs)
-[32m    362[39m     [38;5;28;01melse[39;00m:
-[32m--> [39m[32m363[39m         applied = [38;5;28;43mgetattr[39;49m[43m([49m[43mb[49m[43m,[49m[43m [49m[43mf[49m[43m)[49m[43m([49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
-[32m    364[39m     result_blocks = extend_blocks(applied, result_blocks)
-[32m    366[39m out = [38;5;28mtype[39m([38;5;28mself[39m).from_blocks(result_blocks, [38;5;28mself[39m.axes)
-
-[36mFile [39m[32m~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/internals/blocks.py:1863[39m, in [36mBlock.interpolate[39m[34m(self, method, index, inplace, limit, limit_direction, limit_area, downcast, using_cow, already_warned, **kwargs)[39m
-[32m   1860[39m copy, refs = [38;5;28mself[39m._get_refs_and_copy(using_cow, inplace)
-[32m   1862[39m [38;5;66;03m# Dispatch to the EA method.[39;00m
-[32m-> [39m[32m1863[39m new_values = [38;5;28;43mself[39;49m[43m.[49m[43marray_values[49m[43m.[49m[43minterpolate[49m[43m([49m
-[32m   1864[39m [43m    [49m[43mmethod[49m[43m=[49m[43mmethod[49m[43m,[49m
-[32m   1865[39m [43m    [49m[43maxis[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mndim[49m[43m [49m[43m-[49m[43m [49m[32;43m1[39;49m[43m,[49m
-[32m   1866[39m [43m    [49m[43mindex[49m[43m=[49m[43mindex[49m[43m,[49m
-[32m   1867[39m [43m    [49m[43mlimit[49m[43m=[49m[43mlimit[49m[43m,[49m
-[32m   1868[39m [43m    [49m[43mlimit_direction[49m[43m=[49m[43mlimit_direction[49m[43m,[49m
-[32m   1869[39m [43m    [49m[43mlimit_area[49m[43m=[49m[43mlimit_area[49m[43m,[49m
-[32m   1870[39m [43m    [49m[43mcopy[49m[43m=[49m[43mcopy[49m[43m,[49m
-[32m   1871[39m [43m    [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m,[49m
-[32m   1872[39m [43m[49m[43m)[49m
-[32m   1873[39m data = extract_array(new_values, extract_numpy=[38;5;28;01mTrue[39;00m)
-[32m   1875[39m [38;5;28;01mif[39;00m (
-[32m   1876[39m     [38;5;129;01mnot[39;00m copy
-[32m   1877[39m     [38;5;129;01mand[39;00m warn_copy_on_write()
-[32m   1878[39m     [38;5;129;01mand[39;00m already_warned [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m
-[32m   1879[39m     [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m already_warned.warned_already
-[32m   1880[39m ):
-
-[36mFile [39m[32m~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/arrays/numpy_.py:302[39m, in [36mNumpyExtensionArray.interpolate[39m[34m(self, method, axis, index, limit, limit_direction, limit_area, copy, **kwargs)[39m
-[32m    299[39m     out_data = [38;5;28mself[39m._ndarray.copy()
-[32m    301[39m [38;5;66;03m# TODO: assert we have floating dtype?[39;00m
-[32m--> [39m[32m302[39m [43mmissing[49m[43m.[49m[43minterpolate_2d_inplace[49m[43m([49m
-[32m    303[39m [43m    [49m[43mout_data[49m[43m,[49m
-[32m    304[39m [43m    [49m[43mmethod[49m[43m=[49m[43mmethod[49m[43m,[49m
-[32m    305[39m [43m    [49m[43maxis[49m[43m=[49m[43maxis[49m[43m,[49m
-[32m    306[39m [43m    [49m[43mindex[49m[43m=[49m[43mindex[49m[43m,[49m
-[32m    307[39m [43m    [49m[43mlimit[49m[43m=[49m[43mlimit[49m[43m,[49m
-[32m    308[39m [43m    [49m[43mlimit_direction[49m[43m=[49m[43mlimit_direction[49m[43m,[49m
-[32m    309[39m [43m    [49m[43mlimit_area[49m[43m=[49m[43mlimit_area[49m[43m,[49m
-[32m    310[39m [43m    [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m,[49m
-[32m    311[39m [43m[49m[43m)[49m
-[32m    312[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m copy:
-[32m    313[39m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m
-
-[36mFile [39m[32m~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/missing.py:410[39m, in [36minterpolate_2d_inplace[39m[34m(data, index, axis, method, limit, limit_direction, limit_area, fill_value, mask, **kwargs)[39m
-[32m    391[39m     _interpolate_1d(
-[32m    392[39m         indices=indices,
-[32m    393[39m         yvalues=yvalues,
-[32m   (...)[39m[32m    401[39m         **kwargs,
-[32m    402[39m     )
-[32m    404[39m [38;5;66;03m# error: Argument 1 to "apply_along_axis" has incompatible type[39;00m
-[32m    405[39m [38;5;66;03m# "Callable[[ndarray[Any, Any]], None]"; expected "Callable[...,[39;00m
-[32m    406[39m [38;5;66;03m# Union[_SupportsArray[dtype[<nothing>]], Sequence[_SupportsArray[39;00m
-[32m    407[39m [38;5;66;03m# [dtype[<nothing>]]], Sequence[Sequence[_SupportsArray[dtype[<nothing>]]]],[39;00m
-[32m    408[39m [38;5;66;03m# Sequence[Sequence[Sequence[_SupportsArray[dtype[<nothing>]]]]],[39;00m
-[32m    409[39m [38;5;66;03m# Sequence[Sequence[Sequence[Sequence[_SupportsArray[dtype[<nothing>]]]]]]]]"[39;00m
-[32m--> [39m[32m410[39m [43mnp[49m[43m.[49m[43mapply_along_axis[49m[43m([49m[43mfunc[49m[43m,[49m[43m [49m[43maxis[49m[43m,[49m[43m [49m[43mdata[49m[43m)[49m
-
-[36mFile [39m[32m~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/numpy/lib/_shape_base_impl.py:393[39m, in [36mapply_along_axis[39m[34m(func1d, axis, arr, *args, **kwargs)[39m
-[32m    389[39m [38;5;28;01mexcept[39;00m [38;5;167;01mStopIteration[39;00m:
-[32m    390[39m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[32m    391[39m         [33m'[39m[33mCannot apply_along_axis when any iteration dimensions are 0[39m[33m'[39m
-[32m    392[39m     ) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;28;01mNone[39;00m
-[32m--> [39m[32m393[39m res = asanyarray([43mfunc1d[49m[43m([49m[43minarr_view[49m[43m[[49m[43mind0[49m[43m][49m[43m,[49m[43m [49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m)
-[32m    395[39m [38;5;66;03m# build a buffer for storing evaluations of func1d.[39;00m
-[32m    396[39m [38;5;66;03m# remove the requested axis, and add the new ones on the end.[39;00m
-[32m    397[39m [38;5;66;03m# laid out so that each write is contiguous.[39;00m
-[32m    398[39m [38;5;66;03m# for a tuple index inds, buff[inds] = func1d(inarr_view[inds])[39;00m
-[32m    399[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(res, matrix):
-
-[36mFile [39m[32m~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/missing.py:391[39m, in [36minterpolate_2d_inplace.<locals>.func[39m[34m(yvalues)[39m
-[32m    388[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mfunc[39m(yvalues: np.ndarray) -> [38;5;28;01mNone[39;00m:
-[32m    389[39m     [38;5;66;03m# process 1-d slices in the axis direction[39;00m
-[32m--> [39m[32m391[39m     [43m_interpolate_1d[49m[43m([49m
-[32m    392[39m [43m        [49m[43mindices[49m[43m=[49m[43mindices[49m[43m,[49m
-[32m    393[39m [43m        [49m[43myvalues[49m[43m=[49m[43myvalues[49m[43m,[49m
-[32m    394[39m [43m        [49m[43mmethod[49m[43m=[49m[43mmethod[49m[43m,[49m
-[32m    395[39m [43m        [49m[43mlimit[49m[43m=[49m[43mlimit[49m[43m,[49m
-[32m    396[39m [43m        [49m[43mlimit_direction[49m[43m=[49m[43mlimit_direction[49m[43m,[49m
-[32m    397[39m [43m        [49m[43mlimit_area[49m[43m=[49m[43mlimit_area_validated[49m[43m,[49m
-[32m    398[39m [43m        [49m[43mfill_value[49m[43m=[49m[43mfill_value[49m[43m,[49m
-[32m    399[39m [43m        [49m[43mbounds_error[49m[43m=[49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
-[32m    400[39m [43m        [49m[43mmask[49m[43m=[49m[43mmask[49m[43m,[49m
-[32m    401[39m [43m        [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m,[49m
-[32m    402[39m [43m    [49m[43m)[49m
-
-[36mFile [39m[32m~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/missing.py:528[39m, in [36m_interpolate_1d[39m[34m(indices, yvalues, method, limit, limit_direction, limit_area, fill_value, bounds_error, order, mask, **kwargs)[39m
-[32m    524[39m     yvalues[invalid] = np.interp(
-[32m    525[39m         indices[invalid], indices[valid][indexer], yvalues[valid][indexer]
-[32m    526[39m     )
-[32m    527[39m [38;5;28;01melse[39;00m:
-[32m--> [39m[32m528[39m     yvalues[invalid] = [43m_interpolate_scipy_wrapper[49m[43m([49m
-[32m    529[39m [43m        [49m[43mindices[49m[43m[[49m[43mvalid[49m[43m][49m[43m,[49m
-[32m    530[39m [43m        [49m[43myvalues[49m[43m[[49m[43mvalid[49m[43m][49m[43m,[49m
-[32m    531[39m [43m        [49m[43mindices[49m[43m[[49m[43minvalid[49m[43m][49m[43m,[49m
-[32m    532[39m [43m        [49m[43mmethod[49m[43m=[49m[43mmethod[49m[43m,[49m
-[32m    533[39m [43m        [49m[43mfill_value[49m[43m=[49m[43mfill_value[49m[43m,[49m
-[32m    534[39m [43m        [49m[43mbounds_error[49m[43m=[49m[43mbounds_error[49m[43m,[49m
-[32m    535[39m [43m        [49m[43morder[49m[43m=[49m[43morder[49m[43m,[49m
-[32m    536[39m [43m        [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m,[49m
-[32m    537[39m [43m    [49m[43m)[49m
-[32m    539[39m [38;5;28;01mif[39;00m mask [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
-[32m    540[39m     mask[:] = [38;5;28;01mFalse[39;00m
-
-[36mFile [39m[32m~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/core/missing.py:565[39m, in [36m_interpolate_scipy_wrapper[39m[34m(x, y, new_x, method, fill_value, bounds_error, order, **kwargs)[39m
-[32m    559[39m [38;5;250m[39m[33;03m"""[39;00m
-[32m    560[39m [33;03mPassed off to scipy.interpolate.interp1d. method is scipy's kind.[39;00m
-[32m    561[39m [33;03mReturns an array interpolated at new_x.  Add any new methods to[39;00m
-[32m    562[39m [33;03mthe list in _clean_interp_method.[39;00m
-[32m    563[39m [33;03m"""[39;00m
-[32m    564[39m extra = [33mf[39m[33m"[39m[38;5;132;01m{[39;00mmethod[38;5;132;01m}[39;00m[33m interpolation requires SciPy.[39m[33m"[39m
-[32m--> [39m[32m565[39m [43mimport_optional_dependency[49m[43m([49m[33;43m"[39;49m[33;43mscipy[39;49m[33;43m"[39;49m[43m,[49m[43m [49m[43mextra[49m[43m=[49m[43mextra[49m[43m)[49m
-[32m    566[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mscipy[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m interpolate
-[32m    568[39m new_x = np.asarray(new_x)
-
-[36mFile [39m[32m~/anaconda3/envs/jupyterbook/lib/python3.13/site-packages/pandas/compat/_optional.py:138[39m, in [36mimport_optional_dependency[39m[34m(name, extra, errors, min_version)[39m
-[32m    136[39m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
-[32m    137[39m     [38;5;28;01mif[39;00m errors == [33m"[39m[33mraise[39m[33m"[39m:
-[32m--> [39m[32m138[39m         [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m(msg)
-[32m    139[39m     [38;5;28;01mreturn[39;00m [38;5;28;01mNone[39;00m
-[32m    141[39m [38;5;66;03m# Handle submodules: if we have submodule, grab parent module from sys.modules[39;00m
-
-[31mImportError[39m: Missing optional dependency 'scipy'. polynomial interpolation requires SciPy. Use pip or conda to install scipy.
 
