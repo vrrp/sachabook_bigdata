@@ -111,11 +111,23 @@ Es el conjunto de estrategias, tecnologías y sistemas para el almacenamiento, p
 La sociedad ha experimentado una evolución significativa a lo largo del tiempo, marcada por avances tecnológicos y cambios en las necesidades y capacidades humanas.
 
 <div class="languages-slideshow-container">
-  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0_nuevo.png?raw=true" alt="Imagen 0: Evolución 0">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Imagen 1: Evolución 1">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 2: Evolución 2">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 3: Evolución 3">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev4.png?raw=true" alt="Imagen 4: Evolución 4">
+  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 0: Evolución 0">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Imagen 1: Evolución 1">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 2: Evolución 2">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 3: Evolución 3">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev4.png?raw=true" alt="Imagen 4: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev5.png?raw=true" alt="Imagen 5: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev6.png?raw=true" alt="Imagen 6: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev7.png?raw=true" alt="Imagen 7: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev8.png?raw=true" alt="Imagen 8: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev9.png?raw=true" alt="Imagen 9: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev10.png?raw=true" alt="Imagen 10: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev11.png?raw=true" alt="Imagen 11: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev12.png?raw=true" alt="Imagen 12: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev13.png?raw=true" alt="Imagen 13: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev14.png?raw=true" alt="Imagen 14: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev15.png?raw=true" alt="Imagen 15: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev16.png?raw=true" alt="Imagen 16: Evolución 4">
   <div class="languages-controls"><button onclick="languagesChangeSlide(-1)">Anterior</button><button onclick="languagesToggleAutoPlay()" id="languages-play-btn">Play</button><button onclick="languagesChangeSlide(1)">Siguiente</button><button onclick="languagesToggleFullscreen()" id="languages-fullscreen-btn">Pantalla completa</button></div>
 </div>
 

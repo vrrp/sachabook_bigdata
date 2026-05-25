@@ -111,7 +111,7 @@ Es el conjunto de estrategias, tecnologías y sistemas para el almacenamiento, p
 La sociedad ha experimentado una evolución significativa a lo largo del tiempo, marcada por avances tecnológicos y cambios en las necesidades y capacidades humanas.
 
 <div class="languages-slideshow-container">
-  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0_nuevo.png?raw=true" alt="Imagen 0: Evolución 0">
+  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/preambulo/rev0_nuevo.png?raw=true" alt="Imagen 0: Evolución 0">
   <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Imagen 1: Evolución 1">
   <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 2: Evolución 2">
   <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 3: Evolución 3">
