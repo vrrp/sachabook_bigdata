@@ -420,7 +420,16 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-matematicos"><strong>1.2. Operadores matemáticos</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacion"><strong>1.3. Operadores de comparación</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-i"><strong>1.4. Funciones: parte I</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-paquetes"><strong>1.4 Importar paquetes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-algebraicas"><strong>1.5. Funciones Algebraicas</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponencial">1.5.1. Exponencial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valor-absoluto">1.5.2. Valor absoluto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raiz-cuadrada">1.5.3. Raíz cuadrada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raiz-general"><strong>1.5.4. Raíz general</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logaritmo"><strong>1.5.5 Logaritmo</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-i"><strong>1.6. Funciones: parte I</strong></a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-estructura-de-datos"><strong>II. Estructura de datos</strong></a><ul class="visible nav section-nav flex-column">
@@ -441,9 +450,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-ii"><strong>3.3. Funciones: parte II</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-funcion-con-un-dato">3.3.1. Uso de función con un dato</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-funcion-con-una-estructura-de-datos">3.3.2. Uso de función con una estructura de datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-datos-errados-o-faltantes">3.3.3. Contar datos errados ó faltantes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-errados-o-faltantes">3.3.4. Completar datos errados ó faltantes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-faltantes-en-columnas-numericas-especificas">3.3.5. Completar datos faltantes en columnas numéricas específicas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-control-y-preprocesamiento-de-datos"><strong>3.4 Manejo, control y preprocesamiento de datos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-datos-errados-o-faltantes">3.4.1. Contar datos errados ó faltantes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-errados-o-faltantes">3.4.2. Completar datos errados ó faltantes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-faltantes-en-columnas-numericas-especificas">3.4.3. Completar datos faltantes en columnas numéricas específicas</a></li>
 </ul>
 </li>
 </ul>
@@ -767,52 +779,181 @@ residuo_div01 4
 </div>
 </div>
 </div>
+</section>
+<section id="importar-paquetes">
+<h2><strong>1.4 Importar paquetes</strong><a class="headerlink" href="#importar-paquetes" title="Link to this heading">#</a></h2>
+<p>En Python, las librerías y los paquetes son conceptos fundamentales que permiten organizar, reutilizar y compartir código. Aunque a menudo se usan indistintamente, tienen significados técnicos específicos.</p>
+<ul class="simple">
+<li><p><strong>Paquetes</strong>: Un paquete es una forma de organizar módulos de Python en directorios (carpetas). Un directorio se considera un paquete si contiene un archivo llamado<code class="docutils literal notranslate"> <span class="pre">__init__.py</span></code>. Este archivo, que puede estar vacío, le dice a Python que el directorio debe ser tratado como un paquete. Los paquetes se utilizan para agrupar módulos relacionados y crear una estructura jerárquica, lo que facilita la gestión de proyectos grandes.</p></li>
+<li><p><strong>Librerías</strong>: Una librería (o biblioteca) es un término más general que se refiere a una colección de código ya escrito que puedes usar en tu propio programa. Las librerías de Python se distribuyen comúnmente como paquetes, pero el término “librería” se enfoca en la funcionalidad que proporcionan. Por ejemplo, <strong>Pandas</strong> y <strong>Numpy</strong> son librerías muy populares que se instalan como paquetes.</p></li>
+</ul>
+<div align="center">
+<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/cajaHerramientas.png?raw=true" alt="" width="200" height="150">
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paquete</span><span class="p">:</span>
+        <span class="n">aplicacion_01</span>
+        <span class="n">aplicacion_02</span>
+        <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span>
+        <span class="n">aplicacion_n</span>
+</pre></div>
+</div>
+<p>Formas de importar un paquete y sus aplicaciones</p>
+<p><strong>Primera forma</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">paquete</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pp</span>
+
+<span class="n">var</span> <span class="o">=</span> <span class="n">paquete</span><span class="o">.</span><span class="n">aplicacion_01</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Segunda forma</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">paquete</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pp</span>
+
+<span class="n">var</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">aplicacion_01</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Tercera forma</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">paquete</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">aplicacion_01</span><span class="p">,</span> <span class="n">aplicacion_04</span><span class="p">)</span>
+
+<span class="n">var_01</span> <span class="o">=</span> <span class="n">aplicacion_01</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+<span class="n">var_02</span> <span class="o">=</span> <span class="n">aplicacion_04</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># condicionales: if, elif, else</span>
-<span class="n">var</span> <span class="o">=</span> <span class="mi">23</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">var</span><span class="p">)</span><span class="o">==</span><span class="nb">int</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;var es valor entero&quot;</span><span class="p">)</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;segunda accion de if&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;var no es un numero entero&quot;</span><span class="p">)</span>
+<span class="n">pi_math</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">pi_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi_math</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi_np</span><span class="p">)</span>
+
+<span class="n">n_euler_math</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span>
+<span class="n">n_euler_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_euler_math</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_euler_np</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>var es valor entero
-segunda accion de if
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># condicionales: if, elif, else</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
-
-<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(1)&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="s2">&quot;&gt;&quot;</span><span class="p">,</span><span class="n">b</span> <span class="p">,</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span>
-
-<span class="k">elif</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(2)&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="s2">&quot;&lt;&quot;</span><span class="p">,</span><span class="n">b</span> <span class="p">,</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>
-
-<span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(3)&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="n">b</span> <span class="p">,</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3) 7 == 7 True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+3.141592653589793
+2.718281828459045
+2.718281828459045
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+<section id="funciones-algebraicas">
+<h2><strong>1.5. Funciones Algebraicas</strong><a class="headerlink" href="#funciones-algebraicas" title="Link to this heading">#</a></h2>
+<section id="exponencial">
+<h3>1.5.1. Exponencial<a class="headerlink" href="#exponencial" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(y=f(x) = b^{x}\)</span></p>
+<p><span class="math notranslate nohighlight">\(Si: b = 5, x = 2 \)</span></p>
+<p><span class="math notranslate nohighlight">\(⇒ y=f(2)=5^2=25\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y1</span> <span class="o">=</span> <span class="mi">5</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">display</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="valor-absoluto">
+<h3>1.5.2. Valor absoluto<a class="headerlink" href="#valor-absoluto" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(y = f(x) = |x|\)</span></p>
+<p>si: <span class="math notranslate nohighlight">\(x&lt;0 ⇒ y = f(x) = |x| = (-1) \times x\)</span></p>
+<p>si: <span class="math notranslate nohighlight">\(x&gt;0 → y = f(x) = |x| = x\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="raiz-cuadrada">
+<h3>1.5.3. Raíz cuadrada<a class="headerlink" href="#raiz-cuadrada" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\( y=f(x) = \sqrt{x} = x^\frac{1}{2}\)</span></p>
+<p><span class="math notranslate nohighlight">\( Si: x = 25 \)</span>
+<span class="math notranslate nohighlight">\(⇒ y=f(25)=\sqrt{25}=5\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="raiz-general">
+<h3><strong>1.5.4. Raíz general</strong><a class="headerlink" href="#raiz-general" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\( y=f(x) = \sqrt[n]{x^m}= x^{\frac{m}{n}}\)</span></p>
+<p><span class="math notranslate nohighlight">\( Si: x = 125 \)</span>
+<span class="math notranslate nohighlight">\(⇒ y=f(125)=\sqrt[3]{125}=\sqrt[3]{5^{3}}=5^{\frac{3}{3}}=5\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y4</span> <span class="o">=</span> <span class="mi">125</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.999999999999999
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="logaritmo">
+<h3><strong>1.5.5 Logaritmo</strong><a class="headerlink" href="#logaritmo" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(y = log_{b}x \Rightarrow x = b^y\)</span></p>
+<p><span class="math notranslate nohighlight">\(Si: b=x ⇒b=b^y  \iff y = 1\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># funcion logaritmo de 10 en base 10</span>
+<span class="n">y5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y5</span><span class="p">)</span>
+
+<span class="c1"># funcion logaritmo de 2 en base 2</span>
+<span class="n">y6</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y6</span><span class="p">)</span>
+
+<span class="c1"># funcion logaritmo de e en base e</span>
+<span class="n">y7</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n_euler_np</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+1.0
+1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 <section id="funciones-parte-i">
-<h2><strong>1.4. Funciones: parte I</strong><a class="headerlink" href="#funciones-parte-i" title="Link to this heading">#</a></h2>
+<h2><strong>1.6. Funciones: parte I</strong><a class="headerlink" href="#funciones-parte-i" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">):</span>
@@ -843,7 +984,9 @@ segunda accion de if
 <section id="cadenas">
 <h2><strong>2.1. Cadenas</strong><a class="headerlink" href="#cadenas" title="Link to this heading">#</a></h2>
 <p>En Python, una cadena es una secuencia inmutable de caracteres. Esto significa que una vez que se crea una cadena, su contenido no se puede cambiar. Las cadenas se utilizan para representar texto, como nombres, oraciones, o cualquier otro tipo de dato textual.</p>
-<div class="cell docutils container">
+<div align="center">
+<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/cajaHerramientas.png?raw=true" alt="" width="150" height="80">
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estructuras tipo cadena de caracteres</span>
 <span class="n">var_cadena</span> <span class="o">=</span> <span class="s2">&quot;las estaciones del año son: verano, otoño, invierno y primavera&quot;</span>
@@ -903,7 +1046,9 @@ Lima
 <section id="listas">
 <h2><strong>2.2. Listas</strong><a class="headerlink" href="#listas" title="Link to this heading">#</a></h2>
 <p>Las listas son colecciones ordenadas y mutables, lo que significa que puedes añadir, eliminar o modificar elementos después de su creación. Son muy versátiles y se usan comúnmente para almacenar elementos del mismo tipo, aunque pueden contener datos de diferentes tipos.</p>
-<div class="cell docutils container">
+<div align="center">
+<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/cajaHerramientas.png?raw=true" alt="" width="150" height="80">
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># listas</span>
 <span class="n">lista_01</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="mi">2024</span><span class="p">,</span> <span class="s2">&quot;mundo&quot;</span><span class="p">,</span> <span class="mf">2024.5</span><span class="p">]</span>
@@ -933,7 +1078,9 @@ hola
 <section id="array-1d">
 <h2><strong>2.3. Array 1D</strong><a class="headerlink" href="#array-1d" title="Link to this heading">#</a></h2>
 <p>Un array 1D de NumPy es una estructura de datos fundamental en la biblioteca NumPy de Python, diseñada para almacenar una colección de elementos del mismo tipo de datos, como números enteros o de punto flotante. A diferencia de las listas estándar de Python, los arrays de NumPy están optimizados para operaciones matemáticas y científicas, lo que los hace significativamente más rápidos y eficientes en el manejo de grandes volúmenes de datos numéricos.</p>
-<div class="cell docutils container">
+<div align="center">
+<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/cajaHerramientas.png?raw=true" alt="" width="150" height="80">
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
@@ -1023,7 +1170,9 @@ hola
 </li>
 </ul>
 <p>En resumen, el DataFrame de Pandas simplifica la manipulación y el análisis de datos complejos, proporcionando una estructura intuitiva y herramientas potentes para que los científicos de datos y los analistas trabajen de forma productiva.</p>
-<div class="cell docutils container">
+<div align="center">
+<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/cajaHerramientas.png?raw=true" alt="" width="150" height="80">
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data frame</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -1281,6 +1430,9 @@ min       0.880983          7.802457     6.873829
 50%      18.000000         50.600000   910.800000
 75%      28.580135         77.050336  2202.108979
 max      35.119017         93.397543  3280.029936
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1911,8 +2063,11 @@ Name: temperatura, dtype: float64
 </div></div></div>
 </div>
 </section>
+</section>
+<section id="manejo-control-y-preprocesamiento-de-datos">
+<h2><strong>3.4 Manejo, control y preprocesamiento de datos</strong><a class="headerlink" href="#manejo-control-y-preprocesamiento-de-datos" title="Link to this heading">#</a></h2>
 <section id="contar-datos-errados-o-faltantes">
-<h3>3.3.3. Contar datos errados ó faltantes<a class="headerlink" href="#contar-datos-errados-o-faltantes" title="Link to this heading">#</a></h3>
+<h3>3.4.1. Contar datos errados ó faltantes<a class="headerlink" href="#contar-datos-errados-o-faltantes" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_copia1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -2008,12 +2163,12 @@ Name: temperatura, dtype: float64
     <span class="n">total_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataframe</span><span class="p">)</span>
 
     <span class="c1"># Percentage of NaNs per column</span>
-    <span class="n">nan_percentages</span> <span class="o">=</span> <span class="p">(</span><span class="n">nan_counts</span> <span class="o">/</span> <span class="n">total_rows</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="n">nan_porcentaje</span> <span class="o">=</span> <span class="p">(</span><span class="n">nan_counts</span> <span class="o">/</span> <span class="n">total_rows</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
 
     <span class="c1"># Create a DataFrame to display both counts and percentages</span>
     <span class="n">nan_summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-        <span class="s1">&#39;NaN Count&#39;</span><span class="p">:</span> <span class="n">nan_counts</span><span class="p">,</span>
-        <span class="s1">&#39;NaN Percentage (%)&#39;</span><span class="p">:</span> <span class="n">nan_percentages</span>
+        <span class="s1">&#39;NaN Cantidad&#39;</span><span class="p">:</span> <span class="n">nan_counts</span><span class="p">,</span>
+        <span class="s1">&#39;NaN Porcemtaje (%)&#39;</span><span class="p">:</span> <span class="n">nan_porcentaje</span>
     <span class="p">})</span>
 
     <span class="k">return</span> <span class="n">nan_summary</span>
@@ -2052,8 +2207,8 @@ Name: temperatura, dtype: float64
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>NaN Count</th>
-      <th>NaN Percentage (%)</th>
+      <th>NaN Cantidad</th>
+      <th>NaN Porcemtaje (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -2088,7 +2243,7 @@ Name: temperatura, dtype: float64
 </div>
 </section>
 <section id="completar-datos-errados-o-faltantes">
-<h3>3.3.4. Completar datos errados ó faltantes<a class="headerlink" href="#completar-datos-errados-o-faltantes" title="Link to this heading">#</a></h3>
+<h3>3.4.2. Completar datos errados ó faltantes<a class="headerlink" href="#completar-datos-errados-o-faltantes" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">completar_nan</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">metodo</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">,</span> <span class="n">valor</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -2237,7 +2392,7 @@ dtype: int64
 </ul>
 </section>
 <section id="completar-datos-faltantes-en-columnas-numericas-especificas">
-<h3>3.3.5. Completar datos faltantes en columnas numéricas específicas<a class="headerlink" href="#completar-datos-faltantes-en-columnas-numericas-especificas" title="Link to this heading">#</a></h3>
+<h3>3.4.3. Completar datos faltantes en columnas numéricas específicas<a class="headerlink" href="#completar-datos-faltantes-en-columnas-numericas-especificas" title="Link to this heading">#</a></h3>
 <p>La función <code class="docutils literal notranslate"><span class="pre">completar_nan_col</span></code> se encargará de identificar las columnas numéricas en un DataFrame y aplicar el método de interpolación especificado para rellenar los valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
 <p><strong>Métodos de interpolación de Pandas:</strong>
 <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.interpolate()</span></code> soporta varios métodos, los más comunes son:</p>
@@ -2316,8 +2471,8 @@ dtype: int64
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>NaN Count</th>
-      <th>NaN Percentage (%)</th>
+      <th>NaN Cantidad</th>
+      <th>NaN Porcemtaje (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -2365,29 +2520,147 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">61</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Aplicar interpolación &#39;linear&#39;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df_linear_interpolated</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame después de interpolación &#39;linear&#39; (primeras 7 filas):&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">display</span><span class="p">(</span><span class="n">df_linear_interpolated</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
-
-<span class="nn">Cell In[59], line 15,</span> in <span class="ni">completar_nan_col</span><span class="nt">(dataframe, method, **kwargs)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">completar_nan_col</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="sd">     Completa valores NaN solo en columnas numéricas de un DataFrame</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="sd">     utilizando el método de interpolación especificado.</span>
-<span class="sd">   (...)     13         pd.DataFrame: El DataFrame con los NaNs en columnas numéricas interpolados.</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">interpolate</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">df_interpolado</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">numeric_cols</span> <span class="o">=</span> <span class="n">df_interpolado</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame después de interpolación &#39;linear&#39; (primeras 7 filas):
 </pre></div>
 </div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperatura</th>
+      <th>datos_decimales</th>
+      <th>humedad_relativa</th>
+      <th>estacion</th>
+      <th>temperatura_k</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.000000</td>
+      <td>0.0</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>28.580135</td>
+      <td>0.1</td>
+      <td>77.050336</td>
+      <td>verano</td>
+      <td>301.730135</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>35.119017</td>
+      <td>0.2</td>
+      <td>93.397543</td>
+      <td>verano</td>
+      <td>308.269017</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35.119017</td>
+      <td>0.3</td>
+      <td>93.397543</td>
+      <td>verano</td>
+      <td>308.269017</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28.580135</td>
+      <td>0.4</td>
+      <td>77.050336</td>
+      <td>verano</td>
+      <td>301.730135</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>18.000000</td>
+      <td>0.5</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7.419865</td>
+      <td>0.6</td>
+      <td>24.149664</td>
+      <td>NaN</td>
+      <td>280.569865</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación &#39;linear&#39;:
+</pre></div>
 </div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NaN Cantidad</th>
+      <th>NaN Porcemtaje (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>temperatura</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>datos_decimales</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>humedad_relativa</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>estacion</th>
+      <td>12</td>
+      <td>60.0</td>
+    </tr>
+    <tr>
+      <th>temperatura_k</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2406,9 +2679,7 @@ dtype: int64
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame después de interpolación &#39;polynomial&#39; (orden 2, primeras 7 filas):
 </pre></div>
 </div>
-<div class="output text_html">
-  <div id="df-30481a8c-e658-4d11-8316-72c413756285" class="colab-df-container">
-    <div>
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2492,95 +2763,10 @@ dtype: int64
     </tr>
   </tbody>
 </table>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-30481a8c-e658-4d11-8316-72c413756285')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-30481a8c-e658-4d11-8316-72c413756285 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-30481a8c-e658-4d11-8316-72c413756285');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-    </div>
-  </div>
-</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación &#39;polynomial&#39; (orden 2):
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación &#39;polynomial&#39; (orden 2):
 </pre></div>
 </div>
-<div class="output text_html">
-  <div id="df-c769fd47-97eb-43be-a112-40f1391e227d" class="colab-df-container">
-    <div>
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2598,8 +2784,8 @@ dtype: int64
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>NaN Count</th>
-      <th>NaN Percentage (%)</th>
+      <th>NaN Cantidad</th>
+      <th>NaN Porcemtaje (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -2630,90 +2816,7 @@ dtype: int64
     </tr>
   </tbody>
 </table>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-c769fd47-97eb-43be-a112-40f1391e227d')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-c769fd47-97eb-43be-a112-40f1391e227d button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-c769fd47-97eb-43be-a112-40f1391e227d');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-    </div>
-  </div>
-</div></div>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -2802,7 +2905,16 @@ dtype: int64
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-matematicos"><strong>1.2. Operadores matemáticos</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacion"><strong>1.3. Operadores de comparación</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-i"><strong>1.4. Funciones: parte I</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-paquetes"><strong>1.4 Importar paquetes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-algebraicas"><strong>1.5. Funciones Algebraicas</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponencial">1.5.1. Exponencial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valor-absoluto">1.5.2. Valor absoluto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raiz-cuadrada">1.5.3. Raíz cuadrada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raiz-general"><strong>1.5.4. Raíz general</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logaritmo"><strong>1.5.5 Logaritmo</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-i"><strong>1.6. Funciones: parte I</strong></a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-estructura-de-datos"><strong>II. Estructura de datos</strong></a><ul class="visible nav section-nav flex-column">
@@ -2823,9 +2935,12 @@ dtype: int64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-ii"><strong>3.3. Funciones: parte II</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-funcion-con-un-dato">3.3.1. Uso de función con un dato</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-funcion-con-una-estructura-de-datos">3.3.2. Uso de función con una estructura de datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-datos-errados-o-faltantes">3.3.3. Contar datos errados ó faltantes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-errados-o-faltantes">3.3.4. Completar datos errados ó faltantes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-faltantes-en-columnas-numericas-especificas">3.3.5. Completar datos faltantes en columnas numéricas específicas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-control-y-preprocesamiento-de-datos"><strong>3.4 Manejo, control y preprocesamiento de datos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-datos-errados-o-faltantes">3.4.1. Contar datos errados ó faltantes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-errados-o-faltantes">3.4.2. Completar datos errados ó faltantes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-faltantes-en-columnas-numericas-especificas">3.4.3. Completar datos faltantes en columnas numéricas específicas</a></li>
 </ul>
 </li>
 </ul>
