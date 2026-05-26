@@ -983,26 +983,26 @@ residuo_div01 4
 <p>Una <strong>estructura de datos</strong> es una forma de organizar y almacenar información en la memoria de una computadora para que pueda ser utilizada de manera eficiente. En Python, estos objetos permiten manejar colecciones de datos, facilitando tareas como buscar, ordenar, insertar y eliminar elementos.</p>
 <section id="cadenas">
 <h2><strong>2.1. Cadenas</strong><a class="headerlink" href="#cadenas" title="Link to this heading">#</a></h2>
-<p>En Python, una cadena es una secuencia inmutable de caracteres. Esto significa que una vez que se crea una cadena, su contenido no se puede cambiar. Las cadenas se utilizan para representar texto, como nombres, oraciones, o cualquier otro tipo de dato textual.</p>
+<p>Las cadenas en Python (<code class="docutils literal notranslate"><span class="pre">str</span></code>) son secuencias inmutables de caracteres Unicode que sirven para gestionar datos de texto. Al ser secuencias ordenadas, sus elementos se manipulan mediante posiciones numéricas, lo que permite extraer subtextos, medir extensiones y aplicar funciones nativas</p>
 <div align="center">
-<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/cajaHerramientas.png?raw=true" alt="" width="150" height="80">
+<img src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/ejemplo_cadena.png?raw=true" alt="" width="450" height="150">
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estructuras tipo cadena de caracteres</span>
-<span class="n">var_cadena</span> <span class="o">=</span> <span class="s2">&quot;las estaciones del año son: verano, otoño, invierno y primavera&quot;</span>
+<span class="n">var_cadena</span> <span class="o">=</span> <span class="s2">&quot;Hola a todos&quot;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">var_cadena</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">var_cadena</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">var_cadena</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">14</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var_cadena</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_cadena</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>las estaciones del año son: verano, otoño, invierno y primavera
-63
- estaciones
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola a todos
+12
+Hola
 &lt;class &#39;str&#39;&gt;
 </pre></div>
 </div>
@@ -1042,18 +1042,31 @@ Lima
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s2">&quot;python&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;p&#39;, &#39;y&#39;, &#39;t&#39;, &#39;h&#39;, &#39;o&#39;, &#39;n&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="listas">
 <h2><strong>2.2. Listas</strong><a class="headerlink" href="#listas" title="Link to this heading">#</a></h2>
 <p>Las listas son colecciones ordenadas y mutables, lo que significa que puedes añadir, eliminar o modificar elementos después de su creación. Son muy versátiles y se usan comúnmente para almacenar elementos del mismo tipo, aunque pueden contener datos de diferentes tipos.</p>
 <div align="center">
-<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/cajaHerramientas.png?raw=true" alt="" width="150" height="80">
+<img src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/ejemplo_lista.png?raw=true" alt="" width="400" height="120">
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># listas</span>
-<span class="n">lista_01</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="mi">2024</span><span class="p">,</span> <span class="s2">&quot;mundo&quot;</span><span class="p">,</span> <span class="mf">2024.5</span><span class="p">]</span>
+<span class="n">lista_01</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;Hola&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">2024.5</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">lista_01</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_01</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mf">2024.5</span><span class="p">))</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista_01</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lista_01</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
@@ -1065,11 +1078,11 @@ Lima
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;hola&#39;, 2024, &#39;mundo&#39;, 2024.5]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 4
-hola
-[&#39;hola&#39;, 2024, &#39;mundo&#39;, &#39;Peru 2025&#39;]
-&lt;class &#39;int&#39;&gt;
+7
+[7, &#39;Hola&#39;, True, &#39;Peru 2025&#39;]
+&lt;class &#39;str&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -1079,7 +1092,7 @@ hola
 <h2><strong>2.3. Array 1D</strong><a class="headerlink" href="#array-1d" title="Link to this heading">#</a></h2>
 <p>Un array 1D de NumPy es una estructura de datos fundamental en la biblioteca NumPy de Python, diseñada para almacenar una colección de elementos del mismo tipo de datos, como números enteros o de punto flotante. A diferencia de las listas estándar de Python, los arrays de NumPy están optimizados para operaciones matemáticas y científicas, lo que los hace significativamente más rápidos y eficientes en el manejo de grandes volúmenes de datos numéricos.</p>
 <div align="center">
-<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/cajaHerramientas.png?raw=true" alt="" width="150" height="80">
+<img src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/ejemplo_lista.png?raw=true" alt="" width="400" height="100">
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -1128,14 +1141,14 @@ hola
 <span class="n">array_zeros01</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">array_zeros01</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">array_zeros01</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array_zeros01</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">array_zeros01</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">array_zeros01</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">lista_01</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">array_zeros01</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span> <span class="n">lista_01</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">array_zeros01</span><span class="p">)</span>
+<span class="n">array_zeros01</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">==</span><span class="n">lista_01</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1145,8 +1158,10 @@ hola
 4
 1
 (4,)
-2024
-[   0.    0. 2024.    0.]
+Hola
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.False_
 </pre></div>
 </div>
 </div>
@@ -1171,325 +1186,99 @@ hola
 </ul>
 <p>En resumen, el DataFrame de Pandas simplifica la manipulación y el análisis de datos complejos, proporcionando una estructura intuitiva y herramientas potentes para que los científicos de datos y los analistas trabajen de forma productiva.</p>
 <div align="center">
-<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/cajaHerramientas.png?raw=true" alt="" width="150" height="80">
+<img src="https://github.com/vrrp/sachabook_bigdata/blob/main/docs/images/ejemplo_dataframe.png?raw=true" alt="" width="450" height="200">
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data frame</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importar paquete [pandas] como [pd]</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_animales</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;fox&quot;</span><span class="p">,</span> <span class="s2">&quot;kangaroo&quot;</span><span class="p">,</span> <span class="s2">&quot;deer&quot;</span><span class="p">,</span><span class="s2">&quot;spider&quot;</span><span class="p">,</span><span class="s2">&quot;snale&quot;</span><span class="p">]</span>
+<span class="n">array_legs</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">lista_animales</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">array_legs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;fox&#39;, &#39;kangaroo&#39;, &#39;deer&#39;, &#39;spider&#39;, &#39;snale&#39;]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4.,  2.,  4.,  8., nan])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_animales</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;animal&#39;</span><span class="p">:</span> <span class="n">lista_animales</span><span class="p">,</span>
+                            <span class="s1">&#39;legs&#39;</span><span class="p">:</span> <span class="n">array_legs</span><span class="p">})</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_animales</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="n">temp_aire</span> <span class="o">=</span> <span class="mi">18</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">data</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">temp_aire</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.  1.1 1.2 1.3 1.4 1.5 1.6 1.7
- 1.8 1.9]
-[18.         28.58013454 35.11901729 35.11901729 28.58013454 18.
-  7.41986546  0.88098271  0.88098271  7.41986546 18.         28.58013454
- 35.11901729 35.11901729 28.58013454 18.          7.41986546  0.88098271
-  0.88098271  7.41986546]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creando un data frame</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>animal</th>
+      <th>legs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>fox</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>kangaroo</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>deer</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>spider</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>snale</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empty DataFrame
-Columns: []
-Index: []
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;temperatura&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">temp_aire</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    temperatura
-0     18.000000
-1     28.580135
-2     35.119017
-3     35.119017
-4     28.580135
-5     18.000000
-6      7.419865
-7      0.880983
-8      0.880983
-9      7.419865
-10    18.000000
-11    28.580135
-12    35.119017
-13    35.119017
-14    28.580135
-15    18.000000
-16     7.419865
-17     0.880983
-18     0.880983
-19     7.419865
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;datos_decimales&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">data</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    temperatura  datos_decimales
-0     18.000000              0.0
-1     28.580135              0.1
-2     35.119017              0.2
-3     35.119017              0.3
-4     28.580135              0.4
-5     18.000000              0.5
-6      7.419865              0.6
-7      0.880983              0.7
-8      0.880983              0.8
-9      7.419865              0.9
-10    18.000000              1.0
-11    28.580135              1.1
-12    35.119017              1.2
-13    35.119017              1.3
-14    28.580135              1.4
-15    18.000000              1.5
-16     7.419865              1.6
-17     0.880983              1.7
-18     0.880983              1.8
-19     7.419865              1.9
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hr</span> <span class="o">=</span> <span class="mf">2.5</span><span class="o">*</span><span class="n">temp_aire</span> <span class="o">+</span><span class="mf">5.6</span>
-
-<span class="n">df</span><span class="p">[</span><span class="s2">&quot;humedad_relativa&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hr</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    temperatura  datos_decimales  humedad_relativa
-0     18.000000              0.0         50.600000
-1     28.580135              0.1         77.050336
-2     35.119017              0.2         93.397543
-3     35.119017              0.3         93.397543
-4     28.580135              0.4         77.050336
-5     18.000000              0.5         50.600000
-6      7.419865              0.6         24.149664
-7      0.880983              0.7          7.802457
-8      0.880983              0.8          7.802457
-9      7.419865              0.9         24.149664
-10    18.000000              1.0         50.600000
-11    28.580135              1.1         77.050336
-12    35.119017              1.2         93.397543
-13    35.119017              1.3         93.397543
-14    28.580135              1.4         77.050336
-15    18.000000              1.5         50.600000
-16     7.419865              1.6         24.149664
-17     0.880983              1.7          7.802457
-18     0.880983              1.8          7.802457
-19     7.419865              1.9         24.149664
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="c1"># [fila, columna]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.60000000000001
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># numero total de elementos o medidas del data frame</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-
-<span class="c1"># dimensiones del data frame</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-
-<span class="c1"># nombres de las columnas</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60
-(20, 3)
-Index([&#39;temperatura&#39;, &#39;datos_decimales&#39;, &#39;humedad_relativa&#39;], dtype=&#39;object&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parte_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;temperatura&quot;</span><span class="p">,</span><span class="s2">&quot;humedad_relativa&quot;</span><span class="p">]]</span>
-
-<span class="n">parte_df</span><span class="p">[</span><span class="s2">&quot;txhr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;temperatura&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;humedad_relativa&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">parte_df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    temperatura  humedad_relativa         txhr
-0     18.000000         50.600000   910.800000
-1     28.580135         77.050336  2202.108979
-2     35.119017         93.397543  3280.029936
-3     35.119017         93.397543  3280.029936
-4     28.580135         77.050336  2202.108979
-5     18.000000         50.600000   910.800000
-6      7.419865         24.149664   179.187255
-7      0.880983          7.802457     6.873829
-8      0.880983          7.802457     6.873829
-9      7.419865         24.149664   179.187255
-10    18.000000         50.600000   910.800000
-11    28.580135         77.050336  2202.108979
-12    35.119017         93.397543  3280.029936
-13    35.119017         93.397543  3280.029936
-14    28.580135         77.050336  2202.108979
-15    18.000000         50.600000   910.800000
-16     7.419865         24.149664   179.187255
-17     0.880983          7.802457     6.873829
-18     0.880983          7.802457     6.873829
-19     7.419865         24.149664   179.187255
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">parte_df</span><span class="p">[</span><span class="s2">&quot;temperatura&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     18.000000
-1     28.580135
-2     35.119017
-3     35.119017
-4     28.580135
-5     18.000000
-6      7.419865
-7      0.880983
-8      0.880983
-9      7.419865
-10    18.000000
-11    28.580135
-12    35.119017
-13    35.119017
-14    28.580135
-15    18.000000
-16     7.419865
-17     0.880983
-18     0.880983
-19     7.419865
-Name: temperatura, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">parte_df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       temperatura  humedad_relativa         txhr
-count    20.000000         20.000000    20.000000
-mean     18.000000         50.600000  1315.800000
-std      13.058573         32.646431  1282.509391
-min       0.880983          7.802457     6.873829
-25%       7.419865         24.149664   179.187255
-50%      18.000000         50.600000   910.800000
-75%      28.580135         77.050336  2202.108979
-max      35.119017         93.397543  3280.029936
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    temperatura  datos_decimales  humedad_relativa
-0     18.000000              0.0         50.600000
-1     28.580135              0.1         77.050336
-2     35.119017              NaN         93.397543
-3     35.119017              0.3         93.397543
-4     28.580135              0.4         77.050336
-5     18.000000              0.5         50.600000
-6      7.419865              0.6         24.149664
-7      0.880983              0.7          7.802457
-8      0.880983              0.8          7.802457
-9      7.419865              0.9         24.149664
-10    18.000000              1.0         50.600000
-11    28.580135              1.1         77.050336
-12    35.119017              1.2         93.397543
-13    35.119017              1.3         93.397543
-14    28.580135              1.4         77.050336
-15    18.000000              1.5         50.600000
-16     7.419865              1.6         24.149664
-17     0.880983              1.7          7.802457
-18     0.880983              1.8          7.802457
-19     7.419865              1.9         24.149664
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       temperatura  datos_decimales  humedad_relativa
-count    20.000000        19.000000         20.000000
-mean     18.000000         0.989474         50.600000
-std      13.058573         0.580129         32.646431
-min       0.880983         0.000000          7.802457
-25%       7.419865         0.550000         24.149664
-50%      18.000000         1.000000         50.600000
-75%      28.580135         1.450000         77.050336
-max      35.119017         1.900000         93.397543
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="iii-estructuras-de-control-de-flujo">
+<h1><strong>III. Estructuras de control de flujo</strong><a class="headerlink" href="#iii-estructuras-de-control-de-flujo" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">encontrar_nan</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -1513,20 +1302,6 @@ max      35.119017         1.900000         93.397543
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df_interpolado = df_excel.interpolate() # method: linear</span>
-<span class="c1">#df_interpolado = df.interpolate(method=&quot;spline&quot;, order=2) # method: polynomial, spline</span>
-
-<span class="c1">#print(df_interpolado)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="iii-estructuras-de-control-de-flujo">
-<h1><strong>III. Estructuras de control de flujo</strong><a class="headerlink" href="#iii-estructuras-de-control-de-flujo" title="Link to this heading">#</a></h1>
 <p>Las estructuras de control en Python son construcciones de programación que permiten modificar el flujo de ejecución de un programa. En lugar de ejecutar las instrucciones de forma secuencial de arriba a abajo, estas estructuras dirigen el programa para que tome decisiones, repita acciones o ejecute bloques de código específicos.</p>
 <section id="condicionales-if-else-y-elif">
 <h2><strong>3.1. Condicionales: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> y <code class="docutils literal notranslate"><span class="pre">elif</span></code></strong><a class="headerlink" href="#condicionales-if-else-y-elif" title="Link to this heading">#</a></h2>
@@ -1603,8 +1378,8 @@ segunda accion de if
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hola
-2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+Hola
 </pre></div>
 </div>
 </div>
@@ -1630,9 +1405,9 @@ segunda accion de if
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hola
-2024
-mundo
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+Hola
+True
 Peru 2025
 </pre></div>
 </div>
@@ -1651,7 +1426,7 @@ Peru 2025
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
@@ -1663,7 +1438,7 @@ Peru 2025
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;hola&#39;, &#39;2024&#39;, &#39;mundo&#39;, &#39;Peru 2025&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;7&#39;, &#39;Hola&#39;, True, &#39;Peru 2025&#39;]
 </pre></div>
 </div>
 </div>
@@ -1673,20 +1448,1058 @@ Peru 2025
 <h3>3.2.3. Uso de del bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> en estructura de datos Data Frame<a class="headerlink" href="#uso-de-del-bucle-for-en-estructura-de-datos-data-frame" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">temp_aire</span> <span class="o">=</span> <span class="mi">18</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp_aire</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   temperatura  datos_decimales  humedad_relativa
-0    18.000000              0.0         50.600000
-1    28.580135              0.1         77.050336
-2    35.119017              NaN         93.397543
-3    35.119017              0.3         93.397543
-4    28.580135              0.4         77.050336
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.  1.1 1.2 1.3 1.4 1.5 1.6 1.7
+ 1.8 1.9]
+[18.         28.58013454 35.11901729 35.11901729 28.58013454 18.
+  7.41986546  0.88098271  0.88098271  7.41986546 18.         28.58013454
+ 35.11901729 35.11901729 28.58013454 18.          7.41986546  0.88098271
+  0.88098271  7.41986546]
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creando un data frame</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empty DataFrame
+Columns: []
+Index: []
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;temperatura&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">temp_aire</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperatura</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>28.580135</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>35.119017</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35.119017</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28.580135</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>18.000000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7.419865</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.880983</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.880983</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7.419865</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>18.000000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>28.580135</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>35.119017</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>35.119017</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>28.580135</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>18.000000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>7.419865</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.880983</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.880983</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7.419865</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;datos_decimales&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">data</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperatura</th>
+      <th>datos_decimales</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.000000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>28.580135</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>35.119017</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35.119017</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28.580135</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>18.000000</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7.419865</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.880983</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.880983</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7.419865</td>
+      <td>0.9</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>18.000000</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>28.580135</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>35.119017</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>35.119017</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>28.580135</td>
+      <td>1.4</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>18.000000</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>7.419865</td>
+      <td>1.6</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.880983</td>
+      <td>1.7</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.880983</td>
+      <td>1.8</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7.419865</td>
+      <td>1.9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hr</span> <span class="o">=</span> <span class="mf">2.5</span><span class="o">*</span><span class="n">temp_aire</span> <span class="o">+</span><span class="mf">5.6</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;humedad_relativa&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hr</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperatura</th>
+      <th>datos_decimales</th>
+      <th>humedad_relativa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.000000</td>
+      <td>0.0</td>
+      <td>50.600000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>28.580135</td>
+      <td>0.1</td>
+      <td>77.050336</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>35.119017</td>
+      <td>0.2</td>
+      <td>93.397543</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35.119017</td>
+      <td>0.3</td>
+      <td>93.397543</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28.580135</td>
+      <td>0.4</td>
+      <td>77.050336</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>18.000000</td>
+      <td>0.5</td>
+      <td>50.600000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7.419865</td>
+      <td>0.6</td>
+      <td>24.149664</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.880983</td>
+      <td>0.7</td>
+      <td>7.802457</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.880983</td>
+      <td>0.8</td>
+      <td>7.802457</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7.419865</td>
+      <td>0.9</td>
+      <td>24.149664</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>18.000000</td>
+      <td>1.0</td>
+      <td>50.600000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>28.580135</td>
+      <td>1.1</td>
+      <td>77.050336</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>35.119017</td>
+      <td>1.2</td>
+      <td>93.397543</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>35.119017</td>
+      <td>1.3</td>
+      <td>93.397543</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>28.580135</td>
+      <td>1.4</td>
+      <td>77.050336</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>18.000000</td>
+      <td>1.5</td>
+      <td>50.600000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>7.419865</td>
+      <td>1.6</td>
+      <td>24.149664</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.880983</td>
+      <td>1.7</td>
+      <td>7.802457</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.880983</td>
+      <td>1.8</td>
+      <td>7.802457</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7.419865</td>
+      <td>1.9</td>
+      <td>24.149664</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="c1"># [fila, columna]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.60000000000001
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># numero total de elementos o medidas del data frame</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+<span class="c1"># dimensiones del data frame</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># nombres de las columnas</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60
+(20, 3)
+Index([&#39;temperatura&#39;, &#39;datos_decimales&#39;, &#39;humedad_relativa&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parte_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;temperatura&quot;</span><span class="p">,</span><span class="s2">&quot;humedad_relativa&quot;</span><span class="p">]]</span>
+
+<span class="n">parte_df</span><span class="p">[</span><span class="s2">&quot;txhr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;temperatura&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;humedad_relativa&quot;</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">parte_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperatura</th>
+      <th>humedad_relativa</th>
+      <th>txhr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.000000</td>
+      <td>50.600000</td>
+      <td>910.800000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>28.580135</td>
+      <td>77.050336</td>
+      <td>2202.108979</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>35.119017</td>
+      <td>93.397543</td>
+      <td>3280.029936</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35.119017</td>
+      <td>93.397543</td>
+      <td>3280.029936</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28.580135</td>
+      <td>77.050336</td>
+      <td>2202.108979</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>18.000000</td>
+      <td>50.600000</td>
+      <td>910.800000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7.419865</td>
+      <td>24.149664</td>
+      <td>179.187255</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.880983</td>
+      <td>7.802457</td>
+      <td>6.873829</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.880983</td>
+      <td>7.802457</td>
+      <td>6.873829</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7.419865</td>
+      <td>24.149664</td>
+      <td>179.187255</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>18.000000</td>
+      <td>50.600000</td>
+      <td>910.800000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>28.580135</td>
+      <td>77.050336</td>
+      <td>2202.108979</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>35.119017</td>
+      <td>93.397543</td>
+      <td>3280.029936</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>35.119017</td>
+      <td>93.397543</td>
+      <td>3280.029936</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>28.580135</td>
+      <td>77.050336</td>
+      <td>2202.108979</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>18.000000</td>
+      <td>50.600000</td>
+      <td>910.800000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>7.419865</td>
+      <td>24.149664</td>
+      <td>179.187255</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.880983</td>
+      <td>7.802457</td>
+      <td>6.873829</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.880983</td>
+      <td>7.802457</td>
+      <td>6.873829</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7.419865</td>
+      <td>24.149664</td>
+      <td>179.187255</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">parte_df</span><span class="p">[</span><span class="s2">&quot;temperatura&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     18.000000
+1     28.580135
+2     35.119017
+3     35.119017
+4     28.580135
+5     18.000000
+6      7.419865
+7      0.880983
+8      0.880983
+9      7.419865
+10    18.000000
+11    28.580135
+12    35.119017
+13    35.119017
+14    28.580135
+15    18.000000
+16     7.419865
+17     0.880983
+18     0.880983
+19     7.419865
+Name: temperatura, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">parte_df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperatura</th>
+      <th>humedad_relativa</th>
+      <th>txhr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>20.000000</td>
+      <td>20.000000</td>
+      <td>20.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>18.000000</td>
+      <td>50.600000</td>
+      <td>1315.800000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>13.058573</td>
+      <td>32.646431</td>
+      <td>1282.509391</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.880983</td>
+      <td>7.802457</td>
+      <td>6.873829</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>7.419865</td>
+      <td>24.149664</td>
+      <td>179.187255</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>18.000000</td>
+      <td>50.600000</td>
+      <td>910.800000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>28.580135</td>
+      <td>77.050336</td>
+      <td>2202.108979</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>35.119017</td>
+      <td>93.397543</td>
+      <td>3280.029936</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperatura</th>
+      <th>datos_decimales</th>
+      <th>humedad_relativa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.000000</td>
+      <td>0.0</td>
+      <td>50.600000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>28.580135</td>
+      <td>0.1</td>
+      <td>77.050336</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>35.119017</td>
+      <td>NaN</td>
+      <td>93.397543</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35.119017</td>
+      <td>0.3</td>
+      <td>93.397543</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28.580135</td>
+      <td>0.4</td>
+      <td>77.050336</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>18.000000</td>
+      <td>0.5</td>
+      <td>50.600000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7.419865</td>
+      <td>0.6</td>
+      <td>24.149664</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.880983</td>
+      <td>0.7</td>
+      <td>7.802457</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.880983</td>
+      <td>0.8</td>
+      <td>7.802457</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7.419865</td>
+      <td>0.9</td>
+      <td>24.149664</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>18.000000</td>
+      <td>1.0</td>
+      <td>50.600000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>28.580135</td>
+      <td>1.1</td>
+      <td>77.050336</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>35.119017</td>
+      <td>1.2</td>
+      <td>93.397543</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>35.119017</td>
+      <td>1.3</td>
+      <td>93.397543</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>28.580135</td>
+      <td>1.4</td>
+      <td>77.050336</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>18.000000</td>
+      <td>1.5</td>
+      <td>50.600000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>7.419865</td>
+      <td>1.6</td>
+      <td>24.149664</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.880983</td>
+      <td>1.7</td>
+      <td>7.802457</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.880983</td>
+      <td>1.8</td>
+      <td>7.802457</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7.419865</td>
+      <td>1.9</td>
+      <td>24.149664</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperatura</th>
+      <th>datos_decimales</th>
+      <th>humedad_relativa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>20.000000</td>
+      <td>19.000000</td>
+      <td>20.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>18.000000</td>
+      <td>0.989474</td>
+      <td>50.600000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>13.058573</td>
+      <td>0.580129</td>
+      <td>32.646431</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.880983</td>
+      <td>0.000000</td>
+      <td>7.802457</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>7.419865</td>
+      <td>0.550000</td>
+      <td>24.149664</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>18.000000</td>
+      <td>1.000000</td>
+      <td>50.600000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>28.580135</td>
+      <td>1.450000</td>
+      <td>77.050336</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>35.119017</td>
+      <td>1.900000</td>
+      <td>93.397543</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperatura</th>
+      <th>datos_decimales</th>
+      <th>humedad_relativa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.000000</td>
+      <td>0.0</td>
+      <td>50.600000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>28.580135</td>
+      <td>0.1</td>
+      <td>77.050336</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>35.119017</td>
+      <td>NaN</td>
+      <td>93.397543</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35.119017</td>
+      <td>0.3</td>
+      <td>93.397543</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28.580135</td>
+      <td>0.4</td>
+      <td>77.050336</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
