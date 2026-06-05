@@ -460,7 +460,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-valores-nan">4.2. Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code>:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-errados-o-faltantes">4.3. Completar datos errados ó faltantes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolar-datos-faltantes-en-columnas-numericas-especificas">4.4. interpolar datos faltantes en columnas numéricas específicas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineanl">4.4.1 Interpolación lineanl</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineal">4.4.1 Interpolación lineal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-polinomial-de-orden-2">4.4.2. Interpolación polinomial de orden 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficar">4.4.3 Graficar</a></li>
 </ul>
@@ -484,7 +484,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolar-valores-nan-en-precio-dolar">4.7. Interpolar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> en <code class="docutils literal notranslate"><span class="pre">Precio_Dolar</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineal">4.7.1. Interpolación Lineal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.7.1. Interpolación Lineal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-de-vecinos-cercanos-nearest">4.7.2. Interpolación de Vecinos Cercanos (<code class="docutils literal notranslate"><span class="pre">nearest</span></code>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-polinomial">4.7.3 Interpolación Polinomial</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-spline">4.7.4. Interpolación Spline</a></li>
@@ -3868,8 +3868,8 @@ Name: temperatura, dtype: float64
 </div></div></div>
 </div>
 <p>Acontinuación aplicaremos la función <code class="docutils literal notranslate"><span class="pre">completar_nan_col</span></code> con diferentes métodos de interpolación.</p>
-<section id="interpolacion-lineanl">
-<h3>4.4.1 Interpolación lineanl<a class="headerlink" href="#interpolacion-lineanl" title="Link to this heading">#</a></h3>
+<section id="interpolacion-lineal">
+<h3>4.4.1 Interpolación lineal<a class="headerlink" href="#interpolacion-lineal" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicar interpolación &#39;linear&#39;</span>
@@ -5847,8 +5847,8 @@ Name: temperatura, dtype: float64
 </div>
 </div>
 </div>
-<section id="interpolacion-lineal">
-<h3>4.7.1. Interpolación Lineal<a class="headerlink" href="#interpolacion-lineal" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h3>4.7.1. Interpolación Lineal<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>Este método rellena los valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> ajustando una línea recta entre los puntos de datos válidos más cercanos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6918,7 +6918,7 @@ Name: temperatura, dtype: float64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-valores-nan">4.2. Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code>:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-errados-o-faltantes">4.3. Completar datos errados ó faltantes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolar-datos-faltantes-en-columnas-numericas-especificas">4.4. interpolar datos faltantes en columnas numéricas específicas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineanl">4.4.1 Interpolación lineanl</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineal">4.4.1 Interpolación lineal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-polinomial-de-orden-2">4.4.2. Interpolación polinomial de orden 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficar">4.4.3 Graficar</a></li>
 </ul>
@@ -6942,7 +6942,7 @@ Name: temperatura, dtype: float64
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolar-valores-nan-en-precio-dolar">4.7. Interpolar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> en <code class="docutils literal notranslate"><span class="pre">Precio_Dolar</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineal">4.7.1. Interpolación Lineal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.7.1. Interpolación Lineal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-de-vecinos-cercanos-nearest">4.7.2. Interpolación de Vecinos Cercanos (<code class="docutils literal notranslate"><span class="pre">nearest</span></code>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-polinomial">4.7.3 Interpolación Polinomial</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-spline">4.7.4. Interpolación Spline</a></li>
