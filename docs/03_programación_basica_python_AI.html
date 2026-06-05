@@ -183,6 +183,7 @@
 
 
 
+
 </ul>
 
     </div>
@@ -444,7 +445,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-o-loop-for">3.2. <strong>Bucle ó Loop: <code class="docutils literal notranslate"><span class="pre">for</span></code></strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-del-bucle-for-en-estructura-de-datos-lista">3.2.1 Uso de del bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> en estructura de datos lista</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-y-procesamiento-de-la-variable-lista-01">3.2.2. Analisis exploratorio y procesamiento de la variable <code class="docutils literal notranslate"><span class="pre">lista_01</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-del-bucle-for-en-estructura-de-datos-data-frame">3.2.3. Uso de del bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> en estructura de datos Data Frame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-del-bucle-for-en-estructura-de-datos-data-frame">3.2.3. Uso del bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> en estructura de datos Data Frame</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-ii"><strong>3.3. Funciones: parte II</strong></a><ul class="nav section-nav flex-column">
@@ -452,41 +453,47 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-funcion-con-una-estructura-de-datos">3.3.2. Uso de función con una estructura de datos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-control-y-preprocesamiento-de-datos"><strong>3.4 Manejo, control y preprocesamiento de datos</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-datos-errados-o-faltantes">3.4.1. Contar datos errados ó faltantes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-errados-o-faltantes">3.4.2. Completar datos errados ó faltantes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-faltantes-en-columnas-numericas-especificas">3.4.3. Completar datos faltantes en columnas numéricas específicas</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluar-volumen-de-datos-para-big-data"><strong>3.5 Evaluar volumen de datos para Big Data</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generar-datos-sinteticos">3.5.1 Generar datos Sintéticos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-horarios">3.5.2 Datos horarios</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-diarios">3.5.3 Datos diarios</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-mensuales">3.5.4 Datos mensuales</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-anuales">3.5.5 Datos anuales</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementar-funciones-para-medir-el-volumen-de-datos">3.5.7 Implementar funciones para medir el volumen de datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficar">3.5.8 Graficar</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-manejo-y-control-de-calidad-de-datos">IV. Manejo y control de calidad de datos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-copias-de-una-data-frame">4.1. Crear copias de una Data Frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-valores-nan">4.2. Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-errados-o-faltantes">4.3. Completar datos errados ó faltantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolar-datos-faltantes-en-columnas-numericas-especificas">4.4. interpolar datos faltantes en columnas numéricas específicas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineanl">4.4.1 Interpolación lineanl</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-polinomial-de-orden-2">4.4.2. Interpolación polinomial de orden 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficar">4.4.3 Graficar</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones">3.6 Aplicaciones</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducir-nans-aleatorios">3.6.1 Introducir NaNs aleatorios</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-valores-nan">3.6.2 Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducir-valores-nan-empleando-la-funcion-introducir-nan-aleatorio-extremos">3.6.3 Introducir valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> empleando la función: <code class="docutils literal notranslate"><span class="pre">introducir_nan_aleatorio_extremos</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-valores-nan-despues-de-usar-la-funcion-introducir-nan-aleatorio-extremos">3.6.4 Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> después de usar la función: <code class="docutils literal notranslate"><span class="pre">introducir_nan_aleatorio_extremos</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.6.5 Graficar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volumen-de-datos-para-big-data"><strong>4.5. Volumen de datos para Big Data</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generar-datos-sinteticos">4.5.1 Generar datos Sintéticos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-horarios">4.5.2 Datos horarios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-diarios">4.5.3 Datos diarios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-mensuales">4.5.4 Datos mensuales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-anuales">4.5.5 Datos anuales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementar-funciones-para-medir-el-volumen-de-datos">4.5.6 Implementar funciones para medir el volumen de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.5.7 Graficar</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolar-valores-nan-en-precio-dolar">3.7 Interpolar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> en <code class="docutils literal notranslate"><span class="pre">Precio_Dolar</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineal">3.7.1 Interpolación Lineal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-de-vecinos-cercanos-nearest">3.7.2 Interpolación de Vecinos Cercanos (<code class="docutils literal notranslate"><span class="pre">nearest</span></code>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-polinomial">3.7.3 Interpolación Polinomial</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-spline">3.7.4 Interpolación Spline</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-cubica">3.7.5 Interpolación Cúbica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones">4.6. Aplicaciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducir-nans-aleatorios">4.6.1. Introducir NaNs aleatorios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.6.2. Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducir-valores-nan-empleando-la-funcion-introducir-nan-aleatorio-extremos">4.6.3. Introducir valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> empleando la función: <code class="docutils literal notranslate"><span class="pre">introducir_nan_aleatorio_extremos</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.6.4. Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.6.5 Graficar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolar-valores-nan-en-precio-dolar">4.7. Interpolar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> en <code class="docutils literal notranslate"><span class="pre">Precio_Dolar</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineal">4.7.1. Interpolación Lineal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-de-vecinos-cercanos-nearest">4.7.2. Interpolación de Vecinos Cercanos (<code class="docutils literal notranslate"><span class="pre">nearest</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-polinomial">4.7.3 Interpolación Polinomial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-spline">4.7.4. Interpolación Spline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-cubica">4.7.5. Interpolación Cúbica</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-referencias"><strong>IV. Referencias</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#v-referencias"><strong>V. Referencias</strong></a></li>
 </ul>
 
             </nav>
@@ -1223,7 +1230,7 @@ Hola
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_animales</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;fox&quot;</span><span class="p">,</span> <span class="s2">&quot;kangaroo&quot;</span><span class="p">,</span> <span class="s2">&quot;deer&quot;</span><span class="p">,</span><span class="s2">&quot;spider&quot;</span><span class="p">,</span><span class="s2">&quot;snale&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_animales</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;fox&quot;</span><span class="p">,</span> <span class="s2">&quot;kangaroo&quot;</span><span class="p">,</span> <span class="s2">&quot;deer&quot;</span><span class="p">,</span><span class="s2">&quot;spider&quot;</span><span class="p">,</span><span class="s2">&quot;snake&quot;</span><span class="p">]</span>
 <span class="n">array_legs</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">lista_animales</span><span class="p">)</span>
@@ -1232,7 +1239,7 @@ Hola
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;fox&#39;, &#39;kangaroo&#39;, &#39;deer&#39;, &#39;spider&#39;, &#39;snale&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;fox&#39;, &#39;kangaroo&#39;, &#39;deer&#39;, &#39;spider&#39;, &#39;snake&#39;]
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4.,  2.,  4.,  8., nan])
@@ -1294,7 +1301,7 @@ Hola
     </tr>
     <tr>
       <th>4</th>
-      <td>snale</td>
+      <td>snake</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -1305,29 +1312,6 @@ Hola
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="iii-estructuras-de-control-de-flujo">
 <h1><strong>III. Estructuras de control de flujo</strong><a class="headerlink" href="#iii-estructuras-de-control-de-flujo" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">encontrar_nan</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="c1"># Verificar valores NaN en cada columna</span>
-    <span class="n">nan_por_columna</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-    <span class="c1"># Verificar valores NaN en todo el DataFrame</span>
-    <span class="n">total_nan</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-    <span class="c1"># Mostrar resultados</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DataFrame original:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Valores NaN por columna:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">nan_por_columna</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Total de valores NaN en el DataFrame: </span><span class="si">{</span><span class="n">total_nan</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Llamar a la función con el DataFrame</span>
-<span class="c1">#encontrar_nan(df_excel)</span>
-<span class="c1">#encontrar_nan(df_csv)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Las estructuras de control en Python son construcciones de programación que permiten modificar el flujo de ejecución de un programa. En lugar de ejecutar las instrucciones de forma secuencial de arriba a abajo, estas estructuras dirigen el programa para que tome decisiones, repita acciones o ejecute bloques de código específicos.</p>
 <section id="condicionales-if-else-y-elif">
 <h2><strong>3.1. Condicionales: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> y <code class="docutils literal notranslate"><span class="pre">elif</span></code></strong><a class="headerlink" href="#condicionales-if-else-y-elif" title="Link to this heading">#</a></h2>
@@ -1470,8 +1454,8 @@ Peru 2025
 </div>
 </div>
 </section>
-<section id="uso-de-del-bucle-for-en-estructura-de-datos-data-frame">
-<h3>3.2.3. Uso de del bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> en estructura de datos Data Frame<a class="headerlink" href="#uso-de-del-bucle-for-en-estructura-de-datos-data-frame" title="Link to this heading">#</a></h3>
+<section id="uso-del-bucle-for-en-estructura-de-datos-data-frame">
+<h3>3.2.3. Uso del bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> en estructura de datos Data Frame<a class="headerlink" href="#uso-del-bucle-for-en-estructura-de-datos-data-frame" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
@@ -2903,14 +2887,17 @@ Name: temperatura, dtype: float64
 </div>
 </section>
 </section>
-<section id="manejo-control-y-preprocesamiento-de-datos">
-<h2><strong>3.4 Manejo, control y preprocesamiento de datos</strong><a class="headerlink" href="#manejo-control-y-preprocesamiento-de-datos" title="Link to this heading">#</a></h2>
-<section id="contar-datos-errados-o-faltantes">
-<h3>3.4.1. Contar datos errados ó faltantes<a class="headerlink" href="#contar-datos-errados-o-faltantes" title="Link to this heading">#</a></h3>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="iv-manejo-y-control-de-calidad-de-datos">
+<h1>IV. Manejo y control de calidad de datos<a class="headerlink" href="#iv-manejo-y-control-de-calidad-de-datos" title="Link to this heading">#</a></h1>
+<section id="crear-copias-de-una-data-frame">
+<h2>4.1. Crear copias de una Data Frame<a class="headerlink" href="#crear-copias-de-una-data-frame" title="Link to this heading">#</a></h2>
+<p>Crea una copia <code class="docutils literal notranslate"><span class="pre">df_copia1</span></code> del Data Frame <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_copia1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df_copia1</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">df_copia1</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -2981,35 +2968,261 @@ Name: temperatura, dtype: float64
       <td>verano</td>
       <td>301.730135</td>
     </tr>
+    <tr>
+      <th>5</th>
+      <td>18.000000</td>
+      <td>0.5</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
+<p>Crea una copia <code class="docutils literal notranslate"><span class="pre">df_copia2</span></code> del Data Frame <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_copia2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">df_copia2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperatura</th>
+      <th>datos_decimales</th>
+      <th>humedad_relativa</th>
+      <th>estacion</th>
+      <th>temperatura_k</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.000000</td>
+      <td>0.0</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>28.580135</td>
+      <td>0.1</td>
+      <td>77.050336</td>
+      <td>verano</td>
+      <td>301.730135</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>35.119017</td>
+      <td>NaN</td>
+      <td>93.397543</td>
+      <td>verano</td>
+      <td>308.269017</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35.119017</td>
+      <td>0.3</td>
+      <td>93.397543</td>
+      <td>verano</td>
+      <td>308.269017</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28.580135</td>
+      <td>0.4</td>
+      <td>77.050336</td>
+      <td>verano</td>
+      <td>301.730135</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>18.000000</td>
+      <td>0.5</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>En <code class="docutils literal notranslate"><span class="pre">df_copia2</span></code> reemplazar los valores extremos de todas columnas con datos faltantes o errados <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index_ultimoDato</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Introducir NaNs adicionales para la demostración en df_copia2</span>
+<span class="n">df_copia2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;temperatura&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df_copia2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;temperatura&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df_copia2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;temperatura&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df_copia2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;temperatura&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df_copia2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;temperatura&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df_copia2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index_ultimoDato</span><span class="p">,</span> <span class="s1">&#39;temperatura&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_copia2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_copia2</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperatura</th>
+      <th>datos_decimales</th>
+      <th>humedad_relativa</th>
+      <th>estacion</th>
+      <th>temperatura_k</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>28.580135</td>
+      <td>0.1</td>
+      <td>77.050336</td>
+      <td>verano</td>
+      <td>301.730135</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>93.397543</td>
+      <td>verano</td>
+      <td>308.269017</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperatura</th>
+      <th>datos_decimales</th>
+      <th>humedad_relativa</th>
+      <th>estacion</th>
+      <th>temperatura_k</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>18</th>
+      <td>0.880983</td>
+      <td>1.8</td>
+      <td>7.802457</td>
+      <td>NaN</td>
+      <td>274.030983</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7.419865</td>
+      <td>1.9</td>
+      <td>24.149664</td>
+      <td>NaN</td>
+      <td>280.569865</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="contar-valores-nan">
+<h2>4.2. Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code>:<a class="headerlink" href="#contar-valores-nan" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">contar_nan</span><span class="p">(</span><span class="n">dataframe</span><span class="p">):</span>
-    <span class="c1"># Number of NaNs per column</span>
+    <span class="c1"># numero de NaN por columna</span>
     <span class="n">nan_counts</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
-    <span class="c1"># Total number of rows in the DataFrame</span>
+    <span class="c1"># numero total de filas en el DataFrame</span>
     <span class="n">total_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataframe</span><span class="p">)</span>
 
-    <span class="c1"># Percentage of NaNs per column</span>
+    <span class="c1"># porcentaje de NaN por columna</span>
     <span class="n">nan_porcentaje</span> <span class="o">=</span> <span class="p">(</span><span class="n">nan_counts</span> <span class="o">/</span> <span class="n">total_rows</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
 
-    <span class="c1"># Create a DataFrame to display both counts and percentages</span>
+    <span class="c1"># Crear un DataFrame para mostrar la cantidad y porcentajes de NaN</span>
     <span class="n">nan_summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
         <span class="s1">&#39;NaN Cantidad&#39;</span><span class="p">:</span> <span class="n">nan_counts</span><span class="p">,</span>
         <span class="s1">&#39;NaN Porcemtaje (%)&#39;</span><span class="p">:</span> <span class="n">nan_porcentaje</span>
     <span class="p">})</span>
-
     <span class="k">return</span> <span class="n">nan_summary</span>
 </pre></div>
 </div>
@@ -3080,9 +3293,75 @@ Name: temperatura, dtype: float64
 </table>
 </div></div></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contar NaN en df_copia2</span>
+<span class="n">resultado_nan</span> <span class="o">=</span> <span class="n">contar_nan</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resumen de valores NaN por columna en df_copia2:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">resultado_nan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resumen de valores NaN por columna en df_copia2:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NaN Cantidad</th>
+      <th>NaN Porcemtaje (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>temperatura</th>
+      <td>6</td>
+      <td>28.571429</td>
+    </tr>
+    <tr>
+      <th>datos_decimales</th>
+      <td>2</td>
+      <td>9.523810</td>
+    </tr>
+    <tr>
+      <th>humedad_relativa</th>
+      <td>1</td>
+      <td>4.761905</td>
+    </tr>
+    <tr>
+      <th>estacion</th>
+      <td>13</td>
+      <td>61.904762</td>
+    </tr>
+    <tr>
+      <th>temperatura_k</th>
+      <td>1</td>
+      <td>4.761905</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </section>
 <section id="completar-datos-errados-o-faltantes">
-<h3>3.4.2. Completar datos errados ó faltantes<a class="headerlink" href="#completar-datos-errados-o-faltantes" title="Link to this heading">#</a></h3>
+<h2>4.3. Completar datos errados ó faltantes<a class="headerlink" href="#completar-datos-errados-o-faltantes" title="Link to this heading">#</a></h2>
+<p>Implementar la función <code class="docutils literal notranslate"><span class="pre">completar_nan</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">completar_nan</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">metodo</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">,</span> <span class="n">valor</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -3106,13 +3385,10 @@ Name: temperatura, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicando la función a df_copia1</span>
-<span class="n">df_completado</span> <span class="o">=</span> <span class="n">completar_nan</span><span class="p">(</span><span class="n">df_copia1</span><span class="p">,</span> <span class="n">metodo</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">)</span>
+<span class="n">df_copia1_completado</span> <span class="o">=</span> <span class="n">completar_nan</span><span class="p">(</span><span class="n">df_copia1</span><span class="p">,</span> <span class="n">metodo</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vista previa de df_copia1 completado (ffill):&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df_completado</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Conteo de NaNs después de completar:&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df_completado</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_copia1_completado</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -3196,18 +3472,66 @@ Name: temperatura, dtype: float64
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Conteo de NaNs después de completar:
-</pre></div>
+</div></div></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>temperatura         0
-datos_decimales     0
-humedad_relativa    0
-estacion            1
-temperatura_k       0
-dtype: int64
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_copia1_completado</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NaN Cantidad</th>
+      <th>NaN Porcemtaje (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>temperatura</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>datos_decimales</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>humedad_relativa</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>estacion</th>
+      <td>1</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>temperatura_k</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Explicación de los métodos <code class="docutils literal notranslate"><span class="pre">ffill</span></code> y <code class="docutils literal notranslate"><span class="pre">bfill</span></code> en la función <code class="docutils literal notranslate"><span class="pre">completar_nan</span></code></p>
 <p>Dentro de la función <code class="docutils literal notranslate"><span class="pre">completar_nan</span></code>, los métodos <code class="docutils literal notranslate"><span class="pre">ffill()</span></code> y <code class="docutils literal notranslate"><span class="pre">bfill()</span></code> se utilizan para rellenar los valores faltantes (<code class="docutils literal notranslate"><span class="pre">NaN</span></code>) en un DataFrame de <code class="docutils literal notranslate"><span class="pre">pandas</span></code> de la siguiente manera:</p>
@@ -3230,8 +3554,8 @@ dtype: int64
 </li>
 </ul>
 </section>
-<section id="completar-datos-faltantes-en-columnas-numericas-especificas">
-<h3>3.4.3. Completar datos faltantes en columnas numéricas específicas<a class="headerlink" href="#completar-datos-faltantes-en-columnas-numericas-especificas" title="Link to this heading">#</a></h3>
+<section id="interpolar-datos-faltantes-en-columnas-numericas-especificas">
+<h2>4.4. interpolar datos faltantes en columnas numéricas específicas<a class="headerlink" href="#interpolar-datos-faltantes-en-columnas-numericas-especificas" title="Link to this heading">#</a></h2>
 <p>La función <code class="docutils literal notranslate"><span class="pre">completar_nan_col</span></code> se encargará de identificar las columnas numéricas en un DataFrame y aplicar el método de interpolación especificado para rellenar los valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
 <p><strong>Métodos de interpolación de Pandas:</strong>
 <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.interpolate()</span></code> soporta varios métodos, los más comunes son:</p>
@@ -3275,15 +3599,214 @@ dtype: int64
 </div>
 </div>
 </div>
-<p>Para demostrar la función, vamos a introducir más <code class="docutils literal notranslate"><span class="pre">NaNs</span></code> en <code class="docutils literal notranslate"><span class="pre">df_copia2</span></code> en columnas numéricas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Introducir NaNs adicionales para la demostración en df_copia2</span>
-<span class="n">df_copia2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;temperatura&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="n">df_copia2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;humedad_relativa&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="n">df_copia2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;temperatura_k&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN en df_copia2 antes de la interpolación:&quot;</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperatura</th>
+      <th>datos_decimales</th>
+      <th>humedad_relativa</th>
+      <th>estacion</th>
+      <th>temperatura_k</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>28.580135</td>
+      <td>0.1</td>
+      <td>77.050336</td>
+      <td>verano</td>
+      <td>301.730135</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>93.397543</td>
+      <td>verano</td>
+      <td>308.269017</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35.119017</td>
+      <td>0.3</td>
+      <td>93.397543</td>
+      <td>verano</td>
+      <td>308.269017</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28.580135</td>
+      <td>0.4</td>
+      <td>77.050336</td>
+      <td>verano</td>
+      <td>301.730135</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+      <td>0.5</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+      <td>0.6</td>
+      <td>24.149664</td>
+      <td>NaN</td>
+      <td>280.569865</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.880983</td>
+      <td>0.7</td>
+      <td>7.802457</td>
+      <td>NaN</td>
+      <td>274.030983</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.880983</td>
+      <td>0.8</td>
+      <td>7.802457</td>
+      <td>NaN</td>
+      <td>274.030983</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7.419865</td>
+      <td>0.9</td>
+      <td>24.149664</td>
+      <td>NaN</td>
+      <td>280.569865</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>18.000000</td>
+      <td>1.0</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>28.580135</td>
+      <td>1.1</td>
+      <td>77.050336</td>
+      <td>verano</td>
+      <td>301.730135</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>35.119017</td>
+      <td>1.2</td>
+      <td>93.397543</td>
+      <td>verano</td>
+      <td>308.269017</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>35.119017</td>
+      <td>1.3</td>
+      <td>93.397543</td>
+      <td>verano</td>
+      <td>308.269017</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>28.580135</td>
+      <td>1.4</td>
+      <td>77.050336</td>
+      <td>verano</td>
+      <td>301.730135</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NaN</td>
+      <td>1.5</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>7.419865</td>
+      <td>1.6</td>
+      <td>24.149664</td>
+      <td>NaN</td>
+      <td>280.569865</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.880983</td>
+      <td>1.7</td>
+      <td>7.802457</td>
+      <td>NaN</td>
+      <td>274.030983</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.880983</td>
+      <td>1.8</td>
+      <td>7.802457</td>
+      <td>NaN</td>
+      <td>274.030983</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7.419865</td>
+      <td>1.9</td>
+      <td>24.149664</td>
+      <td>NaN</td>
+      <td>280.569865</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN en df_copia2 antes de la interpolación:&quot;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -3317,44 +3840,43 @@ dtype: int64
   <tbody>
     <tr>
       <th>temperatura</th>
-      <td>1</td>
-      <td>5.0</td>
+      <td>6</td>
+      <td>28.571429</td>
     </tr>
     <tr>
       <th>datos_decimales</th>
-      <td>1</td>
-      <td>5.0</td>
+      <td>2</td>
+      <td>9.523810</td>
     </tr>
     <tr>
       <th>humedad_relativa</th>
       <td>1</td>
-      <td>5.0</td>
+      <td>4.761905</td>
     </tr>
     <tr>
       <th>estacion</th>
-      <td>12</td>
-      <td>60.0</td>
+      <td>13</td>
+      <td>61.904762</td>
     </tr>
     <tr>
       <th>temperatura_k</th>
       <td>1</td>
-      <td>5.0</td>
+      <td>4.761905</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>Ahora aplicaremos la función <code class="docutils literal notranslate"><span class="pre">completar_nan_col</span></code> con diferentes métodos de interpolación.</p>
+<p>Acontinuación aplicaremos la función <code class="docutils literal notranslate"><span class="pre">completar_nan_col</span></code> con diferentes métodos de interpolación.</p>
+<section id="interpolacion-lineanl">
+<h3>4.4.1 Interpolación lineanl<a class="headerlink" href="#interpolacion-lineanl" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicar interpolación &#39;linear&#39;</span>
-<span class="n">df_linear_interpolated</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+<span class="n">df_copia2_interp_lineal</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame después de interpolación &#39;linear&#39; (primeras 7 filas):&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df_linear_interpolated</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN después de interpolación &#39;linear&#39;:&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_linear_interpolated</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_copia2_interp_lineal</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3390,7 +3912,7 @@ dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>18.000000</td>
+      <td>NaN</td>
       <td>0.0</td>
       <td>50.600000</td>
       <td>NaN</td>
@@ -3406,7 +3928,7 @@ dtype: int64
     </tr>
     <tr>
       <th>2</th>
-      <td>35.119017</td>
+      <td>31.849576</td>
       <td>0.2</td>
       <td>93.397543</td>
       <td>verano</td>
@@ -3430,7 +3952,7 @@ dtype: int64
     </tr>
     <tr>
       <th>5</th>
-      <td>18.000000</td>
+      <td>19.347084</td>
       <td>0.5</td>
       <td>50.600000</td>
       <td>NaN</td>
@@ -3438,15 +3960,137 @@ dtype: int64
     </tr>
     <tr>
       <th>6</th>
-      <td>7.419865</td>
+      <td>10.114033</td>
       <td>0.6</td>
+      <td>24.149664</td>
+      <td>NaN</td>
+      <td>280.569865</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.880983</td>
+      <td>0.7</td>
+      <td>7.802457</td>
+      <td>NaN</td>
+      <td>274.030983</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.880983</td>
+      <td>0.8</td>
+      <td>7.802457</td>
+      <td>NaN</td>
+      <td>274.030983</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7.419865</td>
+      <td>0.9</td>
+      <td>24.149664</td>
+      <td>NaN</td>
+      <td>280.569865</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>18.000000</td>
+      <td>1.0</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>28.580135</td>
+      <td>1.1</td>
+      <td>77.050336</td>
+      <td>verano</td>
+      <td>301.730135</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>35.119017</td>
+      <td>1.2</td>
+      <td>93.397543</td>
+      <td>verano</td>
+      <td>308.269017</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>35.119017</td>
+      <td>1.3</td>
+      <td>93.397543</td>
+      <td>verano</td>
+      <td>308.269017</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>28.580135</td>
+      <td>1.4</td>
+      <td>77.050336</td>
+      <td>verano</td>
+      <td>301.730135</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>18.000000</td>
+      <td>1.5</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>7.419865</td>
+      <td>1.6</td>
+      <td>24.149664</td>
+      <td>NaN</td>
+      <td>280.569865</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.880983</td>
+      <td>1.7</td>
+      <td>7.802457</td>
+      <td>NaN</td>
+      <td>274.030983</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.880983</td>
+      <td>1.8</td>
+      <td>7.802457</td>
+      <td>NaN</td>
+      <td>274.030983</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7.419865</td>
+      <td>1.9</td>
+      <td>24.149664</td>
+      <td>NaN</td>
+      <td>280.569865</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>7.419865</td>
+      <td>1.9</td>
       <td>24.149664</td>
       <td>NaN</td>
       <td>280.569865</td>
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación &#39;linear&#39;:
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN después de interpolación &#39;linear&#39;:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_copia2_interp_lineal</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación &#39;linear&#39;:
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -3474,28 +4118,90 @@ dtype: int64
   <tbody>
     <tr>
       <th>temperatura</th>
-      <td>0</td>
-      <td>0.0</td>
+      <td>1</td>
+      <td>4.761905</td>
     </tr>
     <tr>
       <th>datos_decimales</th>
       <td>0</td>
-      <td>0.0</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>humedad_relativa</th>
       <td>0</td>
-      <td>0.0</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>estacion</th>
-      <td>12</td>
-      <td>60.0</td>
+      <td>13</td>
+      <td>61.904762</td>
     </tr>
     <tr>
       <th>temperatura_k</th>
       <td>0</td>
-      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="interpolacion-polinomial-de-orden-2">
+<h3>4.4.2. Interpolación polinomial de orden 2<a class="headerlink" href="#interpolacion-polinomial-de-orden-2" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NaN Cantidad</th>
+      <th>NaN Porcemtaje (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>temperatura</th>
+      <td>6</td>
+      <td>28.571429</td>
+    </tr>
+    <tr>
+      <th>datos_decimales</th>
+      <td>2</td>
+      <td>9.523810</td>
+    </tr>
+    <tr>
+      <th>humedad_relativa</th>
+      <td>1</td>
+      <td>4.761905</td>
+    </tr>
+    <tr>
+      <th>estacion</th>
+      <td>13</td>
+      <td>61.904762</td>
+    </tr>
+    <tr>
+      <th>temperatura_k</th>
+      <td>1</td>
+      <td>4.761905</td>
     </tr>
   </tbody>
 </table>
@@ -3503,14 +4209,10 @@ dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicar interpolación &#39;polynomial&#39; de orden 2</span>
-<span class="n">df_poly_interpolated</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;polynomial&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_copia2_interp_polinomial</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;polynomial&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame después de interpolación &#39;polynomial&#39; (orden 2, primeras 7 filas):&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df_poly_interpolated</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN después de interpolación &#39;polynomial&#39; (orden 2):&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_poly_interpolated</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_copia2_interp_polinomial</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3546,7 +4248,7 @@ dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>18.000000</td>
+      <td>NaN</td>
       <td>0.0</td>
       <td>50.600000</td>
       <td>NaN</td>
@@ -3562,7 +4264,7 @@ dtype: int64
     </tr>
     <tr>
       <th>2</th>
-      <td>35.119017</td>
+      <td>35.289380</td>
       <td>0.2</td>
       <td>93.397543</td>
       <td>verano</td>
@@ -3586,7 +4288,7 @@ dtype: int64
     </tr>
     <tr>
       <th>5</th>
-      <td>18.000410</td>
+      <td>18.739261</td>
       <td>0.5</td>
       <td>50.600000</td>
       <td>NaN</td>
@@ -3594,15 +4296,137 @@ dtype: int64
     </tr>
     <tr>
       <th>6</th>
-      <td>7.419865</td>
+      <td>7.240394</td>
       <td>0.6</td>
       <td>24.149664</td>
       <td>NaN</td>
       <td>280.569865</td>
     </tr>
+    <tr>
+      <th>7</th>
+      <td>0.880983</td>
+      <td>0.7</td>
+      <td>7.802457</td>
+      <td>NaN</td>
+      <td>274.030983</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.880983</td>
+      <td>0.8</td>
+      <td>7.802457</td>
+      <td>NaN</td>
+      <td>274.030983</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7.419865</td>
+      <td>0.9</td>
+      <td>24.149664</td>
+      <td>NaN</td>
+      <td>280.569865</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>18.000000</td>
+      <td>1.0</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>28.580135</td>
+      <td>1.1</td>
+      <td>77.050336</td>
+      <td>verano</td>
+      <td>301.730135</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>35.119017</td>
+      <td>1.2</td>
+      <td>93.397543</td>
+      <td>verano</td>
+      <td>308.269017</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>35.119017</td>
+      <td>1.3</td>
+      <td>93.397543</td>
+      <td>verano</td>
+      <td>308.269017</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>28.580135</td>
+      <td>1.4</td>
+      <td>77.050336</td>
+      <td>verano</td>
+      <td>301.730135</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>18.001464</td>
+      <td>1.5</td>
+      <td>50.600000</td>
+      <td>NaN</td>
+      <td>291.150000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>7.419865</td>
+      <td>1.6</td>
+      <td>24.149664</td>
+      <td>NaN</td>
+      <td>280.569865</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.880983</td>
+      <td>1.7</td>
+      <td>7.802457</td>
+      <td>NaN</td>
+      <td>274.030983</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.880983</td>
+      <td>1.8</td>
+      <td>7.802457</td>
+      <td>NaN</td>
+      <td>274.030983</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7.419865</td>
+      <td>1.9</td>
+      <td>24.149664</td>
+      <td>NaN</td>
+      <td>280.569865</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
   </tbody>
 </table>
-</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación &#39;polynomial&#39; (orden 2):
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN después de interpolación &#39;polynomial&#39; (orden 2):&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_copia2_interp_polinomial</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación &#39;polynomial&#39; (orden 2):
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -3630,39 +4454,137 @@ dtype: int64
   <tbody>
     <tr>
       <th>temperatura</th>
-      <td>0</td>
-      <td>0.0</td>
+      <td>2</td>
+      <td>9.523810</td>
     </tr>
     <tr>
       <th>datos_decimales</th>
-      <td>0</td>
-      <td>0.0</td>
+      <td>1</td>
+      <td>4.761905</td>
     </tr>
     <tr>
       <th>humedad_relativa</th>
-      <td>0</td>
-      <td>0.0</td>
+      <td>1</td>
+      <td>4.761905</td>
     </tr>
     <tr>
       <th>estacion</th>
-      <td>12</td>
-      <td>60.0</td>
+      <td>13</td>
+      <td>61.904762</td>
     </tr>
     <tr>
       <th>temperatura_k</th>
-      <td>0</td>
-      <td>0.0</td>
+      <td>1</td>
+      <td>4.761905</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
 </section>
+<section id="graficar">
+<h3>4.4.3 Graficar<a class="headerlink" href="#graficar" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NaN Cantidad</th>
+      <th>NaN Porcemtaje (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>temperatura</th>
+      <td>6</td>
+      <td>28.571429</td>
+    </tr>
+    <tr>
+      <th>datos_decimales</th>
+      <td>2</td>
+      <td>9.523810</td>
+    </tr>
+    <tr>
+      <th>humedad_relativa</th>
+      <td>1</td>
+      <td>4.761905</td>
+    </tr>
+    <tr>
+      <th>estacion</th>
+      <td>13</td>
+      <td>61.904762</td>
+    </tr>
+    <tr>
+      <th>temperatura_k</th>
+      <td>1</td>
+      <td>4.761905</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_copia2</span><span class="p">[</span><span class="s1">&#39;temperatura&#39;</span><span class="p">],</span> <span class="s2">&quot;ro&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Datos diario con nan&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_copia2_interp_polinomial</span><span class="p">[</span><span class="s1">&#39;temperatura&#39;</span><span class="p">],</span> <span class="s2">&quot;bx&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.35</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Datos diario interpolados-poli&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_copia2_interp_lineal</span><span class="p">[</span><span class="s1">&#39;temperatura&#39;</span><span class="p">],</span> <span class="s2">&quot;y+&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.35</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Datos diario interpolados-lineal&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;°C&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Tiempo&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Datos con NaN vs Interpolados&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span> <span class="c1"># loc: lower, upper:left, right, center</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7ad241b8f5d44d5f7f8eb2c065e5dbf4ce2b652a8a24cc1188b2df15b18e8df8.png" src="../_images/7ad241b8f5d44d5f7f8eb2c065e5dbf4ce2b652a8a24cc1188b2df15b18e8df8.png" />
+</div>
+</div>
 </section>
-<section id="evaluar-volumen-de-datos-para-big-data">
-<h2><strong>3.5 Evaluar volumen de datos para Big Data</strong><a class="headerlink" href="#evaluar-volumen-de-datos-para-big-data" title="Link to this heading">#</a></h2>
+</section>
+<section id="volumen-de-datos-para-big-data">
+<h2><strong>4.5. Volumen de datos para Big Data</strong><a class="headerlink" href="#volumen-de-datos-para-big-data" title="Link to this heading">#</a></h2>
 <section id="generar-datos-sinteticos">
-<h3>3.5.1 Generar datos Sintéticos<a class="headerlink" href="#generar-datos-sinteticos" title="Link to this heading">#</a></h3>
+<h3>4.5.1 Generar datos Sintéticos<a class="headerlink" href="#generar-datos-sinteticos" title="Link to this heading">#</a></h3>
+<p>Los <strong>datos sintéticos</strong> son información creada artificialmente, generada por algoritmos en lugar de ser recolectada directamente de eventos del mundo real. En el contexto del <strong>Big Data</strong>, su uso es crucial para:</p>
+<ul class="simple">
+<li><p><strong>Privacidad y Seguridad</strong>: Permiten trabajar con grandes volúmenes de datos sin comprometer la información sensible de usuarios reales.</p></li>
+<li><p><strong>Escalabilidad</strong>: Se pueden generar cantidades ilimitadas de datos para probar modelos y sistemas de Big Data que requieren volúmenes masivos de información.</p></li>
+<li><p><strong>Resolución de Sesgos</strong>: Ayudan a mitigar sesgos presentes en datos reales, creando conjuntos de datos más equilibrados.</p></li>
+<li><p><strong>Desarrollo y Pruebas</strong>: Facilitan el desarrollo y la prueba de nuevos algoritmos y aplicaciones antes de implementarlos con datos reales, que pueden ser difíciles de obtener o manipular.</p></li>
+</ul>
+<p>Cuando se aplican al <strong>precio del dólar</strong>, los datos sintéticos pueden simular el comportamiento de esta divisa en el mercado. Aquí, dos conceptos clave son:</p>
+<ul class="simple">
+<li><p><strong>Precio Base</strong>: Es el valor inicial o de referencia a partir del cual se comienzan a generar las fluctuaciones del precio. En un modelo sintético, este es el punto de partida para las simulaciones.</p></li>
+<li><p><strong>Volatilidad</strong>: Representa la magnitud de las fluctuaciones del precio del dólar a lo largo del tiempo. Una mayor volatilidad indica cambios más drásticos y frecuentes, mientras que una menor volatilidad sugiere una mayor estabilidad. En la generación de datos sintéticos, la volatilidad se controla mediante un parámetro que define qué tan grandes o pequeños serán los movimientos aleatorios del precio, simulando así diferentes escenarios de mercado (por ejemplo, mercados estables o turbulentos).</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -3715,7 +4637,7 @@ dtype: int64
 </div>
 </section>
 <section id="datos-horarios">
-<h3>3.5.2 Datos horarios<a class="headerlink" href="#datos-horarios" title="Link to this heading">#</a></h3>
+<h3>4.5.2 Datos horarios<a class="headerlink" href="#datos-horarios" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_horario</span> <span class="o">=</span> <span class="n">precio_dolar_sintetico</span><span class="p">(</span>
@@ -3793,7 +4715,7 @@ dtype: int64
 </div>
 </section>
 <section id="datos-diarios">
-<h3>3.5.3 Datos diarios<a class="headerlink" href="#datos-diarios" title="Link to this heading">#</a></h3>
+<h3>4.5.3 Datos diarios<a class="headerlink" href="#datos-diarios" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_diario</span> <span class="o">=</span> <span class="n">precio_dolar_sintetico</span><span class="p">(</span>
@@ -3871,7 +4793,7 @@ dtype: int64
 </div>
 </section>
 <section id="datos-mensuales">
-<h3>3.5.4 Datos mensuales<a class="headerlink" href="#datos-mensuales" title="Link to this heading">#</a></h3>
+<h3>4.5.4 Datos mensuales<a class="headerlink" href="#datos-mensuales" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_mensual</span> <span class="o">=</span> <span class="n">precio_dolar_sintetico</span><span class="p">(</span>
@@ -3949,7 +4871,7 @@ dtype: int64
 </div>
 </section>
 <section id="datos-anuales">
-<h3>3.5.5 Datos anuales<a class="headerlink" href="#datos-anuales" title="Link to this heading">#</a></h3>
+<h3>4.5.5 Datos anuales<a class="headerlink" href="#datos-anuales" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Datos anuales para 10 años</span>
@@ -4013,7 +4935,7 @@ dtype: int64
 </div>
 </section>
 <section id="implementar-funciones-para-medir-el-volumen-de-datos">
-<h3>3.5.7 Implementar funciones para medir el volumen de datos<a class="headerlink" href="#implementar-funciones-para-medir-el-volumen-de-datos" title="Link to this heading">#</a></h3>
+<h3>4.5.6 Implementar funciones para medir el volumen de datos<a class="headerlink" href="#implementar-funciones-para-medir-el-volumen-de-datos" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
@@ -4228,8 +5150,8 @@ dtype: int64
 </div></div></div>
 </div>
 </section>
-<section id="graficar">
-<h3>3.5.8 Graficar<a class="headerlink" href="#graficar" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h3>4.5.7 Graficar<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
@@ -4260,7 +5182,7 @@ dtype: int64
 </section>
 </section>
 <section id="aplicaciones">
-<h2>3.6 Aplicaciones<a class="headerlink" href="#aplicaciones" title="Link to this heading">#</a></h2>
+<h2>4.6. Aplicaciones<a class="headerlink" href="#aplicaciones" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Datos Horarios (primeras 5 filas):&quot;</span><span class="p">)</span>
@@ -4374,8 +5296,8 @@ dtype: int64
 </div></div></div>
 </div>
 <section id="introducir-nans-aleatorios">
-<h3>3.6.1 Introducir NaNs aleatorios<a class="headerlink" href="#introducir-nans-aleatorios" title="Link to this heading">#</a></h3>
-<p>La siguiente función <code class="docutils literal notranslate"><span class="pre">introducir_nan_aleatorio_extremos</span></code> tomará un DataFrame y el nombre de una columna numérica. Introducirá <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> en el 20% de las posiciones aleatorias de esa columna, y también garantizará que la primera y la última entrada de la columna sean <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>.</p>
+<h3>4.6.1. Introducir NaNs aleatorios<a class="headerlink" href="#introducir-nans-aleatorios" title="Link to this heading">#</a></h3>
+<p>La siguiente función <code class="docutils literal notranslate"><span class="pre">introducir_nan_aleatorio_extremos</span></code> tomará un DataFrame y el nombre de una columna numérica. Introducirá <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> en el % que se defina de las posiciones aleatorias de esa columna, y también garantizará que la primera y la última entrada de la columna sean <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">introducir_nan_aleatorio_extremos</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">columna</span><span class="p">,</span> <span class="n">porcentaje_nan</span><span class="p">):</span>
@@ -4450,8 +5372,8 @@ dtype: int64
 </div>
 </div>
 </section>
-<section id="contar-valores-nan">
-<h3>3.6.2 Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code><a class="headerlink" href="#contar-valores-nan" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3>4.6.2. Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN en df_horario antes de la operación:&quot;</span><span class="p">)</span>
@@ -4502,7 +5424,7 @@ dtype: int64
 </div>
 </section>
 <section id="introducir-valores-nan-empleando-la-funcion-introducir-nan-aleatorio-extremos">
-<h3>3.6.3 Introducir valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> empleando la función: <code class="docutils literal notranslate"><span class="pre">introducir_nan_aleatorio_extremos</span></code><a class="headerlink" href="#introducir-valores-nan-empleando-la-funcion-introducir-nan-aleatorio-extremos" title="Link to this heading">#</a></h3>
+<h3>4.6.3. Introducir valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> empleando la función: <code class="docutils literal notranslate"><span class="pre">introducir_nan_aleatorio_extremos</span></code><a class="headerlink" href="#introducir-valores-nan-empleando-la-funcion-introducir-nan-aleatorio-extremos" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicar la función al DataFrame df_horario</span>
@@ -4748,8 +5670,8 @@ dtype: int64
 </div></div></div>
 </div>
 </section>
-<section id="contar-valores-nan-despues-de-usar-la-funcion-introducir-nan-aleatorio-extremos">
-<h3>3.6.4 Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> después de usar la función: <code class="docutils literal notranslate"><span class="pre">introducir_nan_aleatorio_extremos</span></code><a class="headerlink" href="#contar-valores-nan-despues-de-usar-la-funcion-introducir-nan-aleatorio-extremos" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>4.6.4. Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Valores NaN en df_historico_horario_con_nan después de la operación:&quot;</span><span class="p">)</span>
@@ -4799,8 +5721,8 @@ dtype: int64
 </div></div></div>
 </div>
 </section>
-<section id="id1">
-<h3>3.6.5 Graficar<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3>4.6.5 Graficar<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
@@ -4827,10 +5749,85 @@ dtype: int64
 <img alt="../_images/d4d086cab5a5186a66d838003433c63423938e3bfd684990c7d71a8de1b10562.png" src="../_images/d4d086cab5a5186a66d838003433c63423938e3bfd684990c7d71a8de1b10562.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">],</span> <span class="n">df_horario_con_nan</span><span class="p">[</span><span class="s1">&#39;Precio_Dolar&#39;</span><span class="p">],</span> <span class="s2">&quot;ro&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Datos diarios con nan&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_horario</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">],</span> <span class="n">df_horario</span><span class="p">[</span><span class="s1">&#39;Precio_Dolar&#39;</span><span class="p">],</span> <span class="s2">&quot;b+&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Datos diarios&quot;</span><span class="p">)</span>
+
+<span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span>
+<span class="c1">#plt.ylim(3.3, 3.8)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Soles&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Tiempo&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Datos sintéticos: Precio Dolar&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- New code to add rectangles for NaN intervals ---</span>
+
+<span class="c1"># Ensure df_horario_con_nan is sorted by &#39;Fecha&#39; for correct interval detection</span>
+<span class="n">df_horario_con_nan</span> <span class="o">=</span> <span class="n">df_horario_con_nan</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Fecha&#39;</span><span class="p">)</span>
+
+<span class="c1"># Filter the DataFrame to the current x-axis limits to find NaNs relevant to the plot</span>
+<span class="n">df_visible_range</span> <span class="o">=</span> <span class="n">df_horario_con_nan</span><span class="p">[(</span><span class="n">df_horario_con_nan</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">start_date</span><span class="p">)</span> <span class="o">&amp;</span>
+                                      <span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">end_date</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># Identify NaN values</span>
+<span class="n">is_nan_series</span> <span class="o">=</span> <span class="n">df_visible_range</span><span class="p">[</span><span class="s1">&#39;Precio_Dolar&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
+
+<span class="c1"># Find consecutive NaN blocks</span>
+<span class="n">nan_blocks</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">current_block_start</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_visible_range</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">is_nan_series</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span> <span class="c1"># If current value is NaN</span>
+        <span class="k">if</span> <span class="n">current_block_start</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># If it&#39;s the start of a new NaN block</span>
+            <span class="n">current_block_start</span> <span class="o">=</span> <span class="n">df_visible_range</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># If current value is not NaN</span>
+        <span class="k">if</span> <span class="n">current_block_start</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># If we were in an NaN block, it just ended</span>
+            <span class="n">nan_blocks</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">current_block_start</span><span class="p">,</span> <span class="n">df_visible_range</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="n">current_block_start</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Handle the case where the data ends with an NaN block</span>
+<span class="k">if</span> <span class="n">current_block_start</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">nan_blocks</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">current_block_start</span><span class="p">,</span> <span class="n">df_visible_range</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="c1"># Get the current y-axis limits to span the rectangles vertically</span>
+<span class="c1"># Matplotlib will auto-adjust y-limits if not explicitly set</span>
+<span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()</span>
+
+<span class="c1"># Add a flag to label the NaN interval only once in the legend</span>
+<span class="n">nan_label_added</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">for</span> <span class="n">block_start</span><span class="p">,</span> <span class="n">block_end</span> <span class="ow">in</span> <span class="n">nan_blocks</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">nan_label_added</span><span class="p">:</span>
+        <span class="n">axes</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">block_start</span><span class="p">,</span> <span class="n">block_end</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Intervalos NaN&#39;</span><span class="p">)</span>
+        <span class="n">nan_label_added</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">axes</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">block_start</span><span class="p">,</span> <span class="n">block_end</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1"># --- End of new code ---</span>
+
+<span class="n">axes</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span> <span class="c1"># loc: lower, upper:left, right, center</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0b9920011bb7b8896aab04442684c21a148ce750b7636613589ef68bf4c4f388.png" src="../_images/0b9920011bb7b8896aab04442684c21a148ce750b7636613589ef68bf4c4f388.png" />
+</div>
+</div>
 </section>
 </section>
 <section id="interpolar-valores-nan-en-precio-dolar">
-<h2>3.7 Interpolar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> en <code class="docutils literal notranslate"><span class="pre">Precio_Dolar</span></code><a class="headerlink" href="#interpolar-valores-nan-en-precio-dolar" title="Link to this heading">#</a></h2>
+<h2>4.7. Interpolar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> en <code class="docutils literal notranslate"><span class="pre">Precio_Dolar</span></code><a class="headerlink" href="#interpolar-valores-nan-en-precio-dolar" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">interpolar_serie</span><span class="p">(</span><span class="n">serie</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -4851,25 +5848,64 @@ dtype: int64
 </div>
 </div>
 <section id="interpolacion-lineal">
-<h3>3.7.1 Interpolación Lineal<a class="headerlink" href="#interpolacion-lineal" title="Link to this heading">#</a></h3>
+<h3>4.7.1. Interpolación Lineal<a class="headerlink" href="#interpolacion-lineal" title="Link to this heading">#</a></h3>
 <p>Este método rellena los valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> ajustando una línea recta entre los puntos de datos válidos más cercanos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_horario_linear_interpolated</span> <span class="o">=</span> <span class="n">df_horario_con_nan</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">df_horario_linear_interpolated</span><span class="p">[</span><span class="s1">&#39;Precio_Dolar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">interpolar_serie</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">[</span><span class="s1">&#39;Precio_Dolar&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN después de interpolación lineal:&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df_horario_linear_interpolated</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación lineal:
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NaN Cantidad</th>
+      <th>NaN Porcemtaje (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Fecha</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Precio_Dolar</th>
+      <td>8772</td>
+      <td>50.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicar interpolación &#39;linear&#39;</span>
+<span class="n">df_horario_nan_interp_lineal</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame después de interpolación &#39;linear&#39; (primeras 7 filas):&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_horario_nan_interp_lineal</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame después de interpolación &#39;linear&#39; (primeras 7 filas):
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -4957,15 +5993,11 @@ dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN después de interpolación lineal:&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_linear_interpolated</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_nan_interp_lineal</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación lineal:
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -5005,21 +6037,64 @@ dtype: int64
 </div>
 </section>
 <section id="interpolacion-de-vecinos-cercanos-nearest">
-<h3>3.7.2 Interpolación de Vecinos Cercanos (<code class="docutils literal notranslate"><span class="pre">nearest</span></code>)<a class="headerlink" href="#interpolacion-de-vecinos-cercanos-nearest" title="Link to this heading">#</a></h3>
+<h3>4.7.2. Interpolación de Vecinos Cercanos (<code class="docutils literal notranslate"><span class="pre">nearest</span></code>)<a class="headerlink" href="#interpolacion-de-vecinos-cercanos-nearest" title="Link to this heading">#</a></h3>
 <p>Este método rellena los valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> con el valor del punto de datos válido más cercano (anterior o siguiente).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_horario_nearest_interpolated</span> <span class="o">=</span> <span class="n">df_horario_con_nan</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">df_horario_nearest_interpolated</span><span class="p">[</span><span class="s1">&#39;Precio_Dolar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">interpolar_serie</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">[</span><span class="s1">&#39;Precio_Dolar&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN después de interpolación de vecinos cercanos:&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df_horario_nearest_interpolated</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_nearest_interpolated</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación de vecinos cercanos:
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NaN Cantidad</th>
+      <th>NaN Porcemtaje (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Fecha</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Precio_Dolar</th>
+      <td>8772</td>
+      <td>50.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aplicar interpolación &#39;nearest&#39;</span>
+<span class="n">df_horario_nan_interp_nearest</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame después de interpolación &#39;nearest&#39; (primeras 7 filas):&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_horario_nan_interp_nearest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame después de interpolación &#39;nearest&#39; (primeras 7 filas):
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -5103,7 +6178,16 @@ dtype: int64
   </tbody>
 </table>
 <p>17544 rows × 2 columns</p>
-</div></div><div class="output text_html"><div>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_nan_interp_nearest</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -5142,20 +6226,157 @@ dtype: int64
 </div>
 </section>
 <section id="interpolacion-polinomial">
-<h3>3.7.3 Interpolación Polinomial<a class="headerlink" href="#interpolacion-polinomial" title="Link to this heading">#</a></h3>
+<h3>4.7.3 Interpolación Polinomial<a class="headerlink" href="#interpolacion-polinomial" title="Link to this heading">#</a></h3>
 <p>Este método ajusta un polinomio de un grado específico (orden) a los puntos de datos válidos para rellenar los <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s. Un orden más alto puede capturar curvas más complejas, pero también puede llevar a un sobreajuste.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_horario_poly_interpolated</span> <span class="o">=</span> <span class="n">df_horario_con_nan</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">df_horario_poly_interpolated</span><span class="p">[</span><span class="s1">&#39;Precio_Dolar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">interpolar_serie</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">[</span><span class="s1">&#39;Precio_Dolar&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;polynomial&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN después de interpolación polinomial (orden 3):&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_poly_interpolated</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación polinomial (orden 3):
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NaN Cantidad</th>
+      <th>NaN Porcemtaje (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Fecha</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Precio_Dolar</th>
+      <td>8772</td>
+      <td>50.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_horario_con_nan_polinomial</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;polynomial&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame después de interpolación &#39;polynomial&#39; (orden 2, primeras 7 filas):&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_horario_con_nan_polinomial</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame después de interpolación &#39;polynomial&#39; (orden 2, primeras 7 filas):
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fecha</th>
+      <th>Precio_Dolar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2000-01-01 00:00:00</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2000-01-01 01:00:00</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2000-01-01 02:00:00</td>
+      <td>3.406088</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2000-01-01 03:00:00</td>
+      <td>3.417118</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2000-01-01 04:00:00</td>
+      <td>3.428135</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>17539</th>
+      <td>2001-12-31 19:00:00</td>
+      <td>4.082932</td>
+    </tr>
+    <tr>
+      <th>17540</th>
+      <td>2001-12-31 20:00:00</td>
+      <td>4.074901</td>
+    </tr>
+    <tr>
+      <th>17541</th>
+      <td>2001-12-31 21:00:00</td>
+      <td>4.093171</td>
+    </tr>
+    <tr>
+      <th>17542</th>
+      <td>2001-12-31 22:00:00</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17543</th>
+      <td>2001-12-31 23:00:00</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>17544 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN después de interpolación &#39;polynomial&#39; (orden 2):&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_con_nan_polinomial</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación &#39;polynomial&#39; (orden 2):
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -5197,22 +6418,155 @@ dtype: int64
 </div>
 </section>
 <section id="interpolacion-spline">
-<h3>3.7.4 Interpolación Spline<a class="headerlink" href="#interpolacion-spline" title="Link to this heading">#</a></h3>
+<h3>4.7.4. Interpolación Spline<a class="headerlink" href="#interpolacion-spline" title="Link to this heading">#</a></h3>
 <p>La interpolación Spline ajusta una serie de polinomios (splines) entre cada par de puntos de datos consecutivos, creando una curva suave que pasa por todos los puntos. El <code class="docutils literal notranslate"><span class="pre">order</span></code> define el grado de los polinomios.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_horario_spline_interpolated</span> <span class="o">=</span> <span class="n">df_horario_con_nan</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">df_horario_spline_interpolated</span><span class="p">[</span><span class="s1">&#39;Precio_Dolar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">interpolar_serie</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">[</span><span class="s1">&#39;Precio_Dolar&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spline&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN después de interpolación spline (orden 3):&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_spline_interpolated</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación spline (orden 3):
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NaN Cantidad</th>
+      <th>NaN Porcemtaje (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Fecha</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Precio_Dolar</th>
+      <td>8772</td>
+      <td>50.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_horario_con_nan_spline</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spline&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame después de interpolación &#39;polynomial&#39; (orden 2, primeras 7 filas):&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_horario_con_nan_spline</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame después de interpolación &#39;polynomial&#39; (orden 2, primeras 7 filas):
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fecha</th>
+      <th>Precio_Dolar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2000-01-01 00:00:00</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2000-01-01 01:00:00</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2000-01-01 02:00:00</td>
+      <td>3.406088</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2000-01-01 03:00:00</td>
+      <td>3.417118</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2000-01-01 04:00:00</td>
+      <td>5.087832</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>17539</th>
+      <td>2001-12-31 19:00:00</td>
+      <td>4.082932</td>
+    </tr>
+    <tr>
+      <th>17540</th>
+      <td>2001-12-31 20:00:00</td>
+      <td>4.074901</td>
+    </tr>
+    <tr>
+      <th>17541</th>
+      <td>2001-12-31 21:00:00</td>
+      <td>4.093171</td>
+    </tr>
+    <tr>
+      <th>17542</th>
+      <td>2001-12-31 22:00:00</td>
+      <td>3.369724</td>
+    </tr>
+    <tr>
+      <th>17543</th>
+      <td>2001-12-31 23:00:00</td>
+      <td>3.369962</td>
+    </tr>
+  </tbody>
+</table>
+<p>17544 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_con_nan_spline</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -5252,22 +6606,155 @@ dtype: int64
 </div>
 </section>
 <section id="interpolacion-cubica">
-<h3>3.7.5 Interpolación Cúbica<a class="headerlink" href="#interpolacion-cubica" title="Link to this heading">#</a></h3>
+<h3>4.7.5. Interpolación Cúbica<a class="headerlink" href="#interpolacion-cubica" title="Link to this heading">#</a></h3>
 <p>La interpolación cúbica es un caso específico de interpolación polinomial o spline donde el grado del polinomio es 3. Genera una curva suave que pasa por los puntos de datos, similar a la spline de orden 3.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_horario_cubic_interpolated</span> <span class="o">=</span> <span class="n">df_horario_con_nan</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">df_horario_cubic_interpolated</span><span class="p">[</span><span class="s1">&#39;Precio_Dolar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">interpolar_serie</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">[</span><span class="s1">&#39;Precio_Dolar&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;cubic&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores NaN después de interpolación cúbica:&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_cubic_interpolated</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores NaN después de interpolación cúbica:
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NaN Cantidad</th>
+      <th>NaN Porcemtaje (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Fecha</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Precio_Dolar</th>
+      <td>8772</td>
+      <td>50.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_horario_con_nan_cubic</span> <span class="o">=</span> <span class="n">completar_nan_col</span><span class="p">(</span><span class="n">df_horario_con_nan</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;cubic&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame después de interpolación &#39;polynomial&#39; (orden 2, primeras 7 filas):&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_horario_con_nan_cubic</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame después de interpolación &#39;polynomial&#39; (orden 2, primeras 7 filas):
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fecha</th>
+      <th>Precio_Dolar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2000-01-01 00:00:00</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2000-01-01 01:00:00</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2000-01-01 02:00:00</td>
+      <td>3.406088</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2000-01-01 03:00:00</td>
+      <td>3.417118</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2000-01-01 04:00:00</td>
+      <td>3.428216</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>17539</th>
+      <td>2001-12-31 19:00:00</td>
+      <td>4.082932</td>
+    </tr>
+    <tr>
+      <th>17540</th>
+      <td>2001-12-31 20:00:00</td>
+      <td>4.074901</td>
+    </tr>
+    <tr>
+      <th>17541</th>
+      <td>2001-12-31 21:00:00</td>
+      <td>4.093171</td>
+    </tr>
+    <tr>
+      <th>17542</th>
+      <td>2001-12-31 22:00:00</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17543</th>
+      <td>2001-12-31 23:00:00</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>17544 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">contar_nan</span><span class="p">(</span><span class="n">df_horario_con_nan_cubic</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -5308,8 +6795,8 @@ dtype: int64
 </section>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="iv-referencias">
-<h1><strong>IV. Referencias</strong><a class="headerlink" href="#iv-referencias" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="v-referencias">
+<h1><strong>V. Referencias</strong><a class="headerlink" href="#v-referencias" title="Link to this heading">#</a></h1>
 <p><strong>Libros y manuales</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.editorial-sciela.org/index.php/sciela/article/view/16/49">Libro de estadisitica con python</a></p></li>
@@ -5416,7 +6903,7 @@ dtype: int64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-o-loop-for">3.2. <strong>Bucle ó Loop: <code class="docutils literal notranslate"><span class="pre">for</span></code></strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-del-bucle-for-en-estructura-de-datos-lista">3.2.1 Uso de del bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> en estructura de datos lista</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-y-procesamiento-de-la-variable-lista-01">3.2.2. Analisis exploratorio y procesamiento de la variable <code class="docutils literal notranslate"><span class="pre">lista_01</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-del-bucle-for-en-estructura-de-datos-data-frame">3.2.3. Uso de del bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> en estructura de datos Data Frame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-del-bucle-for-en-estructura-de-datos-data-frame">3.2.3. Uso del bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> en estructura de datos Data Frame</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-ii"><strong>3.3. Funciones: parte II</strong></a><ul class="nav section-nav flex-column">
@@ -5424,41 +6911,47 @@ dtype: int64
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-funcion-con-una-estructura-de-datos">3.3.2. Uso de función con una estructura de datos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-control-y-preprocesamiento-de-datos"><strong>3.4 Manejo, control y preprocesamiento de datos</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-datos-errados-o-faltantes">3.4.1. Contar datos errados ó faltantes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-errados-o-faltantes">3.4.2. Completar datos errados ó faltantes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-faltantes-en-columnas-numericas-especificas">3.4.3. Completar datos faltantes en columnas numéricas específicas</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluar-volumen-de-datos-para-big-data"><strong>3.5 Evaluar volumen de datos para Big Data</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generar-datos-sinteticos">3.5.1 Generar datos Sintéticos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-horarios">3.5.2 Datos horarios</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-diarios">3.5.3 Datos diarios</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-mensuales">3.5.4 Datos mensuales</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-anuales">3.5.5 Datos anuales</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementar-funciones-para-medir-el-volumen-de-datos">3.5.7 Implementar funciones para medir el volumen de datos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficar">3.5.8 Graficar</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-manejo-y-control-de-calidad-de-datos">IV. Manejo y control de calidad de datos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-copias-de-una-data-frame">4.1. Crear copias de una Data Frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-valores-nan">4.2. Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-errados-o-faltantes">4.3. Completar datos errados ó faltantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolar-datos-faltantes-en-columnas-numericas-especificas">4.4. interpolar datos faltantes en columnas numéricas específicas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineanl">4.4.1 Interpolación lineanl</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-polinomial-de-orden-2">4.4.2. Interpolación polinomial de orden 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficar">4.4.3 Graficar</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones">3.6 Aplicaciones</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducir-nans-aleatorios">3.6.1 Introducir NaNs aleatorios</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-valores-nan">3.6.2 Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducir-valores-nan-empleando-la-funcion-introducir-nan-aleatorio-extremos">3.6.3 Introducir valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> empleando la función: <code class="docutils literal notranslate"><span class="pre">introducir_nan_aleatorio_extremos</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-valores-nan-despues-de-usar-la-funcion-introducir-nan-aleatorio-extremos">3.6.4 Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> después de usar la función: <code class="docutils literal notranslate"><span class="pre">introducir_nan_aleatorio_extremos</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.6.5 Graficar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volumen-de-datos-para-big-data"><strong>4.5. Volumen de datos para Big Data</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generar-datos-sinteticos">4.5.1 Generar datos Sintéticos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-horarios">4.5.2 Datos horarios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-diarios">4.5.3 Datos diarios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-mensuales">4.5.4 Datos mensuales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-anuales">4.5.5 Datos anuales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementar-funciones-para-medir-el-volumen-de-datos">4.5.6 Implementar funciones para medir el volumen de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.5.7 Graficar</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolar-valores-nan-en-precio-dolar">3.7 Interpolar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> en <code class="docutils literal notranslate"><span class="pre">Precio_Dolar</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineal">3.7.1 Interpolación Lineal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-de-vecinos-cercanos-nearest">3.7.2 Interpolación de Vecinos Cercanos (<code class="docutils literal notranslate"><span class="pre">nearest</span></code>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-polinomial">3.7.3 Interpolación Polinomial</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-spline">3.7.4 Interpolación Spline</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-cubica">3.7.5 Interpolación Cúbica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones">4.6. Aplicaciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducir-nans-aleatorios">4.6.1. Introducir NaNs aleatorios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.6.2. Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducir-valores-nan-empleando-la-funcion-introducir-nan-aleatorio-extremos">4.6.3. Introducir valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> empleando la función: <code class="docutils literal notranslate"><span class="pre">introducir_nan_aleatorio_extremos</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.6.4. Contar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.6.5 Graficar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolar-valores-nan-en-precio-dolar">4.7. Interpolar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> en <code class="docutils literal notranslate"><span class="pre">Precio_Dolar</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineal">4.7.1. Interpolación Lineal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-de-vecinos-cercanos-nearest">4.7.2. Interpolación de Vecinos Cercanos (<code class="docutils literal notranslate"><span class="pre">nearest</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-polinomial">4.7.3 Interpolación Polinomial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-spline">4.7.4. Interpolación Spline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-cubica">4.7.5. Interpolación Cúbica</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-referencias"><strong>IV. Referencias</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#v-referencias"><strong>V. Referencias</strong></a></li>
 </ul>
 
   </nav></div>
