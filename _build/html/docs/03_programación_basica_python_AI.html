@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Conceptos básicos de programación &#8212; Sacha Analytics</title>
+    <title>3. Conceptos básicos de programación para Big Data &#8212; Sacha Analytics</title>
   
   
   
@@ -178,7 +178,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="sesion1_introduccion_bigdata_python.html"><strong>1. Fundamentos de Big Data y Computación en la Nube</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="sesion1_introduccion_cloudComputing.html"><strong>2. Fundamentos de Computación en la Nube</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>3. Conceptos básicos de programación</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>3. Conceptos básicos de programación para Big Data</strong></a></li>
 
 
 
@@ -400,7 +400,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>3. Conceptos básicos de programación</h1>
+    <h1>3. Conceptos básicos de programación para Big Data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -410,7 +410,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>3. Conceptos básicos de programación</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>3. Conceptos básicos de programación para Big Data</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-fundamentos-de-programacion-basica"><strong>I. Fundamentos de programación básica</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-y-variables"><strong>1.1. Tipos de datos y variables</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-categoricos">1.1.1. Datos Categóricos</a></li>
@@ -528,8 +528,8 @@ table tr:last-child td:last-child {
     <th align="left">:<a href="https://sacha-analytics.github.io/" style="font-family:Monospace;font-size: 13px;">sacha-analytics</a></th>
 </tr>
 </table>
-<br><section class="tex2jax_ignore mathjax_ignore" id="conceptos-basicos-de-programacion">
-<h1><strong>3. Conceptos básicos de programación</strong><a class="headerlink" href="#conceptos-basicos-de-programacion" title="Link to this heading">#</a></h1>
+<br><section class="tex2jax_ignore mathjax_ignore" id="conceptos-basicos-de-programacion-para-big-data">
+<h1><strong>3. Conceptos básicos de programación para Big Data</strong><a class="headerlink" href="#conceptos-basicos-de-programacion-para-big-data" title="Link to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="i-fundamentos-de-programacion-basica">
 <h1><strong>I. Fundamentos de programación básica</strong><a class="headerlink" href="#i-fundamentos-de-programacion-basica" title="Link to this heading">#</a></h1>
@@ -5828,25 +5828,6 @@ Name: temperatura, dtype: float64
 </section>
 <section id="interpolar-valores-nan-en-precio-dolar">
 <h2>4.7. Interpolar valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> en <code class="docutils literal notranslate"><span class="pre">Precio_Dolar</span></code><a class="headerlink" href="#interpolar-valores-nan-en-precio-dolar" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">interpolar_serie</span><span class="p">(</span><span class="n">serie</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Interpola valores NaN en una serie de pandas utilizando el método especificado.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        serie (pd.Series): La serie de entrada con posibles valores NaN.</span>
-<span class="sd">        method (str): El método de interpolación a usar. Ej: &#39;linear&#39;, &#39;nearest&#39;, &#39;polynomial&#39;, &#39;spline&#39;, &#39;cubic&#39;.</span>
-<span class="sd">        **kwargs: Argumentos adicionales para el método `interpolate` (ej. `order` para &#39;polynomial&#39;/&#39;spline&#39;).</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        pd.Series: La serie con los NaNs interpolados.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">serie</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <section id="id5">
 <h3>4.7.1. Interpolación Lineal<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>Este método rellena los valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> ajustando una línea recta entre los puntos de datos válidos más cercanos.</p>
@@ -6868,7 +6849,7 @@ Name: temperatura, dtype: float64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>3. Conceptos básicos de programación</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>3. Conceptos básicos de programación para Big Data</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-fundamentos-de-programacion-basica"><strong>I. Fundamentos de programación básica</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-y-variables"><strong>1.1. Tipos de datos y variables</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-categoricos">1.1.1. Datos Categóricos</a></li>
