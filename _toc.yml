@@ -7,4 +7,5 @@ chapters:
 - file: docs/sesion1_introduccion_bigdata_python
 - file: docs/sesion1_introduccion_cloudComputing
 - file: docs/03_programación_basica_python_AI
+- file: docs/04_casoEstudio_precioDolar_BCRP
 
