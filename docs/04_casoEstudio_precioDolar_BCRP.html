@@ -1,0 +1,2372 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Caso estudio: variación histórica en el precio del Dolar según el BCRP &#8212; Sacha Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/04_casoEstudio_precioDolar_BCRP';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="3. Conceptos básicos de programación para Big Data" href="03_programaci%C3%B3n_basica_python_AI.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Sacha Analytics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="home.html">
+                    Descripción del Curso
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sesion1_introduccion_bigdata_python.html"><strong>1. Fundamentos de Big Data y Computación en la Nube</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="sesion1_introduccion_cloudComputing.html"><strong>2. Fundamentos de Computación en la Nube</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_programaci%C3%B3n_basica_python_AI.html"><strong>3. Conceptos básicos de programación para Big Data</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>4. Caso estudio: variación histórica en el precio del Dolar según el BCRP</strong></a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/vrrp/sachabook_bigdata/blob/main/docs/docs/04_casoEstudio_precioDolar_BCRP.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/vrrp/sachabook_bigdata" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/vrrp/sachabook_bigdata/issues/new?title=Issue%20on%20page%20%2Fdocs/04_casoEstudio_precioDolar_BCRP.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/04_casoEstudio_precioDolar_BCRP.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>4. Caso estudio: variación histórica en el precio del Dolar según el BCRP</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>4. Caso estudio: variación histórica en el precio del Dolar según el BCRP</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-marco-teorico"><strong>I. Marco Teórico</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo"><strong>1.1 Objetivo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos"><strong>1.2 Fundamentos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-teoricos"><strong>1.2.1 Fundamentos Teóricos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-matematicos-y-econometricos-en-el-ambito-de-big-data"><strong>1.2.2 Fundamentos Matemáticos y Econométricos (en el ámbito de Big Data)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recoleccion-de-datos"><strong>2.1. Recolección de datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>2.2. Preprocesamiento de datos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-entorno">2.2.1 Preparar entorno</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-archivos-y-directorios-en-la-nube">2.2.2 Gestión de archivos y directorios en la Nube</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-base-de-datos">2.2.3 Importar base de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-faltantes-o-errados">2.2.4. Completar datos faltantes o errados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-datos-atipicos">2.2.5. Manejo de datos atípicos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficar">2.2.6. Graficar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-datos-eda"><strong>2.3. Análisis Exploratorio de Datos (EDA)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-de-variables-clave"><strong>2.4. Identificación de Variables Clave</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelado-econometrico"><strong>2.5. Modelado Econométrico</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion-y-evaluacion-del-modelo"><strong>2.6. Validación y Evaluación del Modelo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-de-resultados-y-conclusiones"><strong>2.7. Interpretación de Resultados y Conclusiones</strong></a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Big Data y Análisis de Datos usando Python con Inteligencia Artificial</b></span></h1>
+</div>
+<style>
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+</style>
+<table align="center" style="font-size: 13px;">
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Autor</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:VR ROJAS</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Email</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:sacha.analytics@gmail.com</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Web</span></th>
+    <th align="left">:<a href="https://sacha-analytics.github.io/" style="font-family:Monospace;font-size: 13px;">sacha-analytics</a></th>
+</tr>
+</table>
+<br><section class="tex2jax_ignore mathjax_ignore" id="caso-estudio-variacion-historica-en-el-precio-del-dolar-segun-el-bcrp">
+<h1><strong>4. Caso estudio: variación histórica en el precio del Dolar según el BCRP</strong><a class="headerlink" href="#caso-estudio-variacion-historica-en-el-precio-del-dolar-segun-el-bcrp" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="i-marco-teorico">
+<h1><strong>I. Marco Teórico</strong><a class="headerlink" href="#i-marco-teorico" title="Link to this heading">#</a></h1>
+<p>Los fundamentos conceptuales y empíricos sobre los cuales se construirá el análisis del precio histórico del dólar según el Banco Central de Reserva del Perú (BCRP). Este marco integrará <strong>teorías económicas relevantes, modelos financieros</strong> y enfoques <strong>econométricos</strong> que permitan comprender y explicar las fluctuaciones del tipo de cambio. Se abordarán conceptos clave como la <strong>paridad del poder adquisitivo (PPA)</strong>, la <strong>teoría de la tasa de interés (TTI)</strong>, la <strong>balanza de pagos</strong>, y el impacto de <strong>políticas monetarias</strong> y <strong>fiscales</strong> en la determinación del valor del dólar frente al sol peruano. Además, se revisarán <strong>estudios previos</strong> y <strong>metodologías</strong> utilizadas en la <strong>predicción y análisis</strong> de series temporales de tipos de cambio.</p>
+<section id="objetivo">
+<h2><strong>1.1 Objetivo</strong><a class="headerlink" href="#objetivo" title="Link to this heading">#</a></h2>
+<p>El objetivo principal de este caso de estudio es analizar y comprender el comportamiento histórico del precio del dólar en Perú, tomando como referencia los datos proporcionados por el Banco Central de Reserva del Perú (BCRP). Se buscará identificar patrones, tendencias y factores macroeconómicos que han influido en las fluctuaciones del tipo de cambio, con el fin de <strong>desarrollar un modelo predictivo</strong> que permita anticipar futuros movimientos y ofrecer una herramienta de apoyo para la <strong>toma de decisiones financieras y económicas</strong>.</p>
+</section>
+<section id="fundamentos">
+<h2><strong>1.2 Fundamentos</strong><a class="headerlink" href="#fundamentos" title="Link to this heading">#</a></h2>
+<p>El estudio de la variación histórica del precio del dólar en el contexto de Big Data requiere un entendimiento sólido de los fundamentos teóricos y matemáticos que sustentan el análisis de series temporales financieras. Esto es crucial para manejar la complejidad y el volumen de datos asociados a los mercados cambiarios.</p>
+<section id="fundamentos-teoricos">
+<h3><strong>1.2.1 Fundamentos Teóricos</strong><a class="headerlink" href="#fundamentos-teoricos" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Hipótesis del Mercado Eficiente (EMH):</strong> Propone que los precios de los activos financieros reflejan toda la información disponible, lo que implica que es imposible obtener consistentemente rendimientos anormales. Sin embargo, en el corto plazo, las ineficiencias o la asimetría de la información pueden generar oportunidades o patrones. En el contexto de Big Data, se puede explorar si grandes volúmenes de datos no tradicionales (noticias, redes sociales, etc.) pueden ofrecer información que contradiga la EMH en ciertos periodos.</p></li>
+<li><p><strong>Teoría de la Paridad del Poder Adquisitivo (PPA):</strong> Sugiere que los tipos de cambio entre dos monedas deberían ajustarse para que una cesta idéntica de bienes y servicios tenga el mismo precio en ambos países. La PPA absoluta y relativa son herramientas clave para evaluar la subvaloración o sobrevaloración de una moneda a largo plazo. Con Big Data, se pueden analizar canastas de bienes más detalladas y en tiempo real para observar desviaciones.</p></li>
+<li><p><strong>Teoría de la Tasa de Interés (TTI) / Paridad Descubierta de la Tasa de Interés (UIP):</strong> Postula que la diferencia en las tasas de interés entre dos países debe ser igual a la tasa esperada de depreciación de la moneda con mayor tasa de interés. Esto implica que los inversores son indiferentes entre invertir en activos de diferentes países. El análisis de Big Data puede incorporar un seguimiento más granular de las expectativas del mercado y los factores que influyen en las decisiones de los bancos centrales.</p></li>
+<li><p><strong>Enfoques de Balance de Pagos:</strong> El tipo de cambio se ve influenciado por los flujos de capital y comerciales entre países. Un déficit o superávit en la cuenta corriente o de capital puede presionar al alza o a la baja el valor de una moneda. Big Data permite monitorear un espectro más amplio de transacciones y flujos financieros.</p></li>
+<li><p><strong>Modelos de Expectativas Adaptativas y Racionales:</strong> Exploran cómo los agentes económicos forman sus expectativas sobre el futuro del tipo de cambio. Las expectativas racionales, en particular, asumen que los agentes utilizan toda la información disponible de manera óptima, lo que tiene implicaciones para la predictibilidad de los tipos de cambio.</p></li>
+</ol>
+</section>
+<section id="fundamentos-matematicos-y-econometricos-en-el-ambito-de-big-data">
+<h3><strong>1.2.2 Fundamentos Matemáticos y Econométricos (en el ámbito de Big Data)</strong><a class="headerlink" href="#fundamentos-matematicos-y-econometricos-en-el-ambito-de-big-data" title="Link to this heading">#</a></h3>
+<p>El análisis de series temporales del tipo de cambio con Big Data requiere técnicas avanzadas para manejar el volumen, la velocidad y la variedad de los datos.</p>
+<ol class="arabic simple">
+<li><p><strong>Series Temporales (Time Series Analysis):</strong></p>
+<ul class="simple">
+<li><p><strong>Modelos ARIMA (AutoRegressive Integrated Moving Average) y SARIMA:</strong> Son fundamentales para modelar series temporales con dependencia de autocorrelación. Permiten capturar tendencias, estacionalidad y componentes autorregresivos/medias móviles. En Big Data, se pueden aplicar a series de alta frecuencia o a agregaciones de datos.</p></li>
+<li><p><strong>Modelos GARCH (Generalized AutoRegressive Conditional Heteroskedasticity):</strong> Cruciales para modelar la volatilidad variable en el tiempo, un fenómeno común en los mercados financieros. Los modelos GARCH (y sus extensiones como EGARCH, GJR-GARCH) permiten predecir la volatilidad futura del tipo de cambio, lo cual es vital para la gestión de riesgos. El Big Data puede alimentar estos modelos con más información sobre los choques exógenos.</p></li>
+<li><p><strong>Cointegración y Modelos de Corrección de Errores (ECM):</strong> Cuando varias series temporales no son estacionarias pero tienen una relación de equilibrio a largo plazo, la cointegración es una técnica clave. Los ECM permiten modelar tanto la dinámica de corto plazo como el ajuste al equilibrio de largo plazo. Esto es relevante para entender las relaciones entre el tipo de cambio y otras variables macroeconómicas en grandes conjuntos de datos.</p></li>
+<li><p><strong>Modelos de Espacio de Estados y Filtro de Kalman:</strong> Permiten modelar sistemas dinámicos donde las variables de interés no son directamente observables. Son potentes para estimar variables latentes y para realizar predicciones en tiempo real, lo cual es útil en escenarios de Big Data donde la inferencia en línea es importante.</p></li>
+</ul>
+</li>
+<li><p><strong>Machine Learning y Deep Learning para Series Temporales:</strong></p>
+<ul class="simple">
+<li><p><strong>Redes Neuronales Recurrentes (RNNs), LSTMs (Long Short-Term Memory) y GRUs (Gated Recurrent Units):</strong> Son especialmente adecuadas para modelar secuencias y capturar dependencias a largo plazo en series temporales. Dada la no linealidad y la complejidad de los datos financieros, estos modelos pueden identificar patrones que los modelos econométricos lineales no pueden. El Big Data proporciona los vastos conjuntos de entrenamiento necesarios para estos modelos.</p></li>
+<li><p><strong>Transformers:</strong> Aunque originalmente desarrollados para procesamiento de lenguaje natural, los modelos Transformer están ganando terreno en series temporales por su capacidad para manejar dependencias de largo alcance y paralelizar el entrenamiento.</p></li>
+<li><p><strong>Modelos Ensemble (Random Forest, Gradient Boosting):</strong> Pueden combinar múltiples modelos para mejorar la precisión de las predicciones, particularmente cuando se integran un gran número de características (features) derivadas de Big Data.</p></li>
+</ul>
+</li>
+<li><p><strong>Procesamiento de Lenguaje Natural (NLP) y Análisis de Sentimientos:</strong></p>
+<ul class="simple">
+<li><p><strong>Análisis de Noticias y Redes Sociales:</strong> Con Big Data, se pueden analizar volúmenes masivos de texto (noticias financieras, posts en redes sociales, informes económicos) para extraer el sentimiento del mercado. Este sentimiento puede ser un predictor significativo de los movimientos del tipo de cambio, especialmente en el corto plazo. Técnicas como <em>embedding</em> de palabras, modelos basados en Transformer y clasificadores de sentimiento son esenciales.</p></li>
+</ul>
+</li>
+<li><p><strong>Cómputo Distribuido y Paralelo:</strong></p>
+<ul class="simple">
+<li><p><strong>Apache Spark, Hadoop:</strong> Para manejar el gran volumen de datos, las arquitecturas de Big Data requieren herramientas de cómputo distribuido que permitan procesar y analizar eficientemente los datos a escala. Esto es crucial para entrenar modelos complejos y ejecutar simulaciones intensivas.</p></li>
+</ul>
+</li>
+</ol>
+<p>Estos fundamentos teóricos y matemáticos, cuando se aplican con las herramientas y metodologías de Big Data, permiten un análisis más profundo y preciso de las variaciones históricas del precio del dólar, facilitando la identificación de patrones, la predicción de movimientos futuros y la comprensión de los factores que impulsan el mercado cambiario.</p>
+<p>#<font size=12 color="#9900FF"><strong>II. Metodología Práctica</strong></font></p>
+</section>
+</section>
+<section id="recoleccion-de-datos">
+<h2><strong>2.1. Recolección de datos</strong><a class="headerlink" href="#recoleccion-de-datos" title="Link to this heading">#</a></h2>
+<p>Los datos históricos del tipo de cambio del BCRP se encuentran disponibles en los siguientes links.</p>
+<p><strong>Fuente de base de datos:</strong></p>
+<ul class="simple">
+<li><p><a href="https://estadisticas.bcrp.gob.pe/estadisticas/series/">BCRP Data</a>.</p></li>
+<li><p>Datos para caso estudio: <a href="https://estadisticas.bcrp.gob.pe/estadisticas/series/diarias/tipo-de-cambio-nominal">Precio del dolar diario</a>.</p></li>
+</ul>
+</section>
+<section id="preprocesamiento-de-datos">
+<h2><strong>2.2. Preprocesamiento de datos</strong><a class="headerlink" href="#preprocesamiento-de-datos" title="Link to this heading">#</a></h2>
+<section id="preparar-entorno">
+<h3>2.2.1 Preparar entorno<a class="headerlink" href="#preparar-entorno" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Paquete especializado en metodos numericos</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Paquete especialozado manejo de estructuras de datos tipo tablas (Data Frames)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Paquetes especializado para generar graficas</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Paquete especializados de estadística y metodos numéricos</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># Paquete especializado en estadística</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># Paquete especializado en estadística</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Comparativa entre Pandas y Polars para Big Data</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Característica</p></th>
+<th class="head text-left"><p>Pandas</p></th>
+<th class="head text-left"><p>Polars</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Backend / Idioma</strong></p></td>
+<td class="text-left"><p>Python (con NumPy y C)</p></td>
+<td class="text-left"><p>Rust</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Rendimiento</strong></p></td>
+<td class="text-left"><p>Generalmente más lento con grandes datasets</p></td>
+<td class="text-left"><p>Muy rápido, optimizado para grandes datasets</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Uso de Memoria</strong></p></td>
+<td class="text-left"><p>Puede ser intensivo en memoria</p></td>
+<td class="text-left"><p>Más eficiente en memoria, columnar</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Modelo de Ejecución</strong></p></td>
+<td class="text-left"><p>Eager (operaciones ejecutadas inmediatamente)</p></td>
+<td class="text-left"><p>Lazy (construye un plan de consulta optimizado)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Paralelización</strong></p></td>
+<td class="text-left"><p>Mayormente single-threaded</p></td>
+<td class="text-left"><p>Multi-threaded por defecto</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>API</strong></p></td>
+<td class="text-left"><p>Muy madura y extensa</p></td>
+<td class="text-left"><p>Moderna, orientada a expresiones y cadenas</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Escalabilidad</strong></p></td>
+<td class="text-left"><p>Limitado por la memoria de la máquina</p></td>
+<td class="text-left"><p>Muy escalable, ideal para Big Data</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Comunidad/Ecosistema</strong></p></td>
+<td class="text-left"><p>Grande, muchos recursos y bibliotecas</p></td>
+<td class="text-left"><p>Creciendo rápidamente, menos maduro que Pandas</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Casos de Uso (Big Data)</strong></p></td>
+<td class="text-left"><p>Análisis exploratorio, datasets de tamaño medio</p></td>
+<td class="text-left"><p>Procesamiento de ETL, datasets muy grandes, alta performance</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Complejidad</strong></p></td>
+<td class="text-left"><p>Más fácil de aprender inicialmente</p></td>
+<td class="text-left"><p>Curva de aprendizaje inicial ligeramente más alta debido al modelo Lazy</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">polars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pl</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tabla comparativa entre las funciones de los Data Frames de Pandas y Polars</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Pandas</strong></p></th>
+<th class="head text-left"><p><strong>Polars</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.info()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.schema</span></code> ó <code class="docutils literal notranslate"><span class="pre">df.glimpse()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.head()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.head()</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.tail()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.tail()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.columns</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.columns</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.shape</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.shape</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.copy()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.clone()</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.groupby('col')</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.group_by('col')</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="gestion-de-archivos-y-directorios-en-la-nube">
+<h3>2.2.2 Gestión de archivos y directorios en la Nube<a class="headerlink" href="#gestion-de-archivos-y-directorios-en-la-nube" title="Link to this heading">#</a></h3>
+<p>La siguiente celda de código permite montar la aplicación Google Drive a la computadora en la nube a través de Google Colaboratory.
+Montar Google Drive en Colab es el proceso mediante el cual el entorno de ejecución de Colab obtiene acceso autorizado a los archivos de Google Drive, de forma que se pueden leer, escribir y modificar archivos durante la sesión.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&quot;/content/drive&quot;, force_remount=True).
+</pre></div>
+</div>
+</div>
+</div>
+<p>La función <strong><code class="docutils literal notranslate"><span class="pre">explorarDrive(args)</span></code></strong> implementada en la siguiente celda de código permite explorar el contenido del Google Drive. Explorar contenido de Google Drive se refiere a la acción de navegar, buscar, visualizar y gestionar los archivos y carpetas almacenados en Google Drive, la plataforma de almacenamiento en la nube de Google.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">explorarDrive</span><span class="p">(</span><span class="n">ruta_carpeta</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+  <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+  <span class="n">ruta_drive</span> <span class="o">=</span><span class="s2">&quot;/content/drive/MyDrive/&quot;</span>
+
+  <span class="k">if</span> <span class="n">ruta_carpeta</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">contenido_carpeta</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">ruta_drive</span><span class="p">)</span>
+    <span class="n">contenido_carpeta</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">n_elem</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">contenido_carpeta</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ruta: </span><span class="si">{</span><span class="n">ruta_drive</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Numero de elementos: </span><span class="si">{</span><span class="n">n_elem</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_elem</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">) </span><span class="si">{</span><span class="n">contenido_carpeta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">contenido_carpeta</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">ruta_drive</span> <span class="o">+</span> <span class="n">ruta_carpeta</span><span class="p">)</span>
+    <span class="n">contenido_carpeta</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">n_elem</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">contenido_carpeta</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ruta: </span><span class="si">{</span><span class="n">ruta_drive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ruta_carpeta</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Numero de elementos: </span><span class="si">{</span><span class="n">n_elem</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_elem</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">) </span><span class="si">{</span><span class="n">contenido_carpeta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">explorarDrive</span><span class="p">(</span><span class="s2">&quot;Base_datos/finanzas/BCRP/precio_dolar&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ruta: /content/drive/MyDrive/Base_datos/finanzas/BCRP/precio_dolar
+Numero de elementos: 3
+(0) Anuales-20260606-174010.csv
+(1) Diarias-20260606-174010.csv
+(2) Diarias-20260609-152222.csv
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="importar-base-de-datos">
+<h3>2.2.3 Importar base de datos<a class="headerlink" href="#importar-base-de-datos" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_baseDatos</span> <span class="o">=</span> <span class="s2">&quot;Diarias-20260609-152222.csv&quot;</span>
+
+<span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/Base_datos/finanzas/BCRP/precio_dolar/&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Fecha&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Interbancario_Compra&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Interbancario_Venta&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Bancario_Compra&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Bancario_Venta&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Informal_Compra&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Informal_Venta&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Importar base de datos usando el paquete Polars</p>
+<p><a class="reference external" href="https://docs.pola.rs/api/python/stable/reference/api/polars.read_csv.html">Página web <strong>Polars</strong></a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df_polars = pl.read_csv(data_dir + nombre_baseDatos, skip_rows=False, has_header=False, new_columns=False)</span>
+<span class="n">df_polars</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="n">nombre_baseDatos</span><span class="p">,</span> <span class="n">null_values</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">has_header</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_polars</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (5, 7)</small><table border="1" class="dataframe"><thead><tr><th></th><th>PD04637PD</th><th>PD04638PD</th><th>PD04639PD</th><th>PD04640PD</th><th>PD04641PD</th><th>PD04642PD</th></tr><tr><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>&quot;&quot;</td><td>&quot;Tipo de cambio - TC Interbanca…</td><td>&quot;Tipo de cambio - TC Interbanca…</td><td>&quot;Tipo de cambio - TC Sistema ba…</td><td>&quot;Tipo de cambio - TC Sistema ba…</td><td>&quot;Tipo de cambio - TC Informal (…</td><td>&quot;Tipo de cambio - TC Informal (…</td></tr><tr><td>&quot;01Ene91&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr><tr><td>&quot;02Ene91&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr><tr><td>&quot;03Ene91&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr><tr><td>&quot;04Ene91&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr></tbody></table></div></div></div>
+</div>
+<p>Generar un resumen estadístico de un Data Frame de Polars:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Pandas</strong></p></th>
+<th class="head text-left"><p><strong>Polars</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_polars</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (9, 8)</small><table border="1" class="dataframe"><thead><tr><th>statistic</th><th></th><th>PD04637PD</th><th>PD04638PD</th><th>PD04639PD</th><th>PD04640PD</th><th>PD04641PD</th><th>PD04642PD</th></tr><tr><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>&quot;count&quot;</td><td>&quot;12945&quot;</td><td>&quot;12945&quot;</td><td>&quot;12945&quot;</td><td>&quot;12945&quot;</td><td>&quot;12945&quot;</td><td>&quot;12945&quot;</td><td>&quot;12945&quot;</td></tr><tr><td>&quot;null_count&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td></tr><tr><td>&quot;mean&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;std&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;min&quot;</td><td>&quot;&quot;</td><td>&quot;2.53871428571429&quot;</td><td>&quot;2.53985714285714&quot;</td><td>&quot;2.539&quot;</td><td>&quot;2.541&quot;</td><td>&quot;2.337&quot;</td><td>&quot;2.339&quot;</td></tr><tr><td>&quot;25%&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;50%&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;75%&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;max&quot;</td><td>&quot;31Oct99&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr></tbody></table></div></div></div>
+</div>
+<p>Importar base de datos usando el paquete Pandas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pandas</span> <span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="n">nombre_baseDatos</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_pandas</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-b243601b-2f1f-4d9d-8279-e2c7a817d57b" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>PD04637PD</th>
+      <th>PD04638PD</th>
+      <th>PD04639PD</th>
+      <th>PD04640PD</th>
+      <th>PD04641PD</th>
+      <th>PD04642PD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>Tipo de cambio - TC Interbancario (S/ por US$)...</td>
+      <td>Tipo de cambio - TC Interbancario (S/ por US$)...</td>
+      <td>Tipo de cambio - TC Sistema bancario SBS (S/ p...</td>
+      <td>Tipo de cambio - TC Sistema bancario SBS (S/ p...</td>
+      <td>Tipo de cambio - TC Informal (S/ por US$) - Co...</td>
+      <td>Tipo de cambio - TC Informal (S/ por US$) - Ve...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>01Ene91</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>02Ene91</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>03Ene91</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>04Ene91</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b243601b-2f1f-4d9d-8279-e2c7a817d57b')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-b243601b-2f1f-4d9d-8279-e2c7a817d57b button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-b243601b-2f1f-4d9d-8279-e2c7a817d57b');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div></div>
+</div>
+<p>Generar un resumen estadístico de un Data Frame de Pandas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_pandas</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-a45d3539-fa12-4787-968e-b03ba1e4d10c" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>PD04637PD</th>
+      <th>PD04638PD</th>
+      <th>PD04639PD</th>
+      <th>PD04640PD</th>
+      <th>PD04641PD</th>
+      <th>PD04642PD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>12944</td>
+      <td>12945</td>
+      <td>12945</td>
+      <td>12945</td>
+      <td>12945</td>
+      <td>12945</td>
+      <td>12945</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>12944</td>
+      <td>5048</td>
+      <td>5118</td>
+      <td>1429</td>
+      <td>1436</td>
+      <td>3523</td>
+      <td>3509</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>24May26</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>1</td>
+      <td>5612</td>
+      <td>5612</td>
+      <td>5604</td>
+      <td>5604</td>
+      <td>6914</td>
+      <td>6914</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a45d3539-fa12-4787-968e-b03ba1e4d10c')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-a45d3539-fa12-4787-968e-b03ba1e4d10c button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-a45d3539-fa12-4787-968e-b03ba1e4d10c');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div></div>
+</div>
+<p>Mostrar información resumida del Data Frame de Polars unsado</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Pandas</strong></p></th>
+<th class="head text-left"><p><strong>Polars</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.info()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.schema</span></code> ó <code class="docutils literal notranslate"><span class="pre">df.glimpse()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_polars</span><span class="o">.</span><span class="n">schema</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Schema([(&#39;&#39;, String),
+        (&#39;PD04637PD&#39;, String),
+        (&#39;PD04638PD&#39;, String),
+        (&#39;PD04639PD&#39;, String),
+        (&#39;PD04640PD&#39;, String),
+        (&#39;PD04641PD&#39;, String),
+        (&#39;PD04642PD&#39;, String)])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_polars</span><span class="o">.</span><span class="n">glimpse</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rows: 12945
+Columns: 7
+$           &lt;str&gt; &#39;&#39;, &#39;01Ene91&#39;, &#39;02Ene91&#39;, &#39;03Ene91&#39;, &#39;04Ene91&#39;, &#39;05Ene91&#39;, &#39;06Ene91&#39;, &#39;07Ene91&#39;, &#39;08Ene91&#39;, &#39;09Ene91&#39;
+$ PD04637PD &lt;str&gt; &#39;Tipo de cambio - TC Interbancario (S/ por US$) - Compra&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;
+$ PD04638PD &lt;str&gt; &#39;Tipo de cambio - TC Interbancario (S/ por US$) - Venta&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;
+$ PD04639PD &lt;str&gt; &#39;Tipo de cambio - TC Sistema bancario SBS (S/ por US$) - Compra&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;
+$ PD04640PD &lt;str&gt; &#39;Tipo de cambio - TC Sistema bancario SBS (S/ por US$) - Venta&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;
+$ PD04641PD &lt;str&gt; &#39;Tipo de cambio - TC Informal (S/ por US$) - Compra (descontinuada)&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;
+$ PD04642PD &lt;str&gt; &#39;Tipo de cambio - TC Informal (S/ por US$) - Venta (descontinuada)&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;, &#39;n.d.&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mostrar información resumida del Data Frame de Pandas usando <code class="docutils literal notranslate"><span class="pre">df.info()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_pandas</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 12945 entries, 0 to 12944
+Data columns (total 7 columns):
+ #   Column      Non-Null Count  Dtype 
+---  ------      --------------  ----- 
+ 0   Unnamed: 0  12944 non-null  object
+ 1   PD04637PD   12945 non-null  object
+ 2   PD04638PD   12945 non-null  object
+ 3   PD04639PD   12945 non-null  object
+ 4   PD04640PD   12945 non-null  object
+ 5   PD04641PD   12945 non-null  object
+ 6   PD04642PD   12945 non-null  object
+dtypes: object(7)
+memory usage: 708.1+ KB
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mostrar sólo las primeras y últimas filas de un <strong>Data Frame de Polar</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Pandas</strong></p></th>
+<th class="head text-left"><p><strong>Polars</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.head()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.head()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.tail()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.tail()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_polars</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (5, 7)</small><table border="1" class="dataframe"><thead><tr><th></th><th>PD04637PD</th><th>PD04638PD</th><th>PD04639PD</th><th>PD04640PD</th><th>PD04641PD</th><th>PD04642PD</th></tr><tr><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>&quot;&quot;</td><td>&quot;Tipo de cambio - TC Interbanca…</td><td>&quot;Tipo de cambio - TC Interbanca…</td><td>&quot;Tipo de cambio - TC Sistema ba…</td><td>&quot;Tipo de cambio - TC Sistema ba…</td><td>&quot;Tipo de cambio - TC Informal (…</td><td>&quot;Tipo de cambio - TC Informal (…</td></tr><tr><td>&quot;01Ene91&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr><tr><td>&quot;02Ene91&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr><tr><td>&quot;03Ene91&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr><tr><td>&quot;04Ene91&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr></tbody></table></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_polars</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (5, 7)</small><table border="1" class="dataframe"><thead><tr><th></th><th>PD04637PD</th><th>PD04638PD</th><th>PD04639PD</th><th>PD04640PD</th><th>PD04641PD</th><th>PD04642PD</th></tr><tr><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>&quot;05Jun26&quot;</td><td>&quot;3.45085714285714&quot;</td><td>&quot;3.45485714285714&quot;</td><td>&quot;3.442&quot;</td><td>&quot;3.443&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr><tr><td>&quot;06Jun26&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr><tr><td>&quot;07Jun26&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr><tr><td>&quot;08Jun26&quot;</td><td>&quot;3.47314285714286&quot;</td><td>&quot;3.48421428571429&quot;</td><td>&quot;3.488&quot;</td><td>&quot;3.498&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr><tr><td>&quot;09Jun26&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr></tbody></table></div></div></div>
+</div>
+<p>Mostrar sólo las primeras y últimas filas de un <strong>Data Frame de Pandas</strong> usando <code class="docutils literal notranslate"><span class="pre">df.head()</span></code> y <code class="docutils literal notranslate"><span class="pre">df.tail()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_pandas</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-a2310b0b-575e-40cd-9a4e-e4cb55dcb112" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>PD04637PD</th>
+      <th>PD04638PD</th>
+      <th>PD04639PD</th>
+      <th>PD04640PD</th>
+      <th>PD04641PD</th>
+      <th>PD04642PD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>Tipo de cambio - TC Interbancario (S/ por US$)...</td>
+      <td>Tipo de cambio - TC Interbancario (S/ por US$)...</td>
+      <td>Tipo de cambio - TC Sistema bancario SBS (S/ p...</td>
+      <td>Tipo de cambio - TC Sistema bancario SBS (S/ p...</td>
+      <td>Tipo de cambio - TC Informal (S/ por US$) - Co...</td>
+      <td>Tipo de cambio - TC Informal (S/ por US$) - Ve...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>01Ene91</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>02Ene91</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>03Ene91</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>04Ene91</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a2310b0b-575e-40cd-9a4e-e4cb55dcb112')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-a2310b0b-575e-40cd-9a4e-e4cb55dcb112 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-a2310b0b-575e-40cd-9a4e-e4cb55dcb112');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_pandas</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-bf392608-bde3-40d3-ac77-549fcb1c89c9" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>PD04637PD</th>
+      <th>PD04638PD</th>
+      <th>PD04639PD</th>
+      <th>PD04640PD</th>
+      <th>PD04641PD</th>
+      <th>PD04642PD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>12940</th>
+      <td>05Jun26</td>
+      <td>3.45085714285714</td>
+      <td>3.45485714285714</td>
+      <td>3.442</td>
+      <td>3.443</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+    <tr>
+      <th>12941</th>
+      <td>06Jun26</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+    <tr>
+      <th>12942</th>
+      <td>07Jun26</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+    <tr>
+      <th>12943</th>
+      <td>08Jun26</td>
+      <td>3.47314285714286</td>
+      <td>3.48421428571429</td>
+      <td>3.488</td>
+      <td>3.498</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+    <tr>
+      <th>12944</th>
+      <td>09Jun26</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+      <td>n.d.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-bf392608-bde3-40d3-ac77-549fcb1c89c9')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-bf392608-bde3-40d3-ac77-549fcb1c89c9 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-bf392608-bde3-40d3-ac77-549fcb1c89c9');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div></div>
+</div>
+<p>Extraer los nombres de las columnas usando</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Pandas</strong></p></th>
+<th class="head text-left"><p><strong>Polars</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.columns</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.columns</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">column_names_polars</span> <span class="o">=</span> <span class="n">df_polars</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">display</span><span class="p">(</span><span class="n">column_names_polars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;&#39;,
+ &#39;PD04637PD&#39;,
+ &#39;PD04638PD&#39;,
+ &#39;PD04639PD&#39;,
+ &#39;PD04640PD&#39;,
+ &#39;PD04641PD&#39;,
+ &#39;PD04642PD&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">column_names_pandas</span> <span class="o">=</span> <span class="n">df_pandas</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">display</span><span class="p">(</span><span class="n">column_names_pandas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Unnamed: 0&#39;, &#39;PD04637PD&#39;, &#39;PD04638PD&#39;, &#39;PD04639PD&#39;, &#39;PD04640PD&#39;,
+       &#39;PD04641PD&#39;, &#39;PD04642PD&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Extrar las dimensiones del Data Frame</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Pandas</strong></p></th>
+<th class="head text-left"><p><strong>Polars</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.shape</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.shape</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_polars</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># Use .shape to get dimensions (rows, columns)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_pandas</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12945, 7)
+(12945, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hacer una copia de un <strong>Data Frame de Polars</strong> usando <code class="docutils literal notranslate"><span class="pre">df.clone()</span></code></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Pandas</strong></p></th>
+<th class="head text-left"><p><strong>Polars</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.copy()</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">df.clone()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_polars_copia1</span> <span class="o">=</span> <span class="n">df_polars</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hacer una copia de un <strong>Data Frame de Pandas</strong> usando <code class="docutils literal notranslate"><span class="pre">df.copy()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pandas_copia1</span> <span class="o">=</span> <span class="n">df_pandas</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="completar-datos-faltantes-o-errados">
+<h3>2.2.4. Completar datos faltantes o errados<a class="headerlink" href="#completar-datos-faltantes-o-errados" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_polars</span><span class="o">.</span><span class="n">null_count</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shape: (1, 7)
+┌─────┬───────────┬───────────┬───────────┬───────────┬───────────┬───────────┐
+│     ┆ PD04637PD ┆ PD04638PD ┆ PD04639PD ┆ PD04640PD ┆ PD04641PD ┆ PD04642PD │
+│ --- ┆ ---       ┆ ---       ┆ ---       ┆ ---       ┆ ---       ┆ ---       │
+│ u32 ┆ u32       ┆ u32       ┆ u32       ┆ u32       ┆ u32       ┆ u32       │
+╞═════╪═══════════╪═══════════╪═══════════╪═══════════╪═══════════╪═══════════╡
+│ 0   ┆ 0         ┆ 0         ┆ 0         ┆ 0         ┆ 0         ┆ 0         │
+└─────┴───────────┴───────────┴───────────┴───────────┴───────────┴───────────┘
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_pandas_copia1</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unnamed: 0    1
+PD04637PD     0
+PD04638PD     0
+PD04639PD     0
+PD04640PD     0
+PD04641PD     0
+PD04642PD     0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_pandas_copia1</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unnamed: 0    1
+PD04637PD     0
+PD04638PD     0
+PD04639PD     0
+PD04640PD     0
+PD04641PD     0
+PD04642PD     0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Reemplazar los valores <code class="docutils literal notranslate"><span class="pre">&quot;n.d.&quot;</span></code> del Data Frame <code class="docutils literal notranslate"><span class="pre">df_polars</span></code> por valores faltantes o errados.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cambiar_caracteres_null</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reemplaza los valores &#39;n.d.&#39; en las columnas numéricas de un DataFrame de Polars con valores nulos</span>
+<span class="sd">    y luego las convierte a tipo flotante. La primera columna (asumida como fecha) se mantiene sin cambios.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pl.DataFrame): El DataFrame de Polars de entrada.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pl.DataFrame: El DataFrame con los valores &#39;n.d.&#39; reemplazados por nulos</span>
+<span class="sd">                      y las columnas numéricas convertidas a pl.Float64.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Obtener todas las columnas del DataFrame</span>
+    <span class="n">columnas</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+
+    <span class="c1"># Inicializar una lista para las expresiones de transformación</span>
+    <span class="n">expresiones</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># La primera columna (df.columns[0]) parece ser de fechas y no contiene &#39;n.d.&#39;,</span>
+    <span class="c1"># por lo que la mantenemos tal cual o la añadimos directamente a las expresiones.</span>
+    <span class="n">expresiones</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="n">columnas</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+    <span class="c1"># Para el resto de las columnas (asumidas como numéricas que contienen &#39;n.d.&#39;)</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columnas</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="c1"># Reemplazar &#39;n.d.&#39; con nulos y luego convertir a Float64. El &#39;strict=False&#39;</span>
+        <span class="c1"># asegura que los valores no parseables como &#39;n.d.&#39; se conviertan a null.</span>
+        <span class="n">expresiones</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">Float64</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Aplicar las expresiones al DataFrame</span>
+    <span class="n">df_cleaned</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="n">expresiones</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df_cleaned</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_polars_con_null</span> <span class="o">=</span> <span class="n">cambiar_caracteres_null</span><span class="p">(</span><span class="n">df_polars</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_polars_con_null</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (5, 7)</small><table border="1" class="dataframe"><thead><tr><th></th><th>PD04637PD</th><th>PD04638PD</th><th>PD04639PD</th><th>PD04640PD</th><th>PD04641PD</th><th>PD04642PD</th></tr><tr><td>str</td><td>f64</td><td>f64</td><td>f64</td><td>f64</td><td>f64</td><td>f64</td></tr></thead><tbody><tr><td>&quot;&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;01Ene91&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;02Ene91&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;03Ene91&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;04Ene91&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr></tbody></table></div></div></div>
+</div>
+<p>Determinar la cantidad y el porcentaje de valores <code class="docutils literal notranslate"><span class="pre">null</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">contar_null_porcentajes</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cuenta la cantidad y el porcentaje de valores nulos por columna en un DataFrame de Polars.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pl.DataFrame): El DataFrame de Polars de entrada.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pl.DataFrame: Un nuevo DataFrame con las columnas:</span>
+<span class="sd">                      &#39;columna&#39;, &#39;null_count&#39; y &#39;null_percentage&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">total_filas</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">height</span>
+    <span class="n">null_counts_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">null_count</span><span class="p">()</span>
+
+    <span class="n">resultados</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">col_name</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">null_count</span> <span class="o">=</span> <span class="n">null_counts_df</span><span class="p">[</span><span class="n">col_name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">null_percentage</span> <span class="o">=</span> <span class="p">(</span><span class="n">null_count</span> <span class="o">/</span> <span class="n">total_filas</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">if</span> <span class="n">total_filas</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">0.0</span>
+        <span class="n">resultados</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s2">&quot;columna&quot;</span><span class="p">:</span> <span class="n">col_name</span><span class="p">,</span>
+            <span class="s2">&quot;Cantidad null&quot;</span><span class="p">:</span> <span class="n">null_count</span><span class="p">,</span>
+            <span class="s2">&quot;Porcentaje null&quot;</span><span class="p">:</span> <span class="n">null_percentage</span>
+        <span class="p">})</span>
+
+    <span class="k">return</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo de uso con df_polars_cleaned</span>
+<span class="n">df_polars_cleaned_resumen_null</span> <span class="o">=</span> <span class="n">contar_null_porcentajes</span><span class="p">(</span><span class="n">df_polars_con_null</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">nulls_summary_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (7, 3)</small><table border="1" class="dataframe"><thead><tr><th>columna</th><th>Cantidad null</th><th>Porcentaje null</th></tr><tr><td>str</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>&quot;&quot;</td><td>0</td><td>0.0</td></tr><tr><td>&quot;PD04637PD&quot;</td><td>5613</td><td>43.360371</td></tr><tr><td>&quot;PD04638PD&quot;</td><td>5613</td><td>43.360371</td></tr><tr><td>&quot;PD04639PD&quot;</td><td>5605</td><td>43.298571</td></tr><tr><td>&quot;PD04640PD&quot;</td><td>5605</td><td>43.298571</td></tr><tr><td>&quot;PD04641PD&quot;</td><td>6915</td><td>53.418308</td></tr><tr><td>&quot;PD04642PD&quot;</td><td>6915</td><td>53.418308</td></tr></tbody></table></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mapear abreviaturas de meses en español a inglés</span>
+<span class="n">month_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Ene&#39;</span><span class="p">:</span> <span class="s1">&#39;Jan&#39;</span><span class="p">,</span> <span class="s1">&#39;Feb&#39;</span><span class="p">:</span> <span class="s1">&#39;Feb&#39;</span><span class="p">,</span> <span class="s1">&#39;Mar&#39;</span><span class="p">:</span> <span class="s1">&#39;Mar&#39;</span><span class="p">,</span> <span class="s1">&#39;Abr&#39;</span><span class="p">:</span> <span class="s1">&#39;Apr&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;May&#39;</span><span class="p">:</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span> <span class="s1">&#39;Jun&#39;</span><span class="p">:</span> <span class="s1">&#39;Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Jul&#39;</span><span class="p">:</span> <span class="s1">&#39;Jul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ago&#39;</span><span class="p">:</span> <span class="s1">&#39;Aug&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Set&#39;</span><span class="p">:</span> <span class="s1">&#39;Sep&#39;</span><span class="p">,</span> <span class="s1">&#39;Oct&#39;</span><span class="p">:</span> <span class="s1">&#39;Oct&#39;</span><span class="p">,</span> <span class="s1">&#39;Nov&#39;</span><span class="p">:</span> <span class="s1">&#39;Dic&#39;</span><span class="p">,</span> <span class="s1">&#39;Dic&#39;</span><span class="p">:</span> <span class="s1">&#39;Dec&#39;</span>
+<span class="p">}</span>
+
+<span class="c1"># Convertir la primera columna (fecha) a tipo datetime</span>
+<span class="c1"># Aplicar reemplazos de abreviaturas de meses en cadena</span>
+<span class="n">date_col_expr</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="n">df_polars_con_null</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">spanish</span><span class="p">,</span> <span class="n">english</span> <span class="ow">in</span> <span class="n">month_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">date_col_expr</span> <span class="o">=</span> <span class="n">date_col_expr</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace_all</span><span class="p">(</span><span class="n">spanish</span><span class="p">,</span> <span class="n">english</span><span class="p">)</span>
+
+<span class="n">df_polars_con_null_plot</span> <span class="o">=</span> <span class="n">df_polars_con_null</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
+    <span class="n">date_col_expr</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">%b%y&#39;</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;Fecha&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Eliminar la primera fila que contiene metadatos</span>
+<span class="n">df_polars_con_null_plot</span> <span class="o">=</span> <span class="n">df_polars_con_null_plot</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Seleccionar las columnas de interés y convertir a Pandas para graficar fácilmente con seaborn</span>
+<span class="n">plot_data</span> <span class="o">=</span> <span class="n">df_polars_con_null_plot</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;Fecha&#39;</span><span class="p">),</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;PD04637PD&#39;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+
+<span class="c1"># Crear la gráfica de línea</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="c1">#sns.lineplot(x=&#39;Fecha&#39;, y=&#39;PD04637PD&#39;, data=plot_data)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_data</span><span class="p">[</span><span class="s2">&quot;Fecha&quot;</span><span class="p">],</span> <span class="n">plot_data</span><span class="p">[</span><span class="s2">&quot;PD04637PD&quot;</span><span class="p">],</span> <span class="s2">&quot;bx&quot;</span><span class="p">)</span>
+
+<span class="c1"># Identificar y graficar los valores null con puntos rojos</span>
+<span class="n">null_values</span> <span class="o">=</span> <span class="n">plot_data</span><span class="p">[</span><span class="n">plot_data</span><span class="p">[</span><span class="s1">&#39;PD04637PD&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">null_values</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">],</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">null_values</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Valores Null&#39;</span><span class="p">)</span>
+
+<span class="c1"># Convertir las cadenas de fecha a objetos datetime antes de pasarlas a xlim</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s2">&quot;1997-05-01&quot;</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s2">&quot;1997-05-25&quot;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">2.3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Evolución de PD04637PD a lo largo del tiempo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fecha&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor de PD04637PD&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5f1073f5bb02926d658be87ac3db7fb25fc72b81a9e23a14a7fc3e47dc2f0219.png" src="../_images/5f1073f5bb02926d658be87ac3db7fb25fc72b81a9e23a14a7fc3e47dc2f0219.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">plot_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-5801d511-2a0d-45a1-aa84-dc922b532385" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fecha</th>
+      <th>PD04637PD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1991-01-01</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1991-01-02</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1991-01-03</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1991-01-04</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1991-01-05</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>12939</th>
+      <td>2026-06-05</td>
+      <td>3.450857</td>
+    </tr>
+    <tr>
+      <th>12940</th>
+      <td>2026-06-06</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12941</th>
+      <td>2026-06-07</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12942</th>
+      <td>2026-06-08</td>
+      <td>3.473143</td>
+    </tr>
+    <tr>
+      <th>12943</th>
+      <td>2026-06-09</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>12944 rows × 2 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-5801d511-2a0d-45a1-aa84-dc922b532385')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-5801d511-2a0d-45a1-aa84-dc922b532385 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-5801d511-2a0d-45a1-aa84-dc922b532385');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+  <div id="id_1b532145-d2d8-45ff-be68-31b148d748be">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('plot_data')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_1b532145-d2d8-45ff-be68-31b148d748be button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('plot_data');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="manejo-de-datos-atipicos">
+<h3>2.2.5. Manejo de datos atípicos<a class="headerlink" href="#manejo-de-datos-atipicos" title="Link to this heading">#</a></h3>
+</section>
+<section id="graficar">
+<h3>2.2.6. Graficar<a class="headerlink" href="#graficar" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="analisis-exploratorio-de-datos-eda">
+<h2><strong>2.3. Análisis Exploratorio de Datos (EDA)</strong><a class="headerlink" href="#analisis-exploratorio-de-datos-eda" title="Link to this heading">#</a></h2>
+<p>Se realizará un análisis descriptivo de las series de tiempo del tipo de cambio para identificar tendencias, estacionalidad, ciclos y posibles rupturas estructurales. Se utilizarán herramientas estadísticas y visualizaciones gráficas.</p>
+</section>
+<section id="identificacion-de-variables-clave">
+<h2><strong>2.4. Identificación de Variables Clave</strong><a class="headerlink" href="#identificacion-de-variables-clave" title="Link to this heading">#</a></h2>
+<p>Se determinarán las variables macroeconómicas y financieras (nacionales e internacionales) que potencialmente influyen en el tipo de cambio, como tasas de interés, inflación, balanza comercial, política monetaria del BCRP, y factores externos.</p>
+</section>
+<section id="modelado-econometrico">
+<h2><strong>2.5. Modelado Econométrico</strong><a class="headerlink" href="#modelado-econometrico" title="Link to this heading">#</a></h2>
+<p>Se emplearán modelos econométricos de series de tiempo, como ARIMA, GARCH, o modelos de vectores autorregresivos (VAR), para capturar la dinámica y las interrelaciones entre el tipo de cambio y las variables identificadas.</p>
+</section>
+<section id="validacion-y-evaluacion-del-modelo">
+<h2><strong>2.6. Validación y Evaluación del Modelo</strong><a class="headerlink" href="#validacion-y-evaluacion-del-modelo" title="Link to this heading">#</a></h2>
+<p>Se validará la robustez de los modelos construidos utilizando técnicas de backtesting y métricas de error (RMSE, MAE, etc.) para asegurar su capacidad predictiva.</p>
+</section>
+<section id="interpretacion-de-resultados-y-conclusiones">
+<h2><strong>2.7. Interpretación de Resultados y Conclusiones</strong><a class="headerlink" href="#interpretacion-de-resultados-y-conclusiones" title="Link to this heading">#</a></h2>
+<p>Se interpretarán los hallazgos del análisis para comprender los drivers del tipo de cambio y se extraerán conclusiones sobre el comportamiento histórico y las perspectivas futuras del precio del dólar.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03_programaci%C3%B3n_basica_python_AI.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>3. Conceptos básicos de programación para Big Data</strong></p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>4. Caso estudio: variación histórica en el precio del Dolar según el BCRP</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-marco-teorico"><strong>I. Marco Teórico</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo"><strong>1.1 Objetivo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos"><strong>1.2 Fundamentos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-teoricos"><strong>1.2.1 Fundamentos Teóricos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-matematicos-y-econometricos-en-el-ambito-de-big-data"><strong>1.2.2 Fundamentos Matemáticos y Econométricos (en el ámbito de Big Data)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recoleccion-de-datos"><strong>2.1. Recolección de datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>2.2. Preprocesamiento de datos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-entorno">2.2.1 Preparar entorno</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-archivos-y-directorios-en-la-nube">2.2.2 Gestión de archivos y directorios en la Nube</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-base-de-datos">2.2.3 Importar base de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completar-datos-faltantes-o-errados">2.2.4. Completar datos faltantes o errados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-datos-atipicos">2.2.5. Manejo de datos atípicos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficar">2.2.6. Graficar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-datos-eda"><strong>2.3. Análisis Exploratorio de Datos (EDA)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-de-variables-clave"><strong>2.4. Identificación de Variables Clave</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelado-econometrico"><strong>2.5. Modelado Econométrico</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion-y-evaluacion-del-modelo"><strong>2.6. Validación y Evaluación del Modelo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-de-resultados-y-conclusiones"><strong>2.7. Interpretación de Resultados y Conclusiones</strong></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By VR Rojas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <style>
+  .slideshow-container { max-width: 800px; margin: auto; position: relative; }
+  .slides { display: none; width: 100%; height: auto; }
+  .slides.active { display: block; }
+  .controls { text-align: center; margin-top: 10px; }
+  .controls button { margin: 0 10px; padding: 10px 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
+  .controls button:hover { background: #0056b3; }
+</style>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
