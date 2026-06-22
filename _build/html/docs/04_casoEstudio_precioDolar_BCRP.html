@@ -186,6 +186,7 @@
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>4. Caso estudio: variación histórica en el precio del Dolar según el BCRP</strong></a></li>
 
+
 </ul>
 
     </div>
@@ -413,13 +414,16 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>4. Caso estudio: variación histórica en el precio del Dolar según el BCRP</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-marco-teorico"><strong>I. Marco Teórico</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-marco-teorico"><font color="#046D0B" size="12"><strong>I. Marco Teórico</strong></font></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo"><strong>1.1 Objetivo</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos"><strong>1.2 Fundamentos</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-teoricos"><strong>1.2.1 Fundamentos Teóricos</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-matematicos-y-econometricos-en-el-ambito-de-big-data"><strong>1.2.2 Fundamentos Matemáticos y Econométricos (en el ámbito de Big Data)</strong></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-metodologia-practica"><font color="#046D0B" size="12"><strong>II. Metodología Práctica</strong></font></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recoleccion-de-datos"><strong>2.1. Recolección de datos</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>2.2. Preprocesamiento de datos</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-entorno">2.2.1 Preparar entorno</a></li>
@@ -485,7 +489,7 @@ table tr:last-child td:last-child {
 <h1><strong>4. Caso estudio: variación histórica en el precio del Dolar según el BCRP</strong><a class="headerlink" href="#caso-estudio-variacion-historica-en-el-precio-del-dolar-segun-el-bcrp" title="Link to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="i-marco-teorico">
-<h1><strong>I. Marco Teórico</strong><a class="headerlink" href="#i-marco-teorico" title="Link to this heading">#</a></h1>
+<h1><font size=12 color="#046D0B"><strong>I. Marco Teórico</strong></font><a class="headerlink" href="#i-marco-teorico" title="Link to this heading">#</a></h1>
 <p>Los fundamentos conceptuales y empíricos sobre los cuales se construirá el análisis del precio histórico del dólar según el Banco Central de Reserva del Perú (BCRP). Este marco integrará <strong>teorías económicas relevantes, modelos financieros</strong> y enfoques <strong>econométricos</strong> que permitan comprender y explicar las fluctuaciones del tipo de cambio. Se abordarán conceptos clave como la <strong>paridad del poder adquisitivo (PPA)</strong>, la <strong>teoría de la tasa de interés (TTI)</strong>, la <strong>balanza de pagos</strong>, y el impacto de <strong>políticas monetarias</strong> y <strong>fiscales</strong> en la determinación del valor del dólar frente al sol peruano. Además, se revisarán <strong>estudios previos</strong> y <strong>metodologías</strong> utilizadas en la <strong>predicción y análisis</strong> de series temporales de tipos de cambio.</p>
 <section id="objetivo">
 <h2><strong>1.1 Objetivo</strong><a class="headerlink" href="#objetivo" title="Link to this heading">#</a></h2>
@@ -535,9 +539,11 @@ table tr:last-child td:last-child {
 </li>
 </ol>
 <p>Estos fundamentos teóricos y matemáticos, cuando se aplican con las herramientas y metodologías de Big Data, permiten un análisis más profundo y preciso de las variaciones históricas del precio del dólar, facilitando la identificación de patrones, la predicción de movimientos futuros y la comprensión de los factores que impulsan el mercado cambiario.</p>
-<p>#<font size=12 color="#9900FF"><strong>II. Metodología Práctica</strong></font></p>
 </section>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ii-metodologia-practica">
+<h1><font size=12 color="#046D0B"><strong>II. Metodología Práctica</strong></font><a class="headerlink" href="#ii-metodologia-practica" title="Link to this heading">#</a></h1>
 <section id="recoleccion-de-datos">
 <h2><strong>2.1. Recolección de datos</strong><a class="headerlink" href="#recoleccion-de-datos" title="Link to this heading">#</a></h2>
 <p>Los datos históricos del tipo de cambio del BCRP se encuentran disponibles en los siguientes links.</p>
@@ -627,16 +633,6 @@ table tr:last-child td:last-child {
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">polars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pl</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;polars&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Tabla comparativa entre las funciones de los Data Frames de Pandas y Polars</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -686,7 +682,42 @@ Montar Google Drive en Colab es el proceso mediante el cual el entorno de ejecuc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&quot;/content/drive&quot;, force_remount=True).
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">20</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">division</span> <span class="k">as</span> <span class="n">_</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_function</span> <span class="k">as</span> <span class="n">_</span>
+<span class="ne">---&gt; </span><span class="mi">20</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_import_hooks</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_installation_commands</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_shell_customizations</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="n">_import_hooks</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2018 Google Inc.</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">12</span> <span class="c1"># See the License for the specific language govestylerning permissions and</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Colab import customizations to the IPython runtime.&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab._import_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">_altair</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab._import_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">_cv2</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">def</span><span class="w"> </span><span class="nf">_register_hooks</span><span class="p">():</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="n">_import_hooks</span><span class="o">/</span><span class="n">_altair</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2018 Google Inc. All rights reserved.</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">12</span> <span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Import hook for ensuring that Altair&#39;s Colab renderer is registered.&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">import</span><span class="w"> </span><span class="nn">imp</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;imp&#39;
 </pre></div>
 </div>
 </div>
@@ -766,7 +797,9 @@ Numero de elementos: 3
 </div>
 </div>
 </div>
-<p>Importar base de datos usando el paquete Polars</p>
+<blockquote>
+<div><p>Polars</p>
+</div></blockquote>
 <p><a class="reference external" href="https://docs.pola.rs/api/python/stable/reference/api/polars.read_csv.html">Página web <strong>Polars</strong></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -786,7 +819,7 @@ Numero de elementos: 3
 </style>
 <small>shape: (5, 7)</small><table border="1" class="dataframe"><thead><tr><th></th><th>PD04637PD</th><th>PD04638PD</th><th>PD04639PD</th><th>PD04640PD</th><th>PD04641PD</th><th>PD04642PD</th></tr><tr><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>&quot;&quot;</td><td>&quot;Tipo de cambio - TC Interbanca…</td><td>&quot;Tipo de cambio - TC Interbanca…</td><td>&quot;Tipo de cambio - TC Sistema ba…</td><td>&quot;Tipo de cambio - TC Sistema ba…</td><td>&quot;Tipo de cambio - TC Informal (…</td><td>&quot;Tipo de cambio - TC Informal (…</td></tr><tr><td>&quot;01Ene91&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr><tr><td>&quot;02Ene91&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr><tr><td>&quot;03Ene91&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr><tr><td>&quot;04Ene91&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr></tbody></table></div></div></div>
 </div>
-<p>Generar un resumen estadístico de un Data Frame de Polars:</p>
+<p>Generar un resumen estadístico de un Data Frame</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p><strong>Pandas</strong></p></th>
@@ -816,7 +849,9 @@ Numero de elementos: 3
 </style>
 <small>shape: (9, 8)</small><table border="1" class="dataframe"><thead><tr><th>statistic</th><th></th><th>PD04637PD</th><th>PD04638PD</th><th>PD04639PD</th><th>PD04640PD</th><th>PD04641PD</th><th>PD04642PD</th></tr><tr><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>&quot;count&quot;</td><td>&quot;12945&quot;</td><td>&quot;12945&quot;</td><td>&quot;12945&quot;</td><td>&quot;12945&quot;</td><td>&quot;12945&quot;</td><td>&quot;12945&quot;</td><td>&quot;12945&quot;</td></tr><tr><td>&quot;null_count&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td><td>&quot;0&quot;</td></tr><tr><td>&quot;mean&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;std&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;min&quot;</td><td>&quot;&quot;</td><td>&quot;2.53871428571429&quot;</td><td>&quot;2.53985714285714&quot;</td><td>&quot;2.539&quot;</td><td>&quot;2.541&quot;</td><td>&quot;2.337&quot;</td><td>&quot;2.339&quot;</td></tr><tr><td>&quot;25%&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;50%&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;75%&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;max&quot;</td><td>&quot;31Oct99&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td><td>&quot;n.d.&quot;</td></tr></tbody></table></div></div></div>
 </div>
-<p>Importar base de datos usando el paquete Pandas</p>
+<blockquote>
+<div><p>Pandas</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pandas</span> <span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="n">nombre_baseDatos</span><span class="p">)</span>
@@ -992,7 +1027,7 @@ Numero de elementos: 3
   </div>
 </div></div>
 </div>
-<p>Generar un resumen estadístico de un Data Frame de Pandas</p>
+<p>Generar resumen estadístico de un Data Frame</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_pandas</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
@@ -1748,7 +1783,9 @@ memory usage: 708.1+ KB
 </section>
 <section id="indexar-data-frame">
 <h3>2.2.4 Indexar Data Frame<a class="headerlink" href="#indexar-data-frame" title="Link to this heading">#</a></h3>
-<p>Polars</p>
+<blockquote>
+<div><p>Polars</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_polars_copia1</span><span class="p">[</span><span class="s1">&#39;PD04637PD&#39;</span><span class="p">][</span><span class="mi">5</span><span class="p">])</span>
@@ -1785,7 +1822,9 @@ memory usage: 708.1+ KB
 </div>
 </div>
 </div>
-<p>Pandas</p>
+<blockquote>
+<div><p>Pandas</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_pandas_copia1</span><span class="p">[</span><span class="s1">&#39;PD04637PD&#39;</span><span class="p">][</span><span class="mi">5</span><span class="p">])</span>
@@ -2490,7 +2529,9 @@ memory usage: 708.1+ KB
 </section>
 <section id="contar-datos-faltante-o-errados">
 <h3>2.2.6. Contar datos faltante o errados<a class="headerlink" href="#contar-datos-faltante-o-errados" title="Link to this heading">#</a></h3>
-<p>Polars</p>
+<blockquote>
+<div><p>Polars</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_polars_con_null</span><span class="o">.</span><span class="n">null_count</span><span class="p">())</span>
@@ -2556,7 +2597,9 @@ memory usage: 708.1+ KB
 </style>
 <small>shape: (7, 3)</small><table border="1" class="dataframe"><thead><tr><th>columna</th><th>Cantidad null</th><th>Porcentaje null</th></tr><tr><td>str</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>&quot;&quot;</td><td>0</td><td>0.0</td></tr><tr><td>&quot;PD04637PD&quot;</td><td>5613</td><td>43.360371</td></tr><tr><td>&quot;PD04638PD&quot;</td><td>5613</td><td>43.360371</td></tr><tr><td>&quot;PD04639PD&quot;</td><td>5605</td><td>43.298571</td></tr><tr><td>&quot;PD04640PD&quot;</td><td>5605</td><td>43.298571</td></tr><tr><td>&quot;PD04641PD&quot;</td><td>6915</td><td>53.418308</td></tr><tr><td>&quot;PD04642PD&quot;</td><td>6915</td><td>53.418308</td></tr></tbody></table></div></div></div>
 </div>
-<p>Pandas</p>
+<blockquote>
+<div><p>Pandas</p>
+</div></blockquote>
 <p>Determinar la cantidad y el porcentaje de valores <code class="docutils literal notranslate"><span class="pre">null</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5808,13 +5851,16 @@ Nulos después de interpolar (spline, order=3):  0
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>4. Caso estudio: variación histórica en el precio del Dolar según el BCRP</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-marco-teorico"><strong>I. Marco Teórico</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-marco-teorico"><font color="#046D0B" size="12"><strong>I. Marco Teórico</strong></font></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo"><strong>1.1 Objetivo</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos"><strong>1.2 Fundamentos</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-teoricos"><strong>1.2.1 Fundamentos Teóricos</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-matematicos-y-econometricos-en-el-ambito-de-big-data"><strong>1.2.2 Fundamentos Matemáticos y Econométricos (en el ámbito de Big Data)</strong></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-metodologia-practica"><font color="#046D0B" size="12"><strong>II. Metodología Práctica</strong></font></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recoleccion-de-datos"><strong>2.1. Recolección de datos</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>2.2. Preprocesamiento de datos</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-entorno">2.2.1 Preparar entorno</a></li>
